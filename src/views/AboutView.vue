@@ -1,12 +1,13 @@
 <script setup>
 import Nav from '../components/Nav.vue'
+
+
 </script>
 
-
 <template>
-  <Nav></Nav>
+  <Nav />
 </template>
 
-<style>
+<style scoped>
 
 </style>
