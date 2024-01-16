@@ -1,0 +1,15 @@
+/* styles/variables.css */
+
+:root {
+    --primary-color: #52A038;
+    --second-color: #5AB23D;
+    --lightblue-color: #C9EAF3;
+    --lightorange-color: #FEDD88;
+    --gooseyellow-color: #FFF98B;
+    --white-color: #FEFEFB;
+    --brown-color: #DAB488;
+    --redbrown-color: #8B4646;
+    --pink-color: #FFAFAF;
+    /* 添加其他颜色变量 */
+  }
+  
