@@ -1,47 +1,41 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import GoTop from './components/GoTop.vue';
-import HelloWorld from './components/HelloWorld.vue'
-
+import Nav from '@/components/Nav.vue';
+import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-  <header>
-    
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        
-        <!--首頁的[關於浪浪的事、最新消息]區塊 到時候本頁要放入HomeView.vue -->
-        <RouterLink to="/homeaboutsection">HomeAboutSection</RouterLink>
-        <!--第二頁的關於浪浪的事區塊  -->
-        <RouterLink to="/aboutpageintro">第二頁：關於浪浪的事簡介</RouterLink>
-      </nav>
-    </div>
-  </header>
-
- 
+  <div class="tabs">
+  <RouterLink to="/">Home</RouterLink>
+  <RouterLink to="/about">About</RouterLink>
+  <!--首頁的[關於浪浪的事、最新消息]區塊 到時候本頁要放入HomeView.vue -->
+  <RouterLink to="/homeaboutsection">HomeAboutSection</RouterLink>
+  <!--第二頁的關於浪浪的事區塊  -->
+  <RouterLink to="/aboutpageintro">第二頁：關於浪浪的事簡介</RouterLink>
+</div>
+  <Nav />
+  <main>
+  </main>
   <GoTop></GoTop>
 
   <RouterView />
+  <Footer />
 </template>
 
 <style scoped>
 
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.tabs{
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  background-color: black;
 }
 
 
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+/* header {
+  line-height: 1.5;
+  max-height: 100vh;
 }
 
 nav {
@@ -73,7 +67,7 @@ nav a:first-of-type {
 .text {
   height: 500vh;
   color: var(--redbrown-color);
-  background-color: var(--gooseyellow-color) ;
+  background-color: var(--gooseyellow-color);
 }
 
 @media (min-width: 1024px) {
@@ -104,5 +98,5 @@ nav a:first-of-type {
 
 
 
-}
+} */
 </style>

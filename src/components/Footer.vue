@@ -4,20 +4,51 @@
 </script>
 
 <template>
-<div class="footer">
-    <span>隱私權政策Copyright © 2019 - 2024 浪浪的事. All Rights Reserved.</span>
+    <div class="footer-container">
+    <div class="dogcat">
+        <div class="dog">
+            <img src="../assets/Image/HomeImage/HomeD-dog and paw.svg">
+        </div>
+        <div class="cat">
+            <img src="../assets/Image/HomeImage/HomeD-cat and paw.svg">
+        </div>
+    </div>
+    <div class="footer">
+        <span>隱私權政策Copyright © 2019 - 2024 浪浪的事. All Rights Reserved.</span>
+    </div>
 </div>
 </template>
 
 <style>
-.footer{
+
+.footer-container{
+    width: 100%;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dogcat {
+    z-index: 1;
+    position: relative;
+}
+.dog{
+    position: absolute;
+    top: -10px;
+    left: 83px;
+}
+.cat{
+    position: absolute;
+    top: 0px;
+    right: 83px;
+}
+.footer {
     background-color: #52A038;
     width: 100%;
     border-radius: 20px 20px 0 0;
     color: white;
     font-size: 18px;
-    padding:76px 0px ;
+    padding: 76px 0px;
     text-align: center;
 }
-
 </style>

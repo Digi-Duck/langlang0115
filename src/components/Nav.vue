@@ -46,7 +46,7 @@ export default {
 
 .boxall {
     width: 100%;
-    height: 100px;
+    height: 82px;
     background: #52A038;
     color: white;
     display: flex;

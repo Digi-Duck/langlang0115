@@ -1,5 +1,6 @@
 <script>
 import HomeCarousel from '@/components/HomeCarousel.vue';
+import IconHeaderLine from '@/components/icons/IconHeaderLine.vue';
 
 
 export default {
@@ -13,39 +14,67 @@ export default {
       // 可以在這裡添加額外的邏輯或改變按鈕的樣式
     },
   },
-  components: { HomeCarousel }
+  components: { HomeCarousel, IconHeaderLine, },
 };
 </script>
 
 <template>
+  <!-- banner -->
+  <header class="home-container header">
+    <section>
+      <div class="home-header-greenbox"></div>
+      <div class="home-header-img">
+        <img src="../assets/Image/HomeImage/HomeA-banner.svg" alt="">
+        <div class="home-header-text">
+          <IconHeaderLine class="line3"></IconHeaderLine>
+          <span>動物走失了</span>
+        </div>
+        <div class="home-header-btn">
+          <img src="../assets/Image/HomeImage/HomeA-btn-l.svg" alt="" srcset="">
+          <img src="../assets/Image/HomeImage/HomeA-btn-r.svg" alt="" srcset="">
+        </div>
+      </div>
+    </section>
+  </header>
+
   <main>
     <!-- 關於浪浪的事 -->
-    <section class="home-about-section">
-      <div class="brown-paw-pic">
-        <img src="../assets/Image/HomeImage/HomeB-paw.svg">
+    <section class="home-container ">
+      <!-- 狗掌&主人與毛小孩圖片 -->
+      <div class="home-abouut-bg">
+        <div class="brown-paw-pic">
+          <img src="../assets/Image/HomeImage/HomeB-paw.svg">
+        </div>
+        <div class="about-us-image">
+          <img src="../assets/Image/HomeImage/HomeB-AboutUsPic.svg" alt="">
+        </div>
       </div>
-      <div class="about-lang-text">關於浪浪的事</div>
-      <!-- about & btns -->
-      <div class="home-about-and-btns about-lang-text">
-        <div>About Us</div>
-        <img src="../assets/Image/HomeImage/HomeB-sponsor-us-btn.svg" alt="贊助我們" class="sponsor-us-btn">
-        <img src="../assets/Image/HomeImage/HomeB-see-more-btn.svg" alt="瞭解更多">
+      <!-- 關於浪浪的事文字 -->
+      <div class="home-about-section">
+        <div class="about-lang-text">關於浪浪的事</div>
+        <!-- about & btns -->
+        <div class="home-about-and-btns">
+          <div class="about-text ">About Us</div>
+          <div class="home-about-btns">
+            <img src="../assets/Image/HomeImage/HomeB-sponsor-us-btn.svg" alt="贊助我們" class="sponsor-us-btn">
+            <img src="../assets/Image/HomeImage/HomeB-see-more-btn.svg" alt="瞭解更多">
+          </div>
+        </div>
+        <!-- 文字簡介 -->
+        <p class="mission-statement">
+          主要由喜歡毛小孩的夥伴們開發，目的是減少流浪在外的毛小孩。<br><br>
+          包含毛小孩送養、協尋、收容所資訊查找的功能，希望可以達到資訊透明，從出生到當小天使，紀錄毛小孩一生。
+        </p>
       </div>
-      <!-- 文字簡介 -->
-      <p class="mission-statement">主要由喜歡毛小孩的夥伴們開發，目的是減少流浪在外的毛小孩。<br><br>
-        包含毛小孩送養、協尋、收容所資訊查找的功能，希望可以達到資訊透明，從出生到當小天使，紀錄毛小孩一生。</p>
-      <!-- 主人與毛小孩圖片 -->
-      <div class="about-us-image"> </div>
     </section>
 
     <!-- 最新消息 -->
-    <section class="home-news-section">
+    <section class="home-container home-news-section">
       <div class="dog-cat-pic"></div>
       <div class="home-news-text">
         <div>最新消息</div>
         <div>News</div>
       </div>
-
       <div class="yellow-paw-pic">
         <img src="../assets/Image/HomeImage/HomeC-paw.svg">
       </div>
@@ -113,148 +142,174 @@ export default {
 </template>
 
 <style scoped>
+.home-container {
+  width: 100%;
+  height: 1080px;
+  position: relative;
+}
+
+.home-header-greenbox {
+  background-color: #52A038;
+  width: 100%;
+  height: 556px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.home-header-img {
+display: flex;
+justify-content: center;
+  position: relative;
+}
+
+.home-header-text {
+  width: 500px;
+  height: 50px;
+  position: absolute;
+  top: 71%;
+  left: 60%;
+}
+
+.home-header-text span {
+  font-size: 28px;
+  text-shadow: 1px 2px 8px rgba(0, 0, 0, 25);
+  color: white;
+  position: absolute;
+  top: -80%;
+  left: 0%;
+  transform: rotate(12deg);
+}
+
+.home-header-btn {
+  display: flex;
+  gap: 26px;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /*-----首頁 關於我們-----*/
 /*#region*/
-.home-about-section {
-  /* background-color: beige;*/
-  width: 1920px;
-  height: 100vh;
-  position: relative;
-  top: 100vh;
+.home-abouut-bg {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: -1;
 }
 
 .brown-paw-pic {
-  height: 990px;
-  width: 1200px;
+ margin-top: -10%;
+ margin-left: -28%;
+}
+
+.home-about-section {
+  padding: 0 179px;
+  z-index: 1;
   position: absolute;
-  top: -199px;
-  left: -543px;
+  top: 0;
+  left: 0;
 }
 
 .about-lang-text {
   color: var(--primary-color);
   font-size: 64px;
   letter-spacing: 1rem;
-  margin-left: 80px;
-  position: absolute;
-  z-index: 2;
+  margin-bottom: 40px;
 }
 
 .home-about-and-btns {
   display: flex;
-  width: 900px;
-  position: absolute;
-  z-index: 2;
-  top: 104px;
-  margin-left: 80px;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 97px;
 }
 
-.sponsor-us-btn {
-  margin: 0px 10px;
+.about-text {
+  color: var(--primary-color);
+  font-size: 46px;
+  letter-spacing: 1rem;
+}
+
+.home-about-btns {
+  width: 333px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .mission-statement {
   width: 864px;
   height: 461px;
-  margin-left: 80px;
   color: #626262;
   font-size: 40px;
-  letter-spacing: 5px;
-  position: absolute;
-  top: 225px;
-  z-index: 2;
+  letter-spacing: 6px;
 }
-
-.about-us-image {
-  background-image: url("../assets/Image/HomeImage/HomeB-AboutUsPic.svg");
-  width: 974px;
-  height: 852px;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: absolute;
-  top: 78px;
-  margin-left: 946px;
-}
-
-
 /*#endregion*/
 
 
 /*-----首頁 最新消息-----*/
 .home-news-section {
-  /*background-color: rgb(118, 184, 228);*/
-  width: 1920px;
-  height: 100vh;
-  position: relative;
-  top: 100vh;
-  /* 調整這個值以確保在下方 */
+ position: relative;
+ top: 0;
+ left: 0;
 }
-
-.home-news-text {
-  color: var(--primary-color);
-  font-size: 64px;
-  letter-spacing: 1rem;
-  margin: 80px;
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-}
-
 .dog-cat-pic {
   background-image: url("../assets/Image/HomeImage/HomeC-dog-cat.svg");
   height: 268px;
   width: 268px;
   position: absolute;
-  top: 64px;
+  top: -20px;
   right: 244px;
-  z-index: 2;
+  z-index: 1;
 }
-
+.home-news-text {
+  color: var(--primary-color);
+  font-size: 64px;
+  letter-spacing: 1rem;
+  width: 500px;
+  padding: 26px 0 0 179px;
+}
 .yellow-paw-pic img {
-  width: 3000px;
-  height: 1200px;
+  z-index: -1;
   position: absolute;
-  top: -200px;
-  left: -1250px;
+  top: -26%;
+  left: -28%;
 }
 
 /* 綠色區塊內 */
+.news-area{
+  position: absolute;
+  top: 12%;
+  right: 0px;
+}
 .green-icon-container {
   background-image: url("../assets/Image/HomeImage/HomeC-dot.svg");
-  background-size: 95%;
+  background-size:100%;
   background-repeat: no-repeat;
+  width: 1265px;
+  height: 686px;
   position: absolute;
-  top: 217px;
-  right: 0px;
-  width: 1445px;
-  height: 759px;
+  top: 0%;
+  right: 130px;
 }
-
-.news-area {
-  position: relative;
-}
-
 .news-list {
   list-style: none;
-  position: absolute;
-  transform: translate(160px, 100px);
-  height: 500px;
-  width: 1000px;
-  /* background-color: blanchedalmond; */
+  padding: 0;
+  transform: translate(160px, 140px);
+  height: 350px;
+  width: 880px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   color: var(--white-color);
 }
-
 .news-item {
   display: flex;
-  margin: 20px 10px;
-  height: 96px;
+  margin: 20px 0px;
+  width:880px ;
+  height: 84px;
   font-family: 'ABeeZee', sans-serif;
-  ;
 }
 
 /* 最新消息的日期區 */
@@ -281,7 +336,6 @@ export default {
   font-size: 28px;
   letter-spacing: 7px;
   display: inline-block;
-  margin-bottom: 30px;
   width: 900px;
   position: relative;
   display: flex;
@@ -314,15 +368,9 @@ export default {
 
 .more-news-btn {
   position: absolute;
-  top: 700px;
-  left: 1000px;
+  top: 660px;
+  right: 150px;
 }
 
 /* 幻燈片/更多浪浪 */
-.home-carousel-section {
-  position: relative;
-  width: 1920px;
-  height: 794px;
-  top: 100vh;
-}
 </style>
