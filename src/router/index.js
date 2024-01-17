@@ -22,6 +22,11 @@ const router = createRouter({
       name: 'homeaboutsection',
       component: () => import('../views/HomeAboutSectionView.vue')
     },
+    {
+      path: '/aboutpageintro',
+      name: 'aboutpageintro',
+      component: () => import('../views/AboutPageAarea.vue')
+    }
   ]
 })
 
