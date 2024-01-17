@@ -1,5 +1,17 @@
 <!--首頁的[關於浪浪的事]、[最新消息]區塊 到時候本頁要放入HomeView.vue -->
 <script>
+export default {
+    methods: {
+        handleHover() {
+            // 在滑鼠懸停時的相關處理
+            // 可以在這裡添加額外的邏輯或改變按鈕的樣式
+        },
+        handleMouseOut() {
+            // 在滑鼠離開時的相關處理
+            // 可以在這裡添加額外的邏輯或改變按鈕的樣式
+        },
+    },
+};
 </script>
 
 <template>
@@ -45,7 +57,13 @@
                         </div>
                         <div class="news-announcement">
                             <span>浪浪的事改版問券調查</span>
-                            <button type="button" class="news-announcement-btn">更多...</button>
+
+                            <!-- 更多按鈕 -->
+                            <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
+                                <span>更多...</span>
+                                <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
+                            </div>
+
                         </div>
                     </li>
                     <li class="news-item">
@@ -55,7 +73,10 @@
                         </div>
                         <div class="news-announcement">
                             <span>誤發登入失敗通知</span>
-                            <button type="button" class="news-announcement-btn">更多...</button>
+                            <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
+                                <span>更多...</span>
+                                <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
+                            </div>
                         </div>
                     </li>
                     <li class="news-item">
@@ -67,15 +88,19 @@
                             <span>活動[轉載]高雄市動物...
 
                             </span>
-                            <button type="button" class="news-announcement-btn">更多...</button>
+                            <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
+                                <span>更多...</span>
+                                <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
+                            </div>
                         </div>
                     </li>
                 </ul>
+                <div class="more-news-btn">
+                    <img src='../assets/Image/HomeImage/HomeC-more-news-btn.svg' alt="更多消息">
+                </div>
             </div>
 
-            <div class="more-news-btn">
-                <img src='../assets/Image/HomeImage/'alt="更多消息">
-            </div>
+
         </div>
     </section>
 </template>
@@ -150,7 +175,7 @@
 
 /*-----首頁 最新消息-----*/
 .home-news-section {
-    background-color: rgb(118, 184, 228);
+    /*background-color: rgb(118, 184, 228);*/
     width: 1920px;
     height: 100vh;
     position: relative;
@@ -174,34 +199,29 @@
     height: 268px;
     width: 268px;
     position: absolute;
-    top: 33px;
-    right: 360px;
-}
-
-.yellow-paw-pic {
-    position: absolute;
-    top: -143px;
-    left: -445px;
+    top: 64px;
+    right: 244px;
+    z-index: 2;
 }
 
 .yellow-paw-pic img {
-    width: 1229px;
-    height: 1119px;
-
-
+    width: 3000px;
+    height: 1200px;
+    position: absolute;
+    top: -200px;
+    left: -1250px;
 }
 
 /* 綠色區塊內 */
-
 .green-icon-container {
     background-image: url("../assets/Image/HomeImage/HomeC-dot.svg");
     background-size: 95%;
     background-repeat: no-repeat;
     position: absolute;
-    top: 200px;
-    right: 189px;
-    width: 1252px;
-    height: 716px;
+    top: 217px;
+    right: 0px;
+    width: 1445px;
+    height: 759px;
 }
 
 .news-area {
@@ -211,13 +231,14 @@
 .news-list {
     list-style: none;
     position: absolute;
-    transform: translate(190px, 50px);
+    transform: translate(160px, 100px);
     height: 500px;
+    width: 1000px;
     /* background-color: blanchedalmond; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     color: var(--white-color);
 }
 
@@ -234,7 +255,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 40px;
     font-family: 'Stick', sans-serif;
 }
 
@@ -244,6 +265,7 @@
 
 .news-date-day {
     font-size: 32px;
+    font-weight: 900;
 }
 
 /* 最新消息的文字區 */
@@ -253,14 +275,39 @@
     letter-spacing: 7px;
     display: inline-block;
     margin-bottom: 30px;
-    width: 550px;
+    width: 900px;
     position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.news-announcement span:first-child{
+    margin-left: 30px;
 }
 
 
-
 .news-announcement-btn {
+    font-size: 20px;
     position: absolute;
-    right: 0;
+    right: 50px;
+    transition: transform 0.3s ease;
+}
+
+
+.news-announcement-btn:hover {
+    transform: translateX(10px);
+    /* 在 hover 時往右移動 10px */
+}
+
+
+.news-announcement-btn img {
+    position: absolute;
+    top: 10px
+}
+
+.more-news-btn {
+    position: absolute;
+    top: 700px;
+    left: 1000px;
 }
 </style>
