@@ -24,8 +24,12 @@ export default {
 </template>
 <style scoped>
 #goTop {
+    display: flex;
+    width: 81.257px;
+    height: 80.035px;
+    z-index: 10;
     position: fixed;
-    width: 0.8rem;
-    height: 0.8rem;
+    right: 8rem;
+    bottom: 6rem;
 }
 </style>

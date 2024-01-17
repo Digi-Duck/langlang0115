@@ -76,13 +76,6 @@ nav a:first-of-type {
   background-color: var(--gooseyellow-color) ;
 }
 
-#goTop {
-  position: fixed;
-  right: 8rem;
-  bottom: 6rem;
-}
-
-
 @media (min-width: 1024px) {
   header {
     display: flex;
