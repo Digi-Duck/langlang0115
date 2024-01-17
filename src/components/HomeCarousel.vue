@@ -34,10 +34,16 @@ export default {
         },
         next() {
             this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-            if(this.currentIndex === 0){
-                // 重置
-                this.$refs.carouselFrame.style.transition = 'none';
-            }
+            // if (this.currentIndex === 0) {
+            //     // 重置
+            //     this.$refs.carouselFrame.style.transition = 'none';
+            //     // 暫時移除過度效果
+            //     this.$refs.carouselFrame.style.transition = 'translateX(0)';
+            //     // 重新繪製
+            //     void this.carouselFrame.offsetWidth;
+            //     // 恢復
+            //     this.$refs.carouselFrame.style.transition = '';
+            // }
         },
         // 自動/停止播放
         starAutoplay() {
@@ -77,6 +83,14 @@ export default {
             </div>
         </div>
     </div>
+    <div class="many">
+        <a href="#">
+            <button class="manylang">
+                <span>更多浪浪</span>
+            </button>
+        </a>
+
+    </div>
 </template>
 <style scoped>
 .carouselshow {
@@ -93,5 +107,31 @@ export default {
     background-color: transparent;
     gap: 5rem;
     width: 105rem;
+}
+
+.many {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.manylang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 3.25rem;
+    background-color: var(--primary-color);
+    border-radius: 1.875rem;
+    border: none;
+}
+
+.manylang span {
+    font-style: normal;
+    font-size: 18px;
+    padding: 1rem;
+    line-height: normal;
+    letter-spacing: 4.5px;
+    color: var(--white-color);
 }
 </style>
