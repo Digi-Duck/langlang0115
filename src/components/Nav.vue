@@ -2,15 +2,11 @@
 <script>
 import IconLogo from './icons/IconLogo.vue';
 import IconNavWave from './icons/IconNavWave.vue';
-import IconTitleCn from './icons/IconTitleCn.vue';
-import IconTitleEn from './icons/IconTitleEn.vue';
 
 export default {
     components: {
         IconLogo,
         IconNavWave,
-        IconTitleEn,
-        IconTitleCn,
     },
     methods: {
 
@@ -24,8 +20,10 @@ export default {
         <div class="boxall">
             <div id="logo">
                 <IconLogo id="logo"></IconLogo>
-                <IconTitleEn id="titleen"></IconTitleEn>
-                <IconTitleCn id="titlecn"></IconTitleCn>
+            </div>
+            <div class="logotext">
+                <img class="titleen" src="../assets/Image/HomeImage/HomeA-title_en.svg">
+                <img class="titlecn" src="../assets/Image/HomeImage/HomeA-title.svg">
             </div>
             <div class="box">
                 <span>失散協尋</span>
@@ -36,17 +34,16 @@ export default {
                 <span>關於我們</span>
                 <span>會員登入</span>
             </div>
-
         </div>
         <IconNavWave id="wave"></IconNavWave>
     </div>
-
 </template>
 
 <style lang="scss" scoped>
-.nav-container{
-  position: relative;  
+.nav-container {
+    position: relative;
 }
+
 .boxall {
     width: 100%;
     height: 100px;
@@ -55,12 +52,12 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 55px;
+    padding: 10px 20px;
 }
 
 #logo {
     margin-top: 70px;
-    z-index: 1;
+    z-index: 2;
 }
 
 span {
@@ -70,17 +67,26 @@ span {
 
 #wave {
     position: absolute;
-    top: 97%;
+    top: 99%;
+    z-index: 1;
 }
-#titleen{
+.logotext{
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+.titleen{
+    width: 186px;
+    height: 34px;
     position: absolute;
-    top: 95%;
-    left: 14%;
+    top:95%;
+    left: 16.5%;
 }
-#titlecn{
+.titlecn{
+    width: 397px;
+    height: 123px;
     position: absolute;
-    top: 95%;
-    left: 13%;
+    top:120%;
+    left: 12.5%;
 }
-
 </style>
