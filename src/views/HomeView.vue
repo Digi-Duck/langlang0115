@@ -1,4 +1,5 @@
 <script setup>
+import HomeCarousel from '@/components/HomeCarousel.vue';
 import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
@@ -6,4 +7,5 @@ import TheWelcome from '../components/TheWelcome.vue'
   <main>
     <TheWelcome />
   </main>
+  <HomeCarousel />
 </template>
