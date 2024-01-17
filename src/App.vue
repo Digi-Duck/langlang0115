@@ -1,11 +1,13 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import GoTop from './components/GoTop.vue';
 import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -13,18 +15,27 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        
+        <!--首頁的關於我們區塊 到時候本頁要放入HomeView.vue -->
+        <RouterLink to="/homeaboutsection">HomeAboutSection</RouterLink>
       </nav>
     </div>
   </header>
+
+ 
+  <GoTop></GoTop>
 
   <RouterView />
 </template>
 
 <style scoped>
+
 header {
   line-height: 1.5;
   max-height: 100vh;
 }
+
+
 
 .logo {
   display: block;
@@ -56,6 +67,20 @@ nav a:first-of-type {
   border: 0;
 }
 
+
+.text {
+  height: 500vh;
+  color: var(--redbrown-color);
+  background-color: var(--gooseyellow-color) ;
+}
+
+#goTop {
+  position: fixed;
+  right: 8rem;
+  bottom: 6rem;
+}
+
+
 @media (min-width: 1024px) {
   header {
     display: flex;
@@ -81,5 +106,8 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+
+
+
 }
 </style>
