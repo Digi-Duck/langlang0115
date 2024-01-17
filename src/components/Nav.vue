@@ -1,13 +1,16 @@
 
 <script>
 import IconLogo from './icons/IconLogo.vue';
-import IconNav from './icons/IconNav.vue';
+import IconNavWave from './icons/IconNavWave.vue';
+import IconTitleCn from './icons/IconTitleCn.vue';
+import IconTitleEn from './icons/IconTitleEn.vue';
 
 export default {
     components: {
         IconLogo,
-        IconNav,
-
+        IconNavWave,
+        IconTitleEn,
+        IconTitleCn,
     },
     methods: {
 
@@ -17,27 +20,33 @@ export default {
 </script>
 
 <template>
-    <div class="boxall">
-        <div id="logo">
-            <IconLogo id="logo"></IconLogo>
+    <div class="nav-container">
+        <div class="boxall">
+            <div id="logo">
+                <IconLogo id="logo"></IconLogo>
+                <IconTitleEn id="titleen"></IconTitleEn>
+                <IconTitleCn id="titlecn"></IconTitleCn>
+            </div>
+            <div class="box">
+                <span>失散協尋</span>
+                <span>認養中心</span>
+            </div>
+            <div class="box">
+                <span>最新消息</span>
+                <span>關於我們</span>
+                <span>會員登入</span>
+            </div>
+
         </div>
-        <div class="box">
-            <span>失散協尋</span>
-            <span>認養中心</span>
-        </div>
-        <div class="box">
-            <span>最新消息</span>
-            <span>關於我們</span>
-            <span>會員登入</span>
-        </div>
-       
+        <IconNavWave id="wave"></IconNavWave>
     </div>
-    
-    <IconNav id="nav"></IconNav>
-    <!-- <img src="../assets/Image/HomeImage/HomeA-wave.svg"> -->
+
 </template>
 
 <style lang="scss" scoped>
+.nav-container{
+  position: relative;  
+}
 .boxall {
     width: 100%;
     height: 100px;
@@ -46,11 +55,11 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 60px;
-    
+    padding: 10px 55px;
 }
-#logo{
-    margin-top: 60px;
+
+#logo {
+    margin-top: 70px;
     z-index: 1;
 }
 
@@ -59,9 +68,19 @@ span {
     margin: 0 37px;
 }
 
-#nav{
+#wave {
     position: absolute;
-    top: 138px;
-    left: 0;
+    top: 97%;
 }
+#titleen{
+    position: absolute;
+    top: 95%;
+    left: 14%;
+}
+#titlecn{
+    position: absolute;
+    top: 95%;
+    left: 13%;
+}
+
 </style>
