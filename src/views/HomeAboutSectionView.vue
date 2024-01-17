@@ -24,7 +24,7 @@
 
     <!-- 最新消息 -->
     <section class="home-news-section">
-        <div class="dog-cat-pic"> </div>
+        <div class="dog-cat-pic"></div>
         <div class="home-news-text">
             <div>最新消息</div>
             <div>News</div>
@@ -40,25 +40,41 @@
                 <ul class="news-list">
                     <li class="news-item">
                         <div class="news-date">
-                            <span>2023.11</span>
-                            <span>02</span>
+                            <span class="news-date-month">2023.11</span>
+                            <span class="news-date-day">02</span>
                         </div>
                         <div class="news-announcement">
-                            <span class="news-announcement-text">浪浪的事改版問券調查</span>
+                            <span>浪浪的事改版問券調查</span>
                             <button type="button" class="news-announcement-btn">更多...</button>
                         </div>
                     </li>
                     <li class="news-item">
                         <div class="news-date">
-                            <span>2023.11</span>
-                            <span>02</span>
+                            <span class="news-date-month">2023.05</span>
+                            <span class="news-date-day">31</span>
                         </div>
                         <div class="news-announcement">
-                            <span class="news-announcement-text">浪浪的事改版問券調查</span>
+                            <span>誤發登入失敗通知</span>
+                            <button type="button" class="news-announcement-btn">更多...</button>
+                        </div>
+                    </li>
+                    <li class="news-item">
+                        <div class="news-date">
+                            <span class="news-date-month">2023.05</span>
+                            <span class="news-date-day">25</span>
+                        </div>
+                        <div class="news-announcement">
+                            <span>活動[轉載]高雄市動物...
+
+                            </span>
                             <button type="button" class="news-announcement-btn">更多...</button>
                         </div>
                     </li>
                 </ul>
+            </div>
+
+            <div class="more-news-btn">
+                <img src='../assets/Image/HomeImage/'alt="更多消息">
             </div>
         </div>
     </section>
@@ -66,6 +82,7 @@
 
 <style>
 /*-----首頁 關於我們-----*/
+/*#region*/
 .home-about-section {
     /* background-color: beige;*/
     width: 1920px;
@@ -128,6 +145,8 @@
 }
 
 
+/*#endregion*/
+
 
 /*-----首頁 最新消息-----*/
 .home-news-section {
@@ -137,10 +156,9 @@
     position: relative;
     top: 100vh;
     /* 調整這個值以確保在下方 */
-
 }
 
-.home-news-text{
+.home-news-text {
     color: var(--primary-color);
     font-size: 64px;
     letter-spacing: 1rem;
@@ -150,6 +168,7 @@
     display: flex;
     flex-direction: column;
 }
+
 .dog-cat-pic {
     background-image: url("../assets/Image/HomeImage/HomeC-dog-cat.svg");
     height: 268px;
@@ -193,39 +212,55 @@
     list-style: none;
     position: absolute;
     transform: translate(190px, 50px);
-    /* width: 200px; */
+    height: 500px;
     /* background-color: blanchedalmond; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: stretch;
+    color: var(--white-color);
 }
 
 .news-item {
     display: flex;
     margin: 20px 10px;
+    height: 96px;
+    font-family: 'ABeeZee', sans-serif;
+    ;
 }
 
+/* 最新消息的日期區 */
 .news-date {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
+    font-family: 'Stick', sans-serif;
 }
 
-/* 最新消息文字區 */
+.news-date-month {
+    font-size: 16px;
+}
+
+.news-date-day {
+    font-size: 32px;
+}
+
+/* 最新消息的文字區 */
 .news-announcement {
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid var(--white-color);
+    font-size: 28px;
+    letter-spacing: 7px;
     display: inline-block;
-    padding-bottom: 4px;
+    margin-bottom: 30px;
     width: 550px;
     position: relative;
 }
 
-.news-announcement-text {
-    letter-spacing: 2px;
-}
+
 
 .news-announcement-btn {
     position: absolute;
     right: 0;
-}</style>
+}
+</style>
