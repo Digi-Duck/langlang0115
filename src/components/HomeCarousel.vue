@@ -46,14 +46,14 @@ export default {
             // }
         },
         // 自動/停止播放
-        starAutoplay() {
-            this.intervalId = setInterval(() => {
-                this.next();
-            }, 1500);
-        },
-        stopAutoplay() {
-            clearInterval(this.intervalId);
-        },
+        // starAutoplay() {
+        //     this.intervalId = setInterval(() => {
+        //         this.next();
+        //     }, 1500);
+        // },
+        // stopAutoplay() {
+        //     clearInterval(this.intervalId);
+        // },
     },
     // 重複播放
     // directives: {
@@ -78,6 +78,7 @@ export default {
 <template>
     <div class="carouselshow">
         <div class="slideshow">
+            <!-- 'translateX(' + currentIndex * -100 + '%)' -->
             <div class="carousel" v-for="img in slides" :style="{ transform: 'translateX(' + timer * -1 + '%)' }">
                 <IconCarouselFrame :framePath="frame" :imgPath="img"></IconCarouselFrame>
             </div>
