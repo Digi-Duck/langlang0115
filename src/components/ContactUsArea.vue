@@ -1,10 +1,17 @@
 <script>
+import IconChangeButton from './icons/IconChangeButton.vue';
+
+
 export default {
     data() {
         return {
             selectedOption: null,
+            mysubmit: "送 出",
         };
     },
+    components: {
+        IconChangeButton
+    }
 };
 </script>
 <template>
@@ -18,7 +25,7 @@ export default {
                 </div>
             </div>
             <div id="contactText">
-                <p>收到訊息後客服部會依照順序逐一回覆唷！</p>
+                <p> 收到訊息後客服部會依照順序逐一回覆唷！</p>
             </div>
         </div>
         <div id="inputArea">
@@ -49,12 +56,10 @@ export default {
                 <div class="inputTitle">
                     <span>內 容</span>
                 </div>
-                <input id="detail" type=" text">
+                <textarea class="detail" ref="input" autocomplete="off" name="text"></textarea>
             </div>
             <div class="sendArea">
-                <button class="send">
-                    <span>送出</span>
-                </button>
+                <IconChangeButton :text="mysubmit"></IconChangeButton>
                 <div class="remindText">
                     <p>或使用電子信箱與我們聯繫</p>
                     <div id="mymail">
@@ -93,13 +98,12 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding: 2.8125rem 12rem 0 12rem;
+    padding: 2.8125rem 12.5rem 0 12.5rem;
 }
 
 #contactTitle span {
     color: var(--primary-color);
     font-size: 48px;
-
     font-weight: 400;
     letter-spacing: 12px;
 }
@@ -131,7 +135,7 @@ export default {
     font-weight: 400;
     line-height: normal;
     letter-spacing: 6px;
-    margin: 0 12.1875rem;
+    margin: 0 12.5rem;
     color: #626262;
 }
 
@@ -195,7 +199,7 @@ export default {
 }
 
 /* input內容 */
-#detail {
+.detail {
     font-size: 1.5rem;
     width: 35.3125rem;
     border: 3px solid var(--primary-color);
@@ -203,6 +207,22 @@ export default {
     outline: none;
     height: 14rem;
     border-radius: 0px 2.5rem 2.5rem 2.5rem;
+
+}
+
+.detail::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* .detail::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    background-color: var(--primary-color);
+} */
+
+.detail::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 .sendArea {
@@ -211,24 +231,6 @@ export default {
     align-items: center;
     flex-direction: column;
     margin-left: 180px;
-}
-
-/* 送出按鈕 */
-.send {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 9.75rem;
-    height: 3.25rem;
-    padding: 1rem 1.9375rem 1rem 2rem;
-    border-radius: 1.875rem;
-    background-color: var(--primary-color);
-    border: none;
-}
-
-.send span {
-    font-size: 24px;
-    color: var(--white-color);
 }
 
 /* 下方文字區 */
