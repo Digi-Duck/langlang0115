@@ -11,7 +11,9 @@
 </template>
 
 <script>
-
+export default{
+    
+}
 </script>
 
 <style>
@@ -38,10 +40,10 @@ button:hover {
     box-shadow: 4px 4px 4px 0px rgb(250 198, 14 ,0.25);
 }
 
-
 .whole-btn:hover #ellipse-yellow-arrow {
     fill: var(--orangeyellow-color); /* 改變 ellipse 的填充顏色 */
 }
+
 .whole-btn:hover #path-yellow-arrow {
     fill: var(--white-color); /* 改變 path 的填充顏色 */
 }

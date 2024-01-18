@@ -1,4 +1,5 @@
 <script>
+import NavBar from '../components/NavBar.vue'
 import HomeCarousel from '@/components/HomeCarousel.vue';
 import IconHeaderLine from '@/components/icons/IconHeaderLine.vue';
 import GreenButton from '../components/GreenButton.vue';
@@ -23,11 +24,12 @@ export default {
       alert("按到瞭解更多");
     },
   },
-  components: { HomeCarousel, IconHeaderLine, GreenButton, YellowButton },
+  components: { HomeCarousel, IconHeaderLine, GreenButton, YellowButton, NavBar },
 };
 </script>
-
+ 
 <template>
+  <NavBar />
   <header class="home-container header">
     <section>
       <div class="home-header-greenbox"></div>

@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import GoTop from './components/GoTop.vue';
-import Nav from '@/components/Nav.vue';
+
 import Footer from '@/components/Footer.vue';
 </script>
 
@@ -12,7 +12,7 @@ import Footer from '@/components/Footer.vue';
   <!--第二頁的關於浪浪的事區塊  -->
   <RouterLink to="/aboutpageintro">第二頁：關於浪浪的事簡介</RouterLink>
 </div>
-  <Nav />
+
   <main>
   </main>
   <GoTop></GoTop>
