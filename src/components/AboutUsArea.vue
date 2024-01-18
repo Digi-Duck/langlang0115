@@ -32,7 +32,7 @@
 
 <style scoped>
 .about-intro {
-    height: 100vh;
+    /* height: 100vh;*/
     width: 100vw;
     max-width: 100%;
     /*background-color: antiquewhite;*/
@@ -50,8 +50,8 @@
 
 .intro-description {
     position: absolute;
-    top: 130px;
-    right: 100px;
+    top: 250px;
+    right: 150px;
 }
 
 .description-text {
