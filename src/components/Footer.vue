@@ -22,7 +22,8 @@
 <style>
 
 .footer-container{
-    width: 100%;
+    width: 100vw;
+    max-width :100%;
     height: 310px;
     display: flex;
     flex-direction: column;

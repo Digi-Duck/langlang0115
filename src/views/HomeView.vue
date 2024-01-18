@@ -19,7 +19,6 @@ export default {
 </script>
 
 <template>
-  <!-- banner -->
   <header class="home-container header">
     <section>
       <div class="home-header-greenbox"></div>
@@ -38,9 +37,9 @@ export default {
   </header>
 
   <main>
-    <!-- 關於浪浪的事 -->
-    <section class="home-container ">
-      <!-- 狗掌&主人與毛小孩圖片 -->
+    <!-- 關於浪浪的事 --><!-- 狗掌&主人與毛小孩圖片 --><!-- 關於浪浪的事文字 -->
+    <!-- about & btns -->
+    <section class="home-container home-about">
       <div class="home-abouut-bg">
         <div class="brown-paw-pic">
           <img src="../assets/Image/HomeImage/HomeB-paw.svg">
@@ -49,10 +48,10 @@ export default {
           <img src="../assets/Image/HomeImage/HomeB-AboutUsPic.svg" alt="">
         </div>
       </div>
-      <!-- 關於浪浪的事文字 -->
+
       <div class="home-about-section">
         <div class="about-lang-text">關於浪浪的事</div>
-        <!-- about & btns -->
+
         <div class="home-about-and-btns">
           <div class="about-text ">About Us</div>
           <div class="home-about-btns">
@@ -60,29 +59,29 @@ export default {
             <img src="../assets/Image/HomeImage/HomeB-see-more-btn.svg" alt="瞭解更多">
           </div>
         </div>
-        <!-- 文字簡介 -->
+
         <p class="mission-statement">
           主要由喜歡毛小孩的夥伴們開發，目的是減少流浪在外的毛小孩。<br><br>
           包含毛小孩送養、協尋、收容所資訊查找的功能，希望可以達到資訊透明，從出生到當小天使，紀錄毛小孩一生。
         </p>
       </div>
     </section>
-
+    <!-- 文字簡介 -->
     <!-- 最新消息 -->
     <section class="home-container home-news-section">
-      <div class="dog-cat-pic"></div>
-      <div class="home-news-text">
-        <div>最新消息</div>
-        <div>News</div>
-      </div>
       <div class="yellow-paw-pic">
         <img src="../assets/Image/HomeImage/HomeC-paw.svg">
       </div>
+      <div class="dog-cat-pic"></div>
+      <div class="home-news-text">
+        <div class="about-lang-text">最新消息</div>
+        <div class="about-text">News</div>
+      </div>
+
       <div class="news-area">
-        <!-- 綠色區塊 -->
         <div class="green-icon-container">
-          <!-- 文字 -->
-          <ul class="news-list">
+
+          <ul class="news-list"> 
             <li class="news-item">
               <div class="news-date">
                 <span class="news-date-month">2023.11</span>
@@ -91,7 +90,7 @@ export default {
               <div class="news-announcement">
                 <span>浪浪的事改版問券調查</span>
 
-                <!-- 更多按鈕 -->
+
                 <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
                   <span>更多...</span>
                   <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
@@ -127,7 +126,7 @@ export default {
                 </div>
               </div>
             </li>
-          </ul>
+          </ul> 
           <div class="more-news-btn">
             <img src='../assets/Image/HomeImage/HomeC-more-news-btn.svg' alt="更多消息">
           </div>
@@ -143,9 +142,10 @@ export default {
 
 <style scoped>
 .home-container {
-  width: 100%;
-  height: 1080px;
+  width: 100vw;
+  max-width: 100%;
   position: relative;
+  margin-bottom: 209px;
 }
 
 .home-header-greenbox {
@@ -193,7 +193,7 @@ export default {
 /*-----首頁 關於我們-----*/
 /*#region*/
 .home-abouut-bg {
-  width: 100%;
+  height: 852px;
   display: flex;
   justify-content: space-between;
   z-index: -1;
@@ -201,15 +201,23 @@ export default {
 
 .brown-paw-pic {
   margin-top: -10%;
-  margin-left: -28%;
+  margin-left: -27%;
+  position: absolute;
+
+}
+
+.about-us-image {
+  /* width: 100%; */
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .home-about-section {
-  padding: 0 179px;
+  padding-left: 180px;
   z-index: 1;
   position: absolute;
   top: 0;
-  left: 0;
 }
 
 .about-lang-text {
@@ -250,10 +258,14 @@ export default {
 
 
 /*-----首頁 最新消息-----*/
-.home-news-section {
-  position: relative;
-  top: 0;
-  left: 0;
+.yellow-paw-pic  {
+width: 1152px;
+height: 839px;
+  z-index: -1;
+}
+.yellow-paw-pic img {
+  margin-top: -24.5%;
+  margin-left: -43%;
 }
 
 .dog-cat-pic {
@@ -261,41 +273,28 @@ export default {
   height: 268px;
   width: 268px;
   position: absolute;
-  top: -20px;
-  right: 244px;
+  top: 0px;
+  right: 225px;
   z-index: 1;
 }
 
 .home-news-text {
-  color: var(--primary-color);
-  font-size: 64px;
-  letter-spacing: 1rem;
-  width: 500px;
-  padding: 26px 0 0 179px;
-}
-
-.yellow-paw-pic img {
-  z-index: -1;
+  margin-top: 65px;
+  margin-left: 180px;
   position: absolute;
-  top: -26%;
-  left: -28%;
+  top: 0;
+  left: 0;
 }
 
 /* 綠色區塊內 */
-.news-area {
-  position: absolute;
-  top: 12%;
-  right: 0px;
-}
-
 .green-icon-container {
   background-image: url("../assets/Image/HomeImage/HomeC-dot.svg");
-  background-size: 100%;
   background-repeat: no-repeat;
-  width: 1265px;
-  height: 686px;
+  background-size: 100%;
+  width: 1300px;
+  height: 716px;
   position: absolute;
-  top: 0%;
+  top: 15%;
   right: 130px;
 }
 
@@ -379,5 +378,4 @@ export default {
   right: 150px;
 }
 
-/* 幻燈片/更多浪浪 */
-</style>
+/* 幻燈片/更多浪浪 */</style>
