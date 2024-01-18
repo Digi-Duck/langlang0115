@@ -1,5 +1,6 @@
 <script>
 import IconCarouselFrame from '../components/icons/IconCarouselFrame.vue';
+import IconChangeButton from './icons/IconChangeButton.vue';
 
 
 export default {
@@ -16,15 +17,16 @@ export default {
             currentIndex: 0,
             intervalId: null,
             timer: 0,
+            mysubmit: "更多浪浪"
         };
     },
-    mounted() {
-        this.starAutoplay();
-        // 計時器
-        setInterval(() => {
-            this.timer += 0.5
-        }, 16)
-    },
+    // mounted() {
+    //     this.starAutoplay();
+    //     // 計時器
+    //     setInterval(() => {
+    //         this.timer += 0.5
+    //     }, 16)
+    // },
     beforeDestroy() {
         this.stopAutoplay();
     },
@@ -71,7 +73,8 @@ export default {
     //     }
     // },
     components: {
-        IconCarouselFrame
+        IconCarouselFrame,
+        IconChangeButton
     }
 };
 </script>
@@ -85,12 +88,7 @@ export default {
         </div>
     </div>
     <div class="many">
-        <a href="#">
-            <button class="manylang">
-                <span>更多浪浪</span>
-            </button>
-        </a>
-
+        <IconChangeButton :text="mysubmit"></IconChangeButton>
     </div>
 </template>
 <style scoped>
@@ -114,25 +112,5 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.manylang {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
-    height: 3.25rem;
-    background-color: var(--primary-color);
-    border-radius: 1.875rem;
-    border: none;
-}
-
-.manylang span {
-    font-style: normal;
-    font-size: 18px;
-    padding: 1rem;
-    line-height: normal;
-    letter-spacing: 4.5px;
-    color: var(--white-color);
 }
 </style>
