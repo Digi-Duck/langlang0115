@@ -25,33 +25,33 @@ export default {
                 <img class="titlecn" src="../assets/Image/HomeImage/HomeA-title.svg">
             </div>
             <div class="box">
-                <span>失散協尋</span>
-                <span>認養中心</span>
-            </div>
-            <div class="box">
-                <span>最新消息</span>
-                <span>關於我們</span>
-                <span>會員登入</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut">關於我們</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut">贊助我們</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut">認養中心</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut">失散協尋</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut">最新消息</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut">會員登入</span>
             </div>
         </div>
         <IconNavWave id="wave"></IconNavWave>
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .nav-container {
     position: relative;
 }
 
 .boxall {
-    width: 100%;
+    width: 100vw;
+    max-width: 100%;
     height: 82px;
     background: #52A038;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding-right: 120px;
 }
 
 #logo {
@@ -60,8 +60,19 @@ export default {
 }
 
 span {
-    font-size: 16px;
-    margin: 0 37px;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 400;
+    letter-spacing: 4.5px;
+    padding: 25px 35px;
+}
+
+span:hover {
+    background-image: url(../assets/Image/HomeImage/HomeA-hover.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    color: #52A038;
 }
 
 #wave {
@@ -69,23 +80,25 @@ span {
     top: 99%;
     z-index: 1;
 }
-.logotext{
+
+.logotext {
     display: flex;
     flex-direction: column;
     z-index: 2;
 }
-.titleen{
+
+.titleen {
     width: 186px;
     height: 34px;
     position: absolute;
-    top:95%;
-    left: 16.5%;
+    top: 95%;
+    left: 12%;
 }
-.titlecn{
+
+.titlecn {
     width: 397px;
     height: 123px;
     position: absolute;
-    top:120%;
-    left: 12.5%;
-}
-</style>
+    top: 125%;
+    left: 10%;
+}</style>

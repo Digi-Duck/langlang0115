@@ -19,7 +19,7 @@ import Footer from '@/components/Footer.vue';
   <GoTop></GoTop>
 
   <RouterView />
-  <Footer />
+  <Footer/>
 </template>
 
 <style scoped>
