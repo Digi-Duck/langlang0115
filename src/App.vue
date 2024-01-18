@@ -8,8 +8,7 @@ import Footer from '@/components/Footer.vue';
 <template>
   <div class="tabs">
  
-  <!--首頁的[關於浪浪的事、最新消息]區塊 到時候本頁要放入HomeView.vue -->
-  <RouterLink to="/homeaboutsection">HomeAboutSection</RouterLink>
+
   <!--第二頁的關於浪浪的事區塊  -->
   <RouterLink to="/aboutpageintro">第二頁：關於浪浪的事簡介</RouterLink>
 </div>
