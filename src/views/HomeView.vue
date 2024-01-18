@@ -158,8 +158,8 @@ export default {
 }
 
 .home-header-img {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
   position: relative;
 }
 
@@ -200,8 +200,8 @@ justify-content: center;
 }
 
 .brown-paw-pic {
- margin-top: -10%;
- margin-left: -28%;
+  margin-top: -10%;
+  margin-left: -28%;
 }
 
 .home-about-section {
@@ -245,15 +245,17 @@ justify-content: center;
   font-size: 40px;
   letter-spacing: 6px;
 }
+
 /*#endregion*/
 
 
 /*-----首頁 最新消息-----*/
 .home-news-section {
- position: relative;
- top: 0;
- left: 0;
+  position: relative;
+  top: 0;
+  left: 0;
 }
+
 .dog-cat-pic {
   background-image: url("../assets/Image/HomeImage/HomeC-dog-cat.svg");
   height: 268px;
@@ -263,6 +265,7 @@ justify-content: center;
   right: 244px;
   z-index: 1;
 }
+
 .home-news-text {
   color: var(--primary-color);
   font-size: 64px;
@@ -270,6 +273,7 @@ justify-content: center;
   width: 500px;
   padding: 26px 0 0 179px;
 }
+
 .yellow-paw-pic img {
   z-index: -1;
   position: absolute;
@@ -278,14 +282,15 @@ justify-content: center;
 }
 
 /* 綠色區塊內 */
-.news-area{
+.news-area {
   position: absolute;
   top: 12%;
   right: 0px;
 }
+
 .green-icon-container {
   background-image: url("../assets/Image/HomeImage/HomeC-dot.svg");
-  background-size:100%;
+  background-size: 100%;
   background-repeat: no-repeat;
   width: 1265px;
   height: 686px;
@@ -293,6 +298,7 @@ justify-content: center;
   top: 0%;
   right: 130px;
 }
+
 .news-list {
   list-style: none;
   padding: 0;
@@ -304,10 +310,11 @@ justify-content: center;
   justify-content: center;
   color: var(--white-color);
 }
+
 .news-item {
   display: flex;
   margin: 20px 0px;
-  width:880px ;
+  width: 880px;
   height: 84px;
   font-family: 'ABeeZee', sans-serif;
 }

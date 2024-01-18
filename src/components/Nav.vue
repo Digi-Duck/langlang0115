@@ -1,4 +1,3 @@
-
 <script>
 import IconLogo from './icons/IconLogo.vue';
 import IconNavWave from './icons/IconNavWave.vue';
