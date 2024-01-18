@@ -1,19 +1,21 @@
 <script>
-
 export default {
-
+    data() {
+        return {
+            selectedOption: null,
+        };
+    },
 };
 </script>
 <template>
     <div class="contact">
         <div id="contactTitleArea">
             <div id="contactTitle">
-                <span>連絡我們</span>
+                <span>聯絡我們</span>
                 <div id="contactLine">
                     <div id="Line"></div>
                     <div id="squre"></div>
                 </div>
-
             </div>
             <div id="contactText">
                 <p>收到訊息後客服部會依照順序逐一回覆唷！</p>
@@ -22,39 +24,43 @@ export default {
         <div id="inputArea">
             <div class="inputFrame">
                 <div class="inputTitle">
-                    <span>姓名</span>
+                    <span>姓 名</span>
                 </div>
-                <div class="input">
-                    <input type=" text">
-                </div>
+                <input class="input" type=" text">
             </div>
             <div class="inputFrame">
                 <div class="inputTitle">
-                    <span>信箱</span>
+                    <span>信 箱</span>
                 </div>
-                <div class="input">
-                    <input type=" text">
-                </div>
+                <input class="input" type=" text">
             </div>
             <div class="inputFrame">
                 <div class="inputTitle">
-                    <span>問題</span>
+                    <span>問 題</span>
                 </div>
-                <div class="input select">
-                    <select>
-                        <option>平台建議</option>
-                        <option>認養相關資訊</option>
-                        <option>問題回報</option>
-                        <option>其他</option>
-                    </select>
-                </div>
+                <select v-model="selectedOption" class="input customSelect">
+                    <option value="0">平台建議</option>
+                    <option value="1">認養相關資訊</option>
+                    <option value="2">問題回報</option>
+                    <option value="3">其他</option>
+                </select>
             </div>
             <div class="inputFrame">
                 <div class="inputTitle">
-                    <span>信箱</span>
+                    <span>內 容</span>
                 </div>
-                <div class="input detail">
-                    <input type=" text">
+                <input id="detail" type=" text">
+            </div>
+            <div class="sendArea">
+                <button class="send">
+                    <span>送出</span>
+                </button>
+                <div class="remindText">
+                    <p>或使用電子信箱與我們聯繫</p>
+                    <div id="mymail">
+                        <img src="../assets/Image/AboutPage2Image/email.svg" alt="mail">
+                        <span>victor@langlangthing.com</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,27 +68,201 @@ export default {
 </template>
 <style scoped>
 .contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100vw;
     max-width: 100%;
-    height: 82.4375rem;
-    background-color: lightblue;
+    font-style: normal;
+}
+
+/* 聯絡我們標題區 */
+#contactTitleArea {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 聯絡我們標題文字 */
+#contactTitleArea {
+    display: flex;
+    flex-direction: column;
+}
+
+#contactTitle {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 2.8125rem 12rem 0 12rem;
 }
 
 #contactTitle span {
     color: var(--primary-color);
     font-size: 48px;
-    font-style: normal;
+
     font-weight: 400;
     letter-spacing: 12px;
 }
-#contactLine{
+
+/* Line */
+#contactLine {
     display: flex;
-    
+    padding-left: 4rem;
 }
+
 #Line {
     width: 70rem;
     height: 2px;
     background-color: var(--primary-color);
     stroke: var(--primary-color);
+}
+
+#squre {
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    transform: translate(0px, -3.5px) rotate(45deg);
+}
+
+/* 上方提醒內文 */
+#contactText {
+    width: 35.75rem;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 6px;
+    margin: 0 12.1875rem;
+    color: #626262;
+}
+
+/* input區 */
+#inputArea {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* width: 93.8125rem;
+    height: 41.5625rem; */
+    padding: 7.5rem 12.5625rem 0 12.5625rem;
+    row-gap: 3rem;
+}
+
+/* input框 */
+.inputFrame {
+    display: flex;
+    flex-direction: row;
+    width: 48rem;
+    font-size: 1.5rem;
+    line-height: normal;
+    font-weight: 400;
+}
+
+/* input標題 */
+.inputTitle {
+    display: flex;
+    width: 13.5625rem;
+    height: 3.6875rem;
+    padding: 0.9375rem 0 1rem 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2.5rem 0 0 2.5rem;
+    border: 1px solid var(--primary-color);
+    background: var(--primary-color);
+}
+
+.inputTitle span {
+    color: var(--white-color);
+}
+
+/* input輸入區 */
+.input {
+    font-size: 1.5rem;
+    width: 35.3125rem;
+    border-radius: 0 2.5rem 2.5rem 0;
+    border: 3px solid var(--primary-color);
+    background: var(--white-color);
+    outline: none;
+}
+
+/* 下拉選單箭頭設定 */
+.customSelect {
+    -webkit-animation: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(../assets/Image/AboutPage2Image/select-vector.svg);
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    padding-right: 1rem;
+}
+
+/* input內容 */
+#detail {
+    font-size: 1.5rem;
+    width: 35.3125rem;
+    border: 3px solid var(--primary-color);
+    background: var(--white-color);
+    outline: none;
+    height: 14rem;
+    border-radius: 0px 2.5rem 2.5rem 2.5rem;
+}
+
+.sendArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 180px;
+}
+
+/* 送出按鈕 */
+.send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9.75rem;
+    height: 3.25rem;
+    padding: 1rem 1.9375rem 1rem 2rem;
+    border-radius: 1.875rem;
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.send span {
+    font-size: 24px;
+    color: var(--white-color);
+}
+
+/* 下方文字區 */
+.remindText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+    font-weight: 400;
+    font-size: 24px;
+    color: #626262;
+}
+
+.remindText p {
+    text-align: center;
+    line-height: 291.667%;
+    letter-spacing: 3.84px;
+    text-decoration-line: underline;
+}
+
+#mymail {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#mymail span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24.4375rem;
+    height: 4.375rem;
+    letter-spacing: 3.84px;
 }
 </style>
