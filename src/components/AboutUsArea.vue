@@ -1,9 +1,23 @@
 <!-- 第二頁 關於浪浪的事 簡介 -->
 <script>
+import GreenButton from '../components/GreenButton.vue';
 
+export default {
+    components: {
+        GreenButton
+    },
+    methods: {
+        clickSponsorUsBtn() {
+            // 處理按鈕點擊的頁面特定邏輯
+           alert("點到贊助我們了！");
+           console.log("點到了");
+        }
+    }
+}
 </script>
 
 <template>
+
     <section class="about-intro">
         <div class="about-intro-title">
             <div>關於浪浪的事</div>
@@ -25,7 +39,10 @@
                 無法照顧毛小孩需要幫牠找個家時，轉換飼主過程多一個紀錄，讓資訊更清晰（本系統並非政府寵物登記系統），我們也會不斷的更新系統，保障使用者的資訊安全。
                 <img src="../assets/Image/AboutPage2Image/about-cat.svg">
             </span>
-            <img src="../assets/Image/HomeImage/HomeB-sponsor-us-btn.svg" alt="贊助我們" class="sponsor-us-btn">
+            <!-- 贊助我們按鈕 -->
+            <div class="sponsor-us-btn">
+                <GreenButton @click="clickSponsorUsBtn">贊助我們</GreenButton>
+            </div>
         </div>
     </section>
 </template>
@@ -42,10 +59,11 @@
     font-size: 48px;
     color: var(--primary-color);
     letter-spacing: 5px;
-    margin-top: 40px;
-    margin-left: 80px;
+    margin-top: 150px;
+    margin-left: 300px;
     display: flex;
     align-items: center;
+    width: 25%;
 }
 
 .intro-description {
@@ -73,9 +91,11 @@
 }
 
 .main-content {
-    width: 1406px;
-    height: 484px;
-    /*background-color: khaki; */
+    width: 73%;
+    height: 50%;
+    /*
+        height: 484px;
+        background-color: khaki; */
     color: #626262;
     padding: 60px;
     font-size: 28px;
@@ -94,7 +114,7 @@
 
 .main-content .sponsor-us-btn {
     position: absolute;
-    bottom: -100px;
-    right: 0px;
+    bottom: -30px;
+    right: 50px;
 }
 </style>
