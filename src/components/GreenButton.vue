@@ -1,4 +1,3 @@
-<!-- Button.vue -->
 <!-- 綠色按鈕 -->
 <template>
     <button>
