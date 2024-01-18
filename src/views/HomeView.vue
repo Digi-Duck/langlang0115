@@ -1,6 +1,9 @@
 <script>
 import HomeCarousel from '@/components/HomeCarousel.vue';
 import IconHeaderLine from '@/components/icons/IconHeaderLine.vue';
+import GreenButton from '../components/GreenButton.vue';
+import YellowButton from '../components/YellowButton.vue';
+
 
 
 export default {
@@ -13,8 +16,14 @@ export default {
       // 在滑鼠離開時的相關處理
       // 可以在這裡添加額外的邏輯或改變按鈕的樣式
     },
+    clickSponsorUsBtn() {
+      alert("按到贊助我們");
+    },
+    clickSeeMoreBtn() {
+      alert("按到瞭解更多");
+    },
   },
-  components: { HomeCarousel, IconHeaderLine, },
+  components: { HomeCarousel, IconHeaderLine, GreenButton, YellowButton },
 };
 </script>
 
@@ -29,34 +38,37 @@ export default {
           <span>動物走失了</span>
         </div>
         <div class="home-header-btn">
-          <img src="../assets/Image/HomeImage/HomeA-btn-l.svg" alt="" srcset="">
-          <img src="../assets/Image/HomeImage/HomeA-btn-r.svg" alt="" srcset="">
+          <YellowButton id="go-adopt-btn">去認養</YellowButton>
+          <GreenButton>協尋主人</GreenButton>
         </div>
       </div>
     </section>
   </header>
 
   <main>
-    <!-- 關於浪浪的事 --><!-- 狗掌&主人與毛小孩圖片 --><!-- 關於浪浪的事文字 -->
-    <!-- about & btns -->
+    <!-- 關於浪浪的事 -->
+
     <section class="home-container home-about">
       <div class="home-abouut-bg">
         <div class="brown-paw-pic">
           <img src="../assets/Image/HomeImage/HomeB-paw.svg">
         </div>
+        <!-- 狗掌&主人與毛小孩圖片 -->
         <div class="about-us-image">
           <img src="../assets/Image/HomeImage/HomeB-AboutUsPic.svg" alt="">
         </div>
       </div>
-
+      <!-- 關於浪浪的事文字 -->
       <div class="home-about-section">
         <div class="about-lang-text">關於浪浪的事</div>
-
+        <!-- about us & btns -->
         <div class="home-about-and-btns">
           <div class="about-text ">About Us</div>
           <div class="home-about-btns">
-            <img src="../assets/Image/HomeImage/HomeB-sponsor-us-btn.svg" alt="贊助我們" class="sponsor-us-btn">
-            <img src="../assets/Image/HomeImage/HomeB-see-more-btn.svg" alt="瞭解更多">
+            <!-- 贊助我們按鈕 -->
+            <GreenButton @click="clickSponsorUsBtn">贊助我們</GreenButton>
+            <!-- 瞭解更多按鈕 -->
+            <YellowButton @click="clickSeeMoreBtn">瞭解更多</YellowButton>
           </div>
         </div>
 
@@ -81,7 +93,7 @@ export default {
       <div class="news-area">
         <div class="green-icon-container">
 
-          <ul class="news-list"> 
+          <ul class="news-list">
             <li class="news-item">
               <div class="news-date">
                 <span class="news-date-month">2023.11</span>
@@ -89,8 +101,7 @@ export default {
               </div>
               <div class="news-announcement">
                 <span>浪浪的事改版問券調查</span>
-
-
+                <!-- 更多按鈕 -->
                 <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
                   <span>更多...</span>
                   <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
@@ -126,9 +137,9 @@ export default {
                 </div>
               </div>
             </li>
-          </ul> 
+          </ul>
           <div class="more-news-btn">
-            <img src='../assets/Image/HomeImage/HomeC-more-news-btn.svg' alt="更多消息">
+            <GreenButton>更多消息</GreenButton>
           </div>
         </div>
       </div>
@@ -188,6 +199,12 @@ export default {
   top: 75%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+#go-adopt-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*-----首頁 關於我們-----*/
@@ -258,11 +275,12 @@ export default {
 
 
 /*-----首頁 最新消息-----*/
-.yellow-paw-pic  {
-width: 1152px;
-height: 839px;
+.yellow-paw-pic {
+  width: 1152px;
+  height: 839px;
   z-index: -1;
 }
+
 .yellow-paw-pic img {
   margin-top: -24.5%;
   margin-left: -43%;
@@ -378,4 +396,5 @@ height: 839px;
   right: 150px;
 }
 
-/* 幻燈片/更多浪浪 */</style>
+/* 幻燈片/更多浪浪 */
+</style>
