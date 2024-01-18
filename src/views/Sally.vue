@@ -1,28 +1,11 @@
 <script setup>
-import Nav from '../components/Nav.vue'
-import IconHeaderLine from '../components/icons/IconHeaderLine.vue'
-import Footer from '../components/Footer.vue'
+import NavPage from '../components/NavPage.vue'
 
 </script>
 
 <template>
   <section class="home-nav-container">
-    <Nav />
-    <div class="home-header-whitebox"></div>
-    <div class="home-header-img">
-      <img src="../assets/Image/HomeImage/HomeA-banner.svg" alt="">
-      <div class="home-header-text">
-        <IconHeaderLine class="line3"></IconHeaderLine>
-        <span>動物走失了</span>
-      </div>
-      <div class="home-header-btn">
-        <img src="../assets/Image/HomeImage/HomeA-btn-l.svg" alt="" srcset="">
-        <img src="../assets/Image/HomeImage/HomeA-btn-r.svg" alt="" srcset="">
-      </div>
-    </div>
-  </section>
-  <section>
-    <Footer />
+    <NavPage/>
   </section>
 </template>
 
