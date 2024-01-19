@@ -1,6 +1,6 @@
 <script setup>
 import NavPage from '../components/NavPage.vue'
-
+import GreenButton from '@/components/GreenButton.vue'
 </script>
 
 <template>
@@ -13,12 +13,8 @@ import NavPage from '../components/NavPage.vue'
         <div class="sponsor-titleen">Sponsor Us</div>
       </div>
       <div class="sponsor-banner">
-        <div class="arrow">
-          <!-- <img src="../assets/Image/SponsorImage/arrow.svg"> -->
-        </div>
-        <div class="cats">
-          <!-- <img src="../assets/Image/SponsorImage/banner.svg"> -->
-        </div>
+        <div class="arrow"></div>
+        <div class="cats"></div>
       </div>
       <div class="sponsor-text">
         <div class="notice">請同意並瞭解以下內容才能贊助</div>
@@ -63,6 +59,35 @@ import NavPage from '../components/NavPage.vue'
         </div>
         <span class="content">建議您填寫以利未來查詢贊助資訊</span>
       </div>
+      <div class="box">
+        <span>手機號碼</span>
+        <div class="email-input">
+          <input type="text">
+        </div>
+        <span class="content">
+          建議您填寫以利未來查詢贊助資訊，格式：0912345678，請勿加入任何符號</span>
+      </div>
+      <div class="box">
+        <span>金額（單位：新台幣TWD） *</span>
+        <div class="email-input">
+          <input type="text">
+        </div>
+      </div>
+      <div class="box pay">
+        <span>支付方式 *<input class="card" type="radio"> 信用卡</span>
+      </div>
+      <div class="box ">
+        <div class="agree-text"><input class="agree" type="checkbox">
+          <span class="">
+            * 同意本網站 
+            <span class="sponsor-aboutus">隱私權政策</span>
+            ，並瞭解姓名、Email、手機號碼，「皆」有填寫未來才能查詢您的查詢贊助資訊！
+          </span>
+        </div>
+      </div>
+      <div class="box ">
+        <GreenButton :showSvg="false" class="sponsornow-btn">立即贊助</GreenButton>
+      </div>
     </div>
   </section>
 </template>
@@ -72,6 +97,9 @@ import NavPage from '../components/NavPage.vue'
   width: 100vw;
   max-width: 100%;
   padding: 0 164px;
+  color: var(--primary-color);
+  font-size: 24px;
+  letter-spacing: 6px;
 }
 
 .sponsor-rightnow {
@@ -85,14 +113,12 @@ import NavPage from '../components/NavPage.vue'
 }
 
 .sponsor-titlecn {
-  color: var(--primary-color);
   font-size: 48px;
   letter-spacing: 12px;
   width: 240px;
 }
 
 .sponsor-titleen {
-  color: var(--primary-color);
   font-size: 20px;
   letter-spacing: 5px;
   width: 150px;
@@ -125,15 +151,13 @@ import NavPage from '../components/NavPage.vue'
   display: flex;
   flex-direction: column;
   row-gap: 55px;
-  font-size: 24px;
   text-indent: -38px;
-  letter-spacing: 6px;
   margin-top: -20px;
   padding-left: 125px;
+  color: var(--gray-color);
 }
 
 .sign {
-  color: var(--primary-color);
   margin-left: 10px;
 }
 
@@ -157,7 +181,6 @@ import NavPage from '../components/NavPage.vue'
 .line {
   display: flex;
   align-items: center;
-  color: var(--primary-color);
 }
 
 .squre {
@@ -183,15 +206,11 @@ import NavPage from '../components/NavPage.vue'
 
 /* 下半部區塊 */
 .information {
-  font-size: 24px;
-  letter-spacing: 6px;
-  color: var(--primary-color);
-  background-color: blanchedalmond;
-  padding: 143px 311px;
+  padding: 143px 311px 0 311px;
   display: flex;
   flex-direction: column;
-  row-gap: 24px;
-  margin-bottom: 64px;
+  gap: 50px;
+
 }
 
 .information input {
@@ -200,17 +219,47 @@ import NavPage from '../components/NavPage.vue'
   border-radius: 4px;
   border: 2px solid var(--primary-color);
 }
-.name-input{
- display: flex;
- justify-content: space-between;
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
-.name-input input{
+
+.name-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-input input {
   width: 429px;
   height: 85px;
 }
-.content{
+
+.content {
   font-size: 20px;
   letter-spacing: 5px;
-  
+  color: var(--gray-color);
+}
+
+.box .card {
+  width: 18px;
+  height: 18px;
+  margin-left: 48px;
+}
+
+.box .agree-text {
+  text-indent: -25px;
+}
+
+.box .agree {
+  width: 18px;
+  height: 18px;
+  margin-left: 26px;
+}
+.sponsornow-btn{
+  margin: auto;
+  /* font-size: 32px; */
+  /* transform: scale(1.3); */
 }
 </style>
