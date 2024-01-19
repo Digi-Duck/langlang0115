@@ -51,11 +51,12 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 120px;
+    padding-right: 20px;
 }
 
 #logo {
     margin-top: 70px;
+    margin-left: 20px;
     z-index: 2;
 }
 
@@ -100,5 +101,5 @@ span:hover {
     height: 123px;
     position: absolute;
     top: 125%;
-    left: 10%;
+    left: 12%;
 }</style>
