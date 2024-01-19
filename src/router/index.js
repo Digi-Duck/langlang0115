@@ -9,10 +9,11 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
+    // 關於我們頁面
     {
-      path: '/aboutpageintro',
-      name: 'aboutpageintro',
-      component: () => import('../views/AboutPageAarea.vue')
+      path: '/aboutuspage',
+      name: 'aboutuspage',
+      component: () => import('../views/AboutUsPageView.vue')
     },{
       // 贊助我們頁面
         path: '/sponsorus',
