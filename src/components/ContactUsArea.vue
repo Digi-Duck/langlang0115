@@ -1,15 +1,31 @@
 <script>
+import ContactMsgScreen from './ContactMsgScreen.vue';
 import IconChangeButton from './icons/IconChangeButton.vue';
 
 export default {
     data() {
         return {
             selectedOption: null,
+            // Button 上的文字
             mysubmit: "送 出",
+            // 進入畫面時 視窗關閉
+            show: false,
         };
     },
+    methods: {
+        showPopup() {
+            // 執行顯示視窗
+            this.show = true;
+            // 視窗開啟時scrollBar隱藏
+            document.body.style.overflow = 'hidden';
+        },
+        // hidePopup() {
+        //     this.show = false;
+        // }
+    },
     components: {
-        IconChangeButton
+        IconChangeButton,
+        ContactMsgScreen
     }
 };
 </script>
@@ -58,7 +74,12 @@ export default {
                 <textarea class="detail" ref="input" autocomplete="off" name="text"></textarea>
             </div>
             <div class="sendArea">
-                <IconChangeButton :text="mysubmit"></IconChangeButton>
+                <!-- 關閉連結視窗 點擊事件顯示視窗-->
+                <a href="javascript:void(0);" @click="showPopup">
+                    <IconChangeButton :text="mysubmit"></IconChangeButton>
+                </a>
+                <!-- 顯示的視窗 -->
+                <ContactMsgScreen :is-show="show"></ContactMsgScreen>
                 <div class="remindText">
                     <p>或使用電子信箱與我們聯繫</p>
                     <div id="mymail">
