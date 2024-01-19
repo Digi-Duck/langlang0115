@@ -1,35 +1,24 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import GoTop from './components/GoTop.vue';
-
 import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
-  <div class="tabs">
- 
-
-  <!--第二頁的關於浪浪的事區塊  -->
-  <RouterLink to="/aboutpageintro">第二頁：關於浪浪的事簡介</RouterLink>
-</div>
-
   <main>
+    <RouterView />
+    <GoTop></GoTop>
   </main>
-  <GoTop></GoTop>
-
-  <RouterView />
-  <Footer/>
+  <Footer />
 </template>
 
 <style scoped>
-
-.tabs{
+/* .tabs{
   width: 100%;
   display: flex;
   gap: 50px;
   background-color: black;
-}
-
+} */
 
 /* header {
   line-height: 1.5;
@@ -60,7 +49,6 @@ nav a {
 nav a:first-of-type {
   border: 0;
 }
-
 
 .text {
   height: 500vh;
@@ -93,8 +81,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-
-
-
 } */
 </style>
