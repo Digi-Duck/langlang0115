@@ -18,7 +18,7 @@ export default {
         },
         handleScroll() {
             const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            console.log(scrollPosition);
+            // console.log(scrollPosition);
             if (scrollPosition > 500) {
                 this.showGoTop = true;
             } else {
