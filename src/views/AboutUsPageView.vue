@@ -2,16 +2,19 @@
 <script>
 import AboutUsArea from '@/components/AboutUsArea.vue';
 import ContactUsArea from '@/components/ContactUsArea.vue';
+import NavPage from '@/components/NavPage.vue';
 
 export default {
     components: {
-        AboutUsArea,
-        ContactUsArea
-    },
+    AboutUsArea,
+    ContactUsArea,
+    NavPage
+},
 };
 </script>
 
 <template>
+    <NavPage></NavPage>
     <main>
         <AboutUsArea></AboutUsArea>
         <ContactUsArea></ContactUsArea>
