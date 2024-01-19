@@ -3,10 +3,16 @@
 <script>
 import GreenButton from '@/components/GreenButton.vue';
 import NavBar from '@/components/NavBar.vue';
+import sponsorsData from '../json/SPONSORS.json';
+
 export default {
+    data() {
+        return {
+            sponsors: sponsorsData
+        };
+    },
     methods: {
         clickSponsorNowBtn() {
-            console.log("導到sally 立即贊助頁面");
             this.$router.push('/sponsornow'); //導到立即贊助頁面
         }
     },
@@ -54,23 +60,46 @@ export default {
                 </tr>
             </thead>
             <tbody>
+                <!-- 使用v-for動態生成表格 -->
                 <!-- 第一筆贊助紀錄 -->
-                <tr>
-                    <td>2024-01-01</td>
-                    <td>John Doe</td>
-                    <td>1000</td>
+                <tr v-for="sponsor in sponsors" :key="sponsor.id">
+                    <td>{{ sponsor.date }}</td>
+                    <td>{{ sponsor.name }}</td>
+                    <td>{{ sponsor.amount }}</td>
                 </tr>
-                <!-- 第二筆贊助紀錄 -->
-                <tr>
-                    <td>2024-01-02</td>
-                    <td>Jane Doe</td>
-                    <td>1500</td>
-                </tr>
+
             </tbody>
         </table>
+    </section>
 
+    <!-- 常見問題Q&A -->
+    <section class="sponsor-page c-area">
+        <img class="cat" src="../assets/Image/SponsorImage/sponsor-us-cat.svg">
+        <div class="thanks">真的很謝謝您！</div>
 
-
+        <div class="q-a-container">
+            <div class="q-a-tittle">常見問題Q&A</div>
+            <!-- 問題內容 -->
+            <div class="q-a-content">
+                <div class="q-a-text">
+                    <div class="question">Q:贊助會在什麼時候扣款?</div>
+                    <div class="answer"> <img src="../assets/Image/SponsorImage/sponsor-us-cat-paw.svg" width="50px"
+                            height="50px">單筆贊助會在贊助完成當日立即扣款。</div>
+                </div>
+                <div class="q-a-text">
+                    <div class="question">Q:我的姓名會被看到嗎?</div>
+                    <div class="answer"> <img src="../assets/Image/SponsorImage/sponsor-us-cat-paw.svg" width="50px"
+                            height="50px">贊助時您提供的姓名、留言皆會公開，姓名可選擇隱藏部分文字，留言可以選擇不填寫留言，第一步驟贊助人的姓名請填寫正確中文姓名。</div>
+                </div>
+                <div class="q-a-text">
+                    <div class="question">Q:我需要其他協助</div>
+                    <div class="answer">
+                        <img src="../assets/Image/SponsorImage/sponsor-us-cat-paw.svg" width="50px" height="50px">
+                        你可以使用 聯絡我們 功能聯絡我們。
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -80,7 +109,7 @@ export default {
     max-width: 100%;
     position: relative;
     margin-bottom: 209px;
-    background-color: beige;
+    /*    background-color: beige;*/
 }
 
 .sponsor-title {
@@ -156,5 +185,126 @@ export default {
 
 /*贊助名單*/
 
-.sponsored-list {}
+.sponsored-list {
+    overflow: hidden;
+    border-radius: 10px 10px 0px 0px;
+}
+
+table {
+    font-family: 'ABeeZee', sans-serif;
+    border-collapse: separate;
+    width: 767px;
+    border-spacing: 0;
+    border: 2px solid #D7D7D7;
+    font-weight: 400;
+    letter-spacing: 8px;
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    width: 767px;
+    height: 93px;
+    font-size: 32px;
+}
+
+tbody {
+    color: var(--gray-color);
+    width: 767px;
+    height: 98px;
+    font-size: 32px;
+    text-align: center;
+}
+
+td {
+    height: 98px;
+    border-bottom: 1px solid #D7D7D7;
+    ;
+    ;
+}
+
+tr td:nth-child(1),
+td:nth-child(3) {
+    font-size: 24px;
+    letter-spacing: 6px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    border-left: 1px solid #D7D7D7;
+    border-right: 1px solid #D7D7D7;
+}
+
+
+
+/* 常見問題Q&A */
+.sponsor-page.c-area {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.c-area .cat {
+    position: absolute;
+    transform: translate(-200px, 313px);
+    transform: rotate(20deg);
+    width: 338px;
+    height: 227px;
+
+}
+
+.thanks {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 100px;
+    width: 194px;
+    height: 195px;
+    position: absolute;
+    transform: translate(700px, -120px);
+}
+
+.q-a-container {
+    /*    background-color: #c5cba7;*/
+    width: 1584px;
+    border: 1px solid var(--primary-color);
+    opacity: 0.97;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px;
+    font-weight: 400;
+
+}
+
+.q-a-tittle {
+    color: var(--gray-color);
+    font-size: 48px;
+    margin-left: 53px;
+    letter-spacing: 12px;
+
+}
+
+.q-a-content {
+    color: var(--primary-color);
+    font-size: 32px;
+    letter-spacing: 8px;
+    padding: 0px 77px;
+}
+
+.q-a-text {
+    margin: 45px 0px;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.answer img {
+    margin: 0px 7px 0px 30px;
+}
 </style>
