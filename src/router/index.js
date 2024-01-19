@@ -10,14 +10,6 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/sponsornow',
-      name: 'sponsornow',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/SponsorNow.vue')
-    },
-    {
       path: '/aboutpageintro',
       name: 'aboutpageintro',
       component: () => import('../views/AboutPageAarea.vue')
@@ -26,6 +18,12 @@ const router = createRouter({
         path: '/sponsorus',
         name: 'sponsorus',
         component:  () => import('../views/SponsorUsView.vue')
+    },
+    {
+      // 立即贊助頁面
+      path: '/sponsornow',
+      name: 'sponsornow',
+      component: () => import('../views/SponsorNow.vue')
     }
   ]
 })
