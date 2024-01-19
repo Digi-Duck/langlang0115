@@ -8,7 +8,6 @@ export default {
         AboutUsArea,
         ContactUsArea
     },
-
 };
 </script>
 
