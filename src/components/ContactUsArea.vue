@@ -1,7 +1,6 @@
 <script>
 import IconChangeButton from './icons/IconChangeButton.vue';
 
-
 export default {
     data() {
         return {
@@ -89,10 +88,6 @@ export default {
 }
 
 /* 聯絡我們標題文字 */
-#contactTitleArea {
-    display: flex;
-    flex-direction: column;
-}
 
 #contactTitle {
     display: flex;
@@ -118,7 +113,6 @@ export default {
     width: 70rem;
     height: 2px;
     background-color: var(--primary-color);
-    stroke: var(--primary-color);
 }
 
 #squre {
@@ -131,7 +125,7 @@ export default {
 /* 上方提醒內文 */
 #contactText {
     width: 35.75rem;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 6px;
@@ -144,9 +138,7 @@ export default {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* width: 93.8125rem;
-    height: 41.5625rem; */
-    padding: 7.5rem 12.5625rem 0 12.5625rem;
+    padding: 7.5rem 12.6rem 0 12.6rem;
     row-gap: 3rem;
 }
 
@@ -214,12 +206,6 @@ export default {
     width: 6px;
     height: 6px;
 }
-
-/* .detail::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    background-color: var(--primary-color);
-} */
 
 .detail::-webkit-scrollbar-track {
     background-color: transparent;
