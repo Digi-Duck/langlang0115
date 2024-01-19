@@ -18,7 +18,8 @@ export default {
       // 可以在這裡添加額外的邏輯或改變按鈕的樣式
     },
     clickSponsorUsBtn() {
-      alert("按到贊助我們");
+      console.log("點到「贊助我們」");
+      this.$router.push('/sponsorus'); //導到贊助我們頁面
     },
     clickSeeMoreBtn() {
       alert("按到瞭解更多");

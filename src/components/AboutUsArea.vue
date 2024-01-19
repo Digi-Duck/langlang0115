@@ -9,8 +9,9 @@ export default {
     methods: {
         clickSponsorUsBtn() {
             // 處理按鈕點擊的頁面特定邏輯
+            console.log("點到了");
            alert("點到贊助我們了！");
-           console.log("點到了");
+
         }
     }
 }

@@ -21,6 +21,11 @@ const router = createRouter({
       path: '/aboutpageintro',
       name: 'aboutpageintro',
       component: () => import('../views/AboutPageAarea.vue')
+    },{
+      // 贊助我們頁面
+        path: '/sponsorus',
+        name: 'sponsorus',
+        component:  () => import('../views/SponsorUsView.vue')
     }
   ]
 })
