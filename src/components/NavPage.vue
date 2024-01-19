@@ -1,16 +1,29 @@
 <script>
+export default {
+    methods: {
+        gohomePage() {
+            this.$router.push('/');
+        },
+        aboutusPage() {
+            this.$router.push('/aboutuspage');
+        },
+        sponsorusPage() {
+            this.$router.push('/sponsorus');
+        },
+    }
+}
 </script>
 
 <template>
     <div class="nav-container">
         <div class="boxall">
-            <div class="logotext">
+            <div class="logotext" @click="gohomePage">
                 <img class="titleen" src="../assets/Image/HomeImage/NavPageEn.svg">
                 <img class="titlecn" src="../assets/Image/HomeImage/NavPageCn.svg">
             </div>
             <div class="box">
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">關於我們</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">贊助我們</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="aboutusPage">關於我們</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="sponsorusPage">贊助我們</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut">認養中心</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut">失散協尋</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut">最新消息</span>
@@ -34,7 +47,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:0 120px;
+    padding: 0 120px;
 }
 
 #logo {
@@ -57,6 +70,7 @@ span:hover {
     background-size: 75%;
     color: #52A038;
 }
+
 .logotext {
     display: flex;
     flex-direction: column;

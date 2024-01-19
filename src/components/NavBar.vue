@@ -8,7 +8,15 @@ export default {
         IconNavWave,
     },
     methods: {
-
+        gohomePage() {
+            this.$router.push('/');
+        },
+        aboutusPage() {
+            this.$router.push('/aboutuspage');
+        },
+        sponsorusPage() {
+            this.$router.push('/sponsorus');
+        },
     },
 
 };
@@ -17,16 +25,16 @@ export default {
 <template>
     <div class="nav-container">
         <div class="boxall">
-            <div id="logo">
+            <div id="logo" @click="gohomePage">
                 <IconLogo id="logo"></IconLogo>
             </div>
-            <div class="logotext">
+            <div class="logotext" @click="gohomePage">
                 <img class="titleen" src="../assets/Image/HomeImage/HomeA-title_en.svg">
                 <img class="titlecn" src="../assets/Image/HomeImage/HomeA-title.svg">
             </div>
             <div class="box">
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">關於我們</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">贊助我們</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="aboutusPage">關於我們</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="sponsorusPage">贊助我們</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut">認養中心</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut">失散協尋</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut">最新消息</span>
@@ -102,4 +110,5 @@ span:hover {
     position: absolute;
     top: 125%;
     left: 12%;
-}</style>
+}
+</style>
