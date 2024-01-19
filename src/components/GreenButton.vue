@@ -3,7 +3,7 @@
     <button>
         <div class="whole-btn">
             <!-- 箭頭svg -->
-            <svg id=green-arrow width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg v-if="showSvg" id=green-arrow width="41" height="39" viewBox="0 0 41 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <ellipse id=ellipse-green-arrow cx="19.5" cy="21" rx="14.5" ry="14" fill="white" />
                 <path id=path-green-arrow d="M28 21L18 15.2265V26.7735L28 21ZM12 22H19V20H12V22Z" fill="#52A038" />
             </svg>
@@ -14,6 +14,12 @@
   
 <script>
 export default {
+    props:{
+        showSvg:{
+            type:Boolean,
+            default:true,//顯示箭頭SVG
+        }
+    }
 }
 </script>
   
