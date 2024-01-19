@@ -2,18 +2,23 @@
 import IconChangeButton from './icons/IconChangeButton.vue';
 
 export default {
+    props: {
+        isShow: Boolean,
+    },
     data() {
         return {
             mysubmit: "回到首頁",
         }
     },
     methods: {
+        // 回到首頁按鈕
         gohomePage() {
             this.$router.push('/');
         },
-        closeMsgScreen() {
-            this.$emit('close');
-        }
+        // 關閉視窗
+        // closePopup() {
+        //     this.$emit('hide');
+        // }
     },
     components: {
         IconChangeButton
@@ -21,8 +26,9 @@ export default {
 }
 </script>
 <template>
-    <!-- <div class="msgScreenFrame" @click="closeMsgScreen"> -->
-    <div class="msgScreenFrame">
+    <!-- 顯示視窗 -->
+    <!-- 關閉視窗@click.self="closePopup" -->
+    <div class="msgScreenFrame" v-show="isShow">
         <div class="msgSuccess">
             <div class="msgSendText">
                 <img src="../assets/Image/AboutPage2Image/message-dogpaw.svg" alt="msg">
@@ -50,6 +56,7 @@ export default {
     background: rgba(255, 255, 255, 0.5);
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 6;
 }
 
