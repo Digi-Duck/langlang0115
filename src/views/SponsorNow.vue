@@ -1,6 +1,21 @@
-<script setup>
+<script>
 import NavPage from '../components/NavPage.vue'
 import GreenButton from '@/components/GreenButton.vue'
+import SponsorPopUp from '@/components/SponsorPopUp.vue';
+export default {
+  components: {
+    SponsorPopUp,
+    GreenButton,
+    NavPage
+  },
+  data() {
+    return {
+      rightnow:false,
+    }
+  },
+  methods: {
+  },
+};
 </script>
 
 <template>
@@ -79,14 +94,15 @@ import GreenButton from '@/components/GreenButton.vue'
       <div class="box ">
         <div class="agree-text"><input class="agree" type="checkbox">
           <span class="">
-            * 同意本網站 
+            * 同意本網站
             <span class="sponsor-aboutus">隱私權政策</span>
             ，並瞭解姓名、Email、手機號碼，「皆」有填寫未來才能查詢您的查詢贊助資訊！
           </span>
         </div>
       </div>
       <div class="box ">
-        <GreenButton :showSvg="false" class="sponsornow-btn">立即贊助</GreenButton>
+        <GreenButton :showSvg="false" class="sponsornow-btn" @click="rightnow = !rightnow">立即贊助</GreenButton>
+        <SponsorPopUp v-if="rightnow"></SponsorPopUp>
       </div>
     </div>
   </section>
@@ -257,7 +273,8 @@ import GreenButton from '@/components/GreenButton.vue'
   height: 18px;
   margin-left: 26px;
 }
-.sponsornow-btn{
+
+.sponsornow-btn {
   margin: auto;
   /* font-size: 32px; */
   /* transform: scale(1.3); */
