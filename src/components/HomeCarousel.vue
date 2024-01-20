@@ -13,65 +13,16 @@ export default {
                 new URL('@/assets/Image/CarouselImage/goldendog.svg', import.meta.url).href,
                 new URL('@/assets/Image/CarouselImage/tabbycat.svg', import.meta.url).href,
                 new URL('@/assets/Image/CarouselImage/taiwandog.svg', import.meta.url).href,
+                new URL('@/assets/Image/CarouselImage/beagledog.svg', import.meta.url).href,
+                new URL('@/assets/Image/CarouselImage/orangecat.svg', import.meta.url).href,
+                new URL('@/assets/Image/CarouselImage/goldendog.svg', import.meta.url).href,
+                new URL('@/assets/Image/CarouselImage/tabbycat.svg', import.meta.url).href,
+                new URL('@/assets/Image/CarouselImage/taiwandog.svg', import.meta.url).href,
             ],
             currentIndex: 0,
-            intervalId: null,
-            timer: 0,
             mysubmit: "更多浪浪"
         };
     },
-    // mounted() {
-    //     this.starAutoplay();
-    //     // 計時器
-    //     setInterval(() => {
-    //         this.timer += 0.5
-    //     }, 16)
-    // },
-    beforeDestroy() {
-        this.stopAutoplay();
-    },
-    methods: {
-        prev() {
-            this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
-        },
-        next() {
-            this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-            // if (this.currentIndex === 0) {
-            //     // 重置
-            //     this.$refs.carouselFrame.style.transition = 'none';
-            //     // 暫時移除過度效果
-            //     this.$refs.carouselFrame.style.transition = 'translateX(0)';
-            //     // 重新繪製
-            //     void this.carouselFrame.offsetWidth;
-            //     // 恢復
-            //     this.$refs.carouselFrame.style.transition = '';
-            // }
-        },
-        // 自動/停止播放
-        // starAutoplay() {
-        //     this.intervalId = setInterval(() => {
-        //         this.next();
-        //     }, 1500);
-        // },
-        // stopAutoplay() {
-        //     clearInterval(this.intervalId);
-        // },
-    },
-    // 重複播放
-    // directives: {
-    //     repeat: {
-    //         mounted(el, binding) {
-    //             const repeatCount = parseInt(binding.value) || 1;
-    //             el.addEventListener('animationiteration', () => {
-    //                 if (--repeatCount > 0) {
-    //                     el.style.animation = 'none';
-    //                     void el.offsetWidth;
-    //                     el.animation = null;
-    //                 }
-    //             })
-    //         }
-    //     }
-    // },
     components: {
         IconCarouselFrame,
         IconChangeButton
@@ -81,8 +32,7 @@ export default {
 <template>
     <div class="carouselshow">
         <div class="slideshow">
-            <!-- 'translateX(' + currentIndex * -100 + '%)' -->
-            <div class="carousel" v-for="img in slides" :style="{ transform: 'translateX(' + timer * -1 + '%)' }">
+            <div class="carousel" v-for="img in slides">
                 <IconCarouselFrame :framePath="frame" :imgPath="img"></IconCarouselFrame>
             </div>
         </div>
@@ -92,12 +42,29 @@ export default {
     </div>
 </template>
 <style scoped>
+/* 幻燈片播放 */
+.carousel {
+    display: flex;
+    animation: translate 15s linear infinite;
+}
+
+@keyframes translate {
+    100% {
+        /* transform: translateX(calc(-150px * 10)); */
+        transform: translateX(calc(-106rem));
+
+    }
+}
+
+
+
 .carouselshow {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    padding: 3.125rem 6.875rem;
+    padding: 3.1rem 6.8rem;
+    overflow: hidden;
 }
 
 .slideshow {
