@@ -39,6 +39,13 @@ const router = createRouter({
       component: () => import('../views/LostandFoundSearchView.vue')
     },
     {
+      // 失散協尋>>撿到遺失動物頁面
+      path: '/foundanimalsform',
+      name: 'foundanimalsform',
+      component: () => import('../views/FormPageFoundAndLost.vue')
+    },
+
+    {
       // 最新消息頁面
       path: '/latestnewspage',
       name: 'latestnewspage',
