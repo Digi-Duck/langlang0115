@@ -10,10 +10,15 @@ export default {
   },
   data() {
     return {
-      rightnow:false,
+      rightnow: false,
+      showSuccess:false,
     }
   },
   methods: {
+    closeModel(close) {
+      this.rightnow = close;
+      this.showSuccess = !this.showSuccess;
+    }
   },
 };
 </script>
@@ -102,7 +107,8 @@ export default {
       </div>
       <div class="box ">
         <GreenButton :showSvg="false" class="sponsornow-btn" @click="rightnow = !rightnow">立即贊助</GreenButton>
-        <SponsorPopUp v-if="rightnow"></SponsorPopUp>
+        <SponsorPopUp v-if="rightnow" @colse-type="closeModel"></SponsorPopUp>
+        <SponsorSuccess v-if="showSuccess"></SponsorSuccess>
       </div>
     </div>
   </section>
