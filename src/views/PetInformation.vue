@@ -17,6 +17,7 @@ export default {
 <template>
     <NavPage />
     <main>
+        
         <img src="../assets/Image/DogPaw.svg" alt="">
     </main>
     <FooterPage />
@@ -26,10 +27,5 @@ main {
     width: 100vw;
     max-width: 100%;
     height: 100vh;
-}
-
-img {
-    width: 500px;
-    height: 500px;
 }
 </style>
