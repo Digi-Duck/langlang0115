@@ -12,6 +12,15 @@ export default {
         NavPage,
         FooterPage
     },
+    data() {
+    return {
+      confirm: "確認",
+      showGreenButton: false,
+      isPopUpVisible: false,
+      isShow: false,
+      now: false,
+    }
+  },
 };
 </script>
 

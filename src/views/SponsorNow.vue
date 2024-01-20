@@ -1,11 +1,42 @@
-<script setup>
+<script>
 import NavPage from '../components/NavPage.vue'
 import GreenButton from '@/components/GreenButton.vue'
+import SponsorPopUp from '@/components/SponsorPopUp.vue';
+export default {
+  components: {
+    SponsorPopUp,
+    GreenButton,
+    NavPage
+  },
+  data() {
+    return {
+      confirm: "確認",
+      showGreenButton: true,
+      isPopUpVisible: false,
+      isShow: false,
+      now:false,
+    }
+  },
+  methods: {
+    openPopup() {
+      console.log("點到了");
+      document.body.style.overflow = 'hidden';
+      this.isPopUpVisible = true;
+    },
+    closePopup() {
+      this.isPopUpVisible = false;
+      document.body.style.overflow = ''; // 解除固定畫面
+    },
+    showSuccess() {
+      this.$emit('success'); // 在此處處理成功彈出框的相應邏輯
+    }
+  },
+};
 </script>
 
 <template>
   <NavPage />
-  <section class="sponsor-container">
+  <section class="sponsor-container" >
     <!-- 上半部區塊 -->
     <div class="sponsor-rightnow">
       <div class="sponsor-title">
@@ -86,10 +117,11 @@ import GreenButton from '@/components/GreenButton.vue'
         </div>
       </div>
       <div class="box ">
-        <GreenButton :showSvg="false" class="sponsornow-btn">立即贊助</GreenButton>
+        <GreenButton :showSvg="false" :is-show="isShow" v-show="now" @click="showPopup" class="sponsornow-btn">立即贊助</GreenButton>
+        <SponsorPopUp :isShow="isPopUpVisible" @close="closePopup" @success="showSuccess"></SponsorPopUp>
       </div>
     </div>
-  </section>
+    </section>
 </template>
 
 <style scoped>

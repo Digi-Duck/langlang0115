@@ -4,7 +4,7 @@ import SponsorSuccess from './SponsorSuccess.vue';
 export default {
   props: {
     isShow: Boolean,
-    success: Boolean,
+    // success: Boolean,
   },
   components: {
     GreenButton,
@@ -13,28 +13,36 @@ export default {
   data() {
     return {
       confirm: "確認",
-      showGreenButton: true,  // 新增一个状态来控制GreenButton的显示
+      showGreenButton: true,
+      isShowSuccess: false,
+        
     }
   },
   methods: {
     showPopup() {
       console.log("下一步");
-      this.success = true;  // 隐藏GreenButton
-      
+      this.showGreenButton = false;  // 隐藏GreenButton
     },
 
     backSponsorNow() {
       console.log("導回立即贊助頁面");
+      this.showGreenButton = true; 
       this.$router.push('/sponsornow');
-      // 这里可以执行其他逻辑，比如返回时隐藏GreenButton
+    },
+    showSuccess() {
+      this.isShowSuccess = true;
+      this.$emit('success');
+    },
+    closeSuccess() {
+      this.isShowSuccess = false;
     },
   },
 };
 </script>
 
 <template>
-  <div class="popup-bg" v-show="isShow">
-    <div class="popup-container">
+  <div class="popup-bg"  :isShow="isShow">
+    <div class="popup-container" >
       <div class="top">
         <div class="title">
           <img src="../assets/Image/PopUp-dogpaw-sm.svg">
@@ -46,13 +54,13 @@ export default {
         <div class="dogimg"></div>
         <span class="text">按下確定以後將會前往第三方支付平台（綠界科技），<br>
           由專業的金流服務平台，完成付款動作，浪浪的事不會儲存您的信用卡卡號。</span>
-        <GreenButton class="btn" :showSvg="false" :text="confirm" v-show="!success" @click="showPopup">確認並前往贊助</GreenButton>
-        <GreenButton class="btn white-btn" :showSvg="false" v-show="!success" @click.self="backSponsorNow">返回修改資料</GreenButton>
-      </div>
+        <GreenButton v-show="showGreenButton" class="btn" :showSvg="false" :text="confirm"  @click="showSuccess">確認並前往贊助</GreenButton>
+        <GreenButton v-show="showGreenButton" class="btn white-btn" :showSvg="false" @click.self="backSponsorNow">返回修改資料</GreenButton>
+        <SponsorSuccess v-if="isShowSuccess" @close="closeSuccess"></SponsorSuccess>  
+    </div>
     </div>
   </div>
-  <SponsorSuccess :is-show="success"></SponsorSuccess>
-</template>
+  </template>
 
 <style scoped>
 .popup-bg {
