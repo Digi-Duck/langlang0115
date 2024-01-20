@@ -92,6 +92,10 @@ export default {
     </div>
 </template>
 <style scoped>
+a:hover {
+    background-color: transparent;
+}
+
 .contact {
     display: flex;
     align-items: center;

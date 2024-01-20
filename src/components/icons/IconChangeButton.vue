@@ -1,3 +1,4 @@
+<!-- 如需使用 "a" 要記得加 " a:hover{background-color: transparent;} " hover才不會有顏色 -->
 <script>
 export default {
     // 設定參數
@@ -44,6 +45,7 @@ export default {
     border: none;
     font-size: 1.2rem;
     color: var(--white-color);
+    box-shadow: none;
 }
 
 .text {
