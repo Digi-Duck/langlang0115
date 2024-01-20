@@ -29,7 +29,7 @@ export default {
     </main>
     <FooterPage />
 </template>
-<style>
+<style scoped>
 main {
     width: 100vw;
     max-width: 100%;
