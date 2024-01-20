@@ -2,14 +2,16 @@
 <script>
 import AboutUsArea from '@/components/AboutUsArea.vue';
 import ContactUsArea from '@/components/ContactUsArea.vue';
+import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
 
 export default {
     components: {
-    AboutUsArea,
-    ContactUsArea,
-    NavPage
-},
+        AboutUsArea,
+        ContactUsArea,
+        NavPage,
+        FooterPage
+    },
 };
 </script>
 
@@ -19,6 +21,7 @@ export default {
         <AboutUsArea></AboutUsArea>
         <ContactUsArea></ContactUsArea>
     </main>
+    <FooterPage />
 </template>
 
 <style scoped></style>
