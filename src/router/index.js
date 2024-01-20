@@ -14,11 +14,12 @@ const router = createRouter({
       path: '/aboutuspage',
       name: 'aboutuspage',
       component: () => import('../views/AboutUsPageView.vue')
-    },{
+    },
+    {
       // 贊助我們頁面
-        path: '/sponsorus',
-        name: 'sponsorus',
-        component:  () => import('../views/SponsorUsView.vue')
+      path: '/sponsorus',
+      name: 'sponsorus',
+      component: () => import('../views/SponsorUsView.vue')
     },
     {
       // 立即贊助頁面
@@ -31,6 +32,12 @@ const router = createRouter({
       path: '/adoptioncenter',
       name: 'adoptioncenter',
       component: () => import('../views/AdoptionCenterView.vue')
+    },
+    {
+      // 認養中心頁面>>毛小孩資訊
+      path: '/petinformation',
+      name: 'petinformation',
+      component: () => import('../views/PetInformation.vue')
     },
     {
       // 失散協尋頁面
