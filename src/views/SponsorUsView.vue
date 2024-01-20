@@ -2,13 +2,16 @@
 
 <script>
 import GreenButton from '@/components/GreenButton.vue';
-import NavBar from '@/components/NavBar.vue';
+import NavPage from '@/components/NavPage.vue';
 import sponsorsData from '../json/SPONSORS.json';
+
+// 1.生成100個名字 要有獨特的id json格式 date、amount不重複、name隨機生成
+// 2.存data到json
 
 export default {
     data() {
         return {
-            sponsors: sponsorsData
+            sponsors: sponsorsData,
         };
     },
     methods: {
@@ -18,14 +21,14 @@ export default {
     },
     components: {
         GreenButton,
-        NavBar
+        NavPage
     },
 
 };
 </script>
 
 <template>
-    <NavBar />
+    <NavPage />
     <section class="sponsor-page">
         <div class="sponsor-title">
             <span>贊助我們</span>
@@ -50,32 +53,67 @@ export default {
 
     <!-- 贊助名單 -->
     <section class="sponsor-page">
-        <div class="sponsored-list-title">贊助名單</div>
-        <table class="sponsored-list">
-            <thead>
-                <tr>
-                    <th>贊助日期</th>
-                    <th>姓名</th>
-                    <th>贊助金額</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 使用v-for動態生成表格 -->
-                <!-- 第一筆贊助紀錄 -->
-                <tr v-for="sponsor in sponsors" :key="sponsor.id">
-                    <td>{{ sponsor.date }}</td>
-                    <td>{{ sponsor.name }}</td>
-                    <td>{{ sponsor.amount }}</td>
-                </tr>
+        <!-- 分線 -->
+        <div class="interval">
+            <div class="line">
+                <div class="squre"></div>
+                <div class="line-left"></div>
+            </div>
+            <div class="sponsored-list-title">贊助名單</div>
+            <div class="line">
+                <div class="line-right"></div>
+                <div class="squre"></div>
+            </div>
+        </div>
 
-            </tbody>
-        </table>
+        <div class="table-all">
+            <table class="sponsored-list">
+                <thead>
+                    <tr>
+                        <th>贊助日期</th>
+                        <th>姓名</th>
+                        <th>贊助金額</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 使用v-for動態生成表格 -->
+                    <!-- 第一筆贊助紀錄 -->
+                    <tr v-for="sponsor in sponsors" :key="sponsor.id">
+                        <td>{{ sponsor.date }}</td>
+                        <td>{{ sponsor.name }}</td>
+                        <td>{{ sponsor.amount }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 此區需要修改 -->
+            <table class="sponsored-list">
+                <thead>
+                    <tr>
+                        <th>贊助日期</th>
+                        <th>姓名</th>
+                        <th>贊助金額</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 使用v-for動態生成表格 -->
+                    <!-- 第一筆贊助紀錄 -->
+                    <tr v-for="sponsor in sponsors" :key="sponsor.id">
+                        <td>{{ sponsor.date }}</td>
+                        <td>{{ sponsor.name }}</td>
+                        <td>{{ sponsor.amount }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
     </section>
 
     <!-- 常見問題Q&A -->
     <section class="sponsor-page c-area">
         <img class="cat" src="../assets/Image/SponsorImage/sponsor-us-cat.svg">
-        <div class="thanks">真的很謝謝您！</div>
+        <div class="thanks"><span>真的很<br>謝謝您！</span></div>
 
         <div class="q-a-container">
             <div class="q-a-tittle">常見問題Q&A</div>
@@ -184,16 +222,73 @@ export default {
 
 
 /*贊助名單*/
+.sponsored-list-title {
+    color: var(--primary-color);
+    font-size: 32px;
+    letter-spacing: 8px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0px 28px;
+}
+
+.interval {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    letter-spacing: 8px;
+    margin: 60px 0px;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+}
+
+.squre {
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    transform: translate(0px, -0.5px) rotate(45deg);
+}
+
+.line-left {
+    width: 633px;
+    height: 2px;
+    background-color: var(--primary-color);
+    stroke: var(--primary-color);
+}
+
+.line-right {
+    width: 633px;
+    height: 2px;
+    background-color: var(--primary-color);
+    stroke: var(--primary-color);
+}
+
+
 
 .sponsored-list {
     overflow: hidden;
     border-radius: 10px 10px 0px 0px;
 }
 
+.table-all {
+    /*background-color: rgb(255, 248, 185);*/
+    width: 1600px;
+    height: 1568px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    overflow: scroll;
+}
+
 table {
     font-family: 'ABeeZee', sans-serif;
     border-collapse: separate;
-    width: 767px;
+    width: 50%;
+    height: 50%;
     border-spacing: 0;
     border: 2px solid #D7D7D7;
     font-weight: 400;
@@ -219,8 +314,6 @@ tbody {
 td {
     height: 98px;
     border-bottom: 1px solid #D7D7D7;
-    ;
-    ;
 }
 
 tr td:nth-child(1),
@@ -242,30 +335,39 @@ td:nth-child(2) {
     display: flex;
     justify-content: center;
     position: relative;
+    margin: 300px 0px 209px 0px;
 }
 
 .c-area .cat {
     position: absolute;
-    transform: translate(-200px, 313px);
-    transform: rotate(20deg);
+    transform: translate(-150px, -153px);
     width: 338px;
     height: 227px;
-
+    z-index: 2;
 }
 
 .thanks {
     color: var(--primary-color);
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 6px;
     text-align: center;
     border: 2px solid;
     border-radius: 100px;
     width: 194px;
     height: 195px;
     position: absolute;
-    transform: translate(700px, -120px);
+    transform: translate(671px, -230px);
 }
+
+.thanks span {
+    width: 139px;
+    height: 51px;
+    text-align: justify;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    position: absolute;
+    transform: translate(-46px, 33px);
+}
+
 
 .q-a-container {
     /*    background-color: #c5cba7;*/
