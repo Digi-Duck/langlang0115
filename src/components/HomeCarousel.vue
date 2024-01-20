@@ -23,6 +23,11 @@ export default {
             mysubmit: "更多浪浪"
         };
     },
+    methods: {
+        lostandfoundPage() {
+            this.$router.push('/lostandfoundsearch');
+        },
+    },
     components: {
         IconCarouselFrame,
         IconChangeButton
@@ -38,7 +43,7 @@ export default {
         </div>
     </div>
     <div class="many">
-        <IconChangeButton :text="mysubmit"></IconChangeButton>
+        <IconChangeButton :text="mysubmit" @click="lostandfoundPage"></IconChangeButton>
     </div>
 </template>
 <style scoped>
