@@ -25,7 +25,31 @@ const router = createRouter({
       path: '/sponsornow',
       name: 'sponsornow',
       component: () => import('../views/SponsorNow.vue')
-    }
+    },
+    {
+      // 認養中心頁面
+      path: '/adoptioncenter',
+      name: 'adoptioncenter',
+      component: () => import('../views/AdoptionCenterView.vue')
+    },
+    {
+      // 失散協尋頁面
+      path: '/lostandfoundsearch',
+      name: 'lostandfoundsearch',
+      component: () => import('../views/LostandFoundSearchView.vue')
+    },
+    {
+      // 最新消息頁面
+      path: '/latestnewspage',
+      name: 'latestnewspage',
+      component: () => import('../views/LatestNewsPageView.vue')
+    },
+    {
+      // 會員登入頁面
+      path: '/memberlogin',
+      name: 'memberlogin',
+      component: () => import('../views/MemberLoginView.vue')
+    },
   ]
 })
 

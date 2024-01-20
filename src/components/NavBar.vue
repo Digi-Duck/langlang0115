@@ -17,6 +17,18 @@ export default {
         sponsorusPage() {
             this.$router.push('/sponsorus');
         },
+        adoptioncenterPage() {
+            this.$router.push('/adoptioncenter');
+        },
+        lostandfoundPage() {
+            this.$router.push('/lostandfoundsearch');
+        },
+        latestnewsPage() {
+            this.$router.push('/latestnewspage');
+        },
+        memberloginPage() {
+            this.$router.push('/memberlogin');
+        }
     },
 
 };
@@ -35,10 +47,10 @@ export default {
             <div class="box">
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="aboutusPage">關於我們</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="sponsorusPage">贊助我們</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">認養中心</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">失散協尋</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">最新消息</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">會員登入</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="adoptioncenterPage">認養中心</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="lostandfoundPage">失散協尋</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="latestnewsPage">最新公告</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="memberloginPage">會員登入</span>
             </div>
         </div>
         <IconNavWave id="wave"></IconNavWave>
@@ -81,7 +93,7 @@ span:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 75%;
-    color:var(--primary-color);
+    color: var(--primary-color);
 }
 
 #wave {

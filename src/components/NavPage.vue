@@ -10,6 +10,18 @@ export default {
         sponsorusPage() {
             this.$router.push('/sponsorus');
         },
+        adoptioncenterPage() {
+            this.$router.push('/adoptioncenter');
+        },
+        lostandfoundPage(){
+            this.$router.push('/lostandfoundsearch');
+        },
+        latestnewsPage(){
+            this.$router.push('/latestnewspage');
+        },
+        memberloginPage(){
+            this.$router.push('/memberlogin');
+        }
     }
 }
 </script>
@@ -24,10 +36,10 @@ export default {
             <div class="box">
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="aboutusPage">關於我們</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="sponsorusPage">贊助我們</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">認養中心</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">失散協尋</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">最新消息</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut">會員登入</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="adoptioncenterPage">認養中心</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="lostandfoundPage">失散協尋</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="latestnewsPage">最新公告</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="memberloginPage">會員登入</span>
             </div>
         </div>
     </div>
@@ -43,7 +55,7 @@ export default {
     max-width: 100%;
     height: 82px;
     background: var(--primary-color);
-    color:var(--white-color);
+    color: var(--white-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
