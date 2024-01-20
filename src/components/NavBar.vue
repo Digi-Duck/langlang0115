@@ -54,8 +54,8 @@ export default {
     width: 100vw;
     max-width: 100%;
     height: 82px;
-    background: #52A038;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +81,7 @@ span:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 75%;
-    color: #52A038;
+    color:var(--primary-color);
 }
 
 #wave {

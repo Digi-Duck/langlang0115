@@ -18,8 +18,8 @@ export default {
     <div class="nav-container">
         <div class="boxall">
             <div class="logotext" @click="gohomePage">
-                <img class="titleen" src="../assets/Image/HomeImage/NavPageEn.svg">
                 <img class="titlecn" src="../assets/Image/HomeImage/NavPageCn.svg">
+                <img class="titleen" src="../assets/Image/HomeImage/NavPageEn.svg">
             </div>
             <div class="box">
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="aboutusPage">關於我們</span>
@@ -42,17 +42,12 @@ export default {
     width: 100vw;
     max-width: 100%;
     height: 82px;
-    background: #52A038;
-    color: white;
+    background: var(--primary-color);
+    color:var(--white-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 120px;
-}
-
-#logo {
-    margin-top: 70px;
-    z-index: 2;
+    padding: 0 20px 0 95px;
 }
 
 span {
@@ -68,13 +63,11 @@ span:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 75%;
-    color: #52A038;
+    color: var(--primary-color);
 }
 
 .logotext {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    z-index: 2;
 }
 </style>

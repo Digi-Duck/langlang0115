@@ -163,7 +163,7 @@ export default {
 }
 
 .home-header-greenbox {
-  background-color: #52A038;
+  background-color: var(--primary-color);
   width: 100%;
   height: 556px;
   position: absolute;
@@ -188,7 +188,7 @@ export default {
 .home-header-text span {
   font-size: 28px;
   text-shadow: 1px 2px 8px rgba(0, 0, 0, 25);
-  color: white;
+  color: var(--white-color);
   position: absolute;
   top: -80%;
   left: 0%;
@@ -269,7 +269,7 @@ export default {
 .mission-statement {
   width: 864px;
   height: 461px;
-  color: #626262;
+  color:var(--gray-color);
   font-size: 40px;
   letter-spacing: 6px;
 }
