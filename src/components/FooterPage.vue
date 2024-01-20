@@ -31,12 +31,12 @@
 }
 .dog{
     position: absolute;
-    top: -10px;
+    top: 27px;
     left: 83px;
 }
 .cat{
     position: absolute;
-    top: 0px;
+    top: 35px;
     right: 83px;
 }
 .footer {
@@ -45,7 +45,7 @@
     border-radius: 20px 20px 0 0;
     color: white;
     font-size: 18px;
-    padding: 76px 0px;
+    padding: 58px 0px;
     text-align: center;
 }
 </style>

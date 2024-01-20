@@ -1,7 +1,8 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import {  RouterView } from 'vue-router'
 import GoTop from './components/GoTop.vue';
-import Footer from '@/components/Footer.vue';
+// import Footer from '@/components/Footer.vue';
+// import FooterPage from './components/FooterPage.vue';
 </script>
 
 <template>
@@ -9,7 +10,8 @@ import Footer from '@/components/Footer.vue';
     <RouterView />
     <GoTop></GoTop>
   </main>
-  <Footer />
+  <!-- <Footer /> -->
+  <!-- <FooterPage/> -->
 </template>
 
 <style scoped>
