@@ -1,11 +1,8 @@
 <script>
 import GreenButton from './GreenButton.vue';
 export default {
-    props: {
-        success: Boolean,
-    },
+    
     methods: {
-
         // 回到首頁按鈕
         gohomePage() {
             this.$router.push('/');
@@ -23,7 +20,7 @@ export default {
 </script>
 
 <template>
-    <div class="popup-bg" v-show="success">
+    <div class="popup-bg">
         <div class="popup-container">
             <div class="content">
                 <div class="thanks">

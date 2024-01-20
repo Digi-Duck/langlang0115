@@ -10,33 +10,17 @@ export default {
   },
   data() {
     return {
-      confirm: "確認",
-      showGreenButton: true,
-      isPopUpVisible: false,
-      isShow: false,
-      now:false,
+      rightnow:false,
     }
   },
   methods: {
-    openPopup() {
-      console.log("點到了");
-      document.body.style.overflow = 'hidden';
-      this.isPopUpVisible = true;
-    },
-    closePopup() {
-      this.isPopUpVisible = false;
-      document.body.style.overflow = ''; // 解除固定畫面
-    },
-    showSuccess() {
-      this.$emit('success'); // 在此處處理成功彈出框的相應邏輯
-    }
   },
 };
 </script>
 
 <template>
   <NavPage />
-  <section class="sponsor-container" >
+  <section class="sponsor-container">
     <!-- 上半部區塊 -->
     <div class="sponsor-rightnow">
       <div class="sponsor-title">
@@ -110,18 +94,18 @@ export default {
       <div class="box ">
         <div class="agree-text"><input class="agree" type="checkbox">
           <span class="">
-            * 同意本網站 
+            * 同意本網站
             <span class="sponsor-aboutus">隱私權政策</span>
             ，並瞭解姓名、Email、手機號碼，「皆」有填寫未來才能查詢您的查詢贊助資訊！
           </span>
         </div>
       </div>
       <div class="box ">
-        <GreenButton :showSvg="false" :is-show="isShow" v-show="now" @click="showPopup" class="sponsornow-btn">立即贊助</GreenButton>
-        <SponsorPopUp :isShow="isPopUpVisible" @close="closePopup" @success="showSuccess"></SponsorPopUp>
+        <GreenButton :showSvg="false" class="sponsornow-btn" @click="rightnow = !rightnow">立即贊助</GreenButton>
+        <SponsorPopUp v-if="rightnow"></SponsorPopUp>
       </div>
     </div>
-    </section>
+  </section>
 </template>
 
 <style scoped>
@@ -289,7 +273,8 @@ export default {
   height: 18px;
   margin-left: 26px;
 }
-.sponsornow-btn{
+
+.sponsornow-btn {
   margin: auto;
   /* font-size: 32px; */
   /* transform: scale(1.3); */
