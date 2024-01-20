@@ -3,6 +3,7 @@
 <script>
 import GreenButton from '@/components/GreenButton.vue';
 import NavPage from '@/components/NavPage.vue';
+import FooterPage from '@/components/FooterPage.vue';
 import sponsorsData from '../json/SPONSORS.json';
 
 // 1.生成100個名字 要有獨特的id json格式 date、amount不重複、name隨機生成
@@ -21,7 +22,8 @@ export default {
     },
     components: {
         GreenButton,
-        NavPage
+        NavPage,
+        FooterPage,
     },
 
 };
@@ -139,6 +141,8 @@ export default {
             </div>
         </div>
     </section>
+
+    <FooterPage/>
 </template>
 
 <style scoped>
@@ -180,7 +184,6 @@ export default {
 }
 
 .sponsor-content {
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
