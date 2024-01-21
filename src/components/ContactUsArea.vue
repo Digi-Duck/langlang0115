@@ -17,11 +17,20 @@ export default {
             // 執行顯示視窗
             this.show = true;
             // 視窗開啟時scrollBar隱藏
-            document.body.style.overflow = 'hidden';
+            // document.body.style.overflow = 'hidden';
         },
+        // openScrollBar() {
+        //     // 執行視窗關閉
+        //     this.show = false;
+        //     // 視窗離開時scrollBar顯示
+        //     document.body.style.overflow = 'auto';
+        // },
         // hidePopup() {
         //     this.show = false;
         // }
+    },
+    beforeDestroy() {
+        this.openScrollBar();
     },
     components: {
         IconChangeButton,

@@ -1,9 +1,9 @@
 <script>
-import NavBar from '../components/NavBar.vue';
-import IconHeaderLine from '@/components/icons/IconHeaderLine.vue';
+import NavBar from '@/components/NavBar.vue';
 import HomePage from '@/components/HomePage.vue';
-import GreenButton from '../components/GreenButton.vue';
-import YellowButton from '../components/YellowButton.vue';
+import IconHeaderLine from '@/components/icons/IconHeaderLine.vue';
+import GreenButton from '@/components/GreenButton.vue';
+import YellowButton from '@/components/YellowButton.vue';
 import HomeCarousel from '@/components/HomeCarousel.vue';
 import FooterPage from '@/components/FooterPage.vue';
 
@@ -14,7 +14,8 @@ export default {
     GreenButton,
     YellowButton,
     HomeCarousel,
-    FooterPage
+    FooterPage,
+    IconHeaderLine
   },
 };
 </script>
