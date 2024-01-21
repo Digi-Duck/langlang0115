@@ -6,14 +6,18 @@ export default {
     },
     data() {
         return {
-            showback: false,
+            // showback: false,
         }
     },
-    emit:['colseType'],
+    // emits 回傳資料給父層
+    emits: ['closeType', 'closePopup'],
     methods: {
-        closeModel () { 
-            this.$emit('colseType',false);
+        closeModel() {
+            this.$emit('closeType', false);
         },
+        closePopup() {
+            this.$emit('closePopup', false);
+        }
     },
 };
 </script>
@@ -32,8 +36,9 @@ export default {
                 <div class="dogimg"></div>
                 <span class="text">按下確定以後將會前往第三方支付平台（綠界科技），<br>
                     由專業的金流服務平台，完成付款動作，浪浪的事不會儲存您的信用卡卡號。</span>
-                <GreenButton class="btn" :showSvg="false" @click="showSuccess=!showSuccess">確認並前往贊助</GreenButton>
-                <GreenButton class="btn white-btn" :showSvg="false"  @click="showback=!showback, closeModel()">返回修改資料</GreenButton>
+                <GreenButton class="btn" :showSvg="false" @click="showSuccess = !showSuccess, closeModel()">確認並前往贊助
+                </GreenButton>
+                <GreenButton class="btn white-btn" :showSvg="false" @click="closePopup()">返回修改資料</GreenButton>
             </div>
         </div>
     </div>

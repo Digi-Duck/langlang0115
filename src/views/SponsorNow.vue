@@ -2,23 +2,36 @@
 import NavPage from '../components/NavPage.vue'
 import GreenButton from '@/components/GreenButton.vue'
 import SponsorPopUp from '@/components/SponsorPopUp.vue';
+import SponsorSuccess from '@/components/SponsorSuccess.vue';
 export default {
   components: {
     SponsorPopUp,
     GreenButton,
-    NavPage
+    NavPage,
+    SponsorSuccess
   },
   data() {
     return {
+      // 進入畫面時 關閉
       rightnow: false,
-      showSuccess:false,
+      showSuccess: false,
     }
   },
   methods: {
-    closeModel(close) {
-      this.rightnow = close;
-      this.showSuccess = !this.showSuccess;
-    }
+    // SponsorPopUp裡 點擊到前往贊助 執行Popup關閉&Success開啟
+    closeModel() {
+      this.rightnow = false;
+      this.showSuccess = true;
+    },
+    // SponsorPopUp裡 點擊到前往贊助 執行Popup關閉&Success關閉
+    closePopup() {
+      this.rightnow = false;
+      this.showSuccess = false;
+    },
+    // 關閉當前視窗
+    // closeCurrentPopup() {
+    //   this.$emit('closePopup');
+    // }
   },
 };
 </script>
@@ -107,8 +120,11 @@ export default {
       </div>
       <div class="box ">
         <GreenButton :showSvg="false" class="sponsornow-btn" @click="rightnow = !rightnow">立即贊助</GreenButton>
-        <SponsorPopUp v-if="rightnow" @colse-type="closeModel"></SponsorPopUp>
-        <SponsorSuccess v-if="showSuccess"></SponsorSuccess>
+        <!-- Popup 執行closeModel closePopup-->
+        <SponsorPopUp v-if="rightnow" @close-type="closeModel" @closePopup="closePopup">
+        </SponsorPopUp>
+        <!-- Success -->
+        <SponsorSuccess v-if="showSuccess" @closePopup="closeCurrentPopup" />
       </div>
     </div>
   </section>
