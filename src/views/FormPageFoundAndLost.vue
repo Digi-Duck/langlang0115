@@ -15,7 +15,8 @@ export default {
     <NavPage />
     <main>
         <div>
-            <AnimalForm title="撿到遺失動物" inputTitleColor="var(--primary-color)" inputTextBorder="2px solid var(--primary-color)"></AnimalForm>
+            <AnimalForm title="撿到遺失動物" inputTitleColor="var(--primary-color)" inputTextBorder="2px solid var(--primary-color)" 
+                svgColor="var(--primary-color)" uploadPicColor=" var(--primary-color)"></AnimalForm>
         </div>
     </main>
 </template>

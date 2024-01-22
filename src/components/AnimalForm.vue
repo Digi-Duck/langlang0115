@@ -1,30 +1,74 @@
 <script>
-import CancelButton from './CancelButton.vue';
+import NoHoverButton from './NoHoverButton.vue';
 import IconChangeButton from './icons/IconChangeButton.vue';
 
 export default {
     props: {
-        title: String,
-        inputTitleColor: String,
-        inputTextBorder: String,
-        uploadPicBorder:String,
+        title: String, //此表單的名稱
+        inputTitleColor: String, //每個欄位的標題
+        inputTextBorder: String, //輸入欄文字
+        uploadPicBorder: String, //上傳照片的border
+        svgColor: String, // 上傳照片的 SVG 顏色
+        uploadPicColor: String //上傳照片的文字
     },
     data() {
         return {
             formData: {
                 name: '',
                 species: '',
+                chipid: '',
+                bodyshape: '',
+                gender: '',
+                colors: '',
+                age: '',
+                neutered: '',
+                time: '',
+                place: '',
+                description: '',
+                phone: '',
+                other: '',
             },
             mysubmit: "送出",
+            confirmClear: false, // 用於確認是否清空的標誌
+            innertext:"清除重填",
+            bgColor: "red",
         };
     },
     methods: {
         submitForm() {
             //處理表單邏輯
             // console.log("表單提交");
+        }, showConfirmation() {
+            // 顯示確認框
+            this.confirmClear = true;
+        }, cancelConfirmation() {
+            // 關閉確認框，不清空表單
+            this.confirmClear = false;
+        },
+        clearForm() {
+            // 如果 confirmClear 是 true，則清空表單
+            if (this.confirmClear) {
+                this.formData = {
+                    name: '',
+                    species: '',
+                    chipid: '',
+                    bodyshape: '',
+                    gender: '',
+                    colors: '',
+                    age: '',
+                    neutered: '',
+                    time: '',
+                    place: '',
+                    description: '',
+                    phone: '',
+                    other: '',
+                };
+                // 重置 confirmClear 為 false
+                this.confirmClear = false;
+            }
         }
     },
-    components: { CancelButton, IconChangeButton }
+    components: { NoHoverButton, IconChangeButton }
 }
 </script>
 
@@ -40,8 +84,21 @@ export default {
             <div class="form-group">
                 <div class="custom-file-upload">
                     <span class="photo-title" :style="{ color: inputTitleColor }">照片 *</span>
-                    <label for="photo" :style="{borderColor:uploadPicBorder}">
-                        <img src="../assets/Image/SponsorImage/entypo_image.svg"><span>上傳照片</span></label>
+                    <label for="photo" :style="{ borderColor: uploadPicBorder }">
+                        <!-- 上傳照片前面的svg -->
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="entypo:image" clip-path="url(#clip0_847_5412)">
+                                <path id="Vector" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M26.6 2.7998H1.4C1.0287 2.7998 0.672601 2.9473 0.410051 3.20986C0.1475 3.47241 0 3.8285 0 4.1998L0 23.7998C0 24.1711 0.1475 24.5272 0.410051 24.7898C0.672601 25.0523 1.0287 25.1998 1.4 25.1998H26.6C26.9713 25.1998 27.3274 25.0523 27.59 24.7898C27.8525 24.5272 28 24.1711 28 23.7998V4.1998C28 3.8285 27.8525 3.47241 27.59 3.20986C27.3274 2.9473 26.9713 2.7998 26.6 2.7998ZM25.2 22.3998H2.8V5.5998H25.2V22.3998ZM20.041 15.2276L15.5176 17.4746L10.2396 8.9332L5.6 19.5998H22.4L20.041 15.2276ZM18.55 12.5998C19.0141 12.5998 19.4592 12.4154 19.7874 12.0872C20.1156 11.7591 20.3 11.3139 20.3 10.8498C20.3 10.3857 20.1156 9.94056 19.7874 9.61237C19.4592 9.28418 19.0141 9.0998 18.55 9.0998C18.0859 9.0998 17.6408 9.28418 17.3126 9.61237C16.9844 9.94056 16.8 10.3857 16.8 10.8498C16.8 11.3139 16.9844 11.7591 17.3126 12.0872C17.6408 12.4154 18.0859 12.5998 18.55 12.5998Z"
+                                    :fill="svgColor" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_847_5412">
+                                    <rect width="28" height="28" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <span :style="{ color: uploadPicColor }">上傳照片</span></label>
                     <!-- 將[傳送檔案]的樣式opacity -->
                     <input type="file" id="photo" accept="image/*" @change="handleFileUpload" />
                 </div>
@@ -62,7 +119,7 @@ export default {
 
             <div class="form-group">
                 <label for="chip-id" :style="{ color: inputTitleColor }">晶片號碼</label>
-                <input type="text" id="chip-id" v-model="formData.chipid" :style="{ border: inputTextBorder}" />
+                <input type="text" id="chip-id" v-model="formData.chipid" :style="{ border: inputTextBorder }" />
             </div>
 
             <div class="form-group">
@@ -127,13 +184,15 @@ export default {
                 <div class="time-place-title" :style="{ color: inputTitleColor }">發現浪浪之時間和地點 *</div>
                 <div class="time-place-text">
                     <label for="time" hidden></label>
-                    <input type="text" id="time" v-model="formData.time" placeholder="年/月/日" :style="{ border: inputTextBorder}">
+                    <input type="text" id="time" v-model="formData.time" placeholder="年/月/日"
+                        :style="{ border: inputTextBorder }">
 
                     <label for="place" hidden></label>
-                    <input type="text" id="place" v-model="formData.place" placeholder="請填寫地點" :style="{ border: inputTextBorder}">
+                    <input type="text" id="place" v-model="formData.place" placeholder="請填寫地點"
+                        :style="{ border: inputTextBorder }">
 
                     <label for="description"></label>
-                    <input type="text" id="description" v-model="formData.description" :style="{ border: inputTextBorder}">
+                    <input type="text" id="description" v-model="formData.description" :style="{ border: inputTextBorder }">
                     <span>更多詳細地點描述</span>
                 </div>
             </div>
@@ -142,7 +201,7 @@ export default {
             <div class="form-group contact-area">
                 <label for="phone" :style="{ color: inputTitleColor }">聯絡方式 *</label>
                 <div class="phone-area">
-                    <input type="text" id="phone" v-model="formData.phone" :style="{ border: inputTextBorder}">
+                    <input type="text" id="phone" v-model="formData.phone" :style="{ border: inputTextBorder }">
                     <span>EX.手機號碼:0912345678</span>
                 </div>
 
@@ -150,13 +209,21 @@ export default {
 
             <div class="form-group">
                 <label for="other" :style="{ color: inputTitleColor }">其他說明</label>
-                <textarea id="other" v-model="formData.other" :style="{ border: inputTextBorder}"></textarea>
+                <textarea id="other" v-model="formData.other" :style="{ border: inputTextBorder }"></textarea>
             </div>
 
             <div class="btn-area">
-                <CancelButton @click.prevent="submitForm">清除重填</CancelButton>
-                <IconChangeButton :text="mysubmit" @click.prevent="submitForm">送出</IconChangeButton>
+                <NoHoverButton @click.prevent="showConfirmation" :text="innertext"></NoHoverButton>
+                <IconChangeButton :text="mysubmit" @click.prevent="submitForm"></IconChangeButton>
                 <!-- <GreenButton @click.prevent="submitForm">送出</GreenButton> -->
+
+
+                <!-- 重填確認框 -->
+                <div v-if="confirmClear" class="confirmation-modal">
+                    <p>確定要清除重填嗎？</p>
+                    <button @click="cancelConfirmation">取消</button>
+                    <button @click="clearForm">確定</button>
+                </div>
             </div>
         </form>
 
@@ -206,8 +273,7 @@ form {
     background-color: #ffffff;
     border: 2px solid green;
     border-radius: 4px;
-    color: green;
-    padding: 10px 15px;
+    padding: 30px 15px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -265,7 +331,6 @@ label[for="time"],
 label[for="phone"],
 label[for="other"],
 .time-place-title {
-    color: var(--primary-color);
     margin-right: 36px;
 }
 
@@ -376,5 +441,18 @@ input#phone {
     display: flex;
     margin: auto;
     gap: 55px;
+}
+
+
+.confirmation-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 5px solid white;
+    color:var(--white-color);
+    border-radius: 20px;
+    background-color: var(--second-color);
 }
 </style>
