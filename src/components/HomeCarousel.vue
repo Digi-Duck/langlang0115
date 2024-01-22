@@ -20,7 +20,12 @@ export default {
                 new URL('@/assets/Image/CarouselImage/taiwandog.svg', import.meta.url).href,
             ],
             currentIndex: 0,
-            mysubmit: "更多浪浪"
+            mysubmit: "更多浪浪",
+            mybgcolor: 'var(--primary-color)',
+            mytextcolor:'var(--white-color)',
+            // changeStyle: {
+            //     color: 'var(--white-color)',
+            // },
         };
     },
     methods: {
@@ -43,7 +48,8 @@ export default {
         </div>
     </div>
     <div class="many">
-        <IconChangeButton :text="mysubmit" @click="lostandfoundPage"></IconChangeButton>
+        <IconChangeButton :text="mysubmit" @click="lostandfoundPage" :textColor="mytextcolor" :bgColor="mybgcolor">
+        </IconChangeButton>
     </div>
 </template>
 <style scoped>
@@ -51,6 +57,10 @@ export default {
 .carousel {
     display: flex;
     animation: translate 15s linear infinite;
+}
+
+.many {
+    color: var(--white-color);
 }
 
 @keyframes translate {
