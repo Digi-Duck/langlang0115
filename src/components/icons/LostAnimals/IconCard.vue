@@ -25,6 +25,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--white-color);
 }
 
 .image {

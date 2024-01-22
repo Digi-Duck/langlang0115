@@ -22,12 +22,18 @@ export default {
 </script>
 
 <template>
-    <main>
-        <div class="notice">!請篩選您遺失的動物，確認是否已被重複登入</div>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab tab-left">撿到遺失動物</div>
+            <div class="tab tab-right">我遺失了動物</div>
+        </div>
+        <div class="notice">
+            <span>!請篩選您遺失的動物，確認是否已被重複登入</span>
+        </div>
         <form>
             <div class="form-group">
                 <label for="species">地區選擇 *</label>
-                <label for="photo">下拉式選單(預計安裝套件)</label>
+                <div>下拉式選單(預計安裝套件)</div>
             </div>
             <div class="form-group">
                 <label for="species">動物類別 *</label>
@@ -103,26 +109,45 @@ export default {
                 <button @click.prevent="submitForm">搜尋</button>
             </div>
         </form>
-    </main>
+    </div>
 </template>
 
 <style scoped>
-main {
+.container {
     width: 700px;
-    height: 1000px;
     font-size: 24px;
     letter-spacing: 6px;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tab {
     border: 1px solid var(--primary-color);
-    background-color: azure;
-    padding: 0px 34px;
+    padding: 20px 40px;
+}
+
+.tab-left {
+    background-color: var(--primary-color);
+    border-radius: 30px 0 0 0;
+    display: inline-block;
+    color: var(--white-color);
+}
+
+.tab-right {
+    border-radius: 0 30px 0 0;
+    background-color: var(--white-color);
+    color: var(--primary-color);
 }
 
 .notice {
     height: 80px;
     text-align: center;
     line-height: 80px;
-    
-    background-color: darkseagreen;
+    border: 1px solid var(--primary-color);
+    background-color:var(--white-color);
+    color: var(--primary-color);
 }
 
 /*根據顏色區分*/
@@ -130,8 +155,11 @@ form {
     display: flex;
     flex-direction: column;
     gap: 75px;
-    background-color: cornsilk;
-    border-top: 1px solid var(--primary-color);
+    background-color:var(--white-color);
+    border: 1px solid var(--primary-color);
+    border-top: 0;
+    padding: 60px 34px 32px;
+    background: var(--white-color);
 }
 
 
@@ -144,20 +172,24 @@ label[for="colors"],
 label[for="age"],
 label[for="neutered"],
 
-/* .form-group input {
-    margin-right:34px;
-} */
+.time-place-title {
+    color: var(--primary-color);
+    margin-right: 36px;
+}
+
+.form-group input {
+    margin: 0 17px;
+}
 
 /* 所有 radio 按鈕 */
 .form-group input[type="radio"] {
     transform: scale(2);
-    color: var(--primary-color);
-    margin-right:30px;
 }
 
 /* 讓選項按鈕和文字對齊 */
 .form-group label {
     vertical-align: middle;
+    margin: 0;
 }
 
 /*按鈕*/

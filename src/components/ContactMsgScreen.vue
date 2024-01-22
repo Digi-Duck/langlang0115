@@ -1,5 +1,5 @@
 <script>
-import IconChangeButton from './icons/IconChangeButton.vue';
+import GreenButton from './GreenButton.vue';
 
 export default {
     props: {
@@ -7,7 +7,7 @@ export default {
     },
     data() {
         return {
-            mysubmit: "回到首頁",
+
         }
     },
     methods: {
@@ -21,7 +21,7 @@ export default {
         // }
     },
     components: {
-        IconChangeButton
+        GreenButton
     }
 }
 </script>
@@ -37,7 +37,7 @@ export default {
             <div class="msgText">
                 <p>客服人員將依序回覆，請耐心等候</p>
             </div>
-            <IconChangeButton :text="mysubmit" @click="gohomePage"></IconChangeButton>
+            <button class="greenbutton" @click="gohomePage">回到首頁</button>
         </div>
     </div>
 </template>
@@ -102,5 +102,16 @@ export default {
     text-align: center;
     font-size: 0.8rem;
     letter-spacing: 3px;
+}
+
+.greenbutton {
+    width: 9.5rem;
+    height: 3.25rem;
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    border-radius: 1.875rem;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    box-shadow: none;
 }
 </style>

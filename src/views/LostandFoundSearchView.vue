@@ -29,10 +29,15 @@ export default {
 <template>
     <NavPage />
     <main>
-        <section>
-            <IconLostFrame />
-            <IconLostAnimalsList />
-        </section>
+        <div class="lost-title">
+            <div class="lost-titlecn">失散協尋</div>
+            <div class="lost-titleen">Lost and Found</div>
+        </div>
+        <div class="content">
+            <img src="../assets/Image/LostImage/arrow.svg">
+            <IconLostFrame class="frame" />
+            <IconLostAnimalsList class="list" />
+        </div>
 
         <!-- 失散協尋>撿到遺失動物（暫放） -->
         <GreenButton :showSvg="false" @click="goToFoundAnimalForm">確認前往：<br>撿到遺失動物</GreenButton>
@@ -42,12 +47,39 @@ export default {
     <FooterPage />
 </template>
 <style scoped>
-section {
-    padding: 50px;
-    background: #fdc3c3;
-    width: 1579px;
-    height: 1068px;
+main {
+    width: 100vw;
+    max-width: 100%;
+    padding: 60px 155px;
+}
+.lost-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 73px;
+  color: var(--primary-color);
+}
+
+.lost-titlecn {
+  font-size: 48px;
+  letter-spacing: 12px;
+  width: 240px;
+}
+
+.lost-titleen {
+  font-size: 20px;
+  letter-spacing: 5px;
+  width: 150px;
+  line-height: 24px;
+}
+.content {
     display: flex;
-    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.content img{
+position: absolute;
+top: -3.8%;
+left: 36%;
 }
 </style>
