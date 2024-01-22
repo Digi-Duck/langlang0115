@@ -55,19 +55,19 @@ export default {
         <div id="inputArea">
             <div class="inputFrame">
                 <div class="inputTitle">
-                    <span>姓 名</span>
+                    <label>姓 名</label>
                 </div>
                 <input class="input" type=" text">
             </div>
             <div class="inputFrame">
                 <div class="inputTitle">
-                    <span>信 箱</span>
+                    <label>信 箱</label>
                 </div>
                 <input class="input" type=" text">
             </div>
             <div class="inputFrame">
                 <div class="inputTitle">
-                    <span>問 題</span>
+                    <label>問 題</label>
                 </div>
                 <select v-model="selectedOption" class="input customSelect">
                     <option value="0">平台建議</option>
@@ -78,7 +78,7 @@ export default {
             </div>
             <div class="inputFrame">
                 <div class="inputTitle">
-                    <span>內 容</span>
+                    <label>內 容</label>
                 </div>
                 <textarea class="detail" ref="input" autocomplete="off" name="text"></textarea>
             </div>
@@ -127,7 +127,7 @@ a:hover {
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding: 2.8125rem 12.5rem 0 12.5rem;
+    padding: 2.8rem 12.5rem 0 12.5rem;
 }
 
 #contactTitle span {
@@ -199,7 +199,7 @@ a:hover {
     background: var(--primary-color);
 }
 
-.inputTitle span {
+.inputTitle label {
     color: var(--white-color);
 }
 
