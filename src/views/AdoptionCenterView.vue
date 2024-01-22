@@ -11,7 +11,7 @@ export default {
     },
     methods: {
         petinformationPage() {
-            this.$router.push('/petinformation');
+            this.$router.push('/adoptionpetinformation');
         }
     },
     components: {

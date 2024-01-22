@@ -35,9 +35,9 @@ const router = createRouter({
     },
     {
       // 認養中心頁面>>毛小孩資訊
-      path: '/petinformation',
-      name: 'petinformation',
-      component: () => import('../views/PetInformation.vue')
+      path: '/adoptionpetinformation',
+      name: 'adoptionpetinformation',
+      component: () => import('../views/AdoptionPetInformation.vue')
     },
     {
       // 失散協尋頁面
