@@ -10,8 +10,11 @@ export default {
 
         }
     }, methods: {
-        clickGoToForm() {
+        goToFoundAnimalForm() {
             this.$router.push('/foundanimalsform'); //導到[撿到遺失動物]
+        },
+        goToMyLostForm() {
+            this.$router.push('/myanimallostform'); //導到[我的動物走失了]
         }
     },
     components: {
@@ -27,12 +30,14 @@ export default {
     <NavPage />
     <main>
         <section>
-            <IconLostFrame/>
+            <IconLostFrame />
             <IconLostAnimalsList />
         </section>
-       
+
         <!-- 失散協尋>撿到遺失動物（暫放） -->
-        <GreenButton :showSvg="false" @click="clickGoToForm">確認前往：<br>撿到遺失動物</GreenButton>
+        <GreenButton :showSvg="false" @click="goToFoundAnimalForm">確認前往：<br>撿到遺失動物</GreenButton>
+        <!-- 失散協尋>我遺失了動物（暫放） -->
+        <GreenButton :showSvg="false" @click="goToMyLostForm">確認前往：<br>我遺失了動物</GreenButton>
     </main>
     <FooterPage />
 </template>

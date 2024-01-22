@@ -1,4 +1,4 @@
-<!-- 綠色按鈕 -->
+<!-- 清除重填：灰色按鈕 -->
 <template>
     <button>
         <div class="whole-btn">

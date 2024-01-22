@@ -1,18 +1,21 @@
 <script>
 import CancelButton from './CancelButton.vue';
-import GreenButton from './GreenButton.vue';
+import IconChangeButton from './icons/IconChangeButton.vue';
 
 export default {
     props: {
         title: String,
-        color: String
+        inputTitleColor: String,
+        inputTextBorder: String,
+        uploadPicBorder:String,
     },
     data() {
         return {
             formData: {
                 name: '',
-                species: ''
-            }
+                species: '',
+            },
+            mysubmit: "送出",
         };
     },
     methods: {
@@ -21,7 +24,7 @@ export default {
             // console.log("表單提交");
         }
     },
-    components: { GreenButton, CancelButton }
+    components: { CancelButton, IconChangeButton }
 }
 </script>
 
@@ -36,8 +39,8 @@ export default {
         <form>
             <div class="form-group">
                 <div class="custom-file-upload">
-                    <span class="photo-title">照片 *</span>
-                    <label for="photo">
+                    <span class="photo-title" :style="{ color: inputTitleColor }">照片 *</span>
+                    <label for="photo" :style="{borderColor:uploadPicBorder}">
                         <img src="../assets/Image/SponsorImage/entypo_image.svg"><span>上傳照片</span></label>
                     <!-- 將[傳送檔案]的樣式opacity -->
                     <input type="file" id="photo" accept="image/*" @change="handleFileUpload" />
@@ -45,7 +48,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="species">動物類別 *</label>
+                <label for="species" :style="{ color: inputTitleColor }">動物類別 *</label>
                 <input type="radio" id="dog" value="犬" v-model="formData.species" name="animalType" />
                 <label for="dog">犬</label>
 
@@ -58,12 +61,12 @@ export default {
 
 
             <div class="form-group">
-                <label for="chip-id">晶片號碼</label>
-                <input type="text" id="chip-id" v-model="formData.chipid" />
+                <label for="chip-id" :style="{ color: inputTitleColor }">晶片號碼</label>
+                <input type="text" id="chip-id" v-model="formData.chipid" :style="{ border: inputTextBorder}" />
             </div>
 
             <div class="form-group">
-                <label for="body-shape">體型 *</label>
+                <label for="body-shape" :style="{ color: inputTitleColor }">體型 *</label>
                 <input type="radio" id="large" value="大型" v-model="formData.bodyshape" name="bodyShape" />
                 <label for="large">大型</label>
 
@@ -75,7 +78,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="gender">性別 *</label>
+                <label for="gender" :style="{ color: inputTitleColor }">性別 *</label>
                 <input type="radio" id="male" value="公" v-model="formData.gender" name="gender">
                 <label for="male">公</label>
                 <input type="radio" id="female" value="母" v-model="formData.gender" name="gender">
@@ -85,7 +88,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="colors">花色 *</label>
+                <label for="colors" :style="{ color: inputTitleColor }">花色 *</label>
                 <input type="radio" id="solidColor" value="純色" v-model="formData.colors" name="colorType" />
                 <label for="solidColor">純色</label>
 
@@ -97,7 +100,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="age">年齡 *</label>
+                <label for="age" :style="{ color: inputTitleColor }">年齡 *</label>
                 <input type="radio" id="youngAge" value="幼年" v-model="formData.age" name="ageType" />
                 <label for="youngAge">幼年</label>
 
@@ -109,7 +112,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="neutered">是否已絕育 *</label>
+                <label for="neutered" :style="{ color: inputTitleColor }">是否已絕育 *</label>
                 <input type="radio" id="neuteredYes" value="已絕育" v-model="formData.neutered" name="neuteredStatus" />
                 <label for="neuteredYes">已絕育</label>
 
@@ -121,40 +124,39 @@ export default {
             </div>
 
             <div class="form-group time-place">
-                <div class="time-place-title">發現浪浪之時間和地點 *</div>
+                <div class="time-place-title" :style="{ color: inputTitleColor }">發現浪浪之時間和地點 *</div>
                 <div class="time-place-text">
                     <label for="time" hidden></label>
-                    <input type="text" id="time" v-model="formData.time" placeholder="年/月/日">
+                    <input type="text" id="time" v-model="formData.time" placeholder="年/月/日" :style="{ border: inputTextBorder}">
 
                     <label for="place" hidden></label>
-                    <input type="text" id="place" v-model="formData.place" placeholder="請填寫地點">
+                    <input type="text" id="place" v-model="formData.place" placeholder="請填寫地點" :style="{ border: inputTextBorder}">
 
                     <label for="description"></label>
-                    <input type="text" id="description" v-model="formData.description">
+                    <input type="text" id="description" v-model="formData.description" :style="{ border: inputTextBorder}">
                     <span>更多詳細地點描述</span>
                 </div>
             </div>
 
 
             <div class="form-group contact-area">
-                <label for="phone">聯絡方式 *</label>
+                <label for="phone" :style="{ color: inputTitleColor }">聯絡方式 *</label>
                 <div class="phone-area">
-                    <input type="text" id="phone" v-model="formData.phone">
+                    <input type="text" id="phone" v-model="formData.phone" :style="{ border: inputTextBorder}">
                     <span>EX.手機號碼:0912345678</span>
                 </div>
 
             </div>
 
             <div class="form-group">
-                <label for="other">其他說明</label>
-                <textarea id="other" v-model="formData.other"></textarea>
+                <label for="other" :style="{ color: inputTitleColor }">其他說明</label>
+                <textarea id="other" v-model="formData.other" :style="{ border: inputTextBorder}"></textarea>
             </div>
 
             <div class="btn-area">
-                <!-- <button >重新填寫</button> -->
-              <CancelButton @click.prevent="submitForm">清除重填</CancelButton>
-                <GreenButton @click.prevent="submitForm">送出</GreenButton>
-             
+                <CancelButton @click.prevent="submitForm">清除重填</CancelButton>
+                <IconChangeButton :text="mysubmit" @click.prevent="submitForm">送出</IconChangeButton>
+                <!-- <GreenButton @click.prevent="submitForm">送出</GreenButton> -->
             </div>
         </form>
 
@@ -162,22 +164,25 @@ export default {
 </template>
 
 <style scoped>
-main{
+main {
     width: 100vw;
     max-width: 100%;
     height: 100vh;
 }
-.header-container{
-font-size: 48px;
-font-weight: 400;
-letter-spacing: 12px;
-margin: 147px 0px 0px 162px;
+
+.header-container {
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 12px;
+    margin: 147px 0px 0px 162px;
 }
-.header-title{
+
+.header-title {
     color: var(--primary-color);
 }
-.header-text{
-color: #D7D7D7;
+
+.header-text {
+    color: #D7D7D7;
 }
 
 form {
@@ -266,7 +271,7 @@ label[for="other"],
 
 .form-group input {
     margin: 0px 17px;
-    border: 2px solid var(--primary-color);
+    /*border: 2px solid var(--primary-color);*/
     border-radius: 4px;
 }
 

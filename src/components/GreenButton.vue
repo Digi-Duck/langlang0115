@@ -7,6 +7,7 @@
                 <ellipse id=ellipse-green-arrow cx="19.5" cy="21" rx="14.5" ry="14" fill="white" />
                 <path id=path-green-arrow d="M28 21L18 15.2265V26.7735L28 21ZM12 22H19V20H12V22Z" fill="#52A038" />
             </svg>
+            
             <slot></slot>
         </div>
     </button>

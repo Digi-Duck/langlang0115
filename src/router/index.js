@@ -51,6 +51,12 @@ const router = createRouter({
       name: 'foundanimalsform',
       component: () => import('../views/FormPageFoundAndLost.vue')
     },
+    {
+      // 失散協尋>>我遺失了動物
+      path: '/myanimallostform',
+      name: 'myanimallostform',
+      component: () => import('../views/FormPageMyAnimalLost.vue')
+    },
 
     {
       // 最新消息頁面
