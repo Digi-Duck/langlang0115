@@ -2,9 +2,15 @@
 import IconLineAndSqure from './icons/IconLineAndSqure.vue';
 
 export default {
+    // data() {
+    //     return {
+    //         mylinew: '80rem',
+    //     }
+    // },
     props: {
         text: String,
-        customStyle:Object,
+        customStyle: Object,
+        linew:String,
     },
     components: {
         IconLineAndSqure
@@ -15,7 +21,7 @@ export default {
     <div class="contactTitleArea">
         <div class="contactTitle" :style="customStyle">
             <span>{{ text }}</span>
-            <IconLineAndSqure />
+            <IconLineAndSqure :linewidth="linew" />
         </div>
     </div>
 </template>

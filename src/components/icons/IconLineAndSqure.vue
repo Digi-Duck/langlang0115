@@ -1,11 +1,13 @@
 <script>
 export default {
-
+    props: {
+        linewidth: String,
+    },
 }
 </script>
 <template>
     <div class="contactLine">
-        <div class="line"></div>
+        <div class="line" :style="{ width: linewidth }"></div>
         <div class="squre"></div>
     </div>
 </template>
@@ -15,7 +17,7 @@ export default {
 }
 
 .line {
-    width: 80rem;
+    /* width: 80rem; */
     height: 2px;
     background-color: var(--primary-color);
 }

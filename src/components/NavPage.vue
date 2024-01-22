@@ -59,7 +59,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px 0 95px;
+    padding: 0 20px 0 38px;
 }
 
 span {
