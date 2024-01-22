@@ -25,7 +25,7 @@ export default {
     <main>
 
         <!-- 失散協尋>撿到遺失動物（暫放） -->
-        <GreenButton :showSvg="false" @click="clickGoToForm">確認前往</GreenButton>
+        <GreenButton :showSvg="false" @click="clickGoToForm">確認前往：<br>撿到遺失動物</GreenButton>
     </main>
     <FooterPage />
 </template>
