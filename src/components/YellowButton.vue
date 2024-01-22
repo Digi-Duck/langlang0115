@@ -32,6 +32,8 @@ button{
     border: 0px;
     font-size: 18px;
     letter-spacing: 2px;
+    cursor: pointer;
+
 }
 
 button:hover {
