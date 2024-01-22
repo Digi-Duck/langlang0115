@@ -6,7 +6,11 @@ import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 export default {
     data() {
         return {
-            mysubmit: "毛小孩資訊"
+            mysubmit: "毛小孩資訊",
+            mybgcolor: 'var(--primary-color)',
+            mytextcolor: 'var(--white-color)',
+            myw: '12.5rem',
+            myh: '4rem',
         }
     },
     methods: {
@@ -25,7 +29,8 @@ export default {
     <NavPage />
     <main>
         <br>
-        <IconChangeButton :text="mysubmit" @click="petinformationPage"></IconChangeButton>
+        <IconChangeButton :text="mysubmit" @click="petinformationPage" :textColor="mytextcolor" :bgColor="mybgcolor"
+            :w="myw" :h="myh"></IconChangeButton>
     </main>
     <FooterPage />
 </template>

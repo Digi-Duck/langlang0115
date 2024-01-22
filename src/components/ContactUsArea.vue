@@ -10,6 +10,8 @@ export default {
             mysubmit: "送 出",
             mybgcolor: 'var(--primary-color)',
             mytextcolor: 'var(--white-color)',
+            myw: '7.8rem',
+            myh: '3.5rem',
             // 進入畫面時 視窗關閉
             show: false,
         };
@@ -87,7 +89,8 @@ export default {
             <div class="sendArea">
                 <!-- 關閉連結視窗 點擊事件顯示視窗-->
                 <a href="javascript:void(0);" @click="showPopup">
-                    <IconChangeButton :text="mysubmit" :textColor="mytextcolor" :bgColor="mybgcolor"></IconChangeButton>
+                    <IconChangeButton :text="mysubmit" :textColor="mytextcolor" :bgColor="mybgcolor" :w="myw" :h="myh">
+                    </IconChangeButton>
                 </a>
                 <!-- 顯示的視窗 -->
                 <ContactMsgScreen :is-show="show"></ContactMsgScreen>

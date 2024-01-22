@@ -7,6 +7,8 @@ export default {
         text: String,
         textColor: String,
         bgColor: String,
+        w: String,
+        h: String,
     },
     data() {
         // 圖
@@ -31,22 +33,21 @@ export default {
     <button @mouseover="showIcon" @mouseleave="hideIcon" class="custom-button" :style="{
         color: textColor,
         backgroundColor:
-            bgColor
+            bgColor,
+        width: w, height: h
     }">
-        <span class="text">{{ text }}</span>
-        <span v-if="isHovered" class="icon">
-            <img src="@\assets\Image\DogPaw.svg" alt="Icon">
-        </span>
+        <div class="button">
+            <span class="text">{{ text }}</span>
+            <img src="@\assets\Image\DogPaw.svg" alt="Icon" v-if="isHovered" class="icon">
+        </div>
+
     </button>
 </template>
 <style scoped>
 .custom-button {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10rem;
-    height: 4rem;
     border-radius: 1.875rem;
     border: none;
     font-size: 1.25rem;
@@ -54,19 +55,29 @@ export default {
     letter-spacing: 5px;
 }
 
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .text {
-    transition: margin-left 0.6s ease;
+    transition: margin-left 2s ease;
 }
 
 .icon {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-168%, -40%);
+    width: 1.5rem;
+    height: 1.3rem;
+}
+
+.custom-button:hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .custom-button:hover .text {
-    margin-left: -22px;
+    margin-left: -2px;
 }
 
 .custom-button:hover .icon {

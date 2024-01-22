@@ -22,10 +22,10 @@ export default {
             currentIndex: 0,
             mysubmit: "更多浪浪",
             mybgcolor: 'var(--primary-color)',
-            mytextcolor:'var(--white-color)',
-            // changeStyle: {
-            //     color: 'var(--white-color)',
-            // },
+            mytextcolor: 'var(--white-color)',
+            myw: '11rem',
+            myh: '4rem',
+
         };
     },
     methods: {
@@ -48,7 +48,8 @@ export default {
         </div>
     </div>
     <div class="many">
-        <IconChangeButton :text="mysubmit" @click="lostandfoundPage" :textColor="mytextcolor" :bgColor="mybgcolor">
+        <IconChangeButton :text="mysubmit" @click="lostandfoundPage" :textColor="mytextcolor" :bgColor="mybgcolor" :w="myw"
+            :h="myh">
         </IconChangeButton>
     </div>
 </template>
@@ -59,15 +60,9 @@ export default {
     animation: translate 15s linear infinite;
 }
 
-.many {
-    color: var(--white-color);
-}
-
 @keyframes translate {
     100% {
-        /* transform: translateX(calc(-150px * 10)); */
         transform: translateX(calc(-106rem));
-
     }
 }
 
