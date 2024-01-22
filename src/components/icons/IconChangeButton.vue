@@ -1,9 +1,12 @@
 <!-- 如需使用 "a" 要記得加 " a:hover{background-color: transparent;} " hover才不會有顏色 -->
+<!-- hover文字顏色會跑 記得要在給文字color -->
 <script>
 export default {
     // 設定參數
     props: {
         text: String,
+        textColor: String,
+        bgColor: String,
     },
     data() {
         // 圖
@@ -25,7 +28,11 @@ export default {
 </script>
 <template>
     <!-- 滑進時顯示圖 離開時隱藏圖 -->
-    <button @mouseover="showIcon" @mouseleave="hideIcon" class="custom-button">
+    <button @mouseover="showIcon" @mouseleave="hideIcon" class="custom-button" :style="{
+        color: textColor,
+        backgroundColor:
+            bgColor
+    }">
         <span class="text">{{ text }}</span>
         <span v-if="isHovered" class="icon">
             <img src="@\assets\Image\DogPaw.svg" alt="Icon">
@@ -39,13 +46,12 @@ export default {
     justify-content: center;
     align-items: center;
     width: 10rem;
-    height: 3.25rem;
+    height: 4rem;
     border-radius: 1.875rem;
-    background-color: var(--primary-color);
     border: none;
-    font-size: 1.2rem;
-    color: var(--white-color);
+    font-size: 1.25rem;
     box-shadow: none;
+    letter-spacing: 5px;
 }
 
 .text {
@@ -56,11 +62,11 @@ export default {
     position: absolute;
     top: 50%;
     left: 100%;
-    transform: translate(-175%, -40%);
+    transform: translate(-168%, -40%);
 }
 
 .custom-button:hover .text {
-    margin-left: -20px;
+    margin-left: -22px;
 }
 
 .custom-button:hover .icon {
