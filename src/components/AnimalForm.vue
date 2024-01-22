@@ -1,15 +1,18 @@
 <script>
+import CancelButton from './CancelButton.vue';
+import GreenButton from './GreenButton.vue';
+
 export default {
     props: {
         title: String,
-        color: String,
+        color: String
     },
     data() {
         return {
             formData: {
                 name: '',
-                species: '',
-            },
+                species: ''
+            }
         };
     },
     methods: {
@@ -17,23 +20,28 @@ export default {
             //處理表單邏輯
             // console.log("表單提交");
         }
-    }
+    },
+    components: { GreenButton, CancelButton }
 }
 </script>
 
 <template>
     <main>
-
-        <h2>{{ title }}</h2>
+        <div class="header-container">
+            <span class="header-title">失散協尋</span>
+            <span class="header-text">
+                <span class="arrow-icon"> > </span>
+                {{ title }} </span>
+        </div>
         <form>
             <div class="form-group">
-                    <div class="custom-file-upload">
-                        <span class="photo-title">照片 *</span>
-                        <label for="photo">
-                            <img src="../assets/Image/SponsorImage/entypo_image.svg"><span>上傳照片</span></label>
-                        <!-- 將[傳送檔案]的樣式opacity -->
-                        <input type="file" id="photo" accept="image/*" @change="handleFileUpload" />
-                    </div>
+                <div class="custom-file-upload">
+                    <span class="photo-title">照片 *</span>
+                    <label for="photo">
+                        <img src="../assets/Image/SponsorImage/entypo_image.svg"><span>上傳照片</span></label>
+                    <!-- 將[傳送檔案]的樣式opacity -->
+                    <input type="file" id="photo" accept="image/*" @change="handleFileUpload" />
+                </div>
             </div>
 
             <div class="form-group">
@@ -139,12 +147,14 @@ export default {
 
             <div class="form-group">
                 <label for="other">其他說明</label>
-                <!-- <input type="text" id="other" v-model="formData.other"> -->
                 <textarea id="other" v-model="formData.other"></textarea>
             </div>
+
             <div class="btn-area">
-                <button @click.prevent="submitForm">重新填寫</button>
-                <button @click.prevent="submitForm">提交</button>
+                <!-- <button >重新填寫</button> -->
+              <CancelButton @click.prevent="submitForm">清除重填</CancelButton>
+                <GreenButton @click.prevent="submitForm">送出</GreenButton>
+             
             </div>
         </form>
 
@@ -152,9 +162,25 @@ export default {
 </template>
 
 <style scoped>
-/*根據顏色區分*/
+main{
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+}
+.header-container{
+font-size: 48px;
+font-weight: 400;
+letter-spacing: 12px;
+margin: 147px 0px 0px 162px;
+}
+.header-title{
+    color: var(--primary-color);
+}
+.header-text{
+color: #D7D7D7;
+}
+
 form {
-    background-color: rgb(251, 247, 208);
     display: flex;
     flex-direction: column;
     font-size: 24px;
@@ -170,6 +196,7 @@ form {
     display: flex;
 }
 
+/*自訂上傳照片按鈕*/
 .custom-file-upload label {
     background-color: #ffffff;
     border: 2px solid green;
@@ -180,6 +207,7 @@ form {
     cursor: pointer;
 }
 
+/*傳送檔案預設樣式隱藏*/
 .custom-file-upload input[type="file"] {
     position: absolute;
     top: 0;
@@ -203,7 +231,7 @@ form {
     background-color: #D8D8D8;
 }
 
-label[for="photo"]{
+label[for="photo"] {
     display: flex;
     width: 200px;
     height: 56px;
@@ -213,7 +241,7 @@ label[for="photo"]{
 
 .form-group {
     margin-bottom: 52px;
-    color: var(--gray-color);
+    color: #000;
     font-size: 24px;
     font-weight: 400;
 }
@@ -238,6 +266,8 @@ label[for="other"],
 
 .form-group input {
     margin: 0px 17px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
 }
 
 /* 所有 radio 按鈕 */
@@ -262,6 +292,13 @@ label[for="other"],
     height: 112px;
     width: 60%;
     gap: 5px;
+}
+
+#time::placeholder,
+#place::placeholder {
+    text-align: center;
+    color: #D7D7D7;
+    letter-spacing: 6px;
 }
 
 .time-place-text span,
@@ -319,6 +356,8 @@ input#phone {
 /*其他說明的輸入欄*/
 .form-group textarea {
     vertical-align: top;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
 }
 
 
