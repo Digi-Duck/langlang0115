@@ -5,6 +5,7 @@ import TitleAndLine from '@/components/TitleAndLine.vue';
 import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 import IconLostAnimalsList from '@/components/icons/LostAnimals/IconLostAnimalsList.vue';
 import IconLostFrame from '@/components/icons/LostAnimals/IconLostFrame.vue';
+import FiveStepsLineFrame from '@/components/FiveStepsLineFrame.vue';
 
 export default {
     data() {
@@ -15,7 +16,7 @@ export default {
             mytextcolor: 'var(--white-color)',
             myw: '12.5rem',
             myh: '4rem',
-            mylinew: '80rem',
+            mylinew: '68rem',
             parenttwoStyle: {
                 gap: '0.5rem',
             }
@@ -32,7 +33,8 @@ export default {
         IconChangeButton,
         TitleAndLine,
         IconLostFrame,
-        IconLostAnimalsList
+        IconLostAnimalsList,
+        FiveStepsLineFrame
     },
 }
 </script>
@@ -40,7 +42,7 @@ export default {
     <NavPage />
     <main>
         <div class="adoptionCenterArea">
-            <!-- 標題 -->
+            <!-- 認養中心 -->
             <div class="adoptionTitle">
                 <span>認養中心</span>
                 <p>
@@ -49,41 +51,17 @@ export default {
                     Center
                 </p>
             </div>
-            <!-- 五步驟組合 -->
-            <!-- components FiveStepsToAdoption -->
+            <!-- 認養五步驟 -->
             <div class="fiveStepsToAdoption">
                 <div class="fiveStepsTitle">
                     <span>認養五步驟</span>
                 </div>
-                <!-- Icon圖形繪製 -->
-                <!-- components/Icon IconFiveStepsLineFrame-->
-                <div class="fiveStepsLineFrame">
-                    <div class="group">
-                        <div class="circle"></div>
-                        <div class="stepsLine"></div>
-                        <div class="triangle"></div>
-                    </div>
-                    <div class="group">
-                        <div class="triangle"></div>
-                        <div class="stepsLine"></div>
-                        <div class="triangle"></div>
-                    </div>
-                    <div class="group">
-                        <div class="triangle"></div>
-                        <div class="stepsLine"></div>
-                        <div class="triangle"></div>
-                    </div>
-                    <div class="group">
-                        <div class="triangle"></div>
-                        <div class="stepsLine"></div>
-                        <div class="circle"></div>
-                    </div>
-                </div>
+                <FiveStepsLineFrame />
                 <div class="fiveStepsText">
                     <p>閱讀認養須知</p>
-                    <p>尋找心目中的毛孩</p>
-                    <p>聯絡刊登的送養人，<br>了解毛小孩情況</p>
-                    <p>實際與毛小孩互動並於<br>完成寵物登記的變更。</p>
+                    <p style="margin-left: 55px;">尋找心目中的毛孩</p>
+                    <p style="margin-left: 25px;">聯絡刊登的送養人<br>了解毛小孩情況</p>
+                    <p>實際與毛小孩互動並於<br>完成寵物登記的變更</p>
                     <p>帶毛小孩回家</p>
                 </div>
             </div>
@@ -93,17 +71,15 @@ export default {
                 <TitleAndLine :text="mytexttwo" :customStyle="parenttwoStyle" :linew="mylinew" />
                 <!-- 認養中心搜尋卡片組件 -->
                 <!-- components/adoptioncenter/LikePetsSearch -->
-                <div class="likepetsCards" style="display: flex; flex-direction: row;">
+                <div class="likepetsCards">
                     <IconLostFrame />
-                    <div class="petsInormationForm" style="display: flex; flex-direction: column;">
-                        <IconChangeButton :text="mysubmit" @click="petinformationPage" :textColor="mytextcolor"
-                            :bgColor="mybgcolor" :w="myw" :h="myh"></IconChangeButton>
+                    <div class="petsInormationForm">
                         <IconLostAnimalsList />
                     </div>
-
                 </div>
             </div>
         </div>
+
         <hr>
         <IconChangeButton :text="mysubmit" @click="petinformationPage" :textColor="mytextcolor" :bgColor="mybgcolor"
             :w="myw" :h="myh"></IconChangeButton>
@@ -114,5 +90,95 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
+    font-style: normal;
+    line-height: normal;
+}
+
+.adoptionCenterArea {
+    display: flex;
+    flex-direction: column;
+    padding: 4.25rem 0.5rem 3rem 12.5rem;
+}
+
+/* 認養中心 標題區 */
+
+.adoptionTitle {
+    display: flex;
+    flex-direction: row;
+    color: var(--primary-color);
+    font-weight: 400;
+    padding-bottom: 7rem;
+    gap: 1.3rem;
+}
+
+.adoptionTitle span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.75rem;
+    font-size: 3rem;
+}
+
+.adoptionTitle p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 120%;
+    letter-spacing: 5px;
+}
+
+/* 認養五步驟 */
+.fiveStepsToAdoption {
+    display: flex;
+    flex-direction: column;
+    padding: 0 13.5rem 0 1rem;
+}
+
+.fiveStepsTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.25rem;
+    color: var(--primary-color);
+    letter-spacing: 0.5rem;
+    padding-bottom: 7rem;
+}
+
+
+/* 五步驟內文 */
+.fiveStepsText {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 4.6rem 0 6.8rem 0;
+}
+
+.fiveStepsText p {
+    text-align: center;
+    color: var(--primary-color);
+    letter-spacing: 5px;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 33px;
+}
+
+/* 尋找心目中的毛小孩 */
+.lookingForLikepets {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 搜尋卡片組件 */
+.likepetsCards {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    padding-top: 2.8rem;
+}
+
+.petsInormationForm {
+    display: flex;
+    flex-direction: column;
 }
 </style>
