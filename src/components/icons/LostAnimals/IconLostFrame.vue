@@ -1,5 +1,8 @@
 <script>
+import NoHoverButton from '@/components/NoHoverButton.vue';
+import IconChangeButton from '../IconChangeButton.vue';
 export default {
+    components: { NoHoverButton, IconChangeButton },
     props: {
         frameBorder: String, //外框色
         noticeborder: String, //notice外框線色
@@ -102,8 +105,8 @@ export default {
                 <label for="neuteredUnknown">未知</label>
             </div>
             <div class="btn-area">
-                <button @click.prevent="submitForm">清除重寫</button>
-                <button @click.prevent="submitForm">搜尋</button>
+                <NoHoverButton @click.prevent="submitForm" btnbgColor="var(--gray-color)" text="清除重寫"></NoHoverButton>
+                <IconChangeButton @click.prevent="submitForm" bgColor="var(--primary-color)" text="搜尋" textColor="var(--white-color)"></IconChangeButton>
             </div>
         </form>
     </div>
@@ -113,7 +116,6 @@ export default {
 .container {
     font-size: 24px;
     letter-spacing: 6px;
-    background-color: blue;
     width: 700px;
 }
 

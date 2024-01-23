@@ -1,6 +1,5 @@
 <script>
-import GreenButton from '@/components/GreenButton.vue';
-
+import NoHoverButton from '@/components/NoHoverButton.vue';
 export default {
     props: {
         isShow: Boolean,
@@ -26,7 +25,7 @@ export default {
         }
     },
     components: {
-        GreenButton,
+        NoHoverButton,
     }
 }
 </script>
@@ -43,8 +42,9 @@ export default {
                 <span class="content">*已確認沒有被重複登入</span>
             </div>
             <div class="btns">
-                <GreenButton class="btn btn-white" @click="close()" :showSvg="false">返回修改</GreenButton>
-                <GreenButton class="btn" @click="next" :showSvg="false">確認前往</GreenButton>
+                <NoHoverButton class="w"  @click="close()" :showSvg="false" btnbgColor="var(--gray-color)" text="返回修改">
+                </NoHoverButton>
+                <NoHoverButton class="w" @click="next" :showSvg="false" btnbgColor="var(--primary-color)" text="確認前往"></NoHoverButton>
             </div>
         </div>
     </div>
@@ -95,18 +95,9 @@ export default {
     display: flex;
     gap: 38px;
 }
-
-.btn {
+.w {
     width: 155px;
     height: 65px;
-    font-size: 20px;
-    letter-spacing: 5px;
-}
-
-.btn-white {
-    background-color: var(--white-color);
-    color: var(--gray-color);
-    border: 1px solid var(--gray-color);
 }
 
 /* 覆寫hover效果 */

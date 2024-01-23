@@ -1,6 +1,6 @@
 <script>
 import IconCard from './IconCard.vue';
-import IconChangeButton from '../IconChangeButton.vue'
+import IconChangeButton from '../IconChangeButton.vue';
 import LostPopup from './LostPopup.vue';
 import IconPaperAirplane from '../IconPaperAirplane.vue';
 export default {
@@ -12,12 +12,6 @@ export default {
     data() {
         return {
             show: false,
-            // Button 上的文字
-            mysubmit: "協尋通報",
-            mybgcolor: 'var(--orangeyellow-color)',
-            mytextcolor: 'var(--gray-color)',
-            myw: '181px',
-            myh: '64px',
         }
     },
     methods: {
@@ -34,8 +28,7 @@ export default {
 <template>
     <div class="all-container">
         <div class="btn">
-            <IconChangeButton @click="showpopup" :text="mysubmit" :textColor="mytextcolor" :bgColor="mybgcolor" :w="myw"
-                :h="myh">
+            <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)">
             </IconChangeButton>
 
             <a href="">
