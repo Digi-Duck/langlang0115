@@ -29,6 +29,10 @@ export default {
                 other: '',
             },
             mysubmit: "送出",
+            w: "125px",
+            h: '54px',
+            textColor: "#fff",
+            submitbgColor: "#52A038",
             confirmClear: false, // 用於確認是否清空的標誌
             myinnertext: "清除重填",
             mybtnbgColor: "#626262",
@@ -220,8 +224,11 @@ export default {
             <div class="btn-area">
                 <NoHoverButton @click.prevent="showConfirmation" :text="myinnertext" :btnbgColor="mybtnbgColor">
                 </NoHoverButton>
-                <IconChangeButton :text="mysubmit" @click.prevent="submitForm"></IconChangeButton>
-                <!-- <GreenButton @click.prevent="submitForm">送出</GreenButton> -->
+                <IconChangeButton :text="mysubmit" @click.prevent="submitForm" :style="{
+                    color: textColor,
+                    backgroundColor:submitbgColor,
+                    width: w, height: h
+                }"></IconChangeButton>
 
 
                 <!-- 重填確認框 -->
@@ -340,7 +347,8 @@ label[for="other"],
     margin-right: 36px;
 }
 
-.form-group input,select {
+.form-group input,
+select {
     margin: 0px 17px;
     /*border: 2px solid var(--primary-color);*/
     border-radius: 4px;
@@ -372,7 +380,7 @@ label[for="other"],
 
 #time::placeholder {
     text-align: center;
-     color: #b1b1b1;
+    color: #b1b1b1;
     letter-spacing: 6px;
 }
 
@@ -383,7 +391,7 @@ label[for="other"],
     font-size: 16px;
     margin-left: 20px;
     letter-spacing: 4px;
-    color:var(--gray-color)
+    color: var(--gray-color)
 }
 
 /*聯絡方式*/
@@ -410,7 +418,7 @@ input#time {
 }
 
 
-select#place{
+select#place {
     width: 257px;
     height: 56px;
     letter-spacing: 6px;
