@@ -9,7 +9,8 @@ export default {
         inputTextBorder: String, //輸入欄文字
         uploadPicBorder: String, //上傳照片的border
         svgColor: String, // 上傳照片的 SVG 顏色
-        uploadPicColor: String //上傳照片的文字
+        uploadPicColor: String, //上傳照片的文字
+        submitBgColor:String
     },
     data() {
         return {
@@ -226,7 +227,7 @@ export default {
                 </NoHoverButton>
                 <IconChangeButton :text="mysubmit" @click.prevent="submitForm" :style="{
                     color: textColor,
-                    backgroundColor:submitbgColor,
+                    backgroundColor:submitBgColor,
                     width: w, height: h
                 }"></IconChangeButton>
 
