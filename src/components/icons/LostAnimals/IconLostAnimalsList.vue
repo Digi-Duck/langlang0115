@@ -1,22 +1,46 @@
 <script>
 import IconCard from './IconCard.vue';
 import IconChangeButton from '../IconChangeButton.vue'
+import LostPopup from './LostPopup.vue';
 export default {
-    components: { IconCard, IconChangeButton, }
+    components: { IconCard, IconChangeButton, LostPopup, },
+    data() {
+        return {
+            show: false,
+            // Button 上的文字
+            mysubmit: "協尋通報",
+            mybgcolor: 'var(--orangeyellow-color)',
+            mytextcolor: 'var(--gray-color)',
+            myw: '181px',
+            myh: '64px',
+        }
+    },
+    methods: {
+        showpopup() {
+            this.show = true;
+        },
+        close(){
+            this.show = false;
+        },
+    },
 }
 </script>
 
 <template>
     <div class="all-container">
         <div class="btn">
-            按鈕
+            <IconChangeButton @click="showpopup" :text="mysubmit" :textColor="mytextcolor" 
+            :bgColor="mybgcolor" :w="myw" :h="myh">
+           </IconChangeButton>
             <a href="">
                 <img src="../src/assets/Image/LostImage/paperairplane.svg">
                 搜尋附近動物醫院
             </a>
+            <!-- 顯示的彈跳視窗 -->
+            <LostPopup :is-show="show" @close="close"></LostPopup>
         </div>
         <div class="list-container">
-            <div class="title">遺失動物列表</div>
+            <div class="title" :style="listTitleColor">遺失動物列表</div>
             <div class="cards">
                 <IconCard />
                 <IconCard />
@@ -33,9 +57,11 @@ export default {
             </div>
         </div>
     </div>
+    <LostPopup />
 </template>
 <style scoped>
 .all-container {
+    width: 840px;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -44,12 +70,12 @@ export default {
 }
 
 .btn {
+    width: 840px;
     height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    background-color: aqua;
 }
 
 a {

@@ -16,18 +16,14 @@ export default {
         submitForm() {
             //處理表單邏輯
             // console.log("表單提交");
-        }
+        },
     }
 }
 </script>
 
 <template>
     <div class="container">
-        <div class="tabs">
-            <div class="tab tab-left">撿到遺失動物</div>
-            <div class="tab tab-right">我遺失了動物</div>
-        </div>
-        <div class="notice">
+         <div class="notice">
             <span>!請篩選您遺失的動物，確認是否已被重複登入</span>
         </div>
         <form>
@@ -108,7 +104,7 @@ export default {
                 <button @click.prevent="submitForm">清除重寫</button>
                 <button @click.prevent="submitForm">搜尋</button>
             </div>
-        </form>
+        </form> 
     </div>
 </template>
 
@@ -119,27 +115,6 @@ export default {
     letter-spacing: 6px;
 }
 
-.tabs {
-    display: flex;
-}
-
-.tab {
-    border: 1px solid var(--primary-color);
-    padding: 20px 40px;
-}
-
-.tab-left {
-    background-color: var(--primary-color);
-    border-radius: 30px 0 0 0;
-    display: inline-block;
-    color: var(--white-color);
-}
-
-.tab-right {
-    border-radius: 0 30px 0 0;
-    background-color: var(--white-color);
-    color: var(--primary-color);
-}
 
 .notice {
     height: 80px;
