@@ -39,23 +39,27 @@ export default {
             <img src="../assets/Image/LostImage/arrow.svg">
             <div class="tabs">
                 <!--   tab group -->
-                <div class="tab-group">
-                    <input type="radio" id="tab-1" name="tab" checked="checked">
-                    <label for="tab-1" class="tab-left">撿到遺失動物</label>
-                    <input type="radio" id="tab-2" name="tab">
-                    <label for="tab-2" class="tab-right">我遺失了動物</label>
+                <input type="radio" id="tab-1" name="tab" checked="checked">
+                <label for="tab-1" class="tab-left">撿到遺失動物</label>
+                <div class="info-1">
+                    <div class="tab-content">
+                        <IconLostFrame></IconLostFrame>
+                        <IconLostAnimalsList />
+                    </div>
                 </div>
-                <div class="tab-content-1">
-                    <IconLostFrame ></IconLostFrame>
-                    <IconLostAnimalsList />
-                </div>
+
                 <!--   tab group end -->
                 <!--   tab group -->
-                <!-- <label for="tab-2" class="tab-right">我遺失了動物</label> -->
-                <div class="tab-content-2">
-                    <IconLostFrame frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)"></IconLostFrame>
-                    <AnimalsListBrown/>
+                <input type="radio" id="tab-2" name="tab">
+                <label for="tab-2" class="tab-right">我遺失了動物</label>
+                <div class="info-2">
+                    <div class="tab-content">
+                        <IconLostFrame frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)">
+                        </IconLostFrame>
+                        <AnimalsListBrown />
+                    </div>
                 </div>
+
                 <!--   tab group end -->
             </div>
         </div>
@@ -70,7 +74,6 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    /* height: 1500px; */
     padding: 60px 155px;
 }
 
@@ -96,7 +99,6 @@ main {
 
 .content {
     position: relative;
-    background-color: bisque;
 }
 
 .content img {
@@ -108,36 +110,18 @@ main {
 .tabs {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     font-size: 24px;
     letter-spacing: 6px;
     order: 0;
 }
 
+/* 隱藏預設的radio */
 .tabs input[type=radio] {
     display: none;
 }
 
-#tab-1:checked+label {
-    color: var(--white-color);
-    background-color: var(--primary-color);
-}
-
-#tab-2:checked+label {
-    color: var(--white-color);
-    background-color: var(--B68337);
-}
-
-/* .tabs input[type=radio]:checked+label+.tab-content-1 {
-    display: block;
-} */
-#tab-1:checked+label+.tab-content-1 {
-    display: block;
-}
-#tab-2:checked+label+.tab-content-2 {
-    display: block;
-}
+/* 頁籤未切換的樣式 */
 .tab-left {
     height: 70px;
     padding: 20px 30px;
@@ -156,24 +140,42 @@ main {
     color: var(--B68337);
     border: 2px solid var(--B68337);
     cursor: pointer;
-
 }
 
-.tab-content-1 {
+/* 切換頁籤後的樣式 */
+#tab-1:checked+label {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+#tab-2:checked+label {
+    color: var(--white-color);
+    background-color: var(--B68337);
+}
+
+/* .tabs input[type=radio]:checked+label+.tab-content-1 {
+    display: block;
+} */
+
+/* 切換頁籤出現對應的內容 */
+#tab-1:checked+label+.info-1 {
+    display: block;
+}
+
+#tab-2:checked+label+.info-2 {
+    display: block;
+}
+.info-1, .info-2{
     display: none;
+}
+
+/* 頁籤的內容 */
+.tab-content {
+    width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
+    background-color: aqua;
     order: 1;
 }
-.tab-content-2 {
-    display: none;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    order: 1;
-}
-
 </style>

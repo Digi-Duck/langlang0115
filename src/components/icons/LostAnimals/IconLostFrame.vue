@@ -113,7 +113,9 @@ export default {
 .container {
     font-size: 24px;
     letter-spacing: 6px;
-    width: 700px;
+  background-color: blue;
+  width: 700px;
+  height: 100px;
 }
 
 
