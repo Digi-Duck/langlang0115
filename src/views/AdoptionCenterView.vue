@@ -3,9 +3,9 @@ import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
 import TitleAndLine from '@/components/TitleAndLine.vue';
 import IconChangeButton from '@/components/icons/IconChangeButton.vue';
-import IconLostAnimalsList from '@/components/icons/LostAnimals/IconLostAnimalsList.vue';
-import IconLostFrame from '@/components/icons/LostAnimals/IconLostFrame.vue';
+import AdoptionList from '@/components/AdoptionList.vue';
 import FiveStepsLineFrame from '@/components/FiveStepsLineFrame.vue';
+import AdoptionSearch from '@/components/AdoptionSearch.vue';
 
 export default {
     data() {
@@ -19,7 +19,10 @@ export default {
             mylinew: '68rem',
             parenttwoStyle: {
                 gap: '0.5rem',
-            }
+            },
+            mybordercolor: 'var(--primary-color)',
+            mynoticeborder: 'var(--primary-color)',
+            mytextc: 'var(--primary-color)',
         }
     },
     methods: {
@@ -32,9 +35,9 @@ export default {
         FooterPage,
         IconChangeButton,
         TitleAndLine,
-        IconLostFrame,
-        IconLostAnimalsList,
-        FiveStepsLineFrame
+        FiveStepsLineFrame,
+        AdoptionSearch,
+        AdoptionList
     },
 }
 </script>
@@ -70,11 +73,15 @@ export default {
             <div class="lookingForLikepets">
                 <TitleAndLine :text="mytexttwo" :customStyle="parenttwoStyle" :linew="mylinew" />
                 <!-- 認養中心搜尋卡片組件 -->
-                <!-- components/adoptioncenter/LikePetsSearch -->
                 <div class="likepetsCards">
-                    <IconLostFrame />
+                    <div class="likepets">
+                        <div class="petsTitle">
+                            <span>尋找心目中的毛小孩</span>
+                        </div>
+                        <AdoptionSearch :frameBorder="mybordercolor" :noticeborder="mynoticeborder" :textColor="mytextc" />
+                    </div>
                     <div class="petsInormationForm">
-                        <IconLostAnimalsList />
+                        <AdoptionList />
                     </div>
                 </div>
             </div>
@@ -163,20 +170,47 @@ main {
     line-height: 33px;
 }
 
+
 /* 尋找心目中的毛小孩 */
 .lookingForLikepets {
     display: flex;
     flex-direction: column;
 }
 
-/* 搜尋卡片組件 */
 .likepetsCards {
     display: flex;
+    align-items: end;
     flex-direction: row;
     gap: 1.25rem;
     padding-top: 2.8rem;
 }
 
+/* 搜尋區 */
+.likepets {
+    display: flex;
+    flex-direction: column;
+}
+
+.petsTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18.8rem;
+    height: 4rem;
+    background-color: var(--primary-color);
+    border-radius: 1.8rem 1.8rem 0px 0px;
+    border: 1px solid var(--primary-color);
+}
+
+.petsTitle span {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* 卡片組件 */
 .petsInormationForm {
     display: flex;
     flex-direction: column;
