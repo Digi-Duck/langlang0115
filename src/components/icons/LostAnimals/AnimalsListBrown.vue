@@ -1,9 +1,9 @@
 <script>
 import IconCard from './IconCard.vue';
 import IconChangeButton from '../IconChangeButton.vue'
-import LostPopup from './LostPopup.vue';
+import LostPopupBrown from './LostPopupBrown.vue';
 export default {
-    components: { IconCard, IconChangeButton, LostPopup, },
+    components: { IconCard, IconChangeButton, LostPopupBrown, },
     data() {
         return {
             show: false,
@@ -37,7 +37,7 @@ export default {
                 搜尋附近動物醫院
             </a>
             <!-- 顯示的彈跳視窗 -->
-            <LostPopup :is-show="show" @close="close"></LostPopup>
+            <LostPopupBrown :is-show="show" @close="close"></LostPopupBrown>
         </div>
         <div class="list-container">
             <div class="title">遺失動物列表</div>

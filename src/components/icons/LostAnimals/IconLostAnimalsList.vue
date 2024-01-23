@@ -2,11 +2,12 @@
 import IconCard from './IconCard.vue';
 import IconChangeButton from '../IconChangeButton.vue'
 import LostPopup from './LostPopup.vue';
+import IconPaperAirplane from '../IconPaperAirplane.vue';
 export default {
-    components: { IconCard, IconChangeButton, LostPopup, },
-    props:{
-        listTitleColor:String,  //列表的上方框
-        listborderColor:String, //列表下框
+    components: { IconCard, IconChangeButton, LostPopup, IconPaperAirplane },
+    props: {
+        listTitleColor: String,  //列表的上方框
+        listborderColor: String, //列表下框
     },
     data() {
         return {
@@ -23,7 +24,7 @@ export default {
         showpopup() {
             this.show = true;
         },
-        close(){
+        close() {
             this.show = false;
         },
     },
@@ -33,20 +34,21 @@ export default {
 <template>
     <div class="all-container">
         <div class="btn">
-            <IconChangeButton @click="showpopup" :text="mysubmit" :textColor="mytextcolor" 
-            :bgColor="mybgcolor" :w="myw" :h="myh">
-           </IconChangeButton>
+            <IconChangeButton @click="showpopup" :text="mysubmit" :textColor="mytextcolor" :bgColor="mybgcolor" :w="myw"
+                :h="myh">
+            </IconChangeButton>
+
             <a href="">
-                <img src="../src/assets/Image/LostImage/paperairplane.svg">
+                <IconPaperAirplane />
                 搜尋附近動物醫院
             </a>
             <!-- 顯示的彈跳視窗 -->
             <LostPopup :is-show="show" @close="close"></LostPopup>
         </div>
         <div class="list-container">
-            <div class="title" :style="{backgroundColor:listTitleColor}">遺失動物列表</div>
-            <div class="cards" :style="{borderColor:listborderColor}">
-                <IconCard/>
+            <div class="title" :style="{ backgroundColor: listTitleColor }">遺失動物列表</div>
+            <div class="cards" :style="{ borderColor: listborderColor }">
+                <IconCard />
                 <IconCard />
                 <IconCard />
                 <IconCard />
@@ -65,10 +67,8 @@ export default {
 </template>
 <style scoped>
 .all-container {
-    width: 840px;
     display: flex;
     flex-direction: column;
-    gap: 0;
     font-size: 24px;
     font-family: 'ABeeZee';
 }
@@ -85,14 +85,13 @@ export default {
 a {
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 10px;
     font-weight: 700;
     color: var(--gray-color);
 }
 
 .list-container {
     width: 840px;
-    height: 866px;
     margin-bottom: 50px;
 }
 

@@ -38,30 +38,28 @@ export default {
         <div class="content">
             <img src="../assets/Image/LostImage/arrow.svg">
             <div class="tabs">
-                <!--   tab group -->
-                <input type="radio" id="tab-1" name="tab" checked="checked">
-                <label for="tab-1" class="tab-left">撿到遺失動物</label>
-                <div class="info-1">
-                    <div class="tab-content">
-                        <IconLostFrame></IconLostFrame>
-                        <IconLostAnimalsList />
-                    </div>
-                </div>
+                    <!--   tab group -->
+                    <input type="radio" id="tab-1" name="tab" checked="checked">
+                    <label for="tab-1" class="tab-left">撿到遺失動物</label>
+                    <div class="info-1">                        <div class="tab-content">
 
+                            <IconLostFrame></IconLostFrame>
+                            <IconLostAnimalsList />
+                        </div>
+                    </div>
                 <!--   tab group end -->
                 <!--   tab group -->
-                <input type="radio" id="tab-2" name="tab">
-                <label for="tab-2" class="tab-right">我遺失了動物</label>
-                <div class="info-2">
-                    <div class="tab-content">
-                        <IconLostFrame frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)">
-                        </IconLostFrame>
-                        <AnimalsListBrown />
+                    <input type="radio" id="tab-2" name="tab">
+                    <label for="tab-2" class="tab-right">我遺失了動物</label>
+                    <div class="info-2">
+                        <div class="tab-content">
+                            <IconLostFrame frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)">
+                            </IconLostFrame>
+                            <AnimalsListBrown />
+                        </div>
                     </div>
                 </div>
-
                 <!--   tab group end -->
-            </div>
         </div>
         <!-- 失散協尋>撿到遺失動物（暫放） -->
         <GreenButton :showSvg="false" @click="goToFoundAnimalForm">確認前往：<br>撿到遺失動物</GreenButton>
@@ -110,10 +108,8 @@ main {
 .tabs {
     display: flex;
     flex-wrap: wrap;
-    /* background-color: cornflowerblue; */
     font-size: 24px;
     letter-spacing: 6px;
-    order: 0;
 }
 
 /* 隱藏預設的radio */
@@ -126,10 +122,12 @@ main {
     height: 70px;
     padding: 20px 30px;
     border-radius: 30px 0 0 0;
-    border: 2px solid var(--primary-color);
+    border: 2.5px solid var(--primary-color);
+    border-bottom: 0;
     color: var(--primary-color);
     background-color: var(--white-color);
     cursor: pointer;
+    order: 0;
 }
 
 .tab-right {
@@ -138,8 +136,10 @@ main {
     border-radius: 0 30px 0 0;
     background-color: var(--white-color);
     color: var(--B68337);
-    border: 2px solid var(--B68337);
+    border: 2.5px solid var(--B68337);
+    border-bottom: 0;
     cursor: pointer;
+    order: 0;
 }
 
 /* 切換頁籤後的樣式 */
@@ -152,11 +152,6 @@ main {
     color: var(--white-color);
     background-color: var(--B68337);
 }
-
-/* .tabs input[type=radio]:checked+label+.tab-content-1 {
-    display: block;
-} */
-
 /* 切換頁籤出現對應的內容 */
 #tab-1:checked+label+.info-1 {
     display: block;
@@ -167,15 +162,12 @@ main {
 }
 .info-1, .info-2{
     display: none;
+    order: 1;
 }
 
 /* 頁籤的內容 */
 .tab-content {
-    width: 100%;
-    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    background-color: aqua;
-    order: 1;
+    gap: 68px;
 }
 </style>
