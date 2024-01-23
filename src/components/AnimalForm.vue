@@ -10,7 +10,8 @@ export default {
         uploadPicBorder: String, //上傳照片的border
         svgColor: String, // 上傳照片的 SVG 顏色
         uploadPicColor: String, //上傳照片的文字
-        submitBgColor:String
+        submitBgColor: String, //送出按鈕
+        popStyle:String //彈跳視窗
     },
     data() {
         return {
@@ -37,20 +38,27 @@ export default {
             confirmClear: false, // 用於確認是否清空的標誌
             myinnertext: "清除重填",
             mybtnbgColor: "#626262",
+            //對話框內按鈕
+            clearbtntext:"確認重填",
+            clearbtnbg:'#52A038',
+            cancelbtntext:"返回修改",
+            cancelbtnbg:'#626262'
         };
     },
     methods: {
         submitForm() {
             //處理表單邏輯
             // console.log("表單提交");
-        }, showConfirmation() {
+        },
+        //點擊清除重填按鈕
+        showConfirmation() {
             // 顯示確認框
             this.confirmClear = true;
         }, cancelConfirmation() {
             // 關閉確認框，不清空表單
             this.confirmClear = false;
         },
-        clearForm() {
+        clearFormBtn() {
             // 如果 confirmClear 是 true，則清空表單
             if (this.confirmClear) {
                 this.formData = {
@@ -223,21 +231,30 @@ export default {
             </div>
 
             <div class="btn-area">
+                <!-- 清除重填按鈕 -->
                 <NoHoverButton @click.prevent="showConfirmation" :text="myinnertext" :btnbgColor="mybtnbgColor">
                 </NoHoverButton>
+                <!-- 送出按鈕 -->
                 <IconChangeButton :text="mysubmit" @click.prevent="submitForm" :style="{
-                    color: textColor,
-                    backgroundColor:submitBgColor,
-                    width: w, height: h
-                }"></IconChangeButton>
+                    color: textColor, backgroundColor: submitBgColor, width: w, height: h}"></IconChangeButton>
 
 
                 <!-- 重填確認框 -->
-                <div v-if="confirmClear" class="confirmation-modal">
-                    <p>確定要清除重填嗎？</p>
-                    <button @click="cancelConfirmation">取消</button>
-                    <button @click="clearForm">確定</button>
+                <div  v-if="confirmClear" class="confirmation-modal">
+                    <div class="container" :style="{ borderColor: popStyle }" >
+                        <div>
+                            <img src="/src/assets/Image/AboutPage2Image/message-dogpaw.svg" alt="msg">
+                        </div>
+                        <div class="text">
+                            <span>是否清除重填？</span>
+                        </div>
+                        <div class="btns">
+                            <NoHoverButton @click="cancelConfirmation" :text="cancelbtntext" :btnbgColor="cancelbtnbg" ></NoHoverButton>
+                            <NoHoverButton @click="clearFormBtn" :text="clearbtntext" :btnbgColor="clearbtnbg"></NoHoverButton>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </form>
 
@@ -468,15 +485,68 @@ input#phone {
 }
 
 
+
+/*確認是否清除*/
 .confirmation-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.5);
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 5px solid white;
-    color: var(--white-color);
-    border-radius: 20px;
-    background-color: var(--second-color);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    font-size: 24px;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 409px;
+    background-color: var(--white-color);
+    /*border: 2px solid var(--primary-color);*/
+    border-width: 2px;
+    border-style:solid ;
+    /*border-color: aqua;*/
+    border-radius: 30px;
+    gap: 42px;
+}
+
+.text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content {
+    font-size: 16px;
+    color: var(--gray-color);
+}
+
+.btns{
+    display: flex;
+    gap: 38px;
+}
+
+.btn {
+    width: 155px;
+    height: 65px;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.btn-white {
+    background-color: var(--white-color);
+    color: var(--gray-color);
+    border: 1px solid var(--gray-color);
+}
+
 </style>
+
