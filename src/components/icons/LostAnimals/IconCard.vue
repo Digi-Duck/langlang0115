@@ -1,9 +1,16 @@
-
+<script>
+export default{
+    props:{
+        cardBorderColor:String,  //卡片
+        checkBoxColor:String,  //卡片裡的色塊
+    },
+}
+</script>
 <template>
     <div class="card-container">
-        <div class="card-ccontent">
+        <div class="card-ccontent" :style="{borderColor:cardBorderColor}">
             <div class="image">
-                <p class="check">查看詳細資訊</p>
+                <p class="check" :style="{backgroundColor:checkBoxColor}">查看詳細資訊</p>
             </div>
             <div class="text">
                 <span>建立時間 : 2023/12/10</span>

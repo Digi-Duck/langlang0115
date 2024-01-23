@@ -4,10 +4,6 @@ import IconChangeButton from '../IconChangeButton.vue'
 import LostPopup from './LostPopup.vue';
 export default {
     components: { IconCard, IconChangeButton, LostPopup, },
-    props:{
-        listTitleColor:String,  //列表的上方框
-        listborderColor:String, //列表下框
-    },
     data() {
         return {
             show: false,
@@ -44,20 +40,16 @@ export default {
             <LostPopup :is-show="show" @close="close"></LostPopup>
         </div>
         <div class="list-container">
-            <div class="title" :style="{backgroundColor:listTitleColor}">遺失動物列表</div>
-            <div class="cards" :style="{borderColor:listborderColor}">
-                <IconCard/>
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
+            <div class="title">遺失動物列表</div>
+            <div class="cards">
+                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
+                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
+                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
+                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
+                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
+                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
+                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
+                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
             </div>
         </div>
     </div>
@@ -101,7 +93,7 @@ a {
     text-align: center;
     padding: 14px 0;
     color: var(--white-color);
-    background-color: var(--primary-color);
+    background-color: var(--B68337);
     border-radius: 40px 40px 0 0;
 }
 
@@ -109,7 +101,7 @@ a {
     height: 850px;
     overflow: hidden;
     overflow: scroll;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--B68337);
     border-radius: 0 0 30px 30px;
     padding: 30px 0;
     display: flex;

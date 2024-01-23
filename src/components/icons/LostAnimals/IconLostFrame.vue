@@ -1,8 +1,9 @@
 <script>
 export default {
     props: {
-        title: String,
-        color: String,
+        frameBorder: String, //外框色
+        noticeborder: String, //notice外框線色
+        textColor: String, //文字色
     },
     data() {
         return {
@@ -23,16 +24,16 @@ export default {
 
 <template>
     <div class="container">
-         <div class="notice">
+        <div class="notice" :style="{borderColor:noticeborder, color:textColor}">
             <span>!請篩選您遺失的動物，確認是否已被重複登入</span>
         </div>
-        <form>
+        <form  :style="{borderColor:frameBorder}">
             <div class="form-group">
-                <label for="species">地區選擇 *</label>
+                <label for="species" :style="{color:textColor}">地區選擇 *</label>
                 <div>下拉式選單(預計安裝套件)</div>
             </div>
-            <div class="form-group">
-                <label for="species">動物類別 *</label>
+            <div class="form-group" >
+                <label for="species" :style="{color:textColor}">動物類別 *</label>
                 <input type="radio" id="dog" value="犬" v-model="formData.species" name="animalType" />
                 <label for="dog">犬</label>
 
@@ -44,7 +45,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="body-shape">體型選擇 *</label>
+                <label for="body-shape" :style="{color:textColor}">體型選擇 *</label>
                 <input type="radio" id="large" value="大型" v-model="formData.bodyshape" name="bodyShape" />
                 <label for="large">大型</label>
 
@@ -56,7 +57,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="gender">性別選擇 *</label>
+                <label for="gender" :style="{color:textColor}">性別選擇 *</label>
                 <input type="radio" id="male" value="公" v-model="formData.gender" name="gender">
                 <label for="male">公</label>
                 <input type="radio" id="female" value="母" v-model="formData.gender" name="gender">
@@ -66,7 +67,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="colors">花色選擇 *</label>
+                <label for="colors" :style="{color:textColor}">花色選擇 *</label>
                 <input type="radio" id="solidColor" value="純色" v-model="formData.colors" name="colorType" />
                 <label for="solidColor">純色</label>
 
@@ -78,7 +79,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="age">年齡選擇 *</label>
+                <label for="age" :style="{color:textColor}">年齡選擇 *</label>
                 <input type="radio" id="youngAge" value="幼年" v-model="formData.age" name="ageType" />
                 <label for="youngAge">幼年</label>
 
@@ -90,7 +91,7 @@ export default {
             </div>
 
             <div class="form-group">
-                <label for="neutered">是否已絕育 *</label>
+                <label for="neutered" :style="{color:textColor}">是否已絕育 *</label>
                 <input type="radio" id="neuteredYes" value="已絕育" v-model="formData.neutered" name="neuteredStatus" />
                 <label for="neuteredYes">已絕育</label>
 
@@ -104,15 +105,15 @@ export default {
                 <button @click.prevent="submitForm">清除重寫</button>
                 <button @click.prevent="submitForm">搜尋</button>
             </div>
-        </form> 
+        </form>
     </div>
 </template>
 
 <style scoped>
 .container {
-    width: 700px;
     font-size: 24px;
     letter-spacing: 6px;
+    width: 700px;
 }
 
 
@@ -121,7 +122,7 @@ export default {
     text-align: center;
     line-height: 80px;
     border: 1px solid var(--primary-color);
-    background-color:var(--white-color);
+    background-color: var(--white-color);
     color: var(--primary-color);
 }
 
@@ -130,7 +131,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 75px;
-    background-color:var(--white-color);
+    background-color: var(--white-color);
     border: 1px solid var(--primary-color);
     border-top: 0;
     padding: 60px 34px 32px;

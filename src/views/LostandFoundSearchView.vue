@@ -3,6 +3,7 @@ import FooterPage from '@/components/FooterPage.vue';
 import GreenButton from '@/components/GreenButton.vue';
 import NavPage from '@/components/NavPage.vue';
 import IconLostAnimalsList from '@/components/icons/LostAnimals/IconLostAnimalsList.vue';
+import AnimalsListBrown from '@/components/icons/LostAnimals/AnimalsListBrown.vue';
 import IconLostFrame from '@/components/icons/LostAnimals/IconLostFrame.vue';
 export default {
     data() {
@@ -23,6 +24,7 @@ export default {
         GreenButton,
         IconLostAnimalsList,
         IconLostFrame,
+        AnimalsListBrown,
     },
 }
 </script>
@@ -37,21 +39,22 @@ export default {
             <img src="../assets/Image/LostImage/arrow.svg">
             <div class="tabs">
                 <!--   tab group -->
-                <input type="radio" id="tab-1" name="tab" checked="checked">
-                <label for="tab-1" class="tab-left">撿到遺失動物</label>
-                <div class="tab-content">
-                    <div class="tab-b">
-                        <IconLostFrame />
-                        <IconLostAnimalsList />
-                    </div>
+                <div class="tab-group">
+                    <input type="radio" id="tab-1" name="tab" checked="checked">
+                    <label for="tab-1" class="tab-left">撿到遺失動物</label>
+                    <input type="radio" id="tab-2" name="tab">
+                    <label for="tab-2" class="tab-right">我遺失了動物</label>
+                </div>
+                <div class="tab-content-1">
+                    <IconLostFrame ></IconLostFrame>
+                    <IconLostAnimalsList />
                 </div>
                 <!--   tab group end -->
                 <!--   tab group -->
-                <input type="radio" id="tab-2" name="tab">
-                <label for="tab-2" class="tab-right">我遺失了動物</label>
-                <div class="tab-content">
-                        <IconLostFrame />
-                        <IconLostAnimalsList />
+                <!-- <label for="tab-2" class="tab-right">我遺失了動物</label> -->
+                <div class="tab-content-2">
+                    <IconLostFrame frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)"></IconLostFrame>
+                    <AnimalsListBrown/>
                 </div>
                 <!--   tab group end -->
             </div>
@@ -110,7 +113,6 @@ main {
     font-size: 24px;
     letter-spacing: 6px;
     order: 0;
-    gap: 50px;
 }
 
 .tabs input[type=radio] {
@@ -127,10 +129,15 @@ main {
     background-color: var(--B68337);
 }
 
-.tabs input[type=radio]:checked+label+.tab-content {
+/* .tabs input[type=radio]:checked+label+.tab-content-1 {
+    display: block;
+} */
+#tab-1:checked+label+.tab-content-1 {
     display: block;
 }
-
+#tab-2:checked+label+.tab-content-2 {
+    display: block;
+}
 .tab-left {
     height: 70px;
     padding: 20px 30px;
@@ -152,17 +159,21 @@ main {
 
 }
 
-.tab-content {
+.tab-content-1 {
+    display: none;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(55, 111, 111);
-    /* width: 100%; */
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    order: 1;
+}
+.tab-content-2 {
+    display: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
     order: 1;
 }
 
-.tab-b {
-    width: 100%;
-    height: 100%;
-    /* display: none; */
-}
 </style>
