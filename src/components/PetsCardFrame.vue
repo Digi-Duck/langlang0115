@@ -55,7 +55,7 @@ export default {
                     </tr>
                     <tr>
                         <th>聯絡方式</th>
-                        <td colspan="3">0908564159</td>
+                        <td colspan="3">09XX-XXX-XXX</td>
                     </tr>
                 </tbody>
             </table>

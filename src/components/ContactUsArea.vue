@@ -194,9 +194,9 @@ a:hover {
 /* input標題 */
 .inputTitle {
     display: flex;
-    width: 13.5625rem;
-    height: 3.6875rem;
-    padding: 0.9375rem 0 1rem 0;
+    width: 13.5rem;
+    height: 3.6rem;
+    padding: 0.9rem 0 1rem 0;
     justify-content: center;
     align-items: center;
     border-radius: 2.5rem 0 0 2.5rem;
@@ -211,7 +211,7 @@ a:hover {
 /* input輸入區 */
 .input {
     font-size: 1.5rem;
-    width: 35.3125rem;
+    width: 35.3rem;
     border-radius: 0 2.5rem 2.5rem 0;
     border: 3px solid var(--primary-color);
     background: var(--white-color);
@@ -232,7 +232,7 @@ a:hover {
 /* input內容 */
 .detail {
     font-size: 1.5rem;
-    width: 35.3125rem;
+    width: 35.3rem;
     border: 3px solid var(--primary-color);
     background: var(--white-color);
     outline: none;
@@ -255,7 +255,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 180px;
+    margin-left: 11.25rem;
 }
 
 /* 下方文字區 */
@@ -266,14 +266,14 @@ a:hover {
     flex-direction: column;
     padding: 2rem 0;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #626262;
 }
 
 .remindText p {
     text-align: center;
-    line-height: 291.667%;
-    letter-spacing: 3.84px;
+    line-height: 291.6%;
+    letter-spacing: 3.8px;
     text-decoration-line: underline;
 }
 
@@ -288,8 +288,8 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 24.4375rem;
-    height: 4.375rem;
-    letter-spacing: 3.84px;
+    width: 24.4rem;
+    height: 4.3rem;
+    letter-spacing: 3.8px;
 }
 </style>

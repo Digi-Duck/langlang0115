@@ -121,7 +121,7 @@ main {
     font-weight: 400;
     line-height: 1.8rem;
     letter-spacing: 6px;
-    padding: 0 3rem 0 1.5rem;
+    padding: 0 3rem 0 4.6rem;
     margin: 4.6rem 0;
 }
 
