@@ -26,7 +26,7 @@ export default {
               <div class="green-icon-container">
       
                 <ul class="news-list">
-                  <li class="news-item">
+                  <li class="news-item" @click="show1">
                     <div class="news-date">
                       <span class="news-date-month">2023.11</span>
                       <span class="news-date-day">02</span>
@@ -98,8 +98,8 @@ main {
     background-image: url("../assets/Image/SponsorImage/news-green.svg");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 1300px;
-    height: 716px;
+    width: 1588px;
+    height: 950px;
     position: absolute;
     top: 15%;
     right: 130px;
@@ -114,7 +114,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--white-color);
+    color: var(--gray-color);
   }
   
   .news-item {
@@ -145,7 +145,7 @@ main {
   
   /* 最新消息的文字區 */
   .news-announcement {
-    border-bottom: 2px solid var(--white-color);
+    border-bottom: 2px solid var(--gray-color);
     font-size: 28px;
     letter-spacing: 7px;
     display: inline-block;
