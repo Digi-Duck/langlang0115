@@ -18,7 +18,9 @@ export default {
         }
     },
     methods: {
-
+        formadoptionPage() {
+            this.$router.push('/formpageadoption');
+        },
     },
     components: {
         IconCard, IconChangeButton, IconPaperAirplane
@@ -29,7 +31,8 @@ export default {
 <template>
     <div class="all-container">
         <div class="btn">
-            <IconChangeButton :text="mytext" :textColor="mytextColor" :bgColor="mybgColor" :w="myw" :h="myh" />
+            <IconChangeButton @click="formadoptionPage" :text="mytext" :textColor="mytextColor" :bgColor="mybgColor"
+                :w="myw" :h="myh" />
             <a href="">
                 <IconPaperAirplane />
                 搜尋附近動物醫院

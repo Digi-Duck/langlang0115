@@ -16,7 +16,7 @@ export default {
             mytextcolor: 'var(--white-color)',
             myw: '12.5rem',
             myh: '4rem',
-            mylinew: '68rem',
+            mylinew: '72rem',
             parenttwoStyle: {
                 gap: '0.5rem',
             },
@@ -104,7 +104,7 @@ main {
 .adoptionCenterArea {
     display: flex;
     flex-direction: column;
-    padding: 4.25rem 0.5rem 3rem 12.5rem;
+    padding: 4.25rem 0.5rem 3rem 11rem;
 }
 
 /* 認養中心 標題區 */
@@ -175,6 +175,7 @@ main {
 .lookingForLikepets {
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
 }
 
 .likepetsCards {

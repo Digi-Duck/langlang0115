@@ -34,6 +34,12 @@ const router = createRouter({
       component: () => import('../views/AdoptionCenterView.vue')
     },
     {
+      // 認養中心頁面>>填寫送養資料
+      path: '/formpageadoption',
+      name: 'formpageadoption',
+      component: () => import('../views/FormPageAdoption.vue')
+    },
+    {
       // 認養中心頁面>>毛小孩資訊
       path: '/adoptionpetinformation',
       name: 'adoptionpetinformation',
