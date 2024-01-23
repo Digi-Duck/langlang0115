@@ -30,8 +30,8 @@ export default {
             },
             mysubmit: "送出",
             confirmClear: false, // 用於確認是否清空的標誌
-            innertext:"清除重填",
-            bgColor: "red",
+            myinnertext: "清除重填",
+            mybtnbgColor: "#626262",
         };
     },
     methods: {
@@ -187,9 +187,14 @@ export default {
                     <input type="text" id="time" v-model="formData.time" placeholder="年/月/日"
                         :style="{ border: inputTextBorder }">
 
-                    <label for="place" hidden></label>
-                    <input type="text" id="place" v-model="formData.place" placeholder="請填寫地點"
-                        :style="{ border: inputTextBorder }">
+                    <label for="place" :style="{ color: inputTitleColor }"></label>
+                    <select id="place" v-model="formData.place" :style="{ border: inputTextBorder }">
+                        <option value="" disabled selected>請選擇縣市</option>
+                        <option value="location1">地點 1</option>
+                        <option value="location2">地點 2</option>
+                        <!-- 添加更多的選項 -->
+                    </select>
+
 
                     <label for="description"></label>
                     <input type="text" id="description" v-model="formData.description" :style="{ border: inputTextBorder }">
@@ -213,7 +218,8 @@ export default {
             </div>
 
             <div class="btn-area">
-                <NoHoverButton @click.prevent="showConfirmation" :text="innertext"></NoHoverButton>
+                <NoHoverButton @click.prevent="showConfirmation" :text="myinnertext" :btnbgColor="mybtnbgColor">
+                </NoHoverButton>
                 <IconChangeButton :text="mysubmit" @click.prevent="submitForm"></IconChangeButton>
                 <!-- <GreenButton @click.prevent="submitForm">送出</GreenButton> -->
 
@@ -334,7 +340,7 @@ label[for="other"],
     margin-right: 36px;
 }
 
-.form-group input {
+.form-group input,select {
     margin: 0px 17px;
     /*border: 2px solid var(--primary-color);*/
     border-radius: 4px;
@@ -364,18 +370,20 @@ label[for="other"],
     gap: 5px;
 }
 
-#time::placeholder,
-#place::placeholder {
+#time::placeholder {
     text-align: center;
-    color: #D7D7D7;
+     color: #b1b1b1;
     letter-spacing: 6px;
 }
+
+
 
 .time-place-text span,
 .phone-area span {
     font-size: 16px;
     margin-left: 20px;
     letter-spacing: 4px;
+    color:var(--gray-color)
 }
 
 /*聯絡方式*/
@@ -398,11 +406,18 @@ input#chip-id {
 input#time {
     width: 221px;
     height: 56px;
+
 }
 
-input#place {
-    width: 351px;
+
+select#place{
+    width: 257px;
     height: 56px;
+    letter-spacing: 6px;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    color: #b1b1b1;
 }
 
 input#description {
@@ -451,7 +466,7 @@ input#phone {
     transform: translate(-50%, -50%);
     padding: 20px;
     border: 5px solid white;
-    color:var(--white-color);
+    color: var(--white-color);
     border-radius: 20px;
     background-color: var(--second-color);
 }
