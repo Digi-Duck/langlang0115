@@ -1,7 +1,5 @@
 <script>
 import IconCard from '@/components/icons/LostAnimals/IconCard.vue';
-import IconChangeButton from '@/components/icons/IconChangeButton.vue';
-import IconPaperAirplane from '@/components/icons/IconPaperAirplane.vue';
 
 export default {
     props: {
@@ -10,35 +8,20 @@ export default {
     },
     data() {
         return {
-            mytext: "前往送養",
-            mytextColor: "var(--gray-color)",
-            mybgColor: "var(--orangeyellow-color) ",
-            myw: "11.3rem",
-            myh: "4rem",
+
         }
     },
     methods: {
-        // 前往表單頁面
-        formadoptionPage() {
-            this.$router.push('/formpageadoption');
-        },
+
     },
     components: {
-        IconCard, IconChangeButton, IconPaperAirplane
+        IconCard
     },
 }
 </script>
 
 <template>
     <div class="all-container">
-        <div class="btn">
-            <IconChangeButton @click="formadoptionPage" :text="mytext" :textColor="mytextColor" :bgColor="mybgColor"
-                :w="myw" :h="myh" />
-            <a href="">
-                <IconPaperAirplane />
-                搜尋附近動物醫院
-            </a>
-        </div>
         <div class="list-container">
             <div class="title" :style="{ backgroundColor: listTitleColor }">毛小孩列表</div>
             <div class="cards" :style="{ borderColor: listborderColor }">
@@ -59,36 +42,14 @@ export default {
     </div>
 </template>
 <style scoped>
-a:hover {
-    background-color: transparent;
-}
-
 .all-container {
     display: flex;
     flex-direction: column;
-    font-size: 24px;
-    font-family: 'ABeeZee';
-}
-
-.btn {
-    width: 840px;
-    height: 64px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-    color: var(--gray-color);
+    font-size: 1.5rem;
 }
 
 .list-container {
-    width: 840px;
+    width: 52.5rem;
 }
 
 .title {
@@ -101,8 +62,7 @@ a {
 }
 
 .cards {
-    height: 840px;
-    /* overflow: hidden; */
+    height: 52.5rem;
     overflow: scroll;
     border: 2px solid var(--primary-color);
     border-radius: 0 0 30px 30px;
@@ -117,7 +77,6 @@ a {
 
 .cards::-webkit-scrollbar {
     display: none;
-
 }
 
 .card {
