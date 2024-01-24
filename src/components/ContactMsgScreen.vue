@@ -11,14 +11,21 @@ export default {
         }
     },
     methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
         // 回到首頁按鈕
         gohomePage() {
             this.$router.push('/');
+            // 視窗離開時scrollBar打開
+            document.body.style.overflow = 'auto';
+             // 讓scrollBar在router後平滑的回至頂部
+            this.scrollToTop();
         },
-        // 關閉視窗
-        // closePopup() {
-        //     this.$emit('hide');
-        // }
     },
     components: {
         GreenButton
@@ -27,7 +34,6 @@ export default {
 </script>
 <template>
     <!-- 顯示視窗 -->
-    <!-- 關閉視窗@click.self="closePopup" -->
     <div class="msgScreenFrame" v-show="isShow">
         <div class="msgSuccess">
             <div class="msgSendText">
