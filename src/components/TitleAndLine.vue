@@ -2,19 +2,14 @@
 import IconLineAndSqure from './icons/IconLineAndSqure.vue';
 
 export default {
-    // data() {
-    //     return {
-    //         mylinew: '80rem',
-    //     }
-    // },
+    components: {
+        IconLineAndSqure
+    },
     props: {
         text: String,
         customStyle: Object,
         linew:String,
     },
-    components: {
-        IconLineAndSqure
-    }
 }
 </script>
 <template>

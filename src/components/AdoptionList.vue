@@ -2,6 +2,9 @@
 import IconCard from '@/components/icons/LostAnimals/IconCard.vue';
 
 export default {
+    components: {
+        IconCard
+    },
     props: {
         listTitleColor: String,  //列表的上方框
         listborderColor: String, //列表下框
@@ -13,9 +16,6 @@ export default {
     },
     methods: {
 
-    },
-    components: {
-        IconCard
     },
 }
 </script>

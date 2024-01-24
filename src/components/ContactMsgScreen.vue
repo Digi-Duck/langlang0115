@@ -2,6 +2,9 @@
 import GreenButton from './GreenButton.vue';
 
 export default {
+    components: {
+        GreenButton
+    },
     props: {
         isShow: Boolean,
     },
@@ -23,13 +26,11 @@ export default {
             this.$router.push('/');
             // 視窗離開時scrollBar打開
             document.body.style.overflow = 'auto';
-             // 讓scrollBar在router後平滑的回至頂部
+            // 讓scrollBar在router後平滑的回至頂部
             this.scrollToTop();
         },
     },
-    components: {
-        GreenButton
-    }
+
 }
 </script>
 <template>
@@ -71,8 +72,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30.625rem;
-    height: 23.8125rem;
+    width: 30.6rem;
+    height: 23.8rem;
     background-color: var(--white-color);
     border: 2px solid var(--primary-color);
     border-radius: 30px;
@@ -115,7 +116,7 @@ export default {
     height: 3.25rem;
     color: var(--white-color);
     background-color: var(--primary-color);
-    border-radius: 1.875rem;
+    border-radius: 1.8rem;
     font-size: 1.25rem;
     letter-spacing: 2px;
     box-shadow: none;

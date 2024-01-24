@@ -2,6 +2,9 @@
 import IconX from './icons/IconX.vue';
 
 export default {
+    components: {
+        IconX
+    },
     props: {
         isShow: Boolean,
     },
@@ -16,9 +19,6 @@ export default {
             this.$emit('close');
         }
     },
-    components: {
-        IconX
-    }
 }
 </script>
 <template>

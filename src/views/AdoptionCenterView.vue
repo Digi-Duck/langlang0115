@@ -8,7 +8,6 @@ import AdoptionSearch from '@/components/AdoptionSearch.vue';
 import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 import AdoptionList from '@/components/AdoptionList.vue';
 import IconPaperAirplane from '@/components/icons/IconPaperAirplane.vue';
-import DataSubmitted from '@/components/DataSubmitted.vue';
 
 export default {
     components: {
@@ -21,7 +20,6 @@ export default {
         AdoptionList,
         AdoptionInformationPopup,
         IconPaperAirplane,
-        DataSubmitted
     },
     data() {
         return {
@@ -83,7 +81,6 @@ export default {
             this.$router.push('/adoptionpetinformation');
         }
     },
-
 }
 </script>
 <template>
@@ -156,9 +153,9 @@ export default {
         <hr>
         <IconChangeButton :text="mysubmit" :textColor="mytextcolorno" :bgColor="mybgcolorno" :w="mywno" :h="myhno"
             @click="petinformationPage" />
-        <DataSubmitted />
     </main>
-    <FooterPage />
+
+    <!-- <FooterPage /> -->
 </template>
 <style scoped>
 main {

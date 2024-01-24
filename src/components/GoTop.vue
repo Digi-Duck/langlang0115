@@ -2,6 +2,9 @@
 import IconGotop from './icons/IconGotop.vue';
 
 export default {
+    components: {
+        IconGotop,
+    },
     data() {
         return {
             showGoTop: false,
@@ -31,9 +34,6 @@ export default {
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.handleScroll);
-    },
-    components: {
-        IconGotop,
     },
 };
 </script>

@@ -24,9 +24,6 @@ export default {
             document.body.style.overflow = 'hidden';
         },
     },
-    beforeDestroy() {
-        this.openScrollBar();
-    },
     components: {
         IconChangeButton,
         ContactMsgScreen

@@ -2,6 +2,9 @@
 import NoHoverButton from '@/components/NoHoverButton.vue';
 import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 export default {
+    components: {
+        NoHoverButton, IconChangeButton
+    },
     props: {
         frameBorder: String, //外框色
         noticeborder: String, //notice外框線色
@@ -25,9 +28,6 @@ export default {
             //處理表單邏輯
             // console.log("表單提交");
         },
-    },
-    components: {
-        NoHoverButton, IconChangeButton
     },
 }
 </script>

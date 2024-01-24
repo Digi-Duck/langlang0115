@@ -4,6 +4,10 @@ import IconChangeButton from './icons/IconChangeButton.vue';
 
 
 export default {
+    components: {
+        IconCarouselFrame,
+        IconChangeButton
+    },
     data() {
         return {
             frame: new URL('@/assets/Image/CarouselImage/carouselframe.svg', import.meta.url).href,
@@ -33,10 +37,6 @@ export default {
             this.$router.push('/lostandfoundsearch');
         },
     },
-    components: {
-        IconCarouselFrame,
-        IconChangeButton
-    }
 };
 </script>
 <template>
