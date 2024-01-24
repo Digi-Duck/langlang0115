@@ -9,9 +9,9 @@ export default {
     return {
       selectedNews: null, // 存儲所選的消息的索引
       news: [
-        {  content: '感謝各位會員一直以來的直支持，因為近期流量越來越大，所以網站部分功能有時候會出現500的錯誤。因為既有的系統環境無法服務到大量使用者。因此系統將執行升級改版，此次改版可能會有暫停服務時間。另外也非常歡迎各位會員提出自己的想法，可以填寫以下google 表單，選出最喜歡哪一些現在已經有的功能以及希望新增的功能。浪浪的事改版問券調查： https://forms.gle/ttEf32Dj8ABXbXZj6' },
-        { title: '誤發登入失敗通知', content: '第二條消息的詳細內容...' },
-        // 其他消息
+        {date:'2023.11', 'day':'02', title:'浪浪的事改版問卷調查',content: '感謝各位會員一直以來的直支持，因為近期流量越來越大，所以網站部分功能有時候會出現500的錯誤。因為既有的系統環境無法服務到大量使用者。因此系統將執行升級改版，此次改版可能會有暫停服務時間。另外也非常歡迎各位會員提出自己的想法，可以填寫以下google 表單，選出最喜歡哪一些現在已經有的功能以及希望新增的功能。浪浪的事改版問券調查： https://forms.gle/ttEf32Dj8ABXbXZj6' },
+        {date:'2023.05', 'day':'31',  title:'誤發登入失敗通知',content: '真的非常不好意思，通知登入失敗的儲存位置，復原備份資料於測試環境。以至於之前若有的登入失敗過的會員，沒有發送通知信，昨天2023/5/31會被發送 登入失敗的Email真的非常抱歉請勿點選來路不明的連結，浪浪的事也不會通知任何繳費的事項。真的非常不好意思，造成您的不便敬請見諒。' }, 
+        {date:'2022.01','day':'24', title:'登記公告策略改變', content: '浪浪的事是以記錄的方式將動物的所有記錄都可以記錄下來。包含看醫生的紀錄、送養轉讓紀錄、遺失快速通報功能，從出生到死亡希望都可以紀錄。但目前大部分還是以會員自主登入為主，期望未來可以越來越好！歡迎不管是不是要送養的毛小孩，都可以嘗試新增毛小孩在網站中，有任何不方便的地方，歡迎使用聯絡我們功能給我們建議喔～另外 浪浪的事主是提供平台幫助紀錄毛小孩的大小事，並無收容任何毛小孩，最近好像有會員誤會有收容動物，我們會加強網頁畫面顯示的提示。祝各位有個愉快的一天' },
       ],
     };
   },
@@ -38,44 +38,15 @@ export default {
       <div class="green-bg"> </div>
 
       <ul class="news-list">
-        <li class="news-item" @click="showDetails(0)">
+        <li class="news-item" v-for="(item,index) in news" :key="index" @click="showDetails(index)">
           <div class="news-date">
-            <span class="news-date-month">2023.11</span>
-            <span class="news-date-day">02</span>
+            <span class="news-date-month">{{item.date}}</span>
+            <span class="news-date-day">{{item.day}}</span>
           </div>
           <div class="news-announcement">
-            <span>浪浪的事改版問券調查</span>
+            <span>{{item.title}}</span>
             <!-- 更多按鈕 -->
-            <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
-              <span>更多...</span>
-              <img src="../assets/Image/HomeImage/HomeC-more-btn-gray.svg">
-            </div>
-
-          </div>
-        </li>
-        <li class="news-item">
-          <div class="news-date">
-            <span class="news-date-month">2023.05</span>
-            <span class="news-date-day">31</span>
-          </div>
-          <div class="news-announcement">
-            <span>誤發登入失敗通知</span>
-            <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
-              <span>更多...</span>
-              <img src="../assets/Image/HomeImage/HomeC-more-btn-gray.svg">
-            </div>
-          </div>
-        </li>
-        <li class="news-item">
-          <div class="news-date">
-            <span class="news-date-month">2023.05</span>
-            <span class="news-date-day">25</span>
-          </div>
-          <div class="news-announcement">
-            <span>活動[轉載]高雄市動物...
-
-            </span>
-            <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
+            <div class="news-announcement-btn" >
               <span>更多...</span>
               <img src="../assets/Image/HomeImage/HomeC-more-btn-gray.svg">
             </div>
@@ -86,7 +57,7 @@ export default {
 
     <!-- 詳細內容 -->
     <div v-if="selectedNews !== null" class="news-detail-popup">
-      <div class="close-btn" @click="closeDetails">x</div>
+      <div class="close-btn" @click="closeDetails"></div>
       <div class="news-detail-content">
         <p>{{ news[selectedNews].content }}</p>
         <!-- 其他詳細內容 -->
@@ -96,6 +67,7 @@ export default {
   </main>
   <FooterPage />
 </template>
+
 <style scoped>
 main {
   width: 100vw;
@@ -201,7 +173,7 @@ main {
 .news-detail-popup {
   position: fixed;
   top: 26%;
-  left: 63%;
+  left: 64%;
   width: 500px;
   height: 500px;
   /*   transform: translate(-50%, -50%);
@@ -217,15 +189,18 @@ main {
   top: 0px;
   right: 0px;
   cursor: pointer;
-  font-size: 20px;
-  color: #333;
+  height: 24px;
+  width: 24px;
+  background-image: url('../assets/Image/SponsorImage/icon_xbox-x.svg');
 }
 
 
 .news-detail-content {
+ 
   letter-spacing: 2px;
   font-size: 24px;
   line-height: 2;
+
 }
 
 </style>

@@ -22,9 +22,9 @@ export default {
 }
 </script>
 <template>
-    <main>
+    <main v-show="isShow">
         <!-- 顯示視窗v-show -->
-        <div v-show="isShow" class="informationPopupFrame">
+        <div class="informationPopupFrame">
             <div class="informationTitle">
                 <span>認養需知</span>
                 <!-- 點擊關閉 -->
@@ -72,6 +72,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(260, 255, 255, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
 }
 
 .informationPopupFrame {
@@ -87,11 +92,6 @@ main {
     background: linear-gradient(102deg, rgba(255, 255, 255, 0.30) -5.18%, rgba(255, 255, 255, 0.12) 108.27%);
     box-shadow: 0px 4px 6px 0px rgba(82, 160, 56, 0.15);
     backdrop-filter: blur(12.5px);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 6;
-    transform: translate(-50%, -50%);
 }
 
 .x {
