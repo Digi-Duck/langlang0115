@@ -1,22 +1,42 @@
 <script>
 import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
+import FiveStepsLineFrame from '@/components/FiveStepsLineFrame.vue';
 import TitleAndLine from '@/components/TitleAndLine.vue';
+import AdoptionInformationPopup from '@/components/AdoptionInformationPopup.vue';
+import AdoptionSearch from '@/components/AdoptionSearch.vue';
 import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 import AdoptionList from '@/components/AdoptionList.vue';
-import FiveStepsLineFrame from '@/components/FiveStepsLineFrame.vue';
-import AdoptionSearch from '@/components/AdoptionSearch.vue';
-import AdoptionInformationPopup from '@/components/AdoptionInformationPopup.vue';
+import IconPaperAirplane from '@/components/icons/IconPaperAirplane.vue';
+import DataSubmitted from '@/components/DataSubmitted.vue';
 
 export default {
+    components: {
+        NavPage,
+        FooterPage,
+        IconChangeButton,
+        TitleAndLine,
+        FiveStepsLineFrame,
+        AdoptionSearch,
+        AdoptionList,
+        AdoptionInformationPopup,
+        IconPaperAirplane,
+        DataSubmitted
+    },
     data() {
         return {
             // 下方暫放按鈕
             mysubmit: "毛小孩資訊",
-            mybgcolor: 'var(--primary-color)',
-            mytextcolor: 'var(--white-color)',
-            myw: '12.5rem',
-            myh: '4rem',
+            mybgcolorno: 'var(--primary-color)',
+            mytextcolorno: 'var(--white-color)',
+            mywno: '12.5rem',
+            myhno: '4rem',
+            // 前往送養按鈕
+            mytext: "前往送養",
+            mytextColor: "var(--gray-color)",
+            mybgColor: "var(--orangeyellow-color) ",
+            myw: "11.3rem",
+            myh: "4rem",
             // 尋找心目中的毛小孩標題
             mytexttwo: "尋找心目中的毛小孩",
             mylinew: '72rem',
@@ -54,20 +74,16 @@ export default {
         hideIcon() {
             this.isHovered = false;
         },
+        // 前往表單頁面
+        formadoptionPage() {
+            this.$router.push('/formpageadoption');
+        },
+        // 暫放
         petinformationPage() {
             this.$router.push('/adoptionpetinformation');
         }
     },
-    components: {
-        NavPage,
-        FooterPage,
-        IconChangeButton, // 暫時按鈕
-        TitleAndLine,
-        FiveStepsLineFrame,
-        AdoptionSearch,
-        AdoptionList,
-        AdoptionInformationPopup
-    },
+
 }
 </script>
 <template>
@@ -109,7 +125,7 @@ export default {
                         <!-- 搜尋 -->
                         <div class="notice" :style="{ borderColor: noticeborder, color: textColor }" @mouseover="showIcon"
                             @mouseleave="hideIcon" @click="showPopup">
-                            <!-- 做按鈕 -->
+                            <!-- 認養須知按鈕 -->
                             <div class="adoptionGuidelines">
                                 <img src="@\assets\Image\DogPawGreen.svg" alt="Icon" v-if="isHovered" class="icon">
                                 <span>請先閱讀認養須知</span>
@@ -120,6 +136,15 @@ export default {
                     </div>
                     <!-- 卡片 -->
                     <div class="petsInormationForm">
+                        <div class="btn">
+                            <!-- <a href="../views/FormPageAdoption.vue"></a> -->
+                            <IconChangeButton :text="mytext" :textColor="mytextColor" :bgColor="mybgColor" :w="myw" :h="myh"
+                                @click="formadoptionPage" />
+                            <a href="#">
+                                <IconPaperAirplane />
+                                搜尋附近動物醫院
+                            </a>
+                        </div>
                         <AdoptionList />
                     </div>
                     <!-- 顯示視窗畫面 -->
@@ -129,8 +154,9 @@ export default {
         </div>
         <!-- 暫放 -->
         <hr>
-        <IconChangeButton :text="mysubmit" @click="petinformationPage" :textColor="mytextcolor" :bgColor="mybgcolor"
-            :w="myw" :h="myh"></IconChangeButton>
+        <IconChangeButton :text="mysubmit" :textColor="mytextcolorno" :bgColor="mybgcolorno" :w="mywno" :h="myhno"
+            @click="petinformationPage" />
+        <DataSubmitted />
     </main>
     <FooterPage />
 </template>
@@ -300,6 +326,28 @@ main {
 }
 
 /* 卡片組件 */
+.btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 52.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--gray-color);
+    font-size: 1.5rem;
+}
+
+a:hover {
+    background-color: transparent;
+}
+
 .petsInormationForm {
     display: flex;
     flex-direction: column;
