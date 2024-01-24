@@ -2,20 +2,18 @@
 import IconX from './icons/IconX.vue';
 
 export default {
+    props: {
+        isShow: Boolean,
+    },
     data() {
         return {
-            isShow: Boolean,
+
         }
     },
     methods: {
-        openPopup() {
-            this.isShow = true;
-            document.body.style.overflow = 'hidden';
-        },
-        // 關閉視窗
+        //  將關閉視窗的值傳給父層
         closePopup() {
-            this.isShow = false;
-            document.body.style.overflow = 'auto';
+            this.$emit('close');
         }
     },
     components: {
@@ -24,11 +22,12 @@ export default {
 }
 </script>
 <template>
-    <!-- v-show="isShow" -->
     <main>
+        <!-- 顯示視窗v-show -->
         <div v-show="isShow" class="informationPopupFrame">
             <div class="informationTitle">
                 <span>認養需知</span>
+                <!-- 點擊關閉 -->
                 <IconX class="x" @click.stop="closePopup" />
             </div>
             <section class="information">
@@ -88,6 +87,11 @@ main {
     background: linear-gradient(102deg, rgba(255, 255, 255, 0.30) -5.18%, rgba(255, 255, 255, 0.12) 108.27%);
     box-shadow: 0px 4px 6px 0px rgba(82, 160, 56, 0.15);
     backdrop-filter: blur(12.5px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 6;
+    transform: translate(-50%, -50%);
 }
 
 .x {

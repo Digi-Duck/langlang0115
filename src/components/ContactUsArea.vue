@@ -93,7 +93,7 @@ export default {
                     </IconChangeButton>
                 </a>
                 <!-- 顯示的視窗 -->
-                <ContactMsgScreen :is-show="show"></ContactMsgScreen>
+                <ContactMsgScreen :is-show="show" />
                 <div class="remindText">
                     <p>或使用電子信箱與我們聯繫</p>
                     <div id="mymail">

@@ -9,8 +9,6 @@ export default {
     },
     data() {
         return {
-            // 圖
-            isHovered: false,
             formData: {
                 name: '',
                 species: '',
@@ -27,14 +25,6 @@ export default {
             //處理表單邏輯
             // console.log("表單提交");
         },
-        // 顯示圖
-        showIcon() {
-            this.isHovered = true;
-        },
-        // 隱藏圖
-        hideIcon() {
-            this.isHovered = false;
-        },
     },
     components: {
         NoHoverButton, IconChangeButton
@@ -44,15 +34,6 @@ export default {
 
 <template>
     <div class="container">
-        <div class="notice" :style="{ borderColor: noticeborder, color: textColor }" @mouseover="showIcon"
-            @mouseleave="hideIcon">
-            <!-- 做按鈕 -->
-            <div class="adoptionGuidelines">
-                <img src="@\assets\Image\DogPawGreen.svg" alt="Icon" v-if="isHovered" class="icon">
-                <span>請先閱讀認養須知</span>
-                <img src="@\assets\Image\DogPawGreen.svg" alt="Icon" v-if="isHovered" class="icon">
-            </div>
-        </div>
         <form :style="{ borderColor: frameBorder }">
             <div class="form-group">
                 <div class="group select">
@@ -203,55 +184,10 @@ export default {
     font-size: 1.5rem;
     letter-spacing: 6px;
     width: 43.75rem;
-    height: 61.6rem;
+    height: 56.6rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-}
-
-/* 請先閱讀認養須知 */
-
-.notice {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    border: 2px solid var(--primary-color);
-    background-color: var(--white-color);
-    color: var(--primary-color);
-}
-
-.notice span {
-    text-align: center;
-    margin: 0 2px 1px 8px;
-}
-
-.notice:hover {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--white-color);
-}
-
-.notice:hover .icon {
-    animation: ChangeIcon 0.5s ease;
-}
-
-@keyframes ChangeIcon {
-    0% {
-        opacity: 0;
-        gap: 10px;
-    }
-
-    100% {
-        opacity: 1;
-        gap: 10px;
-    }
-}
-
-.icon {
-    width: 1.5rem;
-    height: 1.3rem;
 }
 
 /* 表單整區 根據顏色區分*/

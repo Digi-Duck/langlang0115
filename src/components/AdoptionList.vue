@@ -18,6 +18,7 @@ export default {
         }
     },
     methods: {
+        // 前往表單頁面
         formadoptionPage() {
             this.$router.push('/formpageadoption');
         },

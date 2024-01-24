@@ -6,26 +6,54 @@ import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 import AdoptionList from '@/components/AdoptionList.vue';
 import FiveStepsLineFrame from '@/components/FiveStepsLineFrame.vue';
 import AdoptionSearch from '@/components/AdoptionSearch.vue';
+import AdoptionInformationPopup from '@/components/AdoptionInformationPopup.vue';
 
 export default {
     data() {
         return {
+            // 下方暫放按鈕
             mysubmit: "毛小孩資訊",
-            mytexttwo: "尋找心目中的毛小孩",
             mybgcolor: 'var(--primary-color)',
             mytextcolor: 'var(--white-color)',
             myw: '12.5rem',
             myh: '4rem',
+            // 尋找心目中的毛小孩標題
+            mytexttwo: "尋找心目中的毛小孩",
             mylinew: '72rem',
             parenttwoStyle: {
                 gap: '0.5rem',
             },
+            // 搜尋區
             mybordercolor: 'var(--primary-color)',
             mynoticeborder: 'var(--primary-color)',
             mytextc: 'var(--primary-color)',
+            // Icon圖
+            isHovered: false,
+            // 進入畫面時 視窗關閉
+            show: false,
         }
     },
     methods: {
+        showPopup() {
+            // 執行顯示視窗
+            this.show = true;
+            // 視窗開啟時scrollBar隱藏
+            document.body.style.overflow = 'hidden';
+        },
+        closePopup() {
+            // 執行關閉視窗
+            this.show = false;
+            // 視窗開啟時scrollBar打開
+            document.body.style.overflow = 'auto';
+        },
+        // 顯示圖
+        showIcon() {
+            this.isHovered = true;
+        },
+        // 隱藏圖
+        hideIcon() {
+            this.isHovered = false;
+        },
         petinformationPage() {
             this.$router.push('/adoptionpetinformation');
         }
@@ -33,11 +61,12 @@ export default {
     components: {
         NavPage,
         FooterPage,
-        IconChangeButton,
+        IconChangeButton, // 暫時按鈕
         TitleAndLine,
         FiveStepsLineFrame,
         AdoptionSearch,
-        AdoptionList
+        AdoptionList,
+        AdoptionInformationPopup
     },
 }
 </script>
@@ -68,7 +97,6 @@ export default {
                     <p>帶毛小孩回家</p>
                 </div>
             </div>
-
             <!-- 尋找心目中的毛小孩 -->
             <div class="lookingForLikepets">
                 <TitleAndLine :text="mytexttwo" :customStyle="parenttwoStyle" :linew="mylinew" />
@@ -78,15 +106,28 @@ export default {
                         <div class="petsTitle">
                             <span>尋找心目中的毛小孩</span>
                         </div>
+                        <!-- 搜尋 -->
+                        <div class="notice" :style="{ borderColor: noticeborder, color: textColor }" @mouseover="showIcon"
+                            @mouseleave="hideIcon" @click="showPopup">
+                            <!-- 做按鈕 -->
+                            <div class="adoptionGuidelines">
+                                <img src="@\assets\Image\DogPawGreen.svg" alt="Icon" v-if="isHovered" class="icon">
+                                <span>請先閱讀認養須知</span>
+                                <img src="@\assets\Image\DogPawGreen.svg" alt="Icon" v-if="isHovered" class="icon">
+                            </div>
+                        </div>
                         <AdoptionSearch :frameBorder="mybordercolor" :noticeborder="mynoticeborder" :textColor="mytextc" />
                     </div>
+                    <!-- 卡片 -->
                     <div class="petsInormationForm">
                         <AdoptionList />
                     </div>
+                    <!-- 顯示視窗畫面 -->
+                    <AdoptionInformationPopup :is-show="show" @close="closePopup" />
                 </div>
             </div>
         </div>
-
+        <!-- 暫放 -->
         <hr>
         <IconChangeButton :text="mysubmit" @click="petinformationPage" :textColor="mytextcolor" :bgColor="mybgcolor"
             :w="myw" :h="myh"></IconChangeButton>
@@ -184,6 +225,53 @@ main {
     flex-direction: row;
     gap: 1.25rem;
     padding-top: 2.8rem;
+}
+
+/* 請先閱讀認養須知 */
+
+.notice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    border: 2px solid var(--primary-color);
+    background-color: var(--white-color);
+    color: var(--primary-color);
+}
+
+.adoptionGuidelines span {
+    font-size: 28px;
+    text-align: center;
+    margin: 0 2px 1px 8px;
+    letter-spacing: 7px;
+}
+
+.notice:hover {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.notice:hover .icon {
+    animation: ChangeIcon 0.5s ease;
+}
+
+@keyframes ChangeIcon {
+    0% {
+        opacity: 0;
+        gap: 10px;
+    }
+
+    100% {
+        opacity: 1;
+        gap: 10px;
+    }
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.3rem;
 }
 
 /* 搜尋區 */
