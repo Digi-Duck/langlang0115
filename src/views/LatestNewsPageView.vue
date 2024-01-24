@@ -86,7 +86,7 @@ export default {
 
     <!-- 詳細內容 -->
     <div v-if="selectedNews !== null" class="news-detail-popup">
-      <div class="close-btn" @click="closeDetails">x</div>
+      <div class="close-btn" @click="closeDetails"></div>
       <div class="news-detail-content">
         <p>{{ news[selectedNews].content }}</p>
         <!-- 其他詳細內容 -->
@@ -201,7 +201,7 @@ main {
 .news-detail-popup {
   position: fixed;
   top: 26%;
-  left: 63%;
+  left: 64%;
   width: 500px;
   height: 500px;
   /*   transform: translate(-50%, -50%);
@@ -217,15 +217,18 @@ main {
   top: 0px;
   right: 0px;
   cursor: pointer;
-  font-size: 20px;
-  color: #333;
+  height: 24px;
+  width: 24px;
+  background-image: url('../assets/Image/SponsorImage/icon_xbox-x.svg');
 }
 
 
 .news-detail-content {
+ 
   letter-spacing: 2px;
   font-size: 24px;
   line-height: 2;
+
 }
 
 </style>
