@@ -13,23 +13,14 @@ export default {
 </script>
 <template>
     <NavPage />
-    <main>
-        <div class="adoptionCenteTitle">
-            <span>認養中心</span>
-            <p> > </p>
-            <p>毛小孩詳細資訊</p>
-        </div>
-        <AnimalForm />
-    </main>
+    <div>
+        <AnimalForm pagename="認養中心" title="毛小孩詳細資訊" inputTitleColor="var(--primary-color)"
+            inputTextBorder="2px solid var(--primary-color)" svgColor="var(--primary-color)"
+            uploadPicColor=" var(--primary-color)" submitBgColor="var(--primary-color)" />
+    </div>
     <FooterPage />
 </template>
 <style scoped>
-main {
-    width: 100vw;
-    max-width: 100%;
-    padding: 4.3rem 9rem 2.25rem 10rem;
-}
-
 /* 標題 */
 .adoptionCenteTitle {
     display: flex;
