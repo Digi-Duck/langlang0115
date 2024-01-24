@@ -16,7 +16,13 @@ export default {
         },
         goToMyLostForm() {
             this.$router.push('/myanimallostform'); //導到[我的動物走失了]
-        }
+        },
+        goToFoundAnimalInfo() {
+            this.$router.push('/foundanimalsinformation'); //導到[撿到遺失動物資訊頁]
+        },
+        goToMyLostInfo() {
+            this.$router.push('/myanimallostinformation'); //導到[我的動物走失了資訊頁]
+        },
     },
     components: {
         NavPage,
@@ -112,9 +118,14 @@ export default {
             <!--   tab group end -->
         </div>
         <!-- 失散協尋>撿到遺失動物（暫放） -->
-        <GreenButton :showSvg="false" @click="goToFoundAnimalForm">確認前往：<br>撿到遺失動物</GreenButton>
+        <GreenButton :showSvg="false" @click="goToFoundAnimalForm" class="btnn">確認前往：<br>撿到遺失動物</GreenButton>
         <!-- 失散協尋>我遺失了動物（暫放） -->
-        <GreenButton :showSvg="false" @click="goToMyLostForm">確認前往：<br>我遺失了動物</GreenButton>
+        <GreenButton :showSvg="false" @click="goToMyLostForm" class="btnn">確認前往：<br>我遺失了動物</GreenButton>
+        <!-- 失散協尋>撿到遺失動物資訊頁（暫放） -->
+        <GreenButton :showSvg="false" @click="goToFoundAnimalInfo" class="btnn">確認前往：<br>撿到遺失動物資訊頁</GreenButton>
+        <!-- 失散協尋>我遺失了動物資訊頁（暫放） -->
+        <GreenButton :showSvg="false" @click="goToMyLostInfo" class="btnn">確認前往：<br>我遺失了動物資訊頁</GreenButton>
+
     </main>
     <FooterPage />
 </template>
@@ -223,5 +234,13 @@ svg {
 .tab-content {
     display: flex;
     gap: 68px;
+}
+
+/* 暫放按鈕 */
+.btnn {
+    width: 250px;
+    height: 100px;
+    font-size: 24px;
+   margin: 10px 10px;
 }
 </style>
