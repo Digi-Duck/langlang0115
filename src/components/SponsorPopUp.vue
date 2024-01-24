@@ -6,7 +6,6 @@ export default {
     },
     data() {
         return {
-            // showback: false,
         }
     },
     // emits 回傳資料給父層
