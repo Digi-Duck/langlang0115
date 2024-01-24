@@ -15,7 +15,7 @@ export default {
     <NavPage />
     <main>
         <div>
-            <AnimalForm title="我遺失了動物" inputTitleColor="#B68337" uploadPicBorder="#B68337" svgColor="#B68337" uploadPicColor="#B68337"
+            <AnimalForm pagename="失散協尋" title="我遺失了動物" inputTitleColor="#B68337" uploadPicBorder="#B68337" svgColor="#B68337" uploadPicColor="#B68337"
                 inputTextBorder="2px solid #B68337" submitBgColor="#B68337"
                 popStyle="#B68337" ></AnimalForm>
         </div>

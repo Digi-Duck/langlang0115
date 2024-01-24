@@ -4,6 +4,7 @@ import IconChangeButton from './icons/IconChangeButton.vue';
 
 export default {
     props: {
+        pagename:String,
         title: String, //此表單的名稱
         inputTitleColor: String, //每個欄位的標題
         inputTextBorder: String, //輸入欄文字
@@ -88,7 +89,7 @@ export default {
 <template>
     <main>
         <div class="header-container">
-            <span class="header-title">失散協尋</span>
+            <span class="header-title">{{pagename}}</span>
             <span class="header-text">
                 <span class="arrow-icon"> > </span>
                 {{ title }} </span>
