@@ -88,6 +88,25 @@ const router = createRouter({
       name: 'memberlogin',
       component: () => import('../views/MemberLoginView.vue')
     },
+    {
+      // 會員註冊頁面
+      path: '/memberregistration',
+      name: 'memberregistration',
+      component: () => import('../views/MemberRegistration.vue')
+    },
+    {
+      // 會員忘記密碼頁面
+      path: '/memberpassword',
+      name: 'memberpassword',
+      component: () => import('../views/MemberPassword.vue')
+    },
+    {
+      // 會員個人頁面
+      path: '/members',
+      name: 'members',
+      component: () => import('../views/MembersPage.vue')
+    },
+    
   ]
 })
 

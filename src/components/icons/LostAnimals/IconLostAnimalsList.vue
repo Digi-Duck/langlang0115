@@ -100,7 +100,7 @@ a {
 .cards {
     height: 850px;
     overflow: hidden;
-    overflow: scroll;
+    overflow-y: scroll;
     border: 2px solid var(--primary-color);
     border-radius: 0 0 30px 30px;
     padding: 30px 0;

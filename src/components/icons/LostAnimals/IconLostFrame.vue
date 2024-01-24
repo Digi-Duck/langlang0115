@@ -32,8 +32,17 @@ export default {
         </div>
         <form :style="{ borderColor: frameBorder }">
             <div class="form-group">
-                <label for="species" :style="{ color: textColor }">地區選擇 *</label>
-                <div>下拉式選單(預計安裝套件)</div>
+                <div class="group select">
+                    <label for="species" :style="{ color: textColor }">地區選擇 *</label>
+                    <select v-model="selectedOption" class="input customSelect">
+                        <option value="0">臺北市</option>
+                        <option value="1">新北市</option>
+                        <option value="2">臺中市</option>
+                        <option value="3">高雄市</option>
+                    </select>
+                </div>
+                <!-- <label for="species" :style="{ color: textColor }">地區選擇 *</label>
+                <div>下拉式選單(預計安裝套件)</div> -->
             </div>
             <div class="form-group">
                 <label for="species" :style="{ color: textColor }">動物類別 *</label>
@@ -106,7 +115,8 @@ export default {
             </div>
             <div class="btn-area">
                 <NoHoverButton @click.prevent="submitForm" btnbgColor="var(--gray-color)" text="清除重寫"></NoHoverButton>
-                <IconChangeButton @click.prevent="submitForm" bgColor="var(--primary-color)" text="搜尋" textColor="var(--white-color)"></IconChangeButton>
+                <IconChangeButton @click.prevent="submitForm" bgColor="var(--primary-color)" text="搜尋"
+                    textColor="var(--white-color)"></IconChangeButton>
             </div>
         </form>
     </div>
@@ -171,6 +181,29 @@ label[for="neutered"],
     margin: 0;
 }
 
+.input {
+    font-size: 20px;
+    width: 620px;
+    height: 56px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    background: var(--white-color);
+    outline: none;
+    margin-top: 1.5rem;
+    padding: 20px;
+}
+
+/* 下拉選單箭頭設定 */
+.customSelect {
+    -webkit-animation: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(../src/assets/Image/LostImage/selcet.svg);
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    padding-right: 1rem;
+}
+
 /*按鈕*/
 .btn-area {
     display: flex;
@@ -178,5 +211,4 @@ label[for="neutered"],
     gap: 55px;
     font-size: 20px;
     letter-spacing: 5px;
-}
-</style>
+}</style>
