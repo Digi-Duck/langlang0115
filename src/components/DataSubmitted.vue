@@ -1,16 +1,23 @@
 <script>
-import GreenButton from './GreenButton.vue';
-
 export default {
-    components: {
-        GreenButton
-    },
     props: {
+        // 視窗
         isShowSub: Boolean,
+        // SVG顏色
         myFillColor: String,
-        mytextColor: String,
+        // 文字顏色
+        myTextColor: String,
+        // 大字大小
+        textSize: String,
+        // 大字內文
         submitResult: String,
-        submitButText: String,
+        // 小字內文
+        submitText: String,
+        // 按鈕文字
+        submitBtnText: String,
+        // 按鈕顏色
+        submitBtnColor: String,
+        // 按鈕指令
         myurl: String,
     },
     data() {
@@ -41,11 +48,11 @@ export default {
 <template>
     <!-- 顯示視窗 -->
     <!-- v-show="isShowSub" -->
-    <div class="msgScreenFrame" v-show="isShowSub">
-        <div class="msgSuccess">
+    <div class="ScreenFrame">
+        <div class="Success">
             <div class="img">
                 <!-- 圖 -->
-                <svg width="63" height="66" viewBox="0 0 63 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="65" height="66" viewBox="0 0 63 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="ion:paw-outline">
                         <rect x="62.2773" y="0.702637" width="65.2662" height="60.8014" rx="10"
                             transform="rotate(90.6621 62.2773 0.702637)" :fill="myFillColor" />
@@ -55,15 +62,16 @@ export default {
                     </g>
                 </svg>
             </div>
-            <div class="msgSendText">
-                <span :textColor="mytextColor">{{ submitResult }}</span>
+            <div class="SendText" :textColor="myTextColor">
+                <span class="big" :fontSize="textSize">{{ submitResult }}</span>
+                <p class="small">{{ submitText }}</p>
             </div>
-            <button class="greenbutton" @click="goPage(myurl)">{{ submitButText }}</button>
+            <button class="button" @click="goPage(myurl)" :bgColor="submitBtnColor">{{ submitBtnText }}</button>
         </div>
     </div>
 </template>
 <style scoped>
-.msgScreenFrame {
+.ScreenFrame {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +87,7 @@ export default {
     z-index: 6;
 }
 
-.msgSuccess {
+.Success {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,6 +98,7 @@ export default {
     border: 2px solid var(--primary-color);
     border-radius: 30px;
     gap: 2rem;
+    padding: 3rem;
 }
 
 .img {
@@ -99,21 +108,27 @@ export default {
     flex-direction: column;
 }
 
-.msgSendText {
+.SendText {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
 }
 
-.msgSendText span {
+.SendText span {
     font-size: 1.5rem;
     text-align: center;
     letter-spacing: 6px;
+    font-weight: bold;
 }
 
-.greenbutton {
+.SendText p {
+    font-size: 1.25rem;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+.button {
     width: 12.8rem;
     height: 4rem;
     color: var(--white-color);
