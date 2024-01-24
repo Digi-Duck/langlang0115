@@ -3,9 +3,20 @@ import GreenButton from './GreenButton.vue';
 export default {
     
     methods: {
+        // behavior行動= 平滑
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        },
         // 回到首頁按鈕
         gohomePage() {
             this.$router.push('/');
+            // 視窗離開時scrollBar打開
+            document.body.style.overflow = 'auto';
+             // 讓scrollBar在router後平滑的回至頂部
+            this.scrollToTop();
         },
         // 回到贊助我們頁面
         clickSponsorUsBtn() {

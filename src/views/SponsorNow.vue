@@ -3,12 +3,14 @@ import NavPage from '../components/NavPage.vue'
 import GreenButton from '@/components/GreenButton.vue'
 import SponsorPopUp from '@/components/SponsorPopUp.vue';
 import SponsorSuccess from '@/components/SponsorSuccess.vue';
+import FooterPage from '@/components/FooterPage.vue';
 export default {
   components: {
     SponsorPopUp,
     GreenButton,
     NavPage,
-    SponsorSuccess
+    SponsorSuccess,
+    FooterPage
   },
   data() {
     return {
@@ -22,16 +24,21 @@ export default {
     closeModel() {
       this.rightnow = false;
       this.showSuccess = true;
+      this.hidden();
     },
     // SponsorPopUp裡 點擊到前往贊助 執行Popup關閉&Success關閉
     closePopup() {
       this.rightnow = false;
       this.showSuccess = false;
+      this.showScrollbar();
     },
-    // 關閉當前視窗
-    // closeCurrentPopup() {
-    //   this.$emit('closePopup');
-    // }
+    // 視窗開啟時scrollBar隱藏
+    hidden() {
+      document.body.style.overflow = 'hidden';
+    },
+    showScrollbar() {
+      document.body.style.overflow = 'auto';
+    }
   },
 };
 </script>
@@ -119,7 +126,7 @@ export default {
         </div>
       </div>
       <div class="box ">
-        <GreenButton :showSvg="false" class="sponsornow-btn" @click="rightnow = !rightnow">立即贊助</GreenButton>
+        <GreenButton :showSvg="false" class="sponsornow-btn" @click="rightnow = !rightnow, hidden()">立即贊助</GreenButton>
         <!-- Popup 執行closeModel closePopup-->
         <SponsorPopUp v-if="rightnow" @close-type="closeModel" @closePopup="closePopup">
         </SponsorPopUp>
@@ -128,6 +135,7 @@ export default {
       </div>
     </div>
   </section>
+  <FooterPage />
 </template>
 
 <style scoped>
