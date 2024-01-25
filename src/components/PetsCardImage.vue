@@ -1,11 +1,16 @@
 <script>
+import CardClickLike from '@/components/CardClickLike.vue';
+
+export default {
+    components: {
+        CardClickLike,
+    },
+}
 </script>
 <template>
     <div class="furryBabiesImage">
         <img src="../assets/Image/CardImage/CardCat.png" alt="">
-        <!-- 愛心做Icon -->
-        <!-- <IconHeart /> -->
-        <img class="heart" src="../assets/Image/CardImage/IconHeart.svg" alt="">
+        <CardClickLike class="heart"></CardClickLike>
     </div>
 </template>
 <style scoped>
@@ -23,10 +28,8 @@
 
 /* 卡片愛心 */
 .furryBabiesImage .heart {
-    width: 4.8rem;
-    height: 4.25rem;
     position: absolute;
-    bottom: 1.8rem;
-    left: 2.2rem;
+    bottom: 1.75rem;
+    left: 2.1rem;
 }
 </style>

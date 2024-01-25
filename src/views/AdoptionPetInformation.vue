@@ -25,9 +25,9 @@ export default {
         NavPage,
         FooterPage,
         TitleAndLine,
-        PetsCardImage,
         PetsCardFrame,
-        IconCard
+        IconCard,
+        PetsCardImage,
     }
 }
 </script>
