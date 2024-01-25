@@ -4,7 +4,7 @@ import IconChangeButton from './icons/IconChangeButton.vue';
 
 export default {
     props: {
-        pagename:String,
+        pagename: String,
         title: String, //此表單的名稱
         inputTitleColor: String, //每個欄位的標題
         inputTextBorder: String, //輸入欄文字
@@ -12,7 +12,7 @@ export default {
         svgColor: String, // 上傳照片的 SVG 顏色
         uploadPicColor: String, //上傳照片的文字
         submitBgColor: String, //送出按鈕
-        popStyle:String //彈跳視窗
+        popStyle: String //彈跳視窗
     },
     data() {
         return {
@@ -40,10 +40,10 @@ export default {
             myinnertext: "清除重填",
             mybtnbgColor: "#626262",
             //對話框內按鈕
-            clearbtntext:"確認重填",
-            clearbtnbg:'#52A038',
-            cancelbtntext:"返回修改",
-            cancelbtnbg:'#626262'
+            clearbtntext: "確認重填",
+            clearbtnbg: '#52A038',
+            cancelbtntext: "返回修改",
+            cancelbtnbg: '#626262'
         };
     },
     methods: {
@@ -89,7 +89,7 @@ export default {
 <template>
     <main>
         <div class="header-container">
-            <span class="header-title">{{pagename}}</span>
+            <span class="header-title">{{ pagename }}</span>
             <span class="header-text">
                 <span class="arrow-icon"> > </span>
                 {{ title }} </span>
@@ -154,8 +154,9 @@ export default {
                 <label for="male">公</label>
                 <input type="radio" id="female" value="母" v-model="formData.gender" name="gender">
                 <label for="female">母</label>
-                <input type="radio" id="gender-unknown" value="未知" v-model="formData.gender" name="gender">
-                <label for="gender-unknown">未知</label>
+                <!-- 棕色表單不需要未知選項 -->
+                    <input type="radio" class="brown-unnecessary" id="gender-unknown" value="未知" v-model="formData.gender" name="gender">
+                    <label for="gender-unknown" class="brown-unnecessary">未知</label>
             </div>
 
             <div class="form-group">
@@ -165,9 +166,8 @@ export default {
 
                 <input type="radio" id="patternedColor" value="花色" v-model="formData.colors" name="colorType" />
                 <label for="patternedColor">花色</label>
-
-                <input type="radio" id="undefinedColor" value="未定義" v-model="formData.colors" name="colorType" />
-                <label for="undefinedColor">未定義</label>
+                    <input type="radio" class="brown-unnecessary" id="undefinedColor" value="未定義" v-model="formData.colors" name="colorType" />
+                    <label for="undefinedColor" class="brown-unnecessary">未定義</label>
             </div>
 
             <div class="form-group">
@@ -177,9 +177,8 @@ export default {
 
                 <input type="radio" id="adultAge" value="成年" v-model="formData.age" name="ageType" />
                 <label for="adultAge">成年</label>
-
-                <input type="radio" id="unknownAge" value="未知" v-model="formData.age" name="ageType" />
-                <label for="unknownAge">未知</label>
+                    <input type="radio" class="brown-unnecessary" id="unknownAge" value="未知" v-model="formData.age" name="ageType" />
+                    <label for="unknownAge" class="brown-unnecessary">未知</label>
             </div>
 
             <div class="form-group">
@@ -189,9 +188,8 @@ export default {
 
                 <input type="radio" id="neuteredNo" value="未結紮" v-model="formData.neutered" name="neuteredStatus" />
                 <label for="neuteredNo">未結紮</label>
-
-                <input type="radio" id="neuteredUnknown" value="未知" v-model="formData.neutered" name="neuteredStatus" />
-                <label for="neuteredUnknown">未知</label>
+                    <input type="radio" class="brown-unnecessary" id="neuteredUnknown" value="未知" v-model="formData.neutered" name="neuteredStatus" />
+                    <label for="neuteredUnknown" class="brown-unnecessary">未知</label>
             </div>
 
             <div class="form-group time-place">
@@ -213,8 +211,9 @@ export default {
 
 
                     <label for="description"></label>
-                    <input type="text" id="description" v-model="formData.description" :style="{ border: inputTextBorder }" placeholder="詳細地點描述">
-            
+                    <input type="text" id="description" v-model="formData.description" :style="{ border: inputTextBorder }"
+                        placeholder="詳細地點描述">
+
                 </div>
             </div>
 
@@ -239,12 +238,13 @@ export default {
                 </NoHoverButton>
                 <!-- 送出按鈕 -->
                 <IconChangeButton :text="mysubmit" @click.prevent="submitForm" :style="{
-                    color: textColor, backgroundColor: submitBgColor, width: w, height: h}"></IconChangeButton>
+                    color: textColor, backgroundColor: submitBgColor, width: w, height: h
+                }"></IconChangeButton>
 
 
                 <!-- 重填確認框 -->
-                <div  v-if="confirmClear" class="confirmation-modal">
-                    <div class="container" :style="{ borderColor: popStyle }" >
+                <div v-if="confirmClear" class="confirmation-modal">
+                    <div class="container" :style="{ borderColor: popStyle }">
                         <div>
                             <img src="/src/assets/Image/AboutPage2Image/message-dogpaw.svg" alt="msg">
                         </div>
@@ -252,8 +252,10 @@ export default {
                             <span>是否清除重填？</span>
                         </div>
                         <div class="btns">
-                            <NoHoverButton @click="cancelConfirmation" :text="cancelbtntext" :btnbgColor="cancelbtnbg" ></NoHoverButton>
-                            <NoHoverButton @click="clearFormBtn" :text="clearbtntext" :btnbgColor="clearbtnbg"></NoHoverButton>
+                            <NoHoverButton @click="cancelConfirmation" :text="cancelbtntext" :btnbgColor="cancelbtnbg">
+                            </NoHoverButton>
+                            <NoHoverButton @click="clearFormBtn" :text="clearbtntext" :btnbgColor="clearbtnbg">
+                            </NoHoverButton>
                         </div>
                     </div>
                 </div>
@@ -398,7 +400,8 @@ select {
     gap: 5px;
 }
 
-#time::placeholder ,#description::placeholder{
+#time::placeholder,
+#description::placeholder {
     text-align: center;
     color: #b1b1b1;
     letter-spacing: 6px;
@@ -445,7 +448,7 @@ select#place {
     color: #b1b1b1;
 }
 
-select.customSelect{
+select.customSelect {
     /*取消下拉式選單預設按鈕樣式*/
     -webkit-animation: none;
     -moz-appearance: none;
@@ -524,7 +527,7 @@ input#phone {
     background-color: var(--white-color);
     /*border: 2px solid var(--primary-color);*/
     border-width: 2px;
-    border-style:solid ;
+    border-style: solid;
     /*border-color: aqua;*/
     border-radius: 30px;
     gap: 42px;
@@ -541,7 +544,7 @@ input#phone {
     color: var(--gray-color);
 }
 
-.btns{
+.btns {
     display: flex;
     gap: 38px;
 }
@@ -558,6 +561,5 @@ input#phone {
     color: var(--gray-color);
     border: 1px solid var(--gray-color);
 }
-
 </style>
 
