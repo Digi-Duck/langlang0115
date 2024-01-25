@@ -5,11 +5,18 @@ import GreenButton from '@/components/GreenButton.vue';
 import NavPage from '@/components/NavPage.vue';
 import FooterPage from '@/components/FooterPage.vue';
 import sponsorsData from '../json/SPONSORS.json';
+import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 
 // 1.生成100個名字 要有獨特的id json格式 date、amount不重複、name隨機生成
 // 2.存data到json
 
 export default {
+    components: {
+        GreenButton,
+        NavPage,
+        FooterPage,
+        IconChangeButton
+    },
     data() {
         return {
             sponsors: sponsorsData,
@@ -20,12 +27,6 @@ export default {
             this.$router.push('/sponsornow'); //導到立即贊助頁面
         }
     },
-    components: {
-        GreenButton,
-        NavPage,
-        FooterPage,
-    },
-
 };
 </script>
 
@@ -49,7 +50,8 @@ export default {
                 浪浪的事是一個公益性質的平台，我們希望可以達到一個良善的循環，如果你不嫌棄，歡迎贊助我們。<br>
                 <span>祝福您有個美好的一天。</span>
             </div>
-            <GreenButton :showSvg="false" @click="clickSponsorNowBtn">立即贊助</GreenButton>
+            <IconChangeButton text="立即贊助" textColor="var(--white-color)" bgColor="var(--primary-color)" w="9.7rem"
+                h="3.25rem" @click="clickSponsorNowBtn" />
         </div>
     </section>
 
@@ -118,7 +120,7 @@ export default {
         </div>
     </section>
 
-    <FooterPage/>
+    <FooterPage />
 </template>
 
 <style scoped>

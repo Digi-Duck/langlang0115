@@ -4,13 +4,15 @@ import GreenButton from '@/components/GreenButton.vue'
 import SponsorPopUp from '@/components/SponsorPopUp.vue';
 import SponsorSuccess from '@/components/SponsorSuccess.vue';
 import FooterPage from '@/components/FooterPage.vue';
+import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 export default {
   components: {
     SponsorPopUp,
     GreenButton,
     NavPage,
     SponsorSuccess,
-    FooterPage
+    FooterPage,
+    IconChangeButton
   },
   data() {
     return {
@@ -126,7 +128,8 @@ export default {
         </div>
       </div>
       <div class="box ">
-        <GreenButton :showSvg="false" class="sponsornow-btn" @click="rightnow = !rightnow, hidden()">立即贊助</GreenButton>
+        <IconChangeButton class="sponsornow-btn" text="立即贊助" textColor="var(--white-color)" bgColor="var(--primary-color)"
+          w="9.7rem" h="3.25rem" @click="rightnow = !rightnow, hidden()" />
         <!-- Popup 執行closeModel closePopup-->
         <SponsorPopUp v-if="rightnow" @close-type="closeModel" @closePopup="closePopup">
         </SponsorPopUp>

@@ -155,7 +155,7 @@ export default {
             @click="petinformationPage" />
     </main>
 
-    <!-- <FooterPage /> -->
+    <FooterPage />
 </template>
 <style scoped>
 main {
@@ -172,7 +172,6 @@ main {
 }
 
 /* 認養中心 標題區 */
-
 .adoptionTitle {
     display: flex;
     flex-direction: row;
