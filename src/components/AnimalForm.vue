@@ -202,17 +202,19 @@ export default {
                         :style="{ border: inputTextBorder }">
 
                     <label for="place" :style="{ color: inputTitleColor }"></label>
-                    <select id="place" v-model="formData.place" :style="{ border: inputTextBorder }">
+                    <select id="place" class="customSelect" v-model="formData.place" :style="{ border: inputTextBorder }">
                         <option value="" disabled selected>請選擇縣市</option>
-                        <option value="location1">地點 1</option>
-                        <option value="location2">地點 2</option>
+                        <option value="0">臺北市</option>
+                        <option value="1">新北市</option>
+                        <option value="2">臺中市</option>
+                        <option value="3">高雄市</option>
                         <!-- 添加更多的選項 -->
                     </select>
 
 
                     <label for="description"></label>
-                    <input type="text" id="description" v-model="formData.description" :style="{ border: inputTextBorder }">
-                    <span>更多詳細地點描述</span>
+                    <input type="text" id="description" v-model="formData.description" :style="{ border: inputTextBorder }" placeholder="詳細地點描述">
+            
                 </div>
             </div>
 
@@ -221,7 +223,7 @@ export default {
                 <label for="phone" :style="{ color: inputTitleColor }">聯絡方式 *</label>
                 <div class="phone-area">
                     <input type="text" id="phone" v-model="formData.phone" :style="{ border: inputTextBorder }">
-                    <span>EX.手機號碼:0912345678</span>
+                    <span>請留下手機號碼或電子信箱</span>
                 </div>
 
             </div>
@@ -396,13 +398,11 @@ select {
     gap: 5px;
 }
 
-#time::placeholder {
+#time::placeholder ,#description::placeholder{
     text-align: center;
     color: #b1b1b1;
     letter-spacing: 6px;
 }
-
-
 
 .time-place-text span,
 .phone-area span {
@@ -430,11 +430,10 @@ input#chip-id {
 }
 
 input#time {
-    width: 221px;
+    width: 275px;
     height: 56px;
-
+    margin-right: 2px;
 }
-
 
 select#place {
     width: 257px;
@@ -446,8 +445,20 @@ select#place {
     color: #b1b1b1;
 }
 
+select.customSelect{
+    /*取消下拉式選單預設按鈕樣式*/
+    -webkit-animation: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*放入圖片*/
+    background-image: url(../assets/Image/AboutPage2Image/select-vector.svg);
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    padding-right: 1rem;
+}
+
 input#description {
-    width: 610px;
+    width: 562px;
     height: 56px;
 }
 
