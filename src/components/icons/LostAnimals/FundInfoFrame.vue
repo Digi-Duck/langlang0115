@@ -116,7 +116,7 @@ export default {
     align-items: center;
     width: 460px;
     height: 65px;
-    background-color: var(--primary-color);
+    background-color: var(--olivegreen-color);
     border-radius: 0.6rem 0.6rem 0 0;
 }
 
@@ -142,14 +142,14 @@ th {
     padding-left: 2.5rem;
     width: 200px;
     height: 85px;
-    color: var(--primary-color);
-    border: 3px solid var(--primary-color);
+    color: var(--olivegreen-color);
+    border: 3px solid var(--olivegreen-color);
     font-weight: 900;
 }
 
 td {
     padding-left: 2.5rem;
-    border: 3px solid var(--primary-color);
+    border: 3px solid var(--olivegreen-color);
 }
 
 /* 卡片時間區 */
@@ -189,7 +189,7 @@ td {
     align-items: center;
     flex-direction: row;
     gap: 48px;
-    color: var(--primary-color);
+    color: var(--olivegreen-color);
     letter-spacing: 6px;
     font-size: 1.5rem;
 }

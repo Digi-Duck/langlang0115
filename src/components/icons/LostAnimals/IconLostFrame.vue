@@ -6,7 +6,8 @@ export default {
     props: {
         frameBorder: String, //外框色
         noticeborder: String, //notice外框線色
-        textColor: String, //文字色
+        textColor: String, //地區選擇文字色
+        bgColorplan:String,// 地區下拉顏色
     },
     data() {
         return {
@@ -33,7 +34,7 @@ export default {
         <form :style="{ borderColor: frameBorder }">
             <div class="form-group">
                 <div class="group select">
-                    <label for="species" :style="{ color: textColor }">地區選擇 *</label>
+                    <label for="species" :style="{ color: textColor,bgcolor:bgColorplan }">地區選擇 *</label>
                     <select v-model="selectedOption" class="input customSelect">
                         <option value="0">臺北市</option>
                         <option value="1">新北市</option>
@@ -115,7 +116,7 @@ export default {
             </div>
             <div class="btn-area">
                 <NoHoverButton @click.prevent="submitForm" btnbgColor="var(--gray-color)" text="清除重寫"></NoHoverButton>
-                <IconChangeButton @click.prevent="submitForm" bgColor="var(--primary-color)" text="搜尋"
+                <IconChangeButton @click.prevent="submitForm" bgColor="var(--olivegreen-color)" text="搜尋"
                     textColor="var(--white-color)"></IconChangeButton>
             </div>
         </form>
@@ -127,6 +128,7 @@ export default {
     font-size: 24px;
     letter-spacing: 6px;
     width: 700px;
+    height: 62.5rem;
 }
 
 
@@ -134,18 +136,18 @@ export default {
     height: 80px;
     text-align: center;
     line-height: 80px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--olivegreen-color);
     background-color: var(--white-color);
-    color: var(--primary-color);
+    color: var(--olivegreen-color);
 }
 
 /*根據顏色區分*/
 form {
     display: flex;
     flex-direction: column;
-    gap: 75px;
+    gap: 4rem;
     background-color: var(--white-color);
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--olivegreen-color);
     border-top: 0;
     padding: 60px 34px 32px;
     background: var(--white-color);
@@ -162,7 +164,7 @@ label[for="age"],
 label[for="neutered"],
 
 .time-place-title {
-    color: var(--primary-color);
+    color: var(--olivegreen-color);
     margin-right: 36px;
 }
 
@@ -179,13 +181,14 @@ label[for="neutered"],
 .form-group label {
     vertical-align: middle;
     margin: 0;
+    font-size: 24px;
 }
 
 .input {
     font-size: 20px;
     width: 620px;
     height: 56px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--olivegreen-color);
     border-radius: 4px;
     background: var(--white-color);
     outline: none;

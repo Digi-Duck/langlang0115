@@ -4,7 +4,9 @@ import IconChangeButton from '../IconChangeButton.vue';
 import LostPopup from './LostPopup.vue';
 import IconPaperAirplane from '../IconPaperAirplane.vue';
 export default {
-    components: { IconCard, IconChangeButton, LostPopup, IconPaperAirplane },
+    components: {
+        IconCard, IconChangeButton, LostPopup, IconPaperAirplane
+    },
     props: {
         listTitleColor: String,  //列表的上方框
         listborderColor: String, //列表下框
@@ -28,7 +30,8 @@ export default {
 <template>
     <div class="all-container">
         <div class="btn">
-            <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)">
+            <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)"
+                bgColor="var(--orangeyellow-color)">
             </IconChangeButton>
 
             <a href="">
@@ -93,7 +96,7 @@ a {
     text-align: center;
     padding: 14px 0;
     color: var(--white-color);
-    background-color: var(--primary-color);
+    background-color: var(--olivegreen-color);
     border-radius: 40px 40px 0 0;
 }
 
@@ -101,7 +104,7 @@ a {
     height: 850px;
     overflow: hidden;
     overflow-y: scroll;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--olivegreen-color);
     border-radius: 0 0 30px 30px;
     padding: 30px 0;
     display: flex;

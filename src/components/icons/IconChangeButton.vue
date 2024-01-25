@@ -53,12 +53,15 @@ export default {
     font-size: 1.25rem;
     box-shadow: none;
     letter-spacing: 5px;
+    background-color: var(--primary-color)
 }
 
 .button {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 11.3rem;
+    height: 4rem;
 }
 
 .text {

@@ -5,7 +5,7 @@ import LostPopupBrown from './LostPopupBrown.vue';
 import IconPaperAirplane from '../IconPaperAirplane.vue';
 
 export default {
-    components: { IconCard, IconChangeButton, LostPopupBrown,IconPaperAirplane },
+    components: { IconCard, IconChangeButton, LostPopupBrown, IconPaperAirplane },
     data() {
         return {
             show: false,
@@ -16,7 +16,7 @@ export default {
         showpopup() {
             this.show = true;
         },
-        close(){
+        close() {
             this.show = false;
         },
     },
@@ -26,8 +26,9 @@ export default {
 <template>
     <div class="all-container">
         <div class="btn">
-            <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)">
-           </IconChangeButton>
+            <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)"
+                bgColor="var(--orangeyellow-color)">
+            </IconChangeButton>
             <a href="">
                 <IconPaperAirplane />
                 搜尋附近動物醫院
@@ -38,14 +39,18 @@ export default {
         <div class="list-container">
             <div class="title">遺失動物列表</div>
             <div class="cards">
-                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
-                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
-                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
-                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
-                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
-                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
-                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
-                <IconCard cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)"></IconCard>
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
             </div>
         </div>
     </div>
@@ -57,12 +62,11 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 0;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: 'ABeeZee';
 }
 
 .btn {
-    width: 840px;
     height: 64px;
     display: flex;
     justify-content: space-between;
@@ -79,9 +83,10 @@ a {
 }
 
 .list-container {
-    width: 840px;
-    height: 866px;
-    margin-bottom: 50px;
+    width: 52.5rem;
+    /* width: 840px; */
+    /* height: 866px; */
+    /* margin-bottom: 50px; */
 }
 
 .title {
@@ -94,17 +99,25 @@ a {
 }
 
 .cards {
-    height: 850px;
-    overflow: hidden;
+    height: 52.5rem;
     overflow: scroll;
     border: 2px solid var(--B68337);
     border-radius: 0 0 30px 30px;
-    padding: 30px 0;
+    padding: 30px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     background-color: var(--white-color);
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    width: 15.6rem;
+    height: 17.3rem;
 }
 </style>
