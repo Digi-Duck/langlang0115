@@ -69,7 +69,7 @@ export default {
         </div>
 
         <div class="table-all">
-            <table class="sponsored-list">
+            <table >
                 <thead>
                     <tr>
                         <th>贊助日期</th>
@@ -87,36 +87,12 @@ export default {
                     </tr>
                 </tbody>
             </table>
-
-            <!-- 此區需要修改 -->
-            <table class="sponsored-list">
-                <thead>
-                    <tr>
-                        <th>贊助日期</th>
-                        <th>姓名</th>
-                        <th>贊助金額</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 使用v-for動態生成表格 -->
-                    <!-- 第一筆贊助紀錄 -->
-                    <tr v-for="sponsor in sponsors" :key="sponsor.id">
-                        <td>{{ sponsor.date }}</td>
-                        <td>{{ sponsor.name }}</td>
-                        <td>{{ sponsor.amount }}</td>
-                    </tr>
-                </tbody>
-            </table>
-
 
         </div>
     </section>
 
     <!-- 常見問題Q&A -->
     <section class="sponsor-page c-area">
-        <img class="cat" src="../assets/Image/SponsorImage/sponsor-us-cat.svg">
-        <div class="thanks"><span>真的很<br>謝謝您！</span></div>
-
         <div class="q-a-container">
             <div class="q-a-tittle">常見問題Q&A</div>
             <!-- 問題內容 -->
@@ -270,33 +246,32 @@ export default {
 }
 
 
-
-.sponsored-list {
-    overflow: hidden;
-    border-radius: 10px 10px 0px 0px;
-}
-
 .table-all {
-    /*background-color: rgb(255, 248, 185);*/
-    width: 1600px;
-    height: 1568px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin: auto;
+    align-items: center;
     overflow: scroll;
+    width: 1001px;
+    height: 1553px;
 }
 
 table {
     font-family: 'ABeeZee', sans-serif;
     border-collapse: separate;
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 1553px;
     border-spacing: 0;
     border: 2px solid #D7D7D7;
     font-weight: 400;
     letter-spacing: 8px;
-}
+    /* display: block;
+    overflow-x: auto;
+    white-space: nowrap;*/
+   
+  
+ }
 
 thead {
     background-color: var(--primary-color);
@@ -304,14 +279,17 @@ thead {
     width: 767px;
     height: 93px;
     font-size: 32px;
+    position: sticky;
+    top:0;
 }
 
 tbody {
     color: var(--gray-color);
-    width: 767px;
-    height: 98px;
+    /*width: 100%;
+    height: 98px;*/
     font-size: 32px;
     text-align: center;
+   
 }
 
 td {
@@ -339,36 +317,6 @@ td:nth-child(2) {
     justify-content: center;
     position: relative;
     margin: 300px 0px 209px 0px;
-}
-
-.c-area .cat {
-    position: absolute;
-    transform: translate(-150px, -153px);
-    width: 338px;
-    height: 227px;
-    z-index: 2;
-}
-
-.thanks {
-    color: var(--primary-color);
-    text-align: center;
-    border: 2px solid;
-    border-radius: 100px;
-    width: 194px;
-    height: 195px;
-    position: absolute;
-    transform: translate(671px, -230px);
-}
-
-.thanks span {
-    width: 139px;
-    height: 51px;
-    text-align: justify;
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 6px;
-    position: absolute;
-    transform: translate(-46px, 33px);
 }
 
 
