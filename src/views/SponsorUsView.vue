@@ -1,7 +1,6 @@
 <!-- 贊助我們頁面 -->
 
 <script>
-import GreenButton from '@/components/GreenButton.vue';
 import NavPage from '@/components/NavPage.vue';
 import FooterPage from '@/components/FooterPage.vue';
 import sponsorsData from '../json/SPONSORS.json';
@@ -12,7 +11,7 @@ import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 
 export default {
     components: {
-        GreenButton,
+ 
         NavPage,
         FooterPage,
         IconChangeButton
