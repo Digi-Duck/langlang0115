@@ -2,26 +2,21 @@
 import NoHoverButton from '@/components/NoHoverButton.vue';
 import IconChangeButton from '../IconChangeButton.vue';
 export default {
-    components: { NoHoverButton, IconChangeButton },
+    components: { NoHoverButton, IconChangeButton, },
     props: {
         frameBorder: String, //外框色
         noticeborder: String, //notice外框線色
         textColor: String, //地區選擇文字色
-        colorPlan: String,// 地區下拉顏色
+        colorPlan: String,// 地區下拉外框顏色
+        strokeColor: String, //地區下拉顏色
+        text: String,//notice文字
     },
     data() {
         return {
-            formData: {
-                name: '',
-                species: '',
-            },
+           
         };
     },
     methods: {
-        submitForm() {
-            //處理表單邏輯
-            // console.log("表單提交");
-        },
     }
 }
 </script>
@@ -29,21 +24,24 @@ export default {
 <template>
     <div class="container">
         <div class="notice" :style="{ borderColor: noticeborder, color: textColor }">
-            <span>!請篩選您遺失的動物，確認是否已被重複登入</span>
+            <span>{{ text }}</span>
         </div>
         <form :style="{ borderColor: frameBorder }">
             <div class="form-group">
-                <div class="group select">
-                    <label for="species" :style="{ color: textColor, border: colorPlan }">地區選擇 *</label>
-                    <select v-model="selectedOption" class="input customSelect">
+                <div class="select">
+                    <label for="species" :style="{ color: textColor }">地區選擇 *</label>
+                    <svg class="iconselect" width="14" height="9" viewBox="0 0 14 9" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L7 7L2 2" :stroke="strokeColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <select v-model="selectedOption" class="customSelect" :style="{ borderColor: colorPlan }">
                         <option value="0">臺北市</option>
                         <option value="1">新北市</option>
                         <option value="2">臺中市</option>
                         <option value="3">高雄市</option>
                     </select>
                 </div>
-                <!-- <label for="species" :style="{ color: textColor }">地區選擇 *</label>
-                <div>下拉式選單(預計安裝套件)</div> -->
             </div>
             <div class="form-group">
                 <label for="species" :style="{ color: textColor }">動物類別 *</label>
@@ -115,9 +113,9 @@ export default {
                 <label for="neuteredUnknown">未知</label>
             </div>
             <div class="btn-area">
-                <NoHoverButton @click.prevent="submitForm" btnbgColor="var(--gray-color)" text="清除重寫"></NoHoverButton>
-                <IconChangeButton @click.prevent="submitForm" bgColor="var(--olivegreen-color)" text="搜尋"
-                    textColor="var(--white-color)"></IconChangeButton>
+                <NoHoverButton btnbgColor="var(--gray-color)" text="清除重填"></NoHoverButton>
+                <IconChangeButton bgColor="var(--olivegreen-color)" text="搜尋" textColor="var(--white-color)">
+                </IconChangeButton>
             </div>
         </form>
     </div>
@@ -127,8 +125,6 @@ export default {
 .container {
     font-size: 24px;
     letter-spacing: 6px;
-    width: 43.75rem;
-    height: 62.5rem;
 }
 
 
@@ -190,27 +186,33 @@ label[for="neutered"],
     font-size: 24px;
 }
 
-.input {
+
+/* 下拉選單箭頭設定 */
+.customSelect {
+    -moz-appearance: none;
+    appearance: none;
     font-size: 20px;
     width: 620px;
     height: 56px;
     border: 2px solid var(--olivegreen-color);
     border-radius: 4px;
-    background: var(--white-color);
     outline: none;
     margin-top: 1.5rem;
     padding: 20px;
+    z-index: 1;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-/* 下拉選單箭頭設定 */
-.customSelect {
-    -webkit-animation: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url(../src/assets/Image/LostImage/selcet.svg);
-    background-position: 95% center;
-    background-repeat: no-repeat;
-    padding-right: 1rem;
+/* 下拉選單的小v圖 */
+.iconselect {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 26%;
+    left: 38%;
+    color: #000;
+
 }
 
 /*按鈕*/

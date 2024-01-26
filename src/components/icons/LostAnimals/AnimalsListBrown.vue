@@ -27,7 +27,7 @@ export default {
     <div class="all-container">
         <div class="btn">
             <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)"
-                bgColor="var(--orangeyellow-color)">
+                bgColor="var(--orangeyellow-color)" w="180px" h="64px">
             </IconChangeButton>
             <a href="">
                 <IconPaperAirplane />
@@ -58,20 +58,19 @@ export default {
 </template>
 <style scoped>
 .all-container {
-    width: 840px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    gap: 0;
-    font-size: 1.5rem;
+    font-size:24px;
     font-family: 'ABeeZee';
 }
 
 .btn {
+    width: 840px;
     height: 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
 }
 
 a {
@@ -81,12 +80,14 @@ a {
     font-weight: 700;
     color: var(--gray-color);
 }
-
+a:hover {
+    background-color: transparent;
+}
 .list-container {
-    width: 52.5rem;
-    /* width: 840px; */
-    /* height: 866px; */
-    /* margin-bottom: 50px; */
+    display: flex;
+    flex-direction: column;
+    width: 840px;
+    height: 907px;
 }
 
 .title {
@@ -97,13 +98,15 @@ a {
     background-color: var(--B68337);
     border-radius: 40px 40px 0 0;
 }
-
+.cards::-webkit-scrollbar {
+    display: none;
+}
 .cards {
-    height: 52.5rem;
+    height: 53rem;
     overflow: scroll;
     border: 2px solid var(--B68337);
     border-radius: 0 0 30px 30px;
-    padding: 30px 20px;
+    padding: 30px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,12 +115,5 @@ a {
     background-color: var(--white-color);
 }
 
-.cards::-webkit-scrollbar {
-    display: none;
-}
 
-.card {
-    width: 15.6rem;
-    height: 17.3rem;
-}
 </style>

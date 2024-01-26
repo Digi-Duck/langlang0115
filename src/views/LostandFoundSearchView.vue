@@ -67,7 +67,7 @@ export default {
                             </defs>
                         </svg>
                         <!-- svg圖 結束-->
-                        <IconLostFrame></IconLostFrame>
+                        <IconLostFrame strokeColor="var(--primary-color)" text="!請篩選您遺失的動物，確認是否已被重複登入"></IconLostFrame>
                         <IconLostAnimalsList />
                     </div>
                 </div>
@@ -102,8 +102,8 @@ export default {
                             </defs>
                         </svg>
                         <!-- svg圖 結束-->
-                        <IconLostFrame frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)"
-                            colorPlan="var(--B68337)">
+                        <IconLostFrame text="利用篩選器查看毛小孩是否被刊登在此平台上" frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)"
+                        strokeColor="var(--B68337)" colorPlan="var(--B68337)">
                         </IconLostFrame>
                         <AnimalsListBrown />
                     </div>
@@ -173,9 +173,9 @@ svg {
     height: 70px;
     padding: 20px 30px;
     border-radius: 30px 0 0 0;
-    border: 2.5px solid var(--olivegreen-color);
+    border: 2.5px solid var(--B68337);
     border-bottom: 0;
-    color: var(--olivegreen-color);
+    color: var(--B68337);
     background-color: var(--white-color);
     cursor: pointer;
     order: 0;
@@ -197,11 +197,13 @@ svg {
 #tab-1:checked+label {
     color: var(--white-color);
     background-color: var(--olivegreen-color);
+    border: 2.5px solid var(--olivegreen-color);
 }
 
 #tab-2:checked+label {
     color: var(--white-color);
     background-color: var(--B68337);
+    border: 2.5px solid var(--B68337);
 }
 
 /* 切換頁籤出現對應的內容 */

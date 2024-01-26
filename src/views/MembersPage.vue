@@ -24,17 +24,22 @@ export default {
             <div class="headsticker">
             </div>
             <div class="contentbox">
-                <div>
-                    <label>姓名</label>
-                    <input type="text" placeholder="王曉明" class="name">
+                <div class="contentboxtop">
+                    <img class="edit" src="../assets/Image/MemberImage/ep_edit.svg">
                 </div>
-                <div>
-                    <label>電子信箱</label>
-                    <input type="text" placeholder="iluvlang@gmail.com">
-                </div>
-                <div>
-                    <label>手機號碼</label>
-                    <input type="text" placeholder="0990099009">
+                <div class="contentmain">
+                    <div>
+                        <label>姓名</label>
+                        <input type="text" placeholder="王曉明" class="name">
+                    </div>
+                    <div>
+                        <label>電子郵件</label>
+                        <input type="text" placeholder="iluvlang@gmail.com">
+                    </div>
+                    <div>
+                        <label>手機號碼</label>
+                        <input type="text" placeholder="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,15 +92,16 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 170px 0;
+    padding: 115px 0;
 }
 
 .top {
-    width: 800px;
-    height: 255px;
+    width: 1000px;
+    height: 400px;
     margin: auto;
+    padding: 50px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 170px;
 }
@@ -113,25 +119,34 @@ main {
 
 /* 個人資料 */
 .contentbox {
-    height: 210px;
+    width: 550px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
+    gap: 27px;
 }
 
-.contentbox div {
+.contentboxtop {
+    height: 50px;
+    display: flex;
+    justify-content: end;
+}
+
+.contentmain {
     width: 426px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-size: 25px;
     text-align: left;
     letter-spacing: 6px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     color: var(--gray-color);
 }
-
+.contentmain div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 input {
     width: 290px;
     height: 50px;

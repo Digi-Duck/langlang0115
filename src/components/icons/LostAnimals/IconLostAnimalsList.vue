@@ -45,7 +45,7 @@ export default {
             <div class="title" :style="{ backgroundColor: listTitleColor }">遺失動物列表</div>
             <div class="cards" :style="{ borderColor: listborderColor }">
                 <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
-                <IconCard />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
                 <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
                 <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
                 <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
@@ -76,7 +76,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
 }
 
 a {
@@ -94,7 +93,8 @@ a:hover {
 .list-container {
     display: flex;
     flex-direction: column;
-    width: 52.5rem;
+    width: 840px;
+    height: 907px;
 }
 
 .title {

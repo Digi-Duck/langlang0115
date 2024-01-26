@@ -46,7 +46,7 @@ export default {
             cancelbtntext: "返回修改",
             cancelbtnbg: '#626262',
             //點擊送出按鈕後「彈跳視窗」顯示
-            show:false,
+            show: false,
         };
     },
     methods: {
@@ -251,9 +251,10 @@ export default {
                     color: textColor, backgroundColor: submitBgColor, width: w, height: h
                 }"></IconChangeButton>
 
-                 <!-- 彈跳視窗內容錯誤，未完成需修改！！！！！！！！ -->
+                <!-- 彈跳視窗內容錯誤，未完成需修改！！！！！！！！ -->
                 <DataSubmitted myFillColor="var(--primary-color)" mytextColor="var(--primary-color)" submitResult="資料成功送出！"
-                submitButText="前往瀏覽頁面" myurl="/adoptionpetinformation" :is-show-sub="show" submitBtnText="前往瀏覽頁面"></DataSubmitted>
+                    submitButText="前往瀏覽頁面" myurl="/adoptionpetinformation" :is-show-sub="show" submitBtnText="前往瀏覽頁面">
+                </DataSubmitted>
 
 
 
@@ -577,5 +578,6 @@ input#phone {
     background-color: var(--white-color);
     color: var(--gray-color);
     border: 1px solid var(--gray-color);
-}</style>
+}
+</style>
 
