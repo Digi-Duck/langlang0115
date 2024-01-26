@@ -1,51 +1,53 @@
 
 <template>
     <div class="footer-container">
-    <div class="dogcat">
-        <div class="dog">
-            <img src="../assets/Image/HomeImage/HomeD-dog and paw.svg">
+        <div class="dogcat">
+            <div class="dog">
+                <img src="../assets/Image/HomeImage/HomeD-dog and paw.svg">
+            </div>
+            <div class="cat">
+                <img src="../assets/Image/HomeImage/HomeD-cat and paw.svg">
+            </div>
         </div>
-        <div class="cat">
-            <img src="../assets/Image/HomeImage/HomeD-cat and paw.svg">
+        <div class="footer">
+            <span>隱私權政策Copyright © 2019 - 2024 浪浪的事. All Rights Reserved.</span>
         </div>
     </div>
-    <div class="footer">
-        <span>隱私權政策Copyright © 2019 - 2024 浪浪的事. All Rights Reserved.</span>
-    </div>
-</div>
 </template>
 
-<style>
-
-.footer-container{
+<style scoped>
+.footer-container {
     width: 100vw;
-    max-width :100%;
-    height: 310px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    max-width: 100%;
+    z-index: 5;
 }
+
 .dogcat {
     z-index: 1;
     position: relative;
 }
-.dog{
+
+.dog {
     position: absolute;
-    top: 27px;
+    bottom: -35px;
     left: 83px;
+    transform: rotate(-4deg);
 }
-.cat{
+
+.cat {
     position: absolute;
-    top: 35px;
+    bottom: -100px;
     right: 83px;
 }
+
 .footer {
-    background-color:var(--primary-color);
-    width: 100%;
-    border-radius: 20px 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-radius: 5px 5px 0 0;
     color: white;
     font-size: 18px;
-    padding: 58px 0px;
-    text-align: center;
+    height: 116px;
 }
 </style>
