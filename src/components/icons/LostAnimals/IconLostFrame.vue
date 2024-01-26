@@ -13,10 +13,32 @@ export default {
     },
     data() {
         return {
-           
+            formData: {
+                species: '', // 動物類型
+                bodyshape: '', // 體型選擇
+                gender: '', // 性別選擇
+                colors: '', // 花色選擇
+                age: '', // 年齡選擇
+                neutered: '', // 是否已絕育
+            },
         };
     },
     methods: {
+        clearOptions() {
+            // 重置所有選項
+            this.selectedOption = "0";
+            this.formData.species = "";
+            this.formData.bodyshape = "";
+            this.formData.gender = "";
+            this.formData.colors = "";
+            this.formData.age = "";
+            this.formData.neutered = "";
+        },
+        search() {
+            // 搜尋相關
+            console.log("Performing search with the following data:", this.selectedOption, this.formData());
+            // 這裡添加搜尋邏輯，發送API請求
+        },
     }
 }
 </script>
@@ -57,7 +79,7 @@ export default {
 
             <div class="form-group">
                 <label for="body-shape" :style="{ color: textColor }">體型選擇 *</label>
-                <input type="radio" id="large" value="大型" v-model="formData.bodyshape" name="bodyShape" />
+                <input type="radio" id="large" value="大型" name="bodyShape" />
                 <label for="large">大型</label>
 
                 <input type="radio" id="medium" value="中型" v-model="formData.bodyshape" name="bodyShape" />
@@ -113,8 +135,8 @@ export default {
                 <label for="neuteredUnknown">未知</label>
             </div>
             <div class="btn-area">
-                <NoHoverButton btnbgColor="var(--gray-color)" text="清除重填"></NoHoverButton>
-                <IconChangeButton bgColor="var(--olivegreen-color)" text="搜尋" textColor="var(--white-color)">
+                <NoHoverButton @click.prevent="clearOptions" btnbgColor="var(--gray-color)" text="清除重填" ></NoHoverButton>
+                <IconChangeButton @click.prevent="search" bgColor="var(--olivegreen-color)" text="搜尋" textColor="var(--white-color)">
                 </IconChangeButton>
             </div>
         </form>
@@ -126,7 +148,6 @@ export default {
     font-size: 24px;
     letter-spacing: 6px;
 }
-
 
 .notice {
     height: 80px;

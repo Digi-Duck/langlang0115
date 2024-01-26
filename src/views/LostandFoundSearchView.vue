@@ -6,6 +6,14 @@ import IconLostAnimalsList from '@/components/icons/LostAnimals/IconLostAnimalsL
 import AnimalsListBrown from '@/components/icons/LostAnimals/AnimalsListBrown.vue';
 import IconLostFrame from '@/components/icons/LostAnimals/IconLostFrame.vue';
 export default {
+    components: {
+        NavPage,
+        FooterPage,
+        GreenButton,
+        IconLostAnimalsList,
+        IconLostFrame,
+        AnimalsListBrown,
+    },
     data() {
         return {
 
@@ -16,16 +24,12 @@ export default {
         },
         goToMyLostInfo() {
             this.$router.push('/myanimallostinformation'); //導到[我的動物走失了資訊頁]
+        }, 
+        HiddenBrown() { 
+            
         },
     },
-    components: {
-        NavPage,
-        FooterPage,
-        GreenButton,
-        IconLostAnimalsList,
-        IconLostFrame,
-        AnimalsListBrown,
-    },
+
 }
 </script>
 <template>
@@ -102,8 +106,9 @@ export default {
                             </defs>
                         </svg>
                         <!-- svg圖 結束-->
-                        <IconLostFrame text="利用篩選器查看毛小孩是否被刊登在此平台上" frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)"
-                        strokeColor="var(--B68337)" colorPlan="var(--B68337)">
+                        <IconLostFrame text="利用篩選器查看毛小孩是否被刊登在此平台上" frameBorder="var(--B68337)" noticeborder="var(--B68337)"
+                            textColor="var(--B68337)" strokeColor="var(--B68337)" colorPlan="var(--B68337)"
+                            v-if="HiddenBrown()">
                         </IconLostFrame>
                         <AnimalsListBrown />
                     </div>
