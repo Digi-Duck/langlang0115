@@ -28,7 +28,7 @@ export default {
             mybgcolorno: 'var(--primary-color)',
             mytextcolorno: 'var(--white-color)',
             mywno: '12.5rem',
-            myhno: '4rem',
+            myhno: '3rem',
             // 前往送養按鈕
             mytext: "前往送養",
             mytextColor: "var(--gray-color)",
@@ -136,6 +136,8 @@ export default {
                             <!-- <a href="../views/FormPageAdoption.vue"></a> -->
                             <IconChangeButton :text="mytext" :textColor="mytextColor" :bgColor="mybgColor" :w="myw" :h="myh"
                                 @click="formadoptionPage" />
+                                <IconChangeButton :text="mysubmit" :textColor="mytextcolorno" :bgColor="mybgcolorno" :w="mywno" :h="myhno"
+            @click="petinformationPage" />
                             <a href="#">
                                 <IconPaperAirplane />
                                 搜尋附近動物醫院
@@ -148,10 +150,6 @@ export default {
                 </div>
             </div>
         </div>
-        <!-- 暫放 -->
-        <hr>
-        <IconChangeButton :text="mysubmit" :textColor="mytextcolorno" :bgColor="mybgcolorno" :w="mywno" :h="myhno"
-            @click="petinformationPage" />
     </main>
 
     <FooterPage />
@@ -167,7 +165,7 @@ main {
 .adoptionCenterArea {
     display: flex;
     flex-direction: column;
-    padding: 4.25rem 0.5rem 3rem 11rem;
+    padding: 4.25rem 0.5rem 12rem 11rem;
 }
 
 /* 認養中心 標題區 */

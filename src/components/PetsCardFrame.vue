@@ -85,7 +85,7 @@ export default {
 .cardFrameAll {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .CardFrame {
@@ -96,6 +96,7 @@ export default {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    padding-bottom: 30px;
 }
 
 /* 晶片號碼 */
@@ -159,6 +160,7 @@ td {
     display: flex;
     flex-direction: column;
     font-size: 1.25rem;
+    gap: 10px;
 }
 
 .time {
@@ -168,6 +170,7 @@ td {
     justify-content: space-between;
     padding: 4.5px 0 4.5px 0;
     gap: 1rem;
+    color: var(--gray-color);
 }
 
 .time span {
@@ -183,6 +186,7 @@ td {
     color: var(--primary-color);
     letter-spacing: 6px;
     font-size: 1.5rem;
+    height: 3.3rem;
 }
 
 .Icon {

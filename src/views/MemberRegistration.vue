@@ -46,7 +46,6 @@ export default {
                 <input type="checkbox"><span>我已閱讀，並同意遵守《隱私權政策與會員服務條款》</span>
             </div>
             <div class="signup">註冊</div>
-
         </div>
     </main>
     <FooterPage />
@@ -55,7 +54,10 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 102px 530px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6.8rem 0 4.6rem 0;
 }
 
 .container {

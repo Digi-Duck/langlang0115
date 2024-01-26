@@ -94,7 +94,7 @@ export default {
 
 .msgSendText span {
     font-size: 2.25rem;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
     text-align: center;
     letter-spacing: 9px;
     font-weight: bold;
@@ -107,7 +107,7 @@ export default {
 
 .msgText p {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 3px;
 }
 

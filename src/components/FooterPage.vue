@@ -19,7 +19,11 @@
 .footer-container {
     width: 100vw;
     max-width: 100%;
+    height: 116px;
     z-index: 5;
+    border-radius: 5px 5px 0 0;
+    background-color: var(--primary-color);
+
 }
 
 .dogcat {
@@ -29,25 +33,23 @@
 
 .dog {
     position: absolute;
-    bottom: -35px;
+    top: -144px;
     left: 83px;
     transform: rotate(-4deg);
 }
 
 .cat {
     position: absolute;
-    bottom: -100px;
+    top: -130px;
     right: 83px;
 }
 
 .footer {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
-    border-radius: 5px 5px 0 0;
     color: white;
     font-size: 18px;
-    height: 116px;
 }
 </style>

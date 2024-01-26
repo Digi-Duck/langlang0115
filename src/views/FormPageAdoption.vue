@@ -44,31 +44,12 @@ export default {
 </script>
 <template>
     <NavPage />
-    <div>
-        <AnimalForm ref="animalFrame" pagename="認養中心" title="填寫送養資料" inputTitleColor="var(--primary-color)"
-            inputTextBorder="2px solid var(--primary-color)" svgColor="var(--primary-color)"
-            uploadPicColor=" var(--primary-color)" submitBgColor="var(--primary-color)" />
-    </div>
+    <main>
+    <AnimalForm ref="animalFrame" pagename="認養中心" title="填寫送養資料" inputTitleColor="var(--primary-color)"
+        inputTextBorder="2px solid var(--primary-color)" svgColor="var(--primary-color)"
+        uploadPicColor=" var(--primary-color)" submitBgColor="var(--primary-color)" />
+    </main>
     <FooterPage />
 </template>
 <style scoped>
-/* 標題 */
-.adoptionCenteTitle {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 4.8rem;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 12px;
-}
-
-.adoptionCenteTitle span {
-    color: var(--primary-color);
-}
-
-.adoptionCenteTitle p {
-    color: #D7D7D7;
-}
 </style>

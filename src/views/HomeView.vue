@@ -5,7 +5,7 @@ import IconHeaderLine from '@/components/icons/IconHeaderLine.vue';
 import GreenButton from '@/components/GreenButton.vue';
 import YellowButton from '@/components/YellowButton.vue';
 import HomeCarousel from '@/components/HomeCarousel.vue';
-import FooterPage from '@/components/FooterPage.vue';
+import FooterBar from '@/components/FooterBar.vue';
 
 export default {
   components: {
@@ -14,8 +14,8 @@ export default {
     GreenButton,
     YellowButton,
     HomeCarousel,
-    FooterPage,
-    IconHeaderLine
+    IconHeaderLine,
+    FooterBar
   },
 };
 </script>
@@ -44,7 +44,7 @@ export default {
     <!-- 幻燈片/更多浪浪 -->
     <HomeCarousel />
   </main>
-  <FooterPage />
+  <FooterBar />
 </template>
 
 <style scoped>

@@ -12,7 +12,7 @@ export default {
         return {
             mytext: "送養說明",
             mytexttwo: "更多毛小孩",
-            mylinew: '80rem',
+            mylinew: '81.25rem',
             parentStyle: {
                 gap: '4rem',
             },
@@ -78,7 +78,7 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 4.3rem 9rem 2.25rem 10rem;
+    padding: 4.3rem 9rem 13.3rem 10rem;
 }
 
 /* 標題 */
