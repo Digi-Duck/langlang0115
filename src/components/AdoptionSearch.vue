@@ -12,9 +12,14 @@ export default {
     },
     data() {
         return {
+            selectedOption: "0",
             formData: {
-                name: '',
                 species: '',
+                bodyshape: '',
+                gender: '',
+                colors: '',
+                age: '',
+                neutered: '',
             },
             mybgColor: "var(--primary-color)",
             mytext: "搜尋",
@@ -24,12 +29,22 @@ export default {
         };
     },
     methods: {
+        clearOptions() {
+            // 重置所有選項
+            this.selectedOption = "0";
+            this.formData.species = "";
+            this.formData.bodyshape = "";
+            this.formData.gender = "";
+            this.formData.colors = "";
+            this.formData.age = "";
+            this.formData.neutered = "";
+        },
         submitForm() {
-            //處理表單邏輯
-            // console.log("表單提交");
+            // 提交表單
+            console.log("Form submitted!")
         },
     },
-}
+};
 </script>
 
 <template>
@@ -146,7 +161,7 @@ export default {
             </div>
             <!-- 按鈕 -->
             <div class="btn-area">
-                <NoHoverButton @click.prevent="submitForm" btnbgColor="var(--gray-color)" text="清除重寫"></NoHoverButton>
+                <NoHoverButton @click.prevent="clearOptions" btnbgColor="var(--gray-color)" text="清除重填"></NoHoverButton>
                 <IconChangeButton @click.prevent="submitForm" :text="mytext" :textColor="mytextColor" :bgColor="mybgColor"
                     :w="myw" :h="myh">
                 </IconChangeButton>
