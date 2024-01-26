@@ -1,6 +1,7 @@
 <script>
 import NoHoverButton from './NoHoverButton.vue';
 import IconChangeButton from './icons/IconChangeButton.vue';
+import DataSubmitted from './DataSubmitted.vue';
 
 export default {
     props: {
@@ -43,13 +44,18 @@ export default {
             clearbtntext: "確認重填",
             clearbtnbg: '#52A038',
             cancelbtntext: "返回修改",
-            cancelbtnbg: '#626262'
+            cancelbtnbg: '#626262',
+            //點擊送出按鈕後「彈跳視窗」顯示
+            show:false,
         };
     },
     methods: {
         submitForm() {
             //處理表單邏輯
             // console.log("表單提交");
+            // <!-- 顯示的視窗 -->
+            // !!!!!!!!!!!!彈跳視窗內容錯誤，未完成需修改！！！！！！！！
+            this.show = true;
         },
         //點擊清除重填按鈕
         showConfirmation() {
@@ -82,7 +88,7 @@ export default {
             }
         }
     },
-    components: { NoHoverButton, IconChangeButton }
+    components: { NoHoverButton, IconChangeButton, DataSubmitted }
 }
 </script>
 
@@ -155,8 +161,9 @@ export default {
                 <input type="radio" id="female" value="母" v-model="formData.gender" name="gender">
                 <label for="female">母</label>
                 <!-- 棕色表單不需要未知選項 -->
-                    <input type="radio" class="brown-unnecessary" id="gender-unknown" value="未知" v-model="formData.gender" name="gender">
-                    <label for="gender-unknown" class="brown-unnecessary">未知</label>
+                <input type="radio" class="brown-unnecessary" id="gender-unknown" value="未知" v-model="formData.gender"
+                    name="gender">
+                <label for="gender-unknown" class="brown-unnecessary">未知</label>
             </div>
 
             <div class="form-group">
@@ -166,8 +173,9 @@ export default {
 
                 <input type="radio" id="patternedColor" value="花色" v-model="formData.colors" name="colorType" />
                 <label for="patternedColor">花色</label>
-                    <input type="radio" class="brown-unnecessary" id="undefinedColor" value="未定義" v-model="formData.colors" name="colorType" />
-                    <label for="undefinedColor" class="brown-unnecessary">未定義</label>
+                <input type="radio" class="brown-unnecessary" id="undefinedColor" value="未定義" v-model="formData.colors"
+                    name="colorType" />
+                <label for="undefinedColor" class="brown-unnecessary">未定義</label>
             </div>
 
             <div class="form-group">
@@ -177,8 +185,9 @@ export default {
 
                 <input type="radio" id="adultAge" value="成年" v-model="formData.age" name="ageType" />
                 <label for="adultAge">成年</label>
-                    <input type="radio" class="brown-unnecessary" id="unknownAge" value="未知" v-model="formData.age" name="ageType" />
-                    <label for="unknownAge" class="brown-unnecessary">未知</label>
+                <input type="radio" class="brown-unnecessary" id="unknownAge" value="未知" v-model="formData.age"
+                    name="ageType" />
+                <label for="unknownAge" class="brown-unnecessary">未知</label>
             </div>
 
             <div class="form-group">
@@ -188,8 +197,9 @@ export default {
 
                 <input type="radio" id="neuteredNo" value="未結紮" v-model="formData.neutered" name="neuteredStatus" />
                 <label for="neuteredNo">未結紮</label>
-                    <input type="radio" class="brown-unnecessary" id="neuteredUnknown" value="未知" v-model="formData.neutered" name="neuteredStatus" />
-                    <label for="neuteredUnknown" class="brown-unnecessary">未知</label>
+                <input type="radio" class="brown-unnecessary" id="neuteredUnknown" value="未知" v-model="formData.neutered"
+                    name="neuteredStatus" />
+                <label for="neuteredUnknown" class="brown-unnecessary">未知</label>
             </div>
 
             <div class="form-group time-place">
@@ -240,6 +250,13 @@ export default {
                 <IconChangeButton :text="mysubmit" @click.prevent="submitForm" :style="{
                     color: textColor, backgroundColor: submitBgColor, width: w, height: h
                 }"></IconChangeButton>
+
+                 <!-- 彈跳視窗內容錯誤，未完成需修改！！！！！！！！ -->
+                <DataSubmitted myFillColor="var(--primary-color)" mytextColor="var(--primary-color)" submitResult="資料成功送出！"
+                submitButText="前往瀏覽頁面" myurl="/adoptionpetinformation" :is-show-sub="show" submitBtnText="前往瀏覽頁面"></DataSubmitted>
+
+
+
 
 
                 <!-- 重填確認框 -->
@@ -560,6 +577,5 @@ input#phone {
     background-color: var(--white-color);
     color: var(--gray-color);
     border: 1px solid var(--gray-color);
-}
-</style>
+}</style>
 

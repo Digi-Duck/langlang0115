@@ -47,8 +47,7 @@ export default {
 </script>
 <template>
     <!-- 顯示視窗 -->
-    <!-- v-show="isShowSub" -->
-    <div class="ScreenFrame">
+    <div class="ScreenFrame" v-show="isShowSub">
         <div class="Success">
             <div class="img">
                 <!-- 圖 -->
