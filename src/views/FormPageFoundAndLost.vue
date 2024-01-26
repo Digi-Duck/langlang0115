@@ -15,8 +15,8 @@ export default {
     <NavPage />
     <main>
         <div>
-            <AnimalForm pagename="失散協尋"  title="撿到遺失動物" inputTitleColor="var(--primary-color)" inputTextBorder="2px solid var(--primary-color)" 
-                svgColor="var(--primary-color)" uploadPicColor=" var(--primary-color)" submitBgColor="var(--primary-color)" ></AnimalForm>
+            <AnimalForm pagename="失散協尋"  title="撿到遺失動物" inputTitleColor="#7EA138" inputTextBorder="2px solid #7EA138" 
+                svgColor="#7EA138" uploadPicColor=" #7EA138" submitBgColor="#7EA138" ></AnimalForm>
         </div>
     </main>
 </template>
