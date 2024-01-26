@@ -1,3 +1,4 @@
+<!-- 最新公告頁面 -->
 <script>
 import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
@@ -127,8 +128,10 @@ main {
   background-repeat: repeat;
   background-size: 100%;
   width: 1588px;
-  height: 100%;
- /* position: absolute;
+  padding-bottom: 100px;
+
+ /*   height: 100%;
+ position: absolute;
   top: 15%;
   right: 130px;*/
   margin: 62px 0px 0px 158px;
