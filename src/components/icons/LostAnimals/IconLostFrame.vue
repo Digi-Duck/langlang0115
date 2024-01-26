@@ -7,7 +7,7 @@ export default {
         frameBorder: String, //外框色
         noticeborder: String, //notice外框線色
         textColor: String, //地區選擇文字色
-        bgColorplan:String,// 地區下拉顏色
+        colorPlan: String,// 地區下拉顏色
     },
     data() {
         return {
@@ -34,7 +34,7 @@ export default {
         <form :style="{ borderColor: frameBorder }">
             <div class="form-group">
                 <div class="group select">
-                    <label for="species" :style="{ color: textColor,bgcolor:bgColorplan }">地區選擇 *</label>
+                    <label for="species" :style="{ color: textColor, border: colorPlan }">地區選擇 *</label>
                     <select v-model="selectedOption" class="input customSelect">
                         <option value="0">臺北市</option>
                         <option value="1">新北市</option>
@@ -127,7 +127,7 @@ export default {
 .container {
     font-size: 24px;
     letter-spacing: 6px;
-    width: 700px;
+    width: 43.75rem;
     height: 62.5rem;
 }
 
@@ -166,6 +166,12 @@ label[for="neutered"],
 .time-place-title {
     color: var(--olivegreen-color);
     margin-right: 36px;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .form-group input {
@@ -214,4 +220,5 @@ label[for="neutered"],
     gap: 55px;
     font-size: 20px;
     letter-spacing: 5px;
-}</style>
+}
+</style>

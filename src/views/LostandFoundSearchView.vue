@@ -11,12 +11,6 @@ export default {
 
         }
     }, methods: {
-        goToFoundAnimalForm() {
-            this.$router.push('/foundanimalsform'); //導到[撿到遺失動物]
-        },
-        goToMyLostForm() {
-            this.$router.push('/myanimallostform'); //導到[我的動物走失了]
-        },
         goToFoundAnimalInfo() {
             this.$router.push('/foundanimalsinformation'); //導到[撿到遺失動物資訊頁]
         },
@@ -73,7 +67,6 @@ export default {
                             </defs>
                         </svg>
                         <!-- svg圖 結束-->
-
                         <IconLostFrame></IconLostFrame>
                         <IconLostAnimalsList />
                     </div>
@@ -109,7 +102,8 @@ export default {
                             </defs>
                         </svg>
                         <!-- svg圖 結束-->
-                        <IconLostFrame frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)">
+                        <IconLostFrame frameBorder="var(--B68337)" noticeborder="var(--B68337)" textColor="var(--B68337)"
+                            colorPlan="var(--B68337)">
                         </IconLostFrame>
                         <AnimalsListBrown />
                     </div>
@@ -117,16 +111,11 @@ export default {
             </div>
             <!--   tab group end -->
         </div>
-        <!-- 失散協尋>撿到遺失動物（暫放） -->
-        <GreenButton :showSvg="false" @click="goToFoundAnimalForm" class="btnn">確認前往：<br>撿到遺失動物</GreenButton>
-        <!-- 失散協尋>我遺失了動物（暫放） -->
-        <GreenButton :showSvg="false" @click="goToMyLostForm" class="btnn">確認前往：<br>我遺失了動物</GreenButton>
-        <!-- 失散協尋>撿到遺失動物資訊頁（暫放） -->
-        <GreenButton :showSvg="false" @click="goToFoundAnimalInfo" class="btnn">確認前往：<br>撿到遺失動物資訊頁</GreenButton>
-        <!-- 失散協尋>我遺失了動物資訊頁（暫放） -->
-        <GreenButton :showSvg="false" @click="goToMyLostInfo" class="btnn">確認前往：<br>我遺失了動物資訊頁</GreenButton>
-
     </main>
+    <!-- 失散協尋>撿到遺失動物資訊頁（暫放） -->
+    <GreenButton :showSvg="false" @click="goToFoundAnimalInfo" class="btnn">確認前往：<br>撿到遺失動物資訊頁</GreenButton>
+    <!-- 失散協尋>我遺失了動物資訊頁（暫放） -->
+    <GreenButton :showSvg="false" @click="goToMyLostInfo" class="btnn">確認前往：<br>我遺失了動物資訊頁</GreenButton>
     <FooterPage />
 </template>
 <style scoped>
@@ -139,8 +128,8 @@ main {
 .lost-title {
     display: flex;
     align-items: center;
-    margin-bottom: 73px;
-    color: var(--primary-color);
+    margin-bottom: 58px;
+    color: var(--olivegreen-color);
 }
 
 .lost-titlecn {
@@ -184,9 +173,9 @@ svg {
     height: 70px;
     padding: 20px 30px;
     border-radius: 30px 0 0 0;
-    border: 2.5px solid var(--primary-color);
+    border: 2.5px solid var(--olivegreen-color);
     border-bottom: 0;
-    color: var(--primary-color);
+    color: var(--olivegreen-color);
     background-color: var(--white-color);
     cursor: pointer;
     order: 0;
@@ -197,8 +186,8 @@ svg {
     padding: 20px 30px;
     border-radius: 0 30px 0 0;
     background-color: var(--white-color);
-    color: var(--B68337);
-    border: 2.5px solid var(--B68337);
+    color: var(--olivegreen-color);
+    border: 2.5px solid var(--olivegreen-color);
     border-bottom: 0;
     cursor: pointer;
     order: 0;
@@ -207,7 +196,7 @@ svg {
 /* 切換頁籤後的樣式 */
 #tab-1:checked+label {
     color: var(--white-color);
-    background-color: var(--primary-color);
+    background-color: var(--olivegreen-color);
 }
 
 #tab-2:checked+label {
@@ -241,6 +230,6 @@ svg {
     width: 250px;
     height: 100px;
     font-size: 24px;
-   margin: 10px 10px;
+    margin: 10px 10px;
 }
 </style>

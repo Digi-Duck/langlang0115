@@ -31,7 +31,7 @@ export default {
     <div class="all-container">
         <div class="btn">
             <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)"
-                bgColor="var(--orangeyellow-color)">
+                bgColor="var(--orangeyellow-color)" w="11.3rem" h="4rem">
             </IconChangeButton>
 
             <a href="">
@@ -44,18 +44,18 @@ export default {
         <div class="list-container">
             <div class="title" :style="{ backgroundColor: listTitleColor }">遺失動物列表</div>
             <div class="cards" :style="{ borderColor: listborderColor }">
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
                 <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
-                <IconCard />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
+                <IconCard cardBorderColor="var(--olivegreen-color)" checkBoxColor="var(--olivegreen-color)" />
             </div>
         </div>
     </div>
@@ -64,6 +64,7 @@ export default {
 <style scoped>
 .all-container {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     font-size: 24px;
     font-family: 'ABeeZee';
@@ -86,9 +87,14 @@ a {
     color: var(--gray-color);
 }
 
+a:hover {
+    background-color: transparent;
+}
+
 .list-container {
-    width: 840px;
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 52.5rem;
 }
 
 .title {
@@ -100,8 +106,12 @@ a {
     border-radius: 40px 40px 0 0;
 }
 
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
 .cards {
-    height: 850px;
+    height: 53rem;
     overflow: hidden;
     overflow-y: scroll;
     border: 2px solid var(--olivegreen-color);

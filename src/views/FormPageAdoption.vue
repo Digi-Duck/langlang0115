@@ -1,6 +1,6 @@
 <script>
 import AnimalForm from '@/components/AnimalForm.vue';
-import DataSubmitted from '@/components/DataSubmitted.vue';
+// import DataSubmitted from '@/components/DataSubmitted.vue';
 import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
 
@@ -9,7 +9,7 @@ export default {
         NavPage,
         FooterPage,
         AnimalForm,
-        DataSubmitted
+        // DataSubmitted
     },
     // data() {
     //     return {
@@ -32,18 +32,22 @@ export default {
         if (timePlaceElement) {
             timePlaceElement.remove();
         }
+        // // 刪除彈跳視窗小字
+        // const popupRemove = this.$refs.dataSubmitted;
+        // const smalltext = popupRemove.$el.querySelector(".small");
+        // console.log(popupRemove.$el);
+        // if (smalltext) {
+        //     smalltext.remove();
+        // }
     },
 }
 </script>
 <template>
     <NavPage />
     <div>
-        <AnimalForm ref="animalFrame" pagename="認養中心" title="毛小孩詳細資訊" inputTitleColor="var(--primary-color)"
+        <AnimalForm ref="animalFrame" pagename="認養中心" title="填寫送養資料" inputTitleColor="var(--primary-color)"
             inputTextBorder="2px solid var(--primary-color)" svgColor="var(--primary-color)"
             uploadPicColor=" var(--primary-color)" submitBgColor="var(--primary-color)" />
-        <DataSubmitted myFillColor="var(--primary-color)" mytextColor="var(--primary-color)" submitResult="資料成功送出！"
-            submitButText="前往瀏覽頁面" myurl="/adoptionpetinformation">
-        </DataSubmitted>
     </div>
     <FooterPage />
 </template>

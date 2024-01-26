@@ -44,7 +44,7 @@ export default {
             <div class="btns">
                 <NoHoverButton class="w"  @click="close()" :showSvg="false" btnbgColor="var(--gray-color)" text="返回修改">
                 </NoHoverButton>
-                <NoHoverButton class="w" @click="next" :showSvg="false" btnbgColor="var(--primary-color)" text="確認前往"></NoHoverButton>
+                <NoHoverButton class="w" @click="next" :showSvg="false" btnbgColor="var(--olivegreen-color)" text="確認前往"></NoHoverButton>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
+    color: var(--olivegreen-color);
     height: 100vh;
     width: 100vw;
     max-width: 100%;
@@ -75,7 +75,7 @@ export default {
     width: 550px;
     height: 409px;
     background-color: var(--white-color);
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--olivegreen-color);
     border-radius: 30px;
     gap: 42px;
 }
