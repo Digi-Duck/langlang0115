@@ -120,8 +120,7 @@ export default {
                             <span>尋找心目中的毛小孩</span>
                         </div>
                         <!-- 搜尋 -->
-                        <div class="notice" :style="{ borderColor: noticeborder, color: textColor }" @mouseover="showIcon"
-                            @mouseleave="hideIcon" @click="showPopup">
+                        <div class="notice" @mouseover="showIcon" @mouseleave="hideIcon" @click="showPopup">
                             <!-- 認養須知按鈕 -->
                             <div class="adoptionGuidelines">
                                 <img src="@\assets\Image\DogPawGreen.svg" alt="Icon" v-if="isHovered" class="icon">

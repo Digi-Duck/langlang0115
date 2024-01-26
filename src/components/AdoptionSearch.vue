@@ -14,12 +14,12 @@ export default {
         return {
             selectedOption: "0",
             formData: {
-                species: '',
-                bodyshape: '',
-                gender: '',
-                colors: '',
-                age: '',
-                neutered: '',
+                species: '', // 動物類型
+                bodyshape: '', // 體型選擇
+                gender: '', // 性別選擇
+                colors: '', // 花色選擇
+                age: '', // 年齡選擇
+                neutered: '', // 是否已絕育
             },
             mybgColor: "var(--primary-color)",
             mytext: "搜尋",
@@ -39,9 +39,10 @@ export default {
             this.formData.age = "";
             this.formData.neutered = "";
         },
-        submitForm() {
-            // 提交表單
-            console.log("Form submitted!")
+        search() {
+            // 搜尋相關
+            console.log("Performing search with the following data:", this.selectedOption, this.formData());
+            // 這裡添加搜尋邏輯，發送API請求
         },
     },
 };
@@ -162,7 +163,7 @@ export default {
             <!-- 按鈕 -->
             <div class="btn-area">
                 <NoHoverButton @click.prevent="clearOptions" btnbgColor="var(--gray-color)" text="清除重填"></NoHoverButton>
-                <IconChangeButton @click.prevent="submitForm" :text="mytext" :textColor="mytextColor" :bgColor="mybgColor"
+                <IconChangeButton @click.prevent="search" :text="mytext" :textColor="mytextColor" :bgColor="mybgColor"
                     :w="myw" :h="myh">
                 </IconChangeButton>
             </div>
