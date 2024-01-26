@@ -247,6 +247,7 @@ main {
     flex-direction: row;
     gap: 1.25rem;
     padding-top: 2.8rem;
+    margin-left: 0.6rem;
 }
 
 /* 請先閱讀認養須知 */

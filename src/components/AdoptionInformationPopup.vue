@@ -26,7 +26,7 @@ export default {
         <!-- 顯示視窗v-show -->
         <div class="informationPopupFrame">
             <div class="informationTitle">
-                <span>認養需知</span>
+                <span>認養須知</span>
                 <!-- 點擊關閉 -->
                 <IconX class="x" @click.stop="closePopup" />
             </div>
