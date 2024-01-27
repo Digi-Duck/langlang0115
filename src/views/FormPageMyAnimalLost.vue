@@ -32,9 +32,9 @@ export default {
                 inputTextBorder="2px solid #B68337" submitBgColor="#B68337"
                 popStyle="#B68337" 
                 confirmpopStyle="#B68337" 
+                successSvgColor="#B68337"
                 successtextcolor="#B68337" 
                 successBtnbgColor="#B68337" 
-                successSvgColor="#B68337"
                 dynamicUrl="../aboutuspage"></AnimalForm>
         </div>
     </main>
