@@ -1,51 +1,81 @@
 <script>
+import DataSubmitted from '@/components/DataSubmitted.vue';
 import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
 
 export default {
     components: {
-        NavPage,
-        FooterPage
-    },
+    NavPage,
+    FooterPage,
+    DataSubmitted
+},
     data() {
         return {
-
+            formData: {
+                name: '', // 姓名
+                email: "",// 電子信箱
+                phone: '', // 手機號碼
+                password: '', // 密碼
+                checkpassword: '', // 確認密碼
+                check: "",// 隱私權政策
+            },
+            // 進入畫面時 視窗關閉
+            show: false,
         }
     },
-
+    methods: {
+        register() {
+            // console.log(this.formData.password, this.formData.checkpassword)
+            if (this.formData.password != this.formData.checkpassword) {
+                alert("兩次輸入密碼不一致");
+            } else {
+                localStorage.setItem('user', JSON.stringify(this.formData));
+                this.showPopup();
+            }
+        },
+        showPopup() {
+            // 執行顯示視窗
+            this.show = true;
+            // 視窗開啟時scrollBar隱藏
+            document.body.style.overflow = 'hidden';
+        },
+    },
 }
 </script>
 <template>
     <NavPage />
     <main>
         <div class="container">
-            <div class="title">會員註冊</div>
-            <div class="contentbox">
-                <div>
-                    <label>姓名</label>
-                    <input type="text" placeholder="王曉明">
+            <form action="" @submit.prevent="register">
+                <div class="title">會員註冊</div>
+                <div class="contentbox">
+                    <div>
+                        <label>姓名</label>
+                        <input type="text" placeholder="王曉明" v-model="formData.name" >
+                    </div>
+                    <div>
+                        <label>電子信箱</label>
+                        <input type="email" placeholder="請輸入您的電子信箱" v-model="formData.email" >
+                    </div>
+                    <div>
+                        <label>手機號碼</label>
+                        <input type="tel" placeholder="0912321123" v-model="formData.phone" >
+                    </div>
+                    <div>
+                        <label>密碼</label>
+                        <input type="password" placeholder="須設定至少8個字元" v-model="formData.password" >
+                    </div>
+                    <div>
+                        <label>確認密碼</label>
+                        <input type="password" v-model="formData.checkpassword" >
+                    </div>
                 </div>
-                <div>
-                    <label>電子信箱</label>
-                    <input type="text" placeholder="請輸入您的電子信箱">
+                <div class="other">
+                    <input type="checkbox" v-model="formData.check" ><span>我已閱讀，並同意遵守《隱私權政策與會員服務條款》</span>
                 </div>
-                <div>
-                    <label>手機號碼</label>
-                    <input type="text" placeholder="0912321123">
-                </div>
-                <div>
-                    <label>密碼</label>
-                    <input type="text" placeholder="須設定至少8個字元">
-                </div>
-                <div>
-                    <label>確認密碼</label>
-                    <input type="text">
-                </div>
-            </div>
-            <div class="other">
-                <input type="checkbox"><span>我已閱讀，並同意遵守《隱私權政策與會員服務條款》</span>
-            </div>
-            <div class="signup">註冊</div>
+                <button class="signup" type="submit">註冊</button>
+            </form>
+            <DataSubmitted :isShowSub="show"></DataSubmitted>
         </div>
     </main>
     <FooterPage />
@@ -140,6 +170,7 @@ input {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-shadow: none;
 }
 
 .signup:hover {

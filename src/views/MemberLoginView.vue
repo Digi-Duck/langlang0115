@@ -10,10 +10,36 @@ export default {
     },
     data() {
         return {
-
+            formData: {
+                account: '', // 帳號
+                password: '', // 密碼
+            },
         }
     },
     methods: {
+        logIn() {
+            const usertable = JSON.parse(localStorage.user);
+            console.log(usertable)
+            if (usertable.email == this.formData.account || usertable.phone == this.formData.account) {
+                if (usertable.password == this.formData.password) {
+                    sessionStorage.token = this.formData.account;
+                    this.goToPage();
+                } else {
+                    this.formData.account = '';
+                    this.formData.password = '';
+                    alert('登入失敗');
+                }
+            } else {
+                this.formData.account = '';
+                this.formData.password = '';
+                alert('登入失敗');
+            }
+        },
+        autoLogIn() {
+            if (sessionStorage.token) {
+                this.goToPage();
+            }
+        },
         goToSignUp() {
             this.$router.push('/memberregistration'); //導到[會員註冊]
         },
@@ -24,29 +50,34 @@ export default {
             this.$router.push('/members'); //導到[會員頁面]
         },
     },
+    mounted() {
+        this.autoLogIn();
+    },
 }
 </script>
 <template>
     <NavPage />
     <main>
         <div class="container">
-            <div class="title">會員登入</div>
-            <div class="accountbox">
-                <div class="left">
-                    <div class="account">
-                        <label>帳號</label>
-                        <input type="text" placeholder="手機號碼 / 帳號 / 信箱">
-                    </div>
-                    <div class="account">
-                        <label>密碼</label>
-                        <input type="text">
-                    </div>
+            <form action="" @submit.prevent="logIn">
+                <div class="title">會員登入</div>
+                <div class="accountbox">
+                    <div class="left">
+                        <div class="account">
+                            <label>帳號</label>
+                            <input type="text" placeholder="手機號碼 / 帳號 / 信箱" v-model="formData.account">
+                        </div>
+                        <div class="account">
+                            <label>密碼</label>
+                            <input type="password" v-model="formData.password">
+                        </div>
 
+                    </div>
+                    <button type="submit" class="login">
+                        登入
+                    </button>
                 </div>
-                <div class="login">
-                    登入
-                </div>
-            </div>
+            </form>
             <div class="other">
                 <span @click="goToForget">忘記密碼<img src="../assets/Image/MemberImage/Icon-forget.svg"></span>
                 <span @click="goToSignUp">註冊帳號 <img src="../assets/Image/MemberImage/Icon-signup.svg"></span>
