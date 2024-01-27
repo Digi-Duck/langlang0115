@@ -1,6 +1,5 @@
 <script>
 import NavPage from '../components/NavPage.vue'
-import GreenButton from '@/components/GreenButton.vue'
 import SponsorPopUp from '@/components/SponsorPopUp.vue';
 import SponsorSuccess from '@/components/SponsorSuccess.vue';
 import FooterPage from '@/components/FooterPage.vue';
@@ -8,7 +7,6 @@ import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 export default {
   components: {
     SponsorPopUp,
-    GreenButton,
     NavPage,
     SponsorSuccess,
     FooterPage,
@@ -145,7 +143,7 @@ export default {
 .sponsor-container {
   width: 100vw;
   max-width: 100%;
-  padding: 0 164px;
+  padding: 0 164px 150px;
   color: var(--primary-color);
   font-size: 24px;
   letter-spacing: 6px;
@@ -265,10 +263,10 @@ export default {
 .information input {
   width: 100%;
   height: 85px;
+  font-size: 24px;
   border-radius: 4px;
   border: 2px solid var(--primary-color);
 }
-
 .box {
   display: flex;
   flex-direction: column;

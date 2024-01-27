@@ -76,8 +76,8 @@ span:hover {
     background-repeat: no-repeat;
     background-size: 75%;
     color: var(--primary-color);
+    cursor: pointer;
 }
-
 .logotext {
     display: flex;
     align-items: center;

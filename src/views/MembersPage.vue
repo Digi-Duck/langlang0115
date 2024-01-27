@@ -92,7 +92,7 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 115px 0;
+    padding: 115px 0px 276px;
 }
 
 .top {

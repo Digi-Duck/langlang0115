@@ -1,6 +1,6 @@
 <script>
 import FooterPage from '@/components/FooterPage.vue';
-import GreenButton from '@/components/GreenButton.vue';
+// import GreenButton from '@/components/GreenButton.vue';
 import NavPage from '@/components/NavPage.vue';
 import IconLostAnimalsList from '@/components/icons/LostAnimals/IconLostAnimalsList.vue';
 import AnimalsListBrown from '@/components/icons/LostAnimals/AnimalsListBrown.vue';
@@ -9,27 +9,53 @@ export default {
     components: {
         NavPage,
         FooterPage,
-        GreenButton,
+        // GreenButton,
         IconLostAnimalsList,
         IconLostFrame,
         AnimalsListBrown,
     },
     data() {
         return {
-
         }
-    }, methods: {
+    },
+    // mounted() {
+    //     this.HiddenBrown();
+    // },
+    methods: {
         goToFoundAnimalInfo() {
             this.$router.push('/foundanimalsinformation'); //導到[撿到遺失動物資訊頁]
         },
         goToMyLostInfo() {
             this.$router.push('/myanimallostinformation'); //導到[我的動物走失了資訊頁]
-        }, 
-        HiddenBrown() { 
-            
         },
-    },
+        // HiddenBrown() {
+        //     const elremove = this.$refs.IconLostFrame;
+        //     const brownElements = elremove.$el.querySelectorAll('.brown-unnecessary');
 
+        //     brownElements.forEach(element => {
+        //         element.remove();
+        //     });
+        //     return true;
+        // },
+        // HiddenBrown() {
+        //     this.$nextTick(() => {
+        //         const elremove = this.$refs.IconLostFrame;
+        //         if (elremove) {
+        //             const brownElements = elremove.$el.querySelectorAll('.brown-unnecessary');
+        //             brownElements.forEach(element => {
+        //                 element.remove();
+        //             });
+        //         }
+        //     });
+        // },
+        // HiddenBrown() {
+        //     const brownElements = document.querySelectorAll('.brown-unnecessary');
+        //     brownElements.forEach(element => {
+        //         element.style.display = 'none';
+        //     });
+        //     return brownElements.length > 0;
+        // },
+    },
 }
 </script>
 <template>
@@ -40,7 +66,6 @@ export default {
             <div class="lost-titleen">Lost and Found</div>
         </div>
         <div class="content">
-            <!-- <img src="../assets/Image/LostImage/arrow.svg"> -->
             <div class="tabs">
                 <!--   tab group -->
                 <input type="radio" id="tab-1" name="tab" checked="checked">
@@ -107,8 +132,7 @@ export default {
                         </svg>
                         <!-- svg圖 結束-->
                         <IconLostFrame text="利用篩選器查看毛小孩是否被刊登在此平台上" frameBorder="var(--B68337)" noticeborder="var(--B68337)"
-                            textColor="var(--B68337)" strokeColor="var(--B68337)" colorPlan="var(--B68337)"
-                            v-if="HiddenBrown()">
+                            textColor="var(--B68337)" strokeColor="var(--B68337)" colorPlan="var(--B68337)">
                         </IconLostFrame>
                         <AnimalsListBrown />
                     </div>
@@ -118,16 +142,16 @@ export default {
         </div>
     </main>
     <!-- 失散協尋>撿到遺失動物資訊頁（暫放） -->
-    <GreenButton :showSvg="false" @click="goToFoundAnimalInfo" class="btnn">確認前往：<br>撿到遺失動物資訊頁</GreenButton>
+    <!-- <GreenButton :showSvg="false" @click="goToFoundAnimalInfo" class="btnn">確認前往：<br>撿到遺失動物資訊頁</GreenButton> -->
     <!-- 失散協尋>我遺失了動物資訊頁（暫放） -->
-    <GreenButton :showSvg="false" @click="goToMyLostInfo" class="btnn">確認前往：<br>我遺失了動物資訊頁</GreenButton>
+    <!-- <GreenButton :showSvg="false" @click="goToMyLostInfo" class="btnn">確認前往：<br>我遺失了動物資訊頁</GreenButton> -->
     <FooterPage />
 </template>
 <style scoped>
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 60px 155px;
+    padding: 60px 155px 232px;
 }
 
 .lost-title {

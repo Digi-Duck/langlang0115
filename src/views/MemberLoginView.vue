@@ -69,7 +69,7 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 102px 530px 0;
+    padding: 102px 530px 180px;
 }
 
 .container {

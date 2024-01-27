@@ -10,6 +10,7 @@ export default {
         colorPlan: String,// 地區下拉外框顏色
         strokeColor: String, //地區下拉顏色
         text: String,//notice文字
+        bgColor:String, //搜尋按鈕的顏色
     },
     data() {
         return {
@@ -95,8 +96,8 @@ export default {
                 <label for="male">公</label>
                 <input type="radio" id="female" value="母" v-model="formData.gender" name="gender">
                 <label for="female">母</label>
-                <input type="radio" id="gender-unknown" value="未知" v-model="formData.gender" name="gender">
-                <label for="gender-unknown">未知</label>
+                <input type="radio" class="brown-unnecessary" id="gender-unknown" value="未知" v-model="formData.gender" name="gender" >
+                <label for="gender-unknown" class="brown-unnecessary">未知</label>
             </div>
 
             <div class="form-group">
@@ -107,8 +108,8 @@ export default {
                 <input type="radio" id="patternedColor" value="花色" v-model="formData.colors" name="colorType" />
                 <label for="patternedColor">花色</label>
 
-                <input type="radio" id="undefinedColor" value="未定義" v-model="formData.colors" name="colorType" />
-                <label for="undefinedColor">未定義</label>
+                <input type="radio" class="brown-unnecessary" id="undefinedColor" value="未定義" v-model="formData.colors" name="colorType" />
+                <label for="undefinedColor" class="brown-unnecessary">未定義</label>
             </div>
 
             <div class="form-group">
@@ -119,8 +120,8 @@ export default {
                 <input type="radio" id="adultAge" value="成年" v-model="formData.age" name="ageType" />
                 <label for="adultAge">成年</label>
 
-                <input type="radio" id="unknownAge" value="未知" v-model="formData.age" name="ageType" />
-                <label for="unknownAge">未知</label>
+                <input type="radio" class="brown-unnecessary" id="unknownAge" value="未知" v-model="formData.age" name="ageType" />
+                <label for="unknownAge" class="brown-unnecessary">未知</label>
             </div>
 
             <div class="form-group">
@@ -131,12 +132,12 @@ export default {
                 <input type="radio" id="neuteredNo" value="未結紮" v-model="formData.neutered" name="neuteredStatus" />
                 <label for="neuteredNo">未結紮</label>
 
-                <input type="radio" id="neuteredUnknown" value="未知" v-model="formData.neutered" name="neuteredStatus" />
-                <label for="neuteredUnknown">未知</label>
+                <input type="radio" class="brown-unnecessary" id="neuteredUnknown" value="未知" v-model="formData.neutered" name="neuteredStatus" />
+                <label for="neuteredUnknown" class="brown-unnecessary">未知</label>
             </div>
             <div class="btn-area">
                 <NoHoverButton @click.prevent="clearOptions" btnbgColor="var(--gray-color)" text="清除重填" ></NoHoverButton>
-                <IconChangeButton @click.prevent="search" bgColor="var(--olivegreen-color)" text="搜尋" textColor="var(--white-color)">
+                <IconChangeButton @click.prevent="search" bgColor="btnColor" text="搜尋" textColor="var(--white-color)">
                 </IconChangeButton>
             </div>
         </form>

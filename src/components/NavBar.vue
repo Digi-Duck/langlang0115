@@ -86,6 +86,7 @@ span {
     font-weight: 400;
     letter-spacing: 4.5px;
     padding: 25px 35px;
+    cursor: pointer;
 }
 
 span:hover {
@@ -106,6 +107,7 @@ span:hover {
     display: flex;
     flex-direction: column;
     z-index: 2;
+    cursor: pointer;
 }
 
 .titleen {
