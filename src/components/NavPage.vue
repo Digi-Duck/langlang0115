@@ -81,5 +81,6 @@ span:hover {
 .logotext {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 </style>
