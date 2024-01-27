@@ -49,23 +49,23 @@ export default {
             <form action="" @submit.prevent="register">
                 <div class="title">會員註冊</div>
                 <div class="contentbox">
-                    <div>
+                    <div class="group">
                         <label>姓名</label>
                         <input type="text" placeholder="王曉明" v-model="formData.name" >
                     </div>
-                    <div>
+                    <div class="group">
                         <label>電子信箱</label>
                         <input type="email" placeholder="請輸入您的電子信箱" v-model="formData.email" >
                     </div>
-                    <div>
+                    <div class="group">
                         <label>手機號碼</label>
                         <input type="tel" placeholder="0912321123" v-model="formData.phone" >
                     </div>
-                    <div>
+                    <div class="group">
                         <label>密碼</label>
                         <input type="password" placeholder="須設定至少8個字元" v-model="formData.password" >
                     </div>
-                    <div>
+                    <div class="group">
                         <label>確認密碼</label>
                         <input type="password" v-model="formData.checkpassword" >
                     </div>
@@ -98,17 +98,27 @@ main {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 46px;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
     font-family: 'ABeeZee';
 }
 
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
 .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 40px;
     letter-spacing: 10px;
     color: var(--primary-color);
+    padding-bottom: 50px;
 }
 
 .contentbox {
@@ -116,10 +126,10 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 18px;
-    /* margin-bottom: 42px; */
+    margin-bottom: 42px;
 }
 
-.contentbox div {
+.group {
     width: 426px;
     font-size: 25px;
     text-align: left;
@@ -142,13 +152,14 @@ input {
 }
 
 .other {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 3px;
     color: var(--gray-color);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    padding-bottom: 28px;
 }
 
 .other input {
@@ -164,6 +175,7 @@ input {
     background-color: var(--white-color);
     border-radius: 50%;
     border: 1px solid var(--gray-color);
+    color: var(--gray-color);
     font-size: 24px;
     letter-spacing: 6px;
     display: flex;
