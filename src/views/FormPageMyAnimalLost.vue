@@ -13,9 +13,9 @@ export default {
         const elremove = this.$refs.animalFrame;
         const brownUnnecessaryElements = elremove.$el.querySelectorAll(".brown-unnecessary");
         // 使用 forEach 迭代 NodeList 並刪除每個元素
-      brownUnnecessaryElements.forEach(element => {
-        element.remove();
-    });
+        brownUnnecessaryElements.forEach(element => {
+            element.remove();
+        });
     },
 }
 </script>
@@ -24,9 +24,18 @@ export default {
     <NavPage />
     <main>
         <div>
-            <AnimalForm ref="animalFrame" pagename="失散協尋" title="我遺失了動物" inputTitleColor="#B68337" uploadPicBorder="#B68337"
-                svgColor="#B68337" uploadPicColor="#B68337" inputTextBorder="2px solid #B68337" submitBgColor="#B68337"
-                popStyle="#B68337"></AnimalForm>
+            <AnimalForm ref="animalFrame" pagename="失散協尋" title="我遺失了動物" 
+            inputTitleColor="#B68337" 
+            uploadPicBorder="#B68337"
+                svgColor="#B68337" 
+                uploadPicColor="#B68337" 
+                inputTextBorder="2px solid #B68337" submitBgColor="#B68337"
+                popStyle="#B68337" 
+                confirmpopStyle="#B68337" 
+                successtextcolor="#B68337" 
+                successBtnbgColor="#B68337" 
+                successSvgColor="#B68337"
+                dynamicUrl="../aboutuspage"></AnimalForm>
         </div>
     </main>
 </template>
