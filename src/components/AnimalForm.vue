@@ -19,6 +19,7 @@ export default {
         successtextcolor: String, //資料成功送出文字顏色
         successBtnbgColor: String,//前往瀏覽頁面按鈕顏色
         // myurl: String,   //按鈕指令
+        targetRoute: String,
     },
     data() {
         return {
@@ -63,7 +64,10 @@ export default {
         },
         goPage() {
             if (this.isSubmit) {
-                alert("hi")
+                // alert("hi")
+                this.$router.push(this.targetRoute);
+                // this.$router.push('/foundanimalsinformation')
+                // this.$router.push('/myanimallostinformation')
             }
             this.isSubmit = false;
         },

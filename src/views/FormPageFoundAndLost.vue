@@ -4,6 +4,11 @@ import AnimalForm from '@/components/AnimalForm.vue';
 
 
 export default {
+    data(){
+        return{
+            yourDynamicRouterVariable:"/foundanimalsinformation"
+        }
+    },
     components: {
         NavPage,
         AnimalForm
@@ -28,6 +33,7 @@ export default {
                 successSvgColor="#7EA138"
                 successtextcolor="#7EA138" 
                 successBtnbgColor="#7EA138" 
+                :targetRoute="yourDynamicRouterVariable"
                 ></AnimalForm>
         </div>
     </main>

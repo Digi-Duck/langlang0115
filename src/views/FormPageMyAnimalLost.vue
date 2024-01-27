@@ -4,6 +4,11 @@ import AnimalForm from '@/components/AnimalForm.vue';
 
 
 export default {
+    data() {
+        return {
+            yourDynamicRouteVariable: "/myanimallostinformation",
+        }
+    },
     components: {
         NavPage,
         AnimalForm
@@ -24,18 +29,11 @@ export default {
     <NavPage />
     <main>
         <div>
-            <AnimalForm ref="animalFrame" pagename="失散協尋" title="我遺失了動物" 
-            inputTitleColor="#B68337" 
-            uploadPicBorder="#B68337"
-                svgColor="#B68337" 
-                uploadPicColor="#B68337" 
-                inputTextBorder="2px solid #B68337" submitBgColor="#B68337"
-                popStyle="#B68337" 
-                confirmpopStyle="#B68337" 
-                successSvgColor="#B68337"
-                successtextcolor="#B68337" 
-                successBtnbgColor="#B68337" 
-                dynamicUrl="../aboutuspage"></AnimalForm>
+            <AnimalForm ref="animalFrame" pagename="失散協尋" title="我遺失了動物" inputTitleColor="#B68337" uploadPicBorder="#B68337"
+                svgColor="#B68337" uploadPicColor="#B68337" inputTextBorder="2px solid #B68337" submitBgColor="#B68337"
+                popStyle="#B68337" confirmpopStyle="#B68337" successSvgColor="#B68337" successtextcolor="#B68337"
+                successBtnbgColor="#B68337"       :targetRoute="yourDynamicRouteVariable"
+                ></AnimalForm>
         </div>
     </main>
 </template>
