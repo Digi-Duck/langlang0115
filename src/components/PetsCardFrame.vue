@@ -1,28 +1,18 @@
 <script>
 export default {
+    props: {
+        animalData: Object,
+    },
     data() {
         return {
             animals: [],
         }
     },
     methods: {
-        // async非同步
-        async fetchAnimals() {
-            // try...catch 嘗試...捕捉(錯誤)...
-            try {
-                // await 配合 async
-                const response = await fetch('http://localhost:3000/0')
-                // data = 等待response抓資料
-                const data = await response.json();
-                this.animals = data;
-                console.log(this.animals.cats[0].名稱);
-            } catch (error) {
-                console.error('Error fetching dogs:', error);
-            };
-        },
+
     },
     mounted() {
-        this.fetchAnimals();
+
     },
 }
 </script>
@@ -31,27 +21,27 @@ export default {
         <!-- 卡片表格區域-->
         <div class="CardFrame">
             <div class="ChipNumber">
-                <span>晶片號碼：AAAHG1130116001</span>
+                <span>晶片號碼：{{ animalData.名稱 }}</span>
             </div>
             <table>
                 <tbody>
                     <tr>
                         <th>類別</th>
-                        <td>貓</td>
+                        <td>{{ animalData.類型 }}</td>
                         <th>體型</th>
-                        <td>小型</td>
+                        <td>{{ animalData.體型 }}</td>
                     </tr>
                     <tr>
                         <th>年齡</th>
-                        <td>幼年</td>
+                        <td>{{ animalData.年齡 }}</td>
                         <th>性別</th>
-                        <td>母</td>
+                        <td>{{ animalData.性別 }}</td>
                     </tr>
                     <tr>
                         <th>是否已結紮</th>
-                        <td>未知</td>
+                        <td>{{ animalData.是否已結紮 }}</td>
                         <th>顏色</th>
-                        <td>花色</td>
+                        <td>{{ animalData.顏色 }}</td>
                     </tr>
                     <tr>
                         <th>聯絡方式</th>
@@ -64,11 +54,11 @@ export default {
             <div class="platformTime">
                 <div class="time">
                     <span>平台建立時間</span>
-                    <p class="creationTime">2024-01-10 00:00:00</p>
+                    <p class="creationTime">{{ animalData.建立 }}</p>
                 </div>
                 <div class="time">
                     <span>平台更新時間</span>
-                    <p class="updateTime">2024-01-10 00:00:00</p>
+                    <p class="updateTime">{{ animalData.更新 }}</p>
                 </div>
             </div>
             <div class="shareIcon">

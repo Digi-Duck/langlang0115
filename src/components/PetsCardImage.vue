@@ -5,12 +5,17 @@ export default {
     components: {
         CardClickLike,
     },
+    methods: {
+        favoriteAnimal() {
+            this.$emit("favoriteAnimal");
+        }
+    }
 }
 </script>
 <template>
     <div class="furryBabiesImage">
         <img src="../assets/Image/CardImage/CardCat.png" alt="">
-        <CardClickLike class="heart"></CardClickLike>
+        <CardClickLike class="heart" @favorite="favoriteAnimal"></CardClickLike>
     </div>
 </template>
 <style scoped>
