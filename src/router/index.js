@@ -41,7 +41,7 @@ const router = createRouter({
     },
     {
       // 認養中心頁面>>毛小孩資訊
-      path: '/adoptionpetinformation',
+      path: '/adoptionpetinformation/:name',
       name: 'adoptionpetinformation',
       component: () => import('../views/AdoptionPetInformation.vue')
     },
@@ -106,7 +106,7 @@ const router = createRouter({
       name: 'members',
       component: () => import('../views/MembersPage.vue')
     },
-    
+
   ]
 })
 
