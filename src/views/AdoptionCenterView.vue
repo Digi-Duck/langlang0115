@@ -8,6 +8,7 @@ import AdoptionSearch from '@/components/AdoptionSearch.vue';
 import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 import AdoptionList from '@/components/AdoptionList.vue';
 import IconPaperAirplane from '@/components/icons/IconPaperAirplane.vue';
+import Animals from '@/json/Animals.json';
 
 export default {
     components: {
@@ -49,9 +50,36 @@ export default {
             isHovered: false,
             // 進入畫面時 視窗關閉
             show: false,
+            // 傳入動物資料
+            Animals: Animals,
+            // 預設不過濾
+            filteredAnimals: Animals,
         }
     },
+    mounted() {
+        // console.log(this.Animals[0].cats);
+    },
     methods: {
+        // 搜尋器 過濾
+        search(formData) {
+            this.filteredAnimals = this.Animals.filter((ani => ani.類型 == formData.species));
+            this.filteredAnimals = this.filteredAnimals.filter((ani => ani.所在區域 == formData.location));
+            this.filteredAnimals = this.filteredAnimals.filter((ani => ani.體型 == formData.bodyshape));
+            if (formData.gender != "both") {
+                this.filteredAnimals = this.filteredAnimals.filter((ani => ani.性別 == formData.gender));
+            }
+            // if (formData.colors != "both") {
+            //     this.filteredAnimals = this.filteredAnimals.filter((ani => ani.顏色 == formData.colors));
+            // }
+            if (formData.age != "both") {
+                this.filteredAnimals = this.filteredAnimals.filter((ani => ani.年齡 == formData.age));
+            }
+            if (formData.neutered != "both") {
+                this.filteredAnimals = this.filteredAnimals.filter((ani => ani.是否已結紮 == formData.neutered));
+            }
+            // console.log(this.filteredAnimals);
+            // console.log(formData.species);
+        },
         showPopup() {
             // 執行顯示視窗
             this.show = true;
@@ -128,7 +156,8 @@ export default {
                                 <img src="@\assets\Image\DogPawGreen.svg" alt="Icon" v-if="isHovered" class="icon">
                             </div>
                         </div>
-                        <AdoptionSearch :frameBorder="mybordercolor" :noticeborder="mynoticeborder" :textColor="mytextc" />
+                        <AdoptionSearch :frameBorder="mybordercolor" :noticeborder="mynoticeborder" :textColor="mytextc"
+                            @search="search" />
                     </div>
                     <!-- 卡片 -->
                     <div class="petsInormationForm">
@@ -136,14 +165,14 @@ export default {
                             <!-- <a href="../views/FormPageAdoption.vue"></a> -->
                             <IconChangeButton :text="mytext" :textColor="mytextColor" :bgColor="mybgColor" :w="myw" :h="myh"
                                 @click="formadoptionPage" />
-                                <IconChangeButton :text="mysubmit" :textColor="mytextcolorno" :bgColor="mybgcolorno" :w="mywno" :h="myhno"
-            @click="petinformationPage" />
+                            <IconChangeButton :text="mysubmit" :textColor="mytextcolorno" :bgColor="mybgcolorno" :w="mywno"
+                                :h="myhno" @click="petinformationPage" />
                             <a href="#">
                                 <IconPaperAirplane />
                                 搜尋附近動物醫院
                             </a>
                         </div>
-                        <AdoptionList />
+                        <AdoptionList :AnimalsData="filteredAnimals" />
                     </div>
                     <!-- 顯示視窗畫面 -->
                     <AdoptionInformationPopup :is-show="show" @close="closePopup" />
