@@ -2,11 +2,19 @@
 import CardClickLike from './CardClickLike.vue';
 export default {
     components: { CardClickLike },
+    props: {
+        AnimalData: Object, //單一動物資料
+    },
+    methods: {
+        favoriteAnimal() {
+            this.$emit("favoriteAnimal", this.AnimalData);
+        }
+    }
 }
 </script>
 <template>
     <div class="card">
-        <CardClickLike class="heart"></CardClickLike>
+        <CardClickLike class="heart" @favorite="favoriteAnimal"></CardClickLike>
     </div>
 </template>
 <style scoped>
@@ -24,7 +32,9 @@ export default {
     top: 0;
     left: 0;
 }
-.card:nth-child(3)::before,.card:nth-child(8)::before{
+
+.card:nth-child(3)::before,
+.card:nth-child(8)::before {
     content: "已送養";
     color: var(--white-color);
     font-size: 32px;

@@ -11,7 +11,40 @@ export default {
     },
     data() {
         return {
-
+            likeAnimals: []
+        }
+    },
+    mounted() {
+        this.getLikeAnimals();
+        console.log(this.likeAnimals);
+    },
+    methods: {
+        getLikeAnimals() {
+            // this.likeAnimals = [{ 1: 1 }, { 2: 1 }]
+            // 讀取localStorage.likeAnimals
+            const tmp = localStorage.likeAnimals;
+            // 如果有資料
+            if (tmp) {
+                // parse JSON文字轉JS物件
+                this.likeAnimals = JSON.parse(tmp);
+            }
+        },
+        updateLikeAnimal(ani) {
+            // 如果在this.likeAnimals的(indexOf)列表裡未找到ani,就要push; 如果找到就remove;
+            if (this.likeAnimals.indexOf(ani) == -1) {
+                this.likeAnimals.push(ani);
+            } else {
+                this.removeFromArray(this.likeAnimals, ani);
+            }
+            // 儲存更新 stringify JS物件轉JSON文字
+            localStorage.likeAnimals = JSON.stringify(this.likeAnimals);
+        },
+        removeFromArray(arr, elem) {
+            const index = arr.indexOf(elem);
+            if (index !== -1) {
+                // 使用splice方法從陣列中移除元素
+                arr.splice(index, 1);
+            }
         }
     },
 
@@ -46,14 +79,7 @@ export default {
         <div class="followed">
             <span class="title">我追蹤的浪浪</span>
             <div class="followedbox">
-                <FollowedCard />
-                <FollowedCard />
-                <FollowedCard />
-                <FollowedCard />
-                <FollowedCard />
-                <FollowedCard />
-                <FollowedCard />
-                <FollowedCard />
+                <FollowedCard v-for="likeani in likeAnimals" :AnimalData="likeani" @favoriteAnimal="updateLikeAnimal" />
             </div>
         </div>
         <div class="history">
@@ -142,11 +168,13 @@ main {
     letter-spacing: 6px;
     color: var(--gray-color);
 }
-.contentmain div{
+
+.contentmain div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 input {
     width: 290px;
     height: 50px;
@@ -186,8 +214,9 @@ input {
     width: 1350px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     row-gap: 25px;
+    gap: 50px;
 }
 
 /* 捐款歷史 */

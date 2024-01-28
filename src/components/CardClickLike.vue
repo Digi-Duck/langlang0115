@@ -9,8 +9,9 @@ export default {
     methods: {
         toggleFavorite() {
             this.isFavorite = !this.isFavorite;
+            this.$emit("favorite")
         },
-    },
+    }
 };
 </script>
 <template>
