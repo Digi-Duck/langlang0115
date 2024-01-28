@@ -11,7 +11,6 @@ import IconChangeButton from '@/components/icons/IconChangeButton.vue';
 
 export default {
     components: {
- 
         NavPage,
         FooterPage,
         IconChangeButton
@@ -142,6 +141,16 @@ export default {
     width: 44%;
 }
 
+
+@media only screen and (max-width: 1280px) {
+    .sponsor-title {
+        margin-top: 69px;
+        margin-left: 100px;
+        width: 44%;
+    }
+  }
+
+
 .accept-criedcard {
     font-size: 20px;
     border: 3px dashed var(--primary-color);
@@ -160,6 +169,13 @@ export default {
     left: 230px;
 }
 
+@media only screen and (max-width: 1280px) {
+    .accept-criedcard::after {
+        content: "";
+        background-image:none;
+    }
+  }
+
 .sponsor-content {
     display: flex;
     flex-direction: column;
@@ -169,10 +185,9 @@ export default {
 
 .sponsor-flow-chart {
     display: flex;
-
     align-items: center;
-
 }
+
 
 .three-step-text {
     font-size: 40px;
@@ -181,6 +196,12 @@ export default {
     color: var(--primary-color);
     margin: 0px 35px 0px 0px;
 }
+
+@media only screen and (max-width: 1280px) {
+    .three-step-text {
+       margin: 0px -3px 0px 92px;
+    }
+  }
 
 .sponsor-intro-text {
     font-size: 28px;
@@ -193,6 +214,13 @@ export default {
     padding: 34px 62px;
     margin: 15px 351px 50px;
 }
+
+@media only screen and (max-width: 1280px) {
+    .sponsor-intro-text {
+        margin: 66px 351px ;
+    }
+    
+  }
 
 .sponsor-intro-text span {
     display: flex;
@@ -211,6 +239,12 @@ export default {
     margin: 0px 28px;
 }
 
+@media only screen and (max-width: 1500px) {
+    .sponsored-list-title {
+      min-width: 152px;
+    }
+  }
+
 .interval {
     display: flex;
     justify-content: center;
@@ -218,6 +252,7 @@ export default {
     font-size: 32px;
     letter-spacing: 8px;
     margin: 60px 0px;
+    width: 100%;
 }
 
 .line {
@@ -239,12 +274,27 @@ export default {
     stroke: var(--primary-color);
 }
 
+@media only screen and (max-width: 1500px) {
+    .line-left {
+        width: 400px;
+    }
+  
+  }
+
 .line-right {
     width: 633px;
     height: 2px;
     background-color: var(--primary-color);
     stroke: var(--primary-color);
 }
+
+
+
+@media only screen and (max-width: 1500px) {
+    .line-right {
+        width: 400px;
+    }
+  }
 
 
 .table-all {
@@ -267,11 +317,6 @@ table {
     border: 2px solid #D7D7D7;
     font-weight: 400;
     letter-spacing: 8px;
-    /* display: block;
-    overflow-x: auto;
-    white-space: nowrap;*/
-   
-  
  }
 
 thead {
@@ -332,6 +377,13 @@ td:nth-child(2) {
     font-weight: 400;
 
 }
+
+
+@media only screen and (max-width: 1280px) {
+    .q-a-container {
+       margin: 10px 132px;    
+    }
+  }
 
 .q-a-tittle {
     color: var(--gray-color);
