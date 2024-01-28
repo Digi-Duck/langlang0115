@@ -1,12 +1,11 @@
 <script>
 import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
-import GreenButton from '@/components/GreenButton.vue';
+
 export default {
     components: {
         NavPage,
         FooterPage,
-        GreenButton
     },
     data() {
         return {
@@ -18,8 +17,14 @@ export default {
     },
     methods: {
         logIn() {
-            const usertable = JSON.parse(localStorage.user);
-            console.log(usertable)
+            // 讀取localStorage.user
+            const tmp = localStorage.user;
+            // 如果有資料
+            let usertable = '';
+            if (tmp) {
+                usertable = JSON.parse(tmp);
+            }
+            // console.log(usertable)
             if (usertable.email == this.formData.account || usertable.phone == this.formData.account) {
                 if (usertable.password == this.formData.password) {
                     sessionStorage.token = this.formData.account;
@@ -62,7 +67,7 @@ export default {
             <form action="" @submit.prevent="logIn">
                 <div class="title">會員登入</div>
                 <div class="accountbox">
-                    <div class="left">
+                    <div class="inputArea">
                         <div class="account">
                             <label>帳號</label>
                             <input type="text" placeholder="手機號碼 / 帳號 / 信箱" v-model="formData.account">
@@ -71,7 +76,6 @@ export default {
                             <label>密碼</label>
                             <input type="password" v-model="formData.password">
                         </div>
-
                     </div>
                     <button type="submit" class="login">
                         登入
@@ -91,8 +95,6 @@ export default {
                 <img src="../assets/Image/MemberImage/member-fb.svg" alt="">
             </div>
         </div>
-        <!-- 分頁 -->
-        <GreenButton class="btn" @click="goToPage">導到[會員頁面]</GreenButton>
     </main>
     <FooterPage />
 </template>
@@ -100,7 +102,10 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 102px 530px 180px;
+    padding: 102px 0 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 .container {
@@ -111,23 +116,32 @@ main {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
     font-family: 'ABeeZee';
+    padding: 60px 103px;
 }
 
 .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 40px;
-    text-align: center;
     letter-spacing: 10px;
     color: var(--primary-color);
+    padding-bottom: 36px;
 }
 
 .accountbox {
     display: flex;
     align-items: center;
-    gap: 32px;
+}
+
+.inputArea {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 32px;
 }
 
 .account {
@@ -174,10 +188,10 @@ input {
 
 .other {
     display: flex;
-    gap: 59px;
+    gap: 60px;
     color: var(--gray-color);
     margin-right: 35px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .other span {
@@ -186,6 +200,7 @@ input {
     gap: 10px;
     align-items: center;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 .social {
@@ -195,7 +210,11 @@ input {
     gap: 25px;
     font-size: 20px;
     letter-spacing: 5px;
-    margin-bottom: 44px;
+    padding-bottom: 40px;
+}
+
+.social img {
+    width: 200px;
 }
 
 .icon {
@@ -205,13 +224,8 @@ input {
 }
 
 .icon img {
-    cursor: pointer;
-}
-
-/* 按鈕暫放 */
-.btn {
-    width: 250px;
+    width: 80px;
     height: 80px;
-    margin: 10px;
+    cursor: pointer;
 }
 </style>
