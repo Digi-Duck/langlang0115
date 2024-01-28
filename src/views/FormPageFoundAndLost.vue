@@ -13,6 +13,11 @@ export default {
         NavPage,
         AnimalForm
     },
+    mounted(){
+         // 恢復滾軸功能（導入這頁之前，popup有隱藏滾軸的功能）
+        document.body.style.overflow = 'auto';
+
+    }
 }
 </script>
 
