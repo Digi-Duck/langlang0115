@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       //變量，儲存當前所選消息的索引
-      selectedNews: null, 
+      selectedNews: null,
       news: [
         { date: '2023.11', 'day': '02', title: '浪浪的事改版問卷調查', content: '感謝各位會員一直以來的直支持，因為近期流量越來越大，所以網站部分功能有時候會出現500的錯誤。因為既有的系統環境無法服務到大量使用者。因此系統將執行升級改版，此次改版可能會有暫停服務時間。另外也非常歡迎各位會員提出自己的想法，可以填寫以下google 表單，選出最喜歡哪一些現在已經有的功能以及希望新增的功能。浪浪的事改版問券調查： https://forms.gle/ttEf32Dj8ABXbXZj6' },
         { date: '2023.05', 'day': '31', title: '誤發登入失敗通知', content: '真的非常不好意思，通知登入失敗的儲存位置，復原備份資料於測試環境。以至於之前若有的登入失敗過的會員，沒有發送通知信，昨天2023/5/31會被發送 登入失敗的Email真的非常抱歉請勿點選來路不明的連結，浪浪的事也不會通知任何繳費的事項。真的非常不好意思，造成您的不便敬請見諒。' },
@@ -18,7 +18,7 @@ export default {
         { date: '2022.01', 'day': '24', title: '登記公告策略改變', content: '浪浪的事是以記錄的方式將動物的所有記錄都可以記錄下來。包含看醫生的紀錄、送養轉讓紀錄、遺失快速通報功能，從出生到死亡希望都可以紀錄。但目前大部分還是以會員自主登入為主，期望未來可以越來越好！歡迎不管是不是要送養的毛小孩，都可以嘗試新增毛小孩在網站中，有任何不方便的地方，歡迎使用聯絡我們功能給我們建議喔～另外 浪浪的事主是提供平台幫助紀錄毛小孩的大小事，並無收容任何毛小孩，最近好像有會員誤會有收容動物，我們會加強網頁畫面顯示的提示。祝各位有個愉快的一天' }, { date: '2023.11', 'day': '02', title: '浪浪的事改版問卷調查', content: '感謝各位會員一直以來的直支持，因為近期流量越來越大，所以網站部分功能有時候會出現500的錯誤。因為既有的系統環境無法服務到大量使用者。因此系統將執行升級改版，此次改版可能會有暫停服務時間。另外也非常歡迎各位會員提出自己的想法，可以填寫以下google 表單，選出最喜歡哪一些現在已經有的功能以及希望新增的功能。浪浪的事改版問券調查： https://forms.gle/ttEf32Dj8ABXbXZj6' },
         { date: '2023.05', 'day': '31', title: '誤發登入失敗通知', content: '真的非常不好意思，通知登入失敗的儲存位置，復原備份資料於測試環境。以至於之前若有的登入失敗過的會員，沒有發送通知信，昨天2023/5/31會被發送 登入失敗的Email真的非常抱歉請勿點選來路不明的連結，浪浪的事也不會通知任何繳費的事項。真的非常不好意思，造成您的不便敬請見諒。' },
         { date: '2022.01', 'day': '24', title: '登記公告策略改變', content: '浪浪的事是以記錄的方式將動物的所有記錄都可以記錄下來。包含看醫生的紀錄、送養轉讓紀錄、遺失快速通報功能，從出生到死亡希望都可以紀錄。但目前大部分還是以會員自主登入為主，期望未來可以越來越好！歡迎不管是不是要送養的毛小孩，都可以嘗試新增毛小孩在網站中，有任何不方便的地方，歡迎使用聯絡我們功能給我們建議喔～另外 浪浪的事主是提供平台幫助紀錄毛小孩的大小事，並無收容任何毛小孩，最近好像有會員誤會有收容動物，我們會加強網頁畫面顯示的提示。祝各位有個愉快的一天' }, { date: '2022.01', 'day': '24', title: '登記公告策略改變', content: '浪浪的事是以記錄的方式將動物的所有記錄都可以記錄下來。包含看醫生的紀錄、送養轉讓紀錄、遺失快速通報功能，從出生到死亡希望都可以紀錄。但目前大部分還是以會員自主登入為主，期望未來可以越來越好！歡迎不管是不是要送養的毛小孩，都可以嘗試新增毛小孩在網站中，有任何不方便的地方，歡迎使用聯絡我們功能給我們建議喔～另外 浪浪的事主是提供平台幫助紀錄毛小孩的大小事，並無收容任何毛小孩，最近好像有會員誤會有收容動物，我們會加強網頁畫面顯示的提示。祝各位有個愉快的一天' }, { date: '2023.11', 'day': '02', title: '浪浪的事改版問卷調查', content: '感謝各位會員一直以來的直支持，因為近期流量越來越大，所以網站部分功能有時候會出現500的錯誤。因為既有的系統環境無法服務到大量使用者。因此系統將執行升級改版，此次改版可能會有暫停服務時間。另外也非常歡迎各位會員提出自己的想法，可以填寫以下google 表單，選出最喜歡哪一些現在已經有的功能以及希望新增的功能。浪浪的事改版問券調查： https://forms.gle/ttEf32Dj8ABXbXZj6' },
-      
+
       ],
       //變量，控制彈跳視窗的顯示狀態（空字串代表沒有公告被選中）
       //當點擊某公告時，isDetailPopupVisible會被設置相應的索引值，從而觸發彈出窗口的顯示
@@ -31,7 +31,7 @@ export default {
   },
 
   methods: {
-  //點擊後觸發showDetails方法，接收一個index參數，表示所點擊的公告的索引，賦值給selectedNews
+    //點擊後觸發showDetails方法，接收一個index參數，表示所點擊的公告的索引，賦值給selectedNews
     showDetails(index) {
       console.log(index);
       // 當公告被點擊時觸發，更新 selectedNews 為所選公告的索引
@@ -64,10 +64,10 @@ export default {
   <main>
     <section class="news-page-container">
       <div class="latest-news-text">最新公告NEWS</div>
-      <div class="green-bg" >
-        
+      <div class="green-bg">
+
         <ul class="news-list">
-          <li class="news-item" v-for="(item, index) in news" :key="index" @click="showDetails(index)" >
+          <li class="news-item" v-for="(item, index) in news" :key="index" @click="showDetails(index)">
             <div class="news-date">
               <span class="news-date-month">{{ item.date }}</span>
               <span class="news-date-day">{{ item.day }}</span>
@@ -83,7 +83,7 @@ export default {
             </div>
           </li>
         </ul>
-        </div>
+      </div>
 
     </section>
 
@@ -108,11 +108,12 @@ main {
   font-family: 'ABeeZee';
 }
 
-.news-page-container{
+.news-page-container {
   width: 100%;
   height: 100%;
 
 }
+
 .latest-news-text {
   font-weight: 400;
   letter-spacing: 12px;
@@ -129,14 +130,8 @@ main {
   background-size: 100%;
   width: 1588px;
   padding-bottom: 100px;
-
- /*   height: 100%;
- position: absolute;
-  top: 15%;
-  right: 130px;*/
   margin: 62px 0px 0px 158px;
 }
-
 
 .news-list {
   list-style: none;
@@ -217,6 +212,12 @@ main {
   height: 500px;
   padding: 20px;
   z-index: 1000;
+}
+
+@media only screen and (max-width: 1280px) {
+  .news-detail-popup {
+    left: 70%;
+  }
 }
 
 .close-btn {
