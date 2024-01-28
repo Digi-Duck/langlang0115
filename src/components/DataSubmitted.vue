@@ -119,6 +119,7 @@ export default {
     text-align: center;
     letter-spacing: 6px;
     font-weight: bold;
+    margin-left: 40px;
 }
 
 .SendText p {
