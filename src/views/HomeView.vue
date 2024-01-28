@@ -26,7 +26,7 @@ export default {
     <section>
       <div class="home-header-greenbox"></div>
       <div class="home-header-img">
-        <img src="../assets/Image/HomeImage/HomeA-banner.svg" alt="">
+        <!-- <img src="../assets/Image/HomeImage/HomeA-banner.svg" alt=""> -->
         <div class="home-header-text">
           <IconHeaderLine class="line3"></IconHeaderLine>
           <span>動物走失了</span>
@@ -63,13 +63,28 @@ export default {
   top: 0px;
   left: 0px;
 }
-
+@media (min-width: 1280px) {
+  .home-header-greenbox {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 500px;
+}
+}
 .home-header-img {
-  display: flex;
-  justify-content: center;
+  width:1827px ;
+  height: 947px;
+  background-image: url(../assets/Image/HomeImage/HomeA-banner.svg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: auto;
   position: relative;
 }
-
+@media (max-width: 1280px) {
+  .home-header-img {
+  background-image: url(../assets/Image/HomeImage/HomeA-banner-1280.svg);
+}
+  }
 .home-header-text {
   width: 500px;
   height: 50px;

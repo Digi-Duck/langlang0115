@@ -125,4 +125,31 @@ span:hover {
     top: 125%;
     left: 12%;
 }
+
+@media (max-width: 1280px) {
+    #wave {
+        transform: scale(0.95);
+        top: 84%;
+        left: -1%;
+    }
+
+    #logo {
+        margin-top: 70px;
+        margin-left: 0px;
+    }
+
+    .titleen {
+        width: 161px;
+        height: 30px;
+        top: 125%;
+        left: 17%;
+    }
+
+    .titlecn {
+        width: 322px;
+        height: 91px;
+        top: 160%;
+        left: 12%;
+    }
+}
 </style>
