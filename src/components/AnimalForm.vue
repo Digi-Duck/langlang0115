@@ -17,9 +17,8 @@ export default {
         confirmpopStyle: String, //確認彈跳視窗
         successSvgColor: String,//svg顏色
         successtextcolor: String, //資料成功送出文字顏色
-        successBtnbgColor: String,//前往瀏覽頁面按鈕顏色
-        // myurl: String,   //按鈕指令
-        targetRoute: String,
+        successBtnbgColor: String,//前往瀏覽頁面按鈕顏色 
+        targetRoute: String,//goPage按鈕導入下一頁指令
     },
     data() {
         return {
@@ -59,15 +58,12 @@ export default {
     methods: {
         //點擊送出按鈕
         showSubmitBtn() {
-            // document.body.style.overflow = 'hidden'; //隱藏滾軸
+            document.body.style.overflow = 'hidden';    //隱藏滾軸
             this.isSubmit = true;
         },
         goPage() {
             if (this.isSubmit) {
-                // alert("hi")
                 this.$router.push(this.targetRoute);
-                // this.$router.push('/foundanimalsinformation')
-                // this.$router.push('/myanimallostinformation')
             }
             this.isSubmit = false;
         },
