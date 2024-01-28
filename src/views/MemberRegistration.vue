@@ -1,14 +1,16 @@
 <script>
 import DataSubmitted from '@/components/DataSubmitted.vue';
 import FooterPage from '@/components/FooterPage.vue';
+import MemberPrivacyPopup from '@/components/MemberPrivacyPopup.vue';
 import NavPage from '@/components/NavPage.vue';
 
 export default {
     components: {
-    NavPage,
-    FooterPage,
-    DataSubmitted
-},
+        NavPage,
+        FooterPage,
+        DataSubmitted,
+        MemberPrivacyPopup
+    },
     data() {
         return {
             formData: {
@@ -20,7 +22,8 @@ export default {
                 check: "",// 隱私權政策
             },
             // 進入畫面時 視窗關閉
-            show: false,
+            showRegister: false,
+            showPrivacy: false,
         }
     },
     methods: {
@@ -35,9 +38,20 @@ export default {
         },
         showPopup() {
             // 執行顯示視窗
-            this.show = true;
+            this.showRegister = true;
             // 視窗開啟時scrollBar隱藏
             document.body.style.overflow = 'hidden';
+        },
+        showPrivacyPopup() {
+            this.showPrivacy = true;
+            // 視窗開啟時scrollBar隱藏
+            document.body.style.overflow = 'hidden';
+        },
+        closePopup() {
+            // 執行關閉視窗
+            this.showPrivacy = false;
+            // 視窗開啟時scrollBar打開
+            document.body.style.overflow = 'auto';
         },
     },
 }
@@ -51,32 +65,36 @@ export default {
                 <div class="contentbox">
                     <div class="group">
                         <label>姓名</label>
-                        <input type="text" placeholder="王曉明" v-model="formData.name" >
+                        <input type="text" placeholder="王曉明" v-model="formData.name" required>
                     </div>
                     <div class="group">
                         <label>電子信箱</label>
-                        <input type="email" placeholder="請輸入您的電子信箱" v-model="formData.email" >
+                        <input type="email" placeholder="請輸入您的電子信箱" v-model="formData.email" required>
                     </div>
                     <div class="group">
                         <label>手機號碼</label>
-                        <input type="tel" placeholder="0912321123" v-model="formData.phone" >
+                        <input type="tel" placeholder="0912321123" v-model="formData.phone" required>
                     </div>
                     <div class="group">
                         <label>密碼</label>
-                        <input type="password" placeholder="須設定至少8個字元" v-model="formData.password" >
+                        <input type="password" placeholder="須設定至少8個字元" v-model="formData.password" required minlength="8">
                     </div>
                     <div class="group">
                         <label>確認密碼</label>
-                        <input type="password" v-model="formData.checkpassword" >
+                        <input type="password" v-model="formData.checkpassword" required>
                     </div>
                 </div>
                 <div class="other">
-                    <input type="checkbox" v-model="formData.check" ><span>我已閱讀，並同意遵守《隱私權政策與會員服務條款》</span>
+                    <input type="checkbox" v-model="formData.check" required>
+                    <span>我已閱讀，並同意遵守《<u class="privacy" @click="showPrivacyPopup">隱私權政策與會員服務條款</u>》</span>
                 </div>
                 <button class="signup" type="submit">註冊</button>
             </form>
-            <DataSubmitted :isShowSub="show"></DataSubmitted>
+            <DataSubmitted :isShowSub="showRegister" myFillColor="#52A038" myTextColor="#52A038" textSize="2.25rem"
+                submitResult="註冊成功！" submitText="系統將自動跳轉回登入頁面。" submitBtnText="返回登入畫面" submitBtnColor="#52A038"
+                myurl="/memberlogin"></DataSubmitted>
         </div>
+        <MemberPrivacyPopup v-show="showPrivacy" @close="closePopup"></MemberPrivacyPopup>
     </main>
     <FooterPage />
 </template>
@@ -105,12 +123,12 @@ main {
     font-family: 'ABeeZee';
 }
 
-form{
+form {
     display: flex;
     align-items: center;
     flex-direction: column;
-    
 }
+
 .title {
     display: flex;
     align-items: center;
@@ -188,5 +206,9 @@ input {
 .signup:hover {
     border: 4px solid var(--gray-color);
     transition:0.1s linear;
+}
+
+.privacy {
+    color: blue;
 }
 </style>
