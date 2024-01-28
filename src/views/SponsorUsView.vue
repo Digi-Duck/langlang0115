@@ -343,6 +343,18 @@ td {
     border-bottom: 1px solid #D7D7D7;
 }
 
+td:nth-child(1) {
+  width: 258px;
+}
+
+td:nth-child(2),td:nth-child(3){
+    width:371.5px;
+  }
+
+  td:nth-child(3){
+    text-align: end;
+  }
+
 tr td:nth-child(1),
 td:nth-child(3) {
     font-size: 24px;
@@ -355,6 +367,15 @@ td:nth-child(2) {
     border-right: 1px solid #D7D7D7;
 }
 
+tbody tr:nth-child(odd) {
+    background-color: #EFEFEF; 
+    color:#626262;
+  }
+  
+tbody tr:nth-child(even) {
+    background-color: #fff; 
+    color:#626262;
+  }
 
 
 /* 常見問題Q&A */
