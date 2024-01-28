@@ -1,27 +1,57 @@
 <script>
-export default{
-    props:{
-        cardBorderColor:String,  //卡片
-        checkBoxColor:String,  //卡片裡的色塊
+export default {
+    props: {
+        cardBorderColor: String,  //卡片
+        checkBoxColor: String,  //卡片裡的色塊
+        AnimalData: Object, //單一動物資料
+        imageUrl: String,
     },
+    data() {
+        return {
+            // imagePath:'@/assets/Image/CarouselImage/beagledog.svg',
+        }
+    },
+    methods: {
+        // getImageUrl() {
+        //     return process.env.BASE_URL + this.imagePath;
+        // }
+    },
+    mounted() {
+        // console.log(this.AnimalData);
+    }
 }
 </script>
 <template>
-    <div class="card-container">
-        <div class="card-ccontent" :style="{borderColor:cardBorderColor}">
-            <div class="image">
-                <p class="check" :style="{backgroundColor:checkBoxColor}">查看詳細資訊</p>
-            </div>
-            <div class="text">
-                <span>建立時間 : 2023/12/10</span>
-                <br>
-                <span>上次更新 : 2024/01/10</span>
+    <router-link :to="{ name: 'adoptionpetinformation', params: { name: AnimalData.名稱 } }">
+        <div class="card-container">
+            <div class="card-ccontent" :style="{ borderColor: cardBorderColor }">
+                <!-- <div class="image" :style="{ backgroundImage: 'url(${imageUrl})' }"></div> -->
+                <!-- :style="{ backgroundImage: 'url(' + imageUrl + ')' } -->
+                <!-- new URL('@/assets/Image/CarouselImage/beagledog.svg', import.meta.url).href, -->
+                <!-- <div class="image" :style="{ backgroundImage: new URL(AnimalData.path, import.meta.url).href }"> new URL(`@/assets/Image/ShelterImage/${imageUrl}`)-->
+                <div class="image">
+                    <!-- <img :src="imgPath" alt=""> -->
+                    <p class="check" :style="{ backgroundColor: checkBoxColor }">查看詳細資訊</p>
+                </div>
+                <div class="text">
+                    <!-- 原先資料內容 2023-11-28 00:00:00
+                    split(" ")[0] => [2023-11-28,00:00:00] =>切陣烈
+                    .split("-") => [2023,11,28] => 切陣列
+                    .join("/") => "2023/11/28" => 組合成字串 
+                -->
+                    <span>建立時間 : {{ AnimalData.建立.split(" ")[0].split("-").join("/") }}</span>
+                    <br>
+                    <span>上次更新 : {{ AnimalData.更新.split(" ")[0].split("-").join("/") }}</span>
+                </div>
             </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <style scoped>
+a {
+    background-color: transparent;
+}
 .card-ccontent {
     width: 250px;
     height: 277px;
