@@ -8,14 +8,15 @@ export default {
     props: {
         listTitleColor: String,  //列表的上方框
         listborderColor: String, //列表下框
+        AnimalsData: Array,
     },
     data() {
         return {
 
         }
     },
-    methods: {
-
+    mounted() {
+        // console.log(this.AnimalsData);
     },
 }
 </script>
@@ -25,18 +26,7 @@ export default {
         <div class="list-container">
             <div class="title" :style="{ backgroundColor: listTitleColor }">毛小孩列表</div>
             <div class="cards" :style="{ borderColor: listborderColor }">
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
-                <IconCard class="card" />
+                <IconCard class="card" v-for="animal in AnimalsData" :AnimalData="animal" />
             </div>
         </div>
     </div>
@@ -68,8 +58,7 @@ export default {
     border-radius: 0 0 30px 30px;
     padding: 30px 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 20px;
     background-color: var(--white-color);
