@@ -5,9 +5,18 @@ import TitleAndLine from '@/components/TitleAndLine.vue';
 import PetsCardImage from '@/components/PetsCardImage.vue';
 import PetsCardFrame from '@/components/PetsCardFrame.vue';
 import IconCard from '@/components/icons/LostAnimals/IconCard.vue';
+import Animals from '@/json/Animals.json';
 // import IconHeart from '@/components/icons/IconHeart.vue';
 
 export default {
+    components: {
+        NavPage,
+        FooterPage,
+        TitleAndLine,
+        PetsCardFrame,
+        IconCard,
+        PetsCardImage,
+    },
     data() {
         return {
             mytext: "送養說明",
@@ -18,22 +27,66 @@ export default {
             },
             parenttwoStyle: {
                 gap: '1.25rem',
-            }
+            },
+            // 傳入動物資料
+            Animals: Animals,
+            // 隨機動物資料
+            randomAnimals: [],
+            foundAnimal: "",
+            likeAnimals: [],
         };
     },
-    components: {
-        NavPage,
-        FooterPage,
-        TitleAndLine,
-        PetsCardFrame,
-        IconCard,
-        PetsCardImage,
-    }
+    created() {
+        this.randomAnimals = this.getRandomAnimals(Animals, 5);
+        this.lookingAnimal();
+        console.log(this.foundAnimal);
+    },
+    methods: {
+        getRandomAnimals(arr, n) {
+            return arr.sort(() => Math.random() - 0.5).slice(0, n);
+        },
+        lookingAnimal() {
+            this.foundAnimal = this.Animals.find(x => x.名稱 == this.$route.params.name)
+        },
+        getLikeAnimals() {
+            // 讀取localStorage.likeAnimals
+            const tmp = localStorage.getItem("likeAnimals");
+            console.log(tmp);
+            // 如果有資料
+            if (tmp) {
+                // parse JSON文字轉JS物件
+                this.likeAnimals = JSON.parse(tmp);
+            }
+        },
+        updateLikeAnimal() {
+            this.getLikeAnimals();
+            // 如果在this.likeAnimals的(indexOf)列表裡未找到ani,就要push; 如果找到就remove;
+            if (this.likeAnimals.indexOf(this.foundAnimal) == -1) {
+                this.likeAnimals.push(this.foundAnimal);
+            } else {
+                removeFromArray(this.likeAnimals, this.foundAnimal);
+            }
+            // 儲存更新 stringify JS物件轉JSON文字
+            localStorage.likeAnimals = JSON.stringify(this.likeAnimals);
+        },
+        removeFromArray(arr, elem) {
+            const index = arr.indexOf(elem);
+            if (index !== -1) {
+                // 使用splice方法從陣列中移除元素
+                arr.splice(index, 1);
+            }
+        }
+    },
 }
 </script>
 <template>
     <NavPage />
     <main>
+        <!-- 所有可以超連結的 都要用router-link 假設V-for ani in animals  name = ani.名稱    -->
+        <!-- <router-link :to="{ name: 'adoptionpetinformation', params: { name: 'VAAAG112120503' } }">
+            <div>{{ $route.params.name }}</div>
+        </router-link> -->
+
         <div class="adoptionCenteTitle">
             <span>認養中心</span>
             <p>> 毛小孩詳細資訊</p>
@@ -41,9 +94,9 @@ export default {
         <!-- 上方卡片區 -->
         <div class="furryBabiesCard">
             <!-- 卡片區圖 -->
-            <PetsCardImage />
+            <PetsCardImage @favoriteAnimal="updateLikeAnimal" />
             <!-- 卡片區表格 -->
-            <PetsCardFrame />
+            <PetsCardFrame :animalData="this.foundAnimal" />
         </div>
         <!-- 送養中心 -->
         <div class="adoptionInstructions">
@@ -63,11 +116,11 @@ export default {
             <!-- 卡片區 -->
             <div class="furryBabiesCardFrame">
                 <div class="BabiesCard">
+                    <IconCard v-for="animal in randomAnimals" :AnimalData="animal" />
+                    <!-- <IconCard />
                     <IconCard />
                     <IconCard />
-                    <IconCard />
-                    <IconCard />
-                    <IconCard />
+                    <IconCard /> -->
                 </div>
             </div>
         </div>
