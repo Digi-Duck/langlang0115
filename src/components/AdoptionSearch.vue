@@ -1,6 +1,7 @@
 <script>
 import NoHoverButton from '@/components/NoHoverButton.vue';
 import IconChangeButton from '@/components/icons/IconChangeButton.vue';
+
 export default {
     components: {
         NoHoverButton, IconChangeButton
@@ -12,9 +13,9 @@ export default {
     },
     data() {
         return {
-            selectedOption: "0",
             formData: {
-                species: '', // 動物類型
+                species: '', // 動物類別
+                location: "臺北市",// 地區選擇
                 bodyshape: '', // 體型選擇
                 gender: '', // 性別選擇
                 colors: '', // 花色選擇
@@ -31,9 +32,9 @@ export default {
     methods: {
         clearOptions() {
             // 重置所有選項
-            this.selectedOption = "0";
+            this.formData.location = "臺北市";
             this.formData.species = "";
-            this.formData.bodyshape = "";
+            this.formData.bodyShape = "";
             this.formData.gender = "";
             this.formData.colors = "";
             this.formData.age = "";
@@ -41,7 +42,8 @@ export default {
         },
         search() {
             // 搜尋相關
-            console.log("Performing search with the following data:", this.selectedOption, this.formData());
+            this.$emit('search',this.formData);
+            // console.log("Performing search with the following data:", this.formData);
             // 這裡添加搜尋邏輯，發送API請求
         },
     },
@@ -53,12 +55,12 @@ export default {
         <form :style="{ borderColor: frameBorder }">
             <div class="form-group">
                 <div class="group select">
-                    <label for="species" :style="{ color: textColor }">地區選擇 *</label>
-                    <select v-model="selectedOption" class="input customSelect">
-                        <option value="0">臺北市</option>
-                        <option value="1">新北市</option>
-                        <option value="2">臺中市</option>
-                        <option value="3">高雄市</option>
+                    <label for="location" :style="{ color: textColor }">地區選擇 *</label>
+                    <select class="input customSelect" v-model="formData.location">
+                        <option value="臺北市">臺北市</option>
+                        <option value="新北市">新北市</option>
+                        <option value="臺中市">臺中市</option>
+                        <option value="高雄市">高雄市</option>
                     </select>
                 </div>
 
@@ -83,15 +85,15 @@ export default {
             <div class="form-group">
                 <label for="body-shape" :style="{ color: textColor }">體型選擇 *</label>
                 <div class="group">
-                    <input type="radio" id="large" value="大型" v-model="formData.bodyshape" name="bodyShape" />
+                    <input type="radio" id="large" value="大" v-model="formData.bodyshape" name="bodyShape" />
                     <label for="large">大型</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="medium" value="中型" v-model="formData.bodyshape" name="bodyShape" />
+                    <input type="radio" id="medium" value="中" v-model="formData.bodyshape" name="bodyShape" />
                     <label for="medium">中型</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="small" value="小型" v-model="formData.bodyshape" name="bodyShape" />
+                    <input type="radio" id="small" value="小" v-model="formData.bodyshape" name="bodyShape" />
                     <label for="small">小型</label>
                 </div>
             </div>
@@ -107,8 +109,8 @@ export default {
                     <label for="female">母</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="gender-unknown" value="未知" v-model="formData.gender" name="gender">
-                    <label for="gender-unknown">未知</label>
+                    <input type="radio" id="gender-unknown" value="both" v-model="formData.gender" name="gender">
+                    <label for="gender-unknown">皆可</label>
                 </div>
             </div>
             <!-- 花色選擇 -->
@@ -123,8 +125,8 @@ export default {
                     <label for="patternedColor">花色</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="undefinedColor" value="未定義" v-model="formData.colors" name="colorType" />
-                    <label for="undefinedColor">未定義</label>
+                    <input type="radio" id="undefinedColor" value="both" v-model="formData.colors" name="colorType" />
+                    <label for="undefinedColor">皆可</label>
                 </div>
 
             </div>
@@ -140,8 +142,8 @@ export default {
                     <label for="adultAge">成年</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="unknownAge" value="未知" v-model="formData.age" name="ageType" />
-                    <label for="unknownAge">未知</label>
+                    <input type="radio" id="unknownAge" value="both" v-model="formData.age" name="ageType" />
+                    <label for="unknownAge">皆可</label>
                 </div>
             </div>
             <!-- 是否已絕育 -->
@@ -152,12 +154,12 @@ export default {
                     <label for="neuteredYes">已絕育</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="neuteredNo" value="未結紮" v-model="formData.neutered" name="neuteredStatus" />
+                    <input type="radio" id="neuteredNo" value="未絕育" v-model="formData.neutered" name="neuteredStatus" />
                     <label for="neuteredNo">未結紮</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="neuteredUnknown" value="未知" v-model="formData.neutered" name="neuteredStatus" />
-                    <label for="neuteredUnknown">未知</label>
+                    <input type="radio" id="neuteredUnknown" value="both" v-model="formData.neutered" name="neuteredStatus" />
+                    <label for="neuteredUnknown">皆可</label>
                 </div>
             </div>
             <!-- 按鈕 -->
