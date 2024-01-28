@@ -108,6 +108,12 @@ a:hover {
     font-style: normal;
 }
 
+@media only screen and (max-width: 1280px) {
+    .contact {
+        background-color: rgba(253, 255, 218, 0.821);
+    }
+}
+
 /* 聯絡我們標題區 */
 #contactTitleArea {
     display: flex;

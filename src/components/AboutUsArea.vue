@@ -10,7 +10,7 @@ export default {
         clickSponsorUsBtn() {
             // 處理按鈕點擊的頁面特定邏輯
             console.log("點到了");
-           alert("點到贊助我們了！");
+            alert("點到贊助我們了！");
 
         }
     }
@@ -18,7 +18,6 @@ export default {
 </script>
 
 <template>
-
     <section class="about-intro">
         <div class="about-intro-title">
             <div>關於浪浪的事</div>
@@ -50,10 +49,8 @@ export default {
 
 <style scoped>
 .about-intro {
-    /* height: 100vh;*/
     width: 100vw;
     max-width: 100%;
-    /*background-color: antiquewhite;*/
 }
 
 .about-intro-title {
@@ -67,10 +64,24 @@ export default {
     width: 25%;
 }
 
+@media only screen and (max-width: 1280px) {
+    .about-intro-title {
+        margin: 69px 0px 0px 100px;  
+        width: 31%;
+    }
+}
+
 .intro-description {
     position: absolute;
     top: 250px;
     right: 150px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .intro-description {
+        top: 300px;
+        right: 238px;
+    }
 }
 
 .description-text {
@@ -94,9 +105,6 @@ export default {
 .main-content {
     width: 73%;
     height: 50%;
-    /*
-        height: 484px;
-        background-color: khaki; */
     color: #626262;
     padding: 60px;
     font-size: 28px;
@@ -105,6 +113,13 @@ export default {
     border: 3px solid var(--primary-color);
     border-radius: 20px;
     position: relative;
+}
+
+
+@media only screen and (max-width: 1280px) {
+    .main-content {
+        margin:410px 58px 54px 131px
+    }
 }
 
 .main-content img:not(.sponsor-us-btn) {
