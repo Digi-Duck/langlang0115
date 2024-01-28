@@ -1,7 +1,11 @@
 <script>
-import GreenButton from './GreenButton.vue';
+import NoHoverButton from './NoHoverButton.vue';
 export default {
-    
+
+    components: {
+        NoHoverButton,
+    },
+
     methods: {
         // behavior行動= 平滑
         scrollToTop() {
@@ -15,18 +19,16 @@ export default {
             this.$router.push('/');
             // 視窗離開時scrollBar打開
             document.body.style.overflow = 'auto';
-             // 讓scrollBar在router後平滑的回至頂部
+            // 讓scrollBar在router後平滑的回至頂部
             this.scrollToTop();
         },
         // 回到贊助我們頁面
         clickSponsorUsBtn() {
             console.log("點到「贊助我們」");
             this.$router.push('/sponsorus'); //導到贊助我們頁面
+            document.body.style.overflow = 'auto';
         },
     },
-    components: {
-        GreenButton,
-    }
 }
 </script>
 
@@ -40,8 +42,10 @@ export default {
                 </div>
                 <div class="dogimg"><img src="../assets/Image/SponsorImage/successdog.svg" alt=""></div>
                 <div class="btns">
-                    <GreenButton :showSvg="false" @click="gohomePage">返回首頁</GreenButton>
-                    <GreenButton :showSvg="false" @click="clickSponsorUsBtn">查看贊助名單</GreenButton>
+                    <NoHoverButton class="btn-back" btnbgColor="var(--gray-color)" text="返回首頁" @click="gohomePage">
+                    </NoHoverButton>
+                    <NoHoverButton class="btn" btnbgColor="var(--primary-color)" text="查看贊助名單" @click="clickSponsorUsBtn">
+                    </NoHoverButton>
                 </div>
             </div>
         </div>
@@ -64,14 +68,15 @@ export default {
 }
 
 .popup-container {
-    width: 512px;
-    height: 500px;
+    width: 582px;
+    height: 540px;
     background-color: var(--white-color);
-    border: 2px solid var(--primary-color);
+    border: 3px solid var(--primary-color);
     border-radius: 30px;
-    padding: 50px 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--primary-color);
-    z-index: 2;
 }
 
 .content {
@@ -90,16 +95,28 @@ export default {
     gap: 10px;
 }
 
-
-
 .text {
     font-size: 16px;
     letter-spacing: 4px;
     color: var(--gray-color);
 }
 
+img {
+    width: 220px;
+    height: 210px;
+}
+
 .btns {
     display: flex;
     gap: 24px;
 }
-</style>
+
+.btn-back {
+    width: 155px;
+    height: 65px;
+}
+
+.btn {
+    width: 205px;
+    height: 65px;
+}</style>

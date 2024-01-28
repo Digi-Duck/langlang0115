@@ -70,9 +70,9 @@ export default {
                 <div class="form-group">
                     <div class="select">
                         <label for="species" :style="{ color: textColor }">地區選擇 *</label>
-                        <svg class="iconselect" width="14" height="9" viewBox="0 0 14 9" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L7 7L2 2" :stroke="strokeColor" stroke-width="2.5" stroke-linecap="round"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
+                            <path d="M12 2L7 7L12 2ZM7 7L2 2L7 7Z" fill="#7EA138" />
+                            <path d="M12 2L7 7L2 2" stroke="#7EA138" stroke-width="2.5" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                         <select v-model="selectedOption" class="customSelect" :style="{ borderColor: colorPlan }">
@@ -230,7 +230,6 @@ form {
 
 
 /*每個欄位的標題*/
-.photo-title,
 label[for="species"],
 label[for="body-shape"],
 label[for="gender"],
@@ -240,7 +239,6 @@ label[for="neutered"],
 
 .time-place-title {
     color: var(--olivegreen-color);
-    margin-right: 36px;
 }
 
 .select {
@@ -253,7 +251,8 @@ label[for="neutered"],
 }
 
 .form-group input {
-    margin: 0 17px;
+    margin-left: 35px;
+    margin-right: 20px;
 }
 
 /* 所有 radio 按鈕 */
@@ -287,24 +286,20 @@ label[for="neutered"],
 }
 
 /* 下拉選單的小v圖 */
-.iconselect {
-    width: 24px;
-    height: 24px;
+form svg {
     position: absolute;
-    top: 26%;
-    left: 38%;
-    color: #000;
-
+    top: 25%;
+    left: 39%;
 }
 
 /*按鈕*/
 .btn-area {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     gap: 55px;
     font-size: 20px;
     letter-spacing: 5px;
-    margin-bottom:40px;
+    margin-bottom: 40px;
 }
 
 /* 右邊動物列表 */
@@ -368,4 +363,5 @@ a:hover {
     flex-wrap: wrap;
     gap: 20px;
     background-color: var(--white-color);
-}</style>
+}
+</style>

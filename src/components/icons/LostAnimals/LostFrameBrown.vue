@@ -59,9 +59,8 @@ export default {
                 <div class="form-group">
                     <div class="select">
                         <label for="species">地區選擇 *</label>
-                        <svg class="iconselect" width="14" height="9" viewBox="0 0 14 9" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L7 7L2 2" :stroke="strokeColor" stroke-width="2.5" stroke-linecap="round"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none">
+                            <path d="M12 2L7 7L2 2" stroke="#B68337" stroke-width="2.5" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                         <select v-model="selectedOption" class="customSelect">
@@ -100,11 +99,9 @@ export default {
                     <label for="gender">性別選擇 *</label>
                     <input type="radio" id="male" value="公" v-model="formData.gender" name="gender">
                     <label for="male">公</label>
+
                     <input type="radio" id="female" value="母" v-model="formData.gender" name="gender">
                     <label for="female">母</label>
-                    <input type="radio" class="brown-unnecessary" id="gender-unknown" value="未知" v-model="formData.gender"
-                        name="gender">
-                    <label for="gender-unknown" class="brown-unnecessary">未知</label>
                 </div>
 
                 <div class="form-group">
@@ -114,10 +111,6 @@ export default {
 
                     <input type="radio" id="patternedColor" value="花色" v-model="formData.colors" name="colorType" />
                     <label for="patternedColor">花色</label>
-
-                    <input type="radio" class="brown-unnecessary" id="undefinedColor" value="未定義" v-model="formData.colors"
-                        name="colorType" />
-                    <label for="undefinedColor" class="brown-unnecessary">未定義</label>
                 </div>
 
                 <div class="form-group">
@@ -127,23 +120,16 @@ export default {
 
                     <input type="radio" id="adultAge" value="成年" v-model="formData.age" name="ageType" />
                     <label for="adultAge">成年</label>
-
-                    <input type="radio" class="brown-unnecessary" id="unknownAge" value="未知" v-model="formData.age"
-                        name="ageType" />
-                    <label for="unknownAge" class="brown-unnecessary">未知</label>
                 </div>
 
                 <div class="form-group">
-                    <label for="neutered" >是否已絕育 *</label>
+                    <label for="neutered">是否已絕育 *</label>
                     <input type="radio" id="neuteredYes" value="已絕育" v-model="formData.neutered" name="neuteredStatus" />
                     <label for="neuteredYes">已絕育</label>
 
                     <input type="radio" id="neuteredNo" value="未結紮" v-model="formData.neutered" name="neuteredStatus" />
                     <label for="neuteredNo">未結紮</label>
 
-                    <input type="radio" class="brown-unnecessary" id="neuteredUnknown" value="未知"
-                        v-model="formData.neutered" name="neuteredStatus" />
-                    <label for="neuteredUnknown" class="brown-unnecessary">未知</label>
                 </div>
                 <div class="btn-area">
                     <NoHoverButton @click.prevent="clearOptions" btnbgColor="var(--gray-color)" text="清除重填"></NoHoverButton>
@@ -240,7 +226,8 @@ label[for="neutered"],
 }
 
 .form-group input {
-    margin: 0 20px;
+    margin-left: 35px;
+    margin-right: 20px;
 }
 
 /* 所有 radio 按鈕 */
@@ -273,13 +260,10 @@ label[for="neutered"],
 }
 
 /* 下拉選單的小v圖 */
-.iconselect {
-    width: 24px;
-    height: 24px;
+form svg {
     position: absolute;
-    top: 26%;
+    top: 25%;
     left: 38%;
-    color: #000;
 }
 
 /*按鈕*/
@@ -296,7 +280,7 @@ label[for="neutered"],
 .list-container {
     width: 840px;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     flex-direction: column;
     font-size: 24px;
     font-family: 'ABeeZee';
@@ -353,4 +337,5 @@ a:hover {
     flex-wrap: wrap;
     gap: 20px;
     background-color: var(--white-color);
-}</style>
+}
+</style>

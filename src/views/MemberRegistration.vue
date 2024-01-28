@@ -187,5 +187,6 @@ input {
 
 .signup:hover {
     border: 4px solid var(--gray-color);
+    transition:0.1s linear;
 }
 </style>

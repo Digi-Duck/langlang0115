@@ -126,8 +126,8 @@ export default {
         </div>
       </div>
       <div class="box ">
-        <IconChangeButton class="sponsornow-btn" text="立即贊助" textColor="var(--white-color)" bgColor="var(--primary-color)"
-          w="9.7rem" h="3.25rem" @click="rightnow = !rightnow, hidden()" />
+        <IconChangeButton class="sponsornow-btn" text="確認並送出" textColor="var(--white-color)" bgColor="var(--primary-color)"
+          w="201px" h="64px" @click="rightnow = !rightnow, hidden()" />
         <!-- Popup 執行closeModel closePopup-->
         <SponsorPopUp v-if="rightnow" @close-type="closeModel" @closePopup="closePopup">
         </SponsorPopUp>

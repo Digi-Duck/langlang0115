@@ -1,8 +1,7 @@
 <script>
-import GreenButton from './GreenButton.vue';
+import NoHoverButton from './NoHoverButton.vue';
 export default {
-    components: {
-        GreenButton,
+    components: {NoHoverButton,
     },
     data() {
         return {
@@ -35,9 +34,9 @@ export default {
                 <div class="dogimg"></div>
                 <span class="text">按下確定以後將會前往第三方支付平台（綠界科技），<br>
                     由專業的金流服務平台，完成付款動作，浪浪的事不會儲存您的信用卡卡號。</span>
-                <GreenButton class="btn" :showSvg="false" @click="showSuccess = !showSuccess, closeModel()">確認並前往贊助
-                </GreenButton>
-                <GreenButton class="btn white-btn" :showSvg="false" @click="closePopup()">返回修改資料</GreenButton>
+                <NoHoverButton class="btn" btnbgColor="var(--primary-color)" text="確認並前往贊助" @click="showSuccess = !showSuccess, closeModel()">確認並前往贊助
+                </NoHoverButton>
+                <NoHoverButton class="btn" btnbgColor="var(--gray-color)" text="返回修改資料" @click="closePopup()">返回修改資料</NoHoverButton>
             </div>
         </div>
     </div>
@@ -112,10 +111,9 @@ export default {
 }
 
 .btn {
-    width: 200px;
-    height: 60px;
-    border-radius: 20px;
-    padding: 20px 0px;
+    width: 230px;
+    height: 65px;
+    border-radius: 30px;
 }
 
 .white-btn {

@@ -33,6 +33,7 @@ export default{
     justify-content: center;
     align-items: center;
     background-color: var(--white-color);
+    cursor: pointer;
 }
 
 .image {

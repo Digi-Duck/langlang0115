@@ -119,6 +119,7 @@ main {
 
 .title {
     font-size: 40px;
+    text-align: center;
     letter-spacing: 10px;
     color: var(--primary-color);
 }
@@ -153,6 +154,7 @@ input {
 .login {
     width: 100px;
     height: 100px;
+    color: var(--gray-color);
     background-color: var(--white-color);
     border-radius: 50%;
     border: 1px solid var(--gray-color);
@@ -166,6 +168,8 @@ input {
 
 .login:hover {
     border: 4px solid var(--gray-color);
+    box-shadow: none;
+    transition:0.1s linear;
 }
 
 .other {
