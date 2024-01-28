@@ -142,7 +142,7 @@ export default {
 }
 
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1836px) {
     .sponsor-title {
         margin-top: 69px;
         margin-left: 100px;
@@ -169,7 +169,7 @@ export default {
     left: 230px;
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1836px) {
     .accept-criedcard::after {
         content: "";
         background-image:none;
@@ -197,7 +197,7 @@ export default {
     margin: 0px 35px 0px 0px;
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1836px) {
     .three-step-text {
        margin: 0px -3px 0px 92px;
     }
@@ -215,7 +215,7 @@ export default {
     margin: 15px 351px 50px;
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1836px) {
     .sponsor-intro-text {
         margin: 66px 351px ;
     }
