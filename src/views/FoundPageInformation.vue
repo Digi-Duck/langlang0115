@@ -151,6 +151,7 @@ main {
 /* 上方卡片區域 */
 .furryBabiesCard {
     display: flex;
+    align-items: flex-start;
     flex-direction: row;
     padding: 0 0 6.8rem 1.5rem;
 }

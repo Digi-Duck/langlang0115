@@ -7,7 +7,7 @@ import FooterPage from '@/components/FooterPage.vue';
 export default {
     data() {
         return {
-            yourDynamicRouteVariable: "/myanimallostinformation/OAAAG1121110004",
+            yourDynamicRouteVariable: "/myanimallostinformation/VAAAG113010605",
         }
     },
     components: {

@@ -12,7 +12,7 @@ export default {
     },
     data() {
         return {
-            yourDynamicRouterVariable: "/foundanimalsinformation/OAAAG1121219001"
+            yourDynamicRouterVariable: "/foundanimalsinformation/OAAAG1121121008"
         }
     },
     mounted() {
