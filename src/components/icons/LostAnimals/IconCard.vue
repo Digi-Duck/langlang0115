@@ -4,10 +4,12 @@ export default {
         cardBorderColor: String,  //卡片
         checkBoxColor: String,  //卡片裡的色塊
         AnimalData: Object, //單一動物資料
+        prefix: String, //../的暫時替代方案
     },
     data() {
         return {
             // imagePath:'@/assets/Image/CarouselImage/beagledog.svg',
+            imagePath: "",
         }
     },
     methods: {
@@ -16,7 +18,14 @@ export default {
         // }
     },
     mounted() {
-        // console.log(this.AnimalData);
+        // ../的暫時替代方案 如果有前綴 把imagePath設為前綴;反之則"空"
+        if (this.prefix) {
+            this.imagePath = this.prefix
+        }
+        else {
+            this.imagePath = ""
+        }
+        // console.log(this.imagePath)
     }
 }
 </script>
@@ -25,7 +34,7 @@ export default {
         <div class="card-container">
             <div class="card-ccontent" :style="{ borderColor: cardBorderColor }">
                 <div class="image"
-                    :style="{ backgroundImage: 'url(' + AnimalData.path + '),url(src/assets/Image/DogPawGreen.svg)' }">
+                    :style="{ backgroundImage: 'url(' + imagePath + AnimalData.path + '),url(' + imagePath + 'src/assets/Image/DogPawGreen.svg)' }">
                     <!-- <img :src="imgPath" alt=""> -->
                     <p class="check" :style="{ backgroundColor: checkBoxColor }">查看詳細資訊</p>
                 </div>

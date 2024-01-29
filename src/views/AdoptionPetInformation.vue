@@ -117,7 +117,7 @@ export default {
             <!-- 卡片區 -->
             <div class="furryBabiesCardFrame">
                 <div class="BabiesCard">
-                    <IconCard v-for="animal in randomAnimals" :AnimalData="animal" />
+                    <IconCard v-for="animal in randomAnimals" :AnimalData="animal" :prefix="'../'" />
                 </div>
             </div>
         </div>
