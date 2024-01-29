@@ -148,7 +148,7 @@ export default {
                                 搜尋附近動物醫院
                             </a>
                         </div>
-                        <AdoptionList :AnimalsData="filteredAnimals" />
+                        <AdoptionList :AnimalsData="filteredAnimals" :prefix="''" />
                     </div>
                     <!-- 顯示視窗畫面 -->
                     <AdoptionInformationPopup :is-show="show" @close="closePopup" />

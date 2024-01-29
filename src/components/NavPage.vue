@@ -13,13 +13,13 @@ export default {
         adoptioncenterPage() {
             this.$router.push('/adoptioncenter');
         },
-        lostandfoundPage(){
+        lostandfoundPage() {
             this.$router.push('/lostandfoundsearch');
         },
-        latestnewsPage(){
+        latestnewsPage() {
             this.$router.push('/latestnewspage');
         },
-        memberloginPage(){
+        memberloginPage() {
             this.$router.push('/memberlogin');
         }
     }
@@ -78,9 +78,24 @@ span:hover {
     color: var(--primary-color);
     cursor: pointer;
 }
+
 .logotext {
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+    .boxall {
+        padding: 0 38px;
+    }
+
+    span {
+        padding: 25px 10px;
+    }
+
+    span:hover {
+        background-size: 100%;
+    }
 }
 </style>

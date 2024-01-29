@@ -17,7 +17,7 @@ export default {
 </script>
 <template>
     <div class="furryBabiesImage">
-        <div class="img" :style="{ backgroundImage: 'url(' + AnimalData.path + '),url(src/assets/Image/DogPawGreen.svg)' }">
+        <div class="img" :style="{ backgroundImage: 'url(../' + AnimalData.path + '),url(../src/assets/Image/DogPawGreen.svg)' }">
         </div>
         <CardClickLike class="heart" @favorite="favoriteAnimal"></CardClickLike>
     </div>
@@ -33,6 +33,8 @@ export default {
 .img {
     width: 40.3rem;
     height: 33.3rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* 卡片愛心 */
