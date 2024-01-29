@@ -65,13 +65,13 @@ const router = createRouter({
     },
     {
       // 失散協尋>>撿到遺失動物資訊
-      path: '/foundanimalsinformation',
+      path: '/foundanimalsinformation/:name',
       name: 'foundanimalsinformation',
       component: () => import('../views/FoundPageInformation.vue')
     },
     {
       // 失散協尋>>我遺失了動物資訊
-      path: '/myanimallostinformation',
+      path: '/myanimallostinformation/:name',
       name: 'myanimallostinformation',
       component: () => import('../views/FoundPageMyAnimalInformation.vue')
     },

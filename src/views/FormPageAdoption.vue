@@ -11,7 +11,7 @@ export default {
     },
     data() {
         return {
-            myRouter:"/adoptionpetinformation"
+            myRouter:"/adoptionpetinformation/EAAAG1121120003"
         }
     },
     mounted() {
