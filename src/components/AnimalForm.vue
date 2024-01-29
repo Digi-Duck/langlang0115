@@ -2,6 +2,7 @@
 import NoHoverButton from './NoHoverButton.vue';
 import IconChangeButton from './icons/IconChangeButton.vue';
 
+
 export default {
     components: { NoHoverButton, IconChangeButton },
     props: {
@@ -54,6 +55,9 @@ export default {
             //送出後的彈跳視窗框內按鈕 自定義樣式 
             goPagebtnbg: '#52A038',
             show: false, //控制dataSubmitted組件的顯示
+            uploadedImageURL: null,//動態生成上傳照片
+            preview: null,
+            image: null,
         };
     },
     methods: {
@@ -115,9 +119,28 @@ export default {
                 document.body.style.overflow = 'auto';
             }
         },
+        handleFileUpload(event) {
+            var input = event.target;
+            if (input.files) {
+                var reader = new FileReader();
+                reader.onload = (e) => {
+                    this.preview = e.target.result;
+                }
+                this.image = input.files[0];
+                reader.readAsDataURL(input.files[0]);
 
+            }
+            // 使用 $nextTick 確保 Vue 更新 DOM
+            this.$nextTick(() => {
+                // 移除 preview-pic-block
+                const previewPicBlock = document.querySelector('.preview-pic-block');
+                if (previewPicBlock) {
+                    previewPicBlock.parentNode.removeChild(previewPicBlock);
+                }
+            })
+        },
+    }
 
-    },
 
 }
 </script>
@@ -132,6 +155,7 @@ export default {
         </div>
         <form>
             <div class="form-group">
+
                 <div class="custom-file-upload">
                     <span class="photo-title" :style="{ color: inputTitleColor }">照片 *</span>
                     <label for="photo" :style="{ borderColor: uploadPicBorder }">
@@ -151,7 +175,15 @@ export default {
                         <span :style="{ color: uploadPicColor }">上傳照片</span></label>
                     <!-- 將[傳送檔案]的樣式opacity -->
                     <input type="file" id="photo" accept="image/*" @change="handleFileUpload" />
+
+                    <div class="preview-pic-block">預覽照片</div>
+
+                    <div v-if="preview" class="preview-pic">
+                        <img :src="preview" />
+                    </div>
+
                 </div>
+
             </div>
 
             <div class="form-group">
@@ -398,7 +430,41 @@ form {
     display: flex;
 }
 
-.custom-file-upload::after {
+.preview-pic {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 100;
+    border: 5px dashed lightgrey;
+    padding: 10px ;
+    display: flex;
+    width: 500px;
+    height: 500px;
+}
+
+.preview-pic img{
+background-repeat: no-repeat;
+height: 100%;
+width: 100%;
+object-fit: cover;
+
+}
+
+.preview-pic-block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--white-color);
+    width: 529px;
+    height: 477px;
+    text-align: center;
+    line-height: 477px;
+    float: right;
+    background-color: #D8D8D8;
+}
+
+
+/*.custom-file-upload::after {
     content: '預覽照片';
     position: absolute;
     top: 0;
@@ -411,6 +477,8 @@ form {
     float: right;
     background-color: #D8D8D8;
 }
+*/
+
 
 label[for="photo"] {
     display: flex;
