@@ -7,7 +7,7 @@ import LostPopup from './LostPopup.vue';
 
 export default {
     components: {
-        AnimalsData: Array, NoHoverButton, IconChangeButton, IconCard, IconPaperAirplane, LostPopup
+        NoHoverButton, IconChangeButton, IconCard, IconPaperAirplane, LostPopup
     },
     props: {
         frameBorder: String, //外框色
@@ -51,7 +51,7 @@ export default {
         },
         search() {
             // 搜尋相關
-            this.$emit('search',this.formData);
+            this.$emit('search', this.formData);
             // 這裡添加搜尋邏輯，發送API請求
         },
         // 彈跳視窗的功能

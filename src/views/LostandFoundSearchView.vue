@@ -81,7 +81,7 @@ export default {
                         </defs>
                     </svg>
                     <!-- svg圖 結束-->
-                    <LostFrame :AnimalsData="filteredAnimals" />
+                    <LostFrame @search="search" :AnimalsData="filteredAnimals" />
                 </div>
                 <!--   tab group end -->
                 <!--   tab group -->
@@ -112,7 +112,7 @@ export default {
                         </defs>
                     </svg>
                     <!-- svg圖 結束-->
-                    <LostFrameBrown :AnimalsData="filteredAnimals" />
+                    <LostFrameBrown @search="search" :AnimalsData="filteredAnimals" />
                 </div>
             </div>
             <!--   tab group end -->
