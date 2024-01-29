@@ -46,7 +46,9 @@ export default {
         // 搜尋器 過濾
         search(formData) {
             this.filteredAnimals = this.Animals.filter((ani => ani.類型 == formData.species));
-            this.filteredAnimals = this.filteredAnimals.filter((ani => ani.所在區域 == formData.location));
+            if (formData.location != "所有縣市") {
+                this.filteredAnimals = this.filteredAnimals.filter((ani => ani.所在區域 == formData.location));
+            }
             this.filteredAnimals = this.filteredAnimals.filter((ani => ani.體型 == formData.bodyshape));
             if (formData.gender != "both") {
                 this.filteredAnimals = this.filteredAnimals.filter((ani => ani.性別 == formData.gender));
@@ -83,9 +85,17 @@ export default {
         hideIcon() {
             this.isHovered = false;
         },
+        // behavior行動= 平滑
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+        },
         // 前往表單頁面
         formadoptionPage() {
             this.$router.push('/formpageadoption');
+            this.scrollToTop();
         },
     },
 }

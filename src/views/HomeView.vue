@@ -17,6 +17,25 @@ export default {
     IconHeaderLine,
     FooterBar
   },
+  methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        // behavior行動= 平滑
+        behavior: 'smooth',
+      });
+    },
+    // 前往認養中心
+    goAdoptionPage() {
+      this.$router.push('/adoptioncenter');
+      this.scrollToTop();
+    },
+    // 前往失散協尋
+    goLostPage() {
+      this.$router.push('/lostandfoundsearch');
+      this.scrollToTop();
+    },
+  },
 };
 </script>
  
@@ -31,8 +50,8 @@ export default {
           <span>動物走失了</span>
         </div>
         <div class="home-header-btn">
-          <YellowButton id="go-adopt-btn">去認養</YellowButton>
-          <GreenButton>協尋主人</GreenButton>
+          <YellowButton id="go-adopt-btn" @click="goAdoptionPage">去認養</YellowButton>
+          <GreenButton @click="goLostPage">協尋主人</GreenButton>
         </div>
       </div>
     </section>
@@ -52,16 +71,16 @@ export default {
   max-width: 100%;
   position: relative;
   margin-bottom: 209px;
-  background-color:var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .home-header-greenbox {
-background: var(--white-color);
+  background: var(--white-color);
   width: 100%;
   height: 440px;
   border-radius: 10px 10px 0 0;
   position: absolute;
-  bottom:-5px;
+  bottom: -5px;
   left: 0px;
 }
 
@@ -130,4 +149,5 @@ background: var(--white-color);
   display: flex;
   justify-content: center;
   align-items: center;
-}</style>
+}
+</style>

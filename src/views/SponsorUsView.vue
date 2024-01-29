@@ -21,8 +21,16 @@ export default {
         };
     },
     methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
         clickSponsorNowBtn() {
             this.$router.push('/sponsornow'); //導到立即贊助頁面
+            this.scrollToTop();
         }
     },
 };
@@ -69,7 +77,7 @@ export default {
         </div>
 
         <div class="table-all">
-            <table >
+            <table>
                 <thead>
                     <tr>
                         <th>贊助日期</th>
@@ -148,7 +156,7 @@ export default {
         margin-left: 100px;
         width: 44%;
     }
-  }
+}
 
 
 .accept-criedcard {
@@ -203,20 +211,20 @@ export default {
 
 @media only screen and (max-width: 1836px) {
     .three-step-text {
-       margin: 0px -3px 0px 40px;
+        margin: 0px -3px 0px 40px;
     }
-  }
+}
 
-.flow-chart img{
+.flow-chart img {
     width: 919px;
 }
 
 @media only screen and (max-width: 1836px) {
-  
-.flow-chart img{
-    width: 812px;
+
+    .flow-chart img {
+        width: 812px;
+    }
 }
-  }
 
 
 .sponsor-intro-text {
@@ -233,10 +241,10 @@ export default {
 
 @media only screen and (max-width: 1836px) {
     .sponsor-intro-text {
-        margin: 66px 351px ;
+        margin: 66px 351px;
     }
-    
-  }
+
+}
 
 .sponsor-intro-text span {
     display: flex;
@@ -257,9 +265,9 @@ export default {
 
 @media only screen and (max-width: 1836px) {
     .sponsored-list-title {
-      min-width: 152px;
+        min-width: 152px;
     }
-  }
+}
 
 .interval {
     display: flex;
@@ -294,8 +302,8 @@ export default {
     .line-left {
         width: 400px;
     }
-  
-  }
+
+}
 
 .line-right {
     width: 633px;
@@ -310,7 +318,7 @@ export default {
     .line-right {
         width: 400px;
     }
-  }
+}
 
 
 .table-all {
@@ -333,7 +341,7 @@ table {
     border: 2px solid #D7D7D7;
     font-weight: 400;
     letter-spacing: 8px;
- }
+}
 
 thead {
     background-color: var(--primary-color);
@@ -342,7 +350,7 @@ thead {
     height: 93px;
     font-size: 32px;
     position: sticky;
-    top:0;
+    top: 0;
 }
 
 tbody {
@@ -351,7 +359,7 @@ tbody {
     height: 98px;*/
     font-size: 32px;
     text-align: center;
-   
+
 }
 
 td {
@@ -360,16 +368,17 @@ td {
 }
 
 td:nth-child(1) {
-  width: 258px;
+    width: 258px;
 }
 
-td:nth-child(2),td:nth-child(3){
-    width:371.5px;
-  }
+td:nth-child(2),
+td:nth-child(3) {
+    width: 371.5px;
+}
 
-  td:nth-child(3){
+td:nth-child(3) {
     text-align: end;
-  }
+}
 
 tr td:nth-child(1),
 td:nth-child(3) {
@@ -384,14 +393,14 @@ td:nth-child(2) {
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #EFEFEF; 
-    color:#626262;
-  }
-  
+    background-color: #EFEFEF;
+    color: #626262;
+}
+
 tbody tr:nth-child(even) {
-    background-color: #fff; 
-    color:#626262;
-  }
+    background-color: #fff;
+    color: #626262;
+}
 
 
 /* 常見問題Q&A */
@@ -418,9 +427,9 @@ tbody tr:nth-child(even) {
 
 @media only screen and (max-width: 1836px) {
     .q-a-container {
-       margin: 10px 132px;    
+        margin: 10px 132px;
     }
-  }
+}
 
 .q-a-tittle {
     color: var(--gray-color);

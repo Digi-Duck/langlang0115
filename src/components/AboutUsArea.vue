@@ -7,8 +7,16 @@ export default {
         GreenButton
     },
     methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
         clickSponsorUsBtn() {
             this.$router.push('/sponsorus');
+            this.scrollToTop();
         }
     }
 }
@@ -64,8 +72,8 @@ export default {
 @media only screen and (max-width: 1645px) {
     .about-intro-title {
         margin: 69px 0px 0px 100px;
-        width: 31%;   
-         font-size: 26px;
+        width: 31%;
+        font-size: 26px;
     }
 }
 
@@ -88,6 +96,7 @@ export default {
         right: 238px;
     }
 }
+
 @media only screen and (max-width: 1278px) {
     .intro-description {
         top: 237px;
@@ -127,7 +136,7 @@ export default {
 }
 
 @media only screen and (max-width: 1278px) {
-    .intro-dog-pic img{
+    .intro-dog-pic img {
         position: absolute;
         top: 15px;
         right: -46px;
@@ -135,6 +144,7 @@ export default {
         height: 74px;
     }
 }
+
 .main-content {
     width: 73%;
     height: 50%;

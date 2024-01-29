@@ -33,9 +33,18 @@ export default {
         };
     },
     methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
         lostandfoundPage() {
             this.$router.push('/lostandfoundsearch');
+            this.scrollToTop();
         },
+
     },
 };
 </script>

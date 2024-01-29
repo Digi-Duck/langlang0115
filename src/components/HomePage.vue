@@ -4,6 +4,13 @@ import YellowButton from '../components/YellowButton.vue';
 
 export default {
   methods: {
+    scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        // behavior行動= 平滑
+        behavior: 'smooth',
+      });
+    },
     handleHover() {
       // 在滑鼠懸停時的相關處理
       // 可以在這裡添加額外的邏輯或改變按鈕的樣式
@@ -13,12 +20,18 @@ export default {
       // 可以在這裡添加額外的邏輯或改變按鈕的樣式
     },
     clickSponsorUsBtn() {
-      console.log("點到「贊助我們」");
+      // console.log("點到「贊助我們」");
       this.$router.push('/sponsorus'); //導到贊助我們頁面
+      this.scrollToTop();
     },
     clickSeeMoreBtn() {
-      alert("按到瞭解更多");
+      this.$router.push('/aboutuspage'); //導到關於我們頁面
+      this.scrollToTop();
     },
+    clickMoreNews(){
+      this.$router.push('/latestnewspage'); //導到關於我們頁面
+      this.scrollToTop();
+    }
   },
   components: { GreenButton, YellowButton },
 };
@@ -115,7 +128,7 @@ export default {
           </li>
         </ul>
         <div class="more-news-btn">
-          <GreenButton>更多消息</GreenButton>
+          <GreenButton @click="clickMoreNews">更多消息</GreenButton>
         </div>
       </div>
     </div>
@@ -279,7 +292,7 @@ export default {
     top: -26%;
     left: -38.5%;
   }
-  
+
 }
 
 .dog-cat-pic {
@@ -434,13 +447,15 @@ export default {
   top: 660px;
   right: 150px;
 }
+
 @media (max-width: 1280px) {
   .news-announcement-btn {
- display: none;
-}
-.more-news-btn {
-  position: absolute;
-  top: 500px;
-}
+    display: none;
   }
+
+  .more-news-btn {
+    position: absolute;
+    top: 500px;
+  }
+}
 </style>

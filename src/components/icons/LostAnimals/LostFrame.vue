@@ -26,7 +26,7 @@ export default {
             show: false,  //彈跳視窗【協尋通報】
             formData: {
                 species: '', // 動物類型
-                location: "臺北市",// 地區選擇
+                location: "所有縣市",// 地區選擇
                 bodyshape: '', // 體型選擇
                 gender: '', // 性別選擇
                 colors: '', // 花色選擇
@@ -41,7 +41,7 @@ export default {
     methods: {
         clearOptions() {
             // 重置所有選項
-            this.formData.location = "臺北市";
+            this.formData.location = "所有縣市";
             this.formData.species = "";
             this.formData.bodyshape = "";
             this.formData.gender = "";
@@ -84,6 +84,7 @@ export default {
                                 stroke-linejoin="round" />
                         </svg>
                         <select v-model="formData.location" class="customSelect" :style="{ borderColor: colorPlan }">
+                            <option value="所有縣市">所有縣市</option>
                             <option value="臺北市">臺北市</option>
                             <option value="基隆市">基隆市</option>
                             <option value="新北市">新北市</option>

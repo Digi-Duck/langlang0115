@@ -14,6 +14,12 @@ export default {
                 behavior: 'smooth',
             });
         },
+        scrollToTwo() {
+            window.scrollTo({
+                top: 1000,
+                behavior: 'smooth',
+            });
+        },
         // 回到首頁按鈕
         gohomePage() {
             this.$router.push('/');
@@ -27,6 +33,7 @@ export default {
             console.log("點到「贊助我們」");
             this.$router.push('/sponsorus'); //導到贊助我們頁面
             document.body.style.overflow = 'auto';
+            this.scrollToTwo();
         },
     },
 }
