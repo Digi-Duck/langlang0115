@@ -12,7 +12,7 @@ export default {
 
     },
     mounted() {
-
+        // console.log(this.animalData.名稱);
     },
 }
 </script>
