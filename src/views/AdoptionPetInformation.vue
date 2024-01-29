@@ -6,7 +6,6 @@ import PetsCardImage from '@/components/PetsCardImage.vue';
 import PetsCardFrame from '@/components/PetsCardFrame.vue';
 import IconCard from '@/components/icons/LostAnimals/IconCard.vue';
 import Animals from '@/json/Animals.json';
-// import IconHeart from '@/components/icons/IconHeart.vue';
 
 export default {
     components: {
@@ -117,10 +116,6 @@ export default {
             <div class="furryBabiesCardFrame">
                 <div class="BabiesCard">
                     <IconCard v-for="animal in randomAnimals" :AnimalData="animal" />
-                    <!-- <IconCard />
-                    <IconCard />
-                    <IconCard />
-                    <IconCard /> -->
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 <script>
 import NavPage from '@/components/NavPage.vue';
 import AnimalForm from '@/components/AnimalForm.vue';
+import FooterPage from '@/components/FooterPage.vue';
 
 
 export default {
@@ -10,9 +11,10 @@ export default {
         }
     },
     components: {
-        NavPage,
-        AnimalForm
-    },
+    NavPage,
+    AnimalForm,
+    FooterPage
+},
     mounted() {
         // 刪除不需要的radio選項「未知」
         const elremove = this.$refs.animalFrame;
@@ -39,13 +41,9 @@ export default {
                 ></AnimalForm>
         </div>
     </main>
+    <FooterPage />
 </template>
 
 
 <style>
-main {
-    width: 100vw;
-    max-width: 100%;
-    height: 100vh;
-}
 </style>
