@@ -214,7 +214,7 @@ main {
   z-index: 1000;
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1870px) {
   .news-detail-popup {
     left: 70%;
   }
