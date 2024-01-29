@@ -79,7 +79,7 @@ export default {
         <div class="followed">
             <span class="title">我追蹤的浪浪</span>
             <div class="followedbox">
-                <FollowedCard v-for="likeani in likeAnimals" :AnimalData="likeani" @favoriteAnimal="updateLikeAnimal" :prefix="''" />
+                <FollowedCard v-for="likeani in likeAnimals" :AnimalData="likeani" @favoriteAnimal="updateLikeAnimal" :prefix="'../'" />
             </div>
         </div>
         <div class="history">

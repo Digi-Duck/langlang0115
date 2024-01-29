@@ -25,9 +25,17 @@ export default {
         back() {
             this.$router.push('/');
         },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
         //導到[我的動物走失了]
         next() {
             this.$router.push('/myanimallostform');
+            this.scrollToTop();
         },
         close() {
             this.$emit('close', false);
@@ -57,9 +65,10 @@ export default {
                 <span class="content">*已確認沒有被重複登入</span>
             </div>
             <div class="btns">
-                <NoHoverButton class="w"  @click="close()" :showSvg="false" btnbgColor="var(--gray-color)" text="返回修改">
+                <NoHoverButton class="w" @click="close()" :showSvg="false" btnbgColor="var(--gray-color)" text="返回修改">
                 </NoHoverButton>
-                <NoHoverButton class="w" @click="next" :showSvg="false" btnbgColor="var(--B68337)" text="確認前往"></NoHoverButton>
+                <NoHoverButton class="w" @click="next" :showSvg="false" btnbgColor="var(--B68337)" text="確認前往">
+                </NoHoverButton>
             </div>
         </div>
     </div>
