@@ -134,8 +134,8 @@ export default {
     font-size: 48px;
     color: var(--primary-color);
     letter-spacing: 5px;
-    margin-top: 150px;
-    margin-left: 300px;
+    margin-top: 69px;
+    margin-left: 200px;
     display: flex;
     align-items: center;
     width: 44%;
@@ -186,6 +186,7 @@ export default {
 .sponsor-flow-chart {
     display: flex;
     align-items: center;
+    padding: 0px 40px;
 }
 
 
@@ -199,9 +200,21 @@ export default {
 
 @media only screen and (max-width: 1836px) {
     .three-step-text {
-       margin: 0px -3px 0px 92px;
+       margin: 0px -3px 0px 40px;
     }
   }
+
+.flow-chart img{
+    width: 919px;
+}
+
+@media only screen and (max-width: 1836px) {
+  
+.flow-chart img{
+    width: 812px;
+}
+  }
+
 
 .sponsor-intro-text {
     font-size: 28px;
