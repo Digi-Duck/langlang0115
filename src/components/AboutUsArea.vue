@@ -8,10 +8,7 @@ export default {
     },
     methods: {
         clickSponsorUsBtn() {
-            // 處理按鈕點擊的頁面特定邏輯
-            console.log("點到了");
-            alert("點到贊助我們了！");
-
+            this.$router.push('/sponsorus');
         }
     }
 }
@@ -66,8 +63,16 @@ export default {
 
 @media only screen and (max-width: 1645px) {
     .about-intro-title {
-        margin: 69px 0px 0px 100px;  
-        width: 31%;
+        margin: 69px 0px 0px 100px;
+        width: 31%;   
+         font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 1278px) {
+    .about-intro-title {
+        margin: 44px 0px 0px 40px;
+        width: 415px
     }
 }
 
@@ -83,6 +88,14 @@ export default {
         right: 238px;
     }
 }
+@media only screen and (max-width: 1278px) {
+    .intro-description {
+        top: 237px;
+        right: 238px;
+        width: 340px;
+        height: 65px;
+    }
+}
 
 .description-text {
     background-color: var(--primary-color);
@@ -96,12 +109,32 @@ export default {
     position: relative;
 }
 
+
+@media only screen and (max-width: 1278px) {
+    .description-text {
+        font-size: 16px;
+        width: 309px;
+        height: 79px;
+        padding: 14px 37px 13px 6px;
+        text-align: center;
+    }
+}
+
 .intro-dog-pic {
     position: absolute;
     top: -70px;
     right: -100px;
 }
 
+@media only screen and (max-width: 1278px) {
+    .intro-dog-pic img{
+        position: absolute;
+        top: 15px;
+        right: -46px;
+        width: 187px;
+        height: 74px;
+    }
+}
 .main-content {
     width: 73%;
     height: 50%;
@@ -118,7 +151,15 @@ export default {
 
 @media only screen and (max-width: 1645px) {
     .main-content {
-        margin:410px 58px 54px 187px
+        margin: 150px 82px 54px 82px;
+    }
+}
+
+@media only screen and (max-width: 1278px) {
+    .main-content {
+        margin: 207px 58px 54px 187px;
+        width: 587px;
+        height: 999px;
     }
 }
 
@@ -126,6 +167,15 @@ export default {
     position: absolute;
     top: -150px;
     left: -100px;
+}
+
+@media only screen and (max-width: 1278px) {
+    .main-content img:not(.sponsor-us-btn) {
+        top: -60px;
+        left: -100px;
+        width: 201px;
+        height: 128px;
+    }
 }
 
 .main-content .sponsor-us-btn {

@@ -211,7 +211,6 @@ main {
   }
 }
 
-
 .news-announcement span:first-child {
   margin-left: 30px;
 }
