@@ -118,7 +118,7 @@ export default {
 
 @media only screen and (max-width: 1645px) {
     .main-content {
-        margin:410px 58px 54px 277px
+        margin:410px 58px 54px 187px
     }
 }
 
