@@ -5,12 +5,18 @@ import LostPopupBrown from './LostPopupBrown.vue';
 import IconPaperAirplane from '../IconPaperAirplane.vue';
 
 export default {
-    components: { IconCard, IconChangeButton, LostPopupBrown, IconPaperAirplane },
+    components: {
+        IconCard, IconChangeButton, LostPopupBrown, IconPaperAirplane
+    },
     data() {
         return {
             show: false,
             // Button 上的文字
+            AnimalsData: Array,
         }
+    },
+    mounted() {
+        // console.log(this.AnimalsData);
     },
     methods: {
         showpopup() {
@@ -39,18 +45,8 @@ export default {
         <div class="list-container">
             <div class="title">遺失動物列表</div>
             <div class="cards">
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
-                <IconCard class="card" cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                <IconCard class="card" v-for="animal in AnimalsData" :AnimalData="animal" cardBorderColor="var(--B68337)"
+                    checkBoxColor="var(--B68337)" />
             </div>
         </div>
     </div>
@@ -61,7 +57,7 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    font-size:24px;
+    font-size: 24px;
     font-family: 'ABeeZee';
 }
 
@@ -80,9 +76,11 @@ a {
     font-weight: 700;
     color: var(--gray-color);
 }
+
 a:hover {
     background-color: transparent;
 }
+
 .list-container {
     display: flex;
     flex-direction: column;
@@ -98,9 +96,11 @@ a:hover {
     background-color: var(--B68337);
     border-radius: 40px 40px 0 0;
 }
+
 .cards::-webkit-scrollbar {
     display: none;
 }
+
 .cards {
     height: 53rem;
     overflow: scroll;
@@ -114,6 +114,4 @@ a:hover {
     gap: 20px;
     background-color: var(--white-color);
 }
-
-
 </style>

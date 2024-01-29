@@ -3,6 +3,8 @@ import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
 import LostFrame from '@/components/icons/LostAnimals/LostFrame.vue';
 import LostFrameBrown from '@/components/icons/LostAnimals/LostFrameBrown.vue';
+import Animals from '@/json/Animals.json';
+
 export default {
     components: {
         NavPage,
@@ -12,45 +14,33 @@ export default {
     },
     data() {
         return {
+            // 傳入動物資料
+            Animals: Animals,
+            // 預設不過濾
+            filteredAnimals: Animals,
         }
     },
-    // mounted() {
-    //     this.HiddenBrown();
-    // },
     methods: {
-        goToFoundAnimalInfo() {
-            this.$router.push('/foundanimalsinformation'); //導到[撿到遺失動物資訊頁]
+        // 搜尋器 過濾
+        search(formData) {
+            this.filteredAnimals = this.Animals.filter((ani => ani.類型 == formData.species));
+            this.filteredAnimals = this.filteredAnimals.filter((ani => ani.所在區域 == formData.location));
+            this.filteredAnimals = this.filteredAnimals.filter((ani => ani.體型 == formData.bodyshape));
+            if (formData.gender != "both") {
+                this.filteredAnimals = this.filteredAnimals.filter((ani => ani.性別 == formData.gender));
+            }
+            // if (formData.colors != "both") {
+            //     this.filteredAnimals = this.filteredAnimals.filter((ani => ani.顏色 == formData.colors));
+            // }
+            if (formData.age != "both") {
+                this.filteredAnimals = this.filteredAnimals.filter((ani => ani.年齡 == formData.age));
+            }
+            if (formData.neutered != "both") {
+                this.filteredAnimals = this.filteredAnimals.filter((ani => ani.是否已結紮 == formData.neutered));
+            }
+            // console.log(this.filteredAnimals);
+            // console.log(formData.species);
         },
-        goToMyLostInfo() {
-            this.$router.push('/myanimallostinformation'); //導到[我的動物走失了資訊頁]
-        },
-        // HiddenBrown() {
-        //     const elremove = this.$refs.IconLostFrame;
-        //     const brownElements = elremove.$el.querySelectorAll('.brown-unnecessary');
-
-        //     brownElements.forEach(element => {
-        //         element.remove();
-        //     });
-        //     return true;
-        // },
-        // HiddenBrown() {
-        //     this.$nextTick(() => {
-        //         const elremove = this.$refs.IconLostFrame;
-        //         if (elremove) {
-        //             const brownElements = elremove.$el.querySelectorAll('.brown-unnecessary');
-        //             brownElements.forEach(element => {
-        //                 element.remove();
-        //             });
-        //         }
-        //     });
-        // },
-        // HiddenBrown() {
-        //     const brownElements = document.querySelectorAll('.brown-unnecessary');
-        //     brownElements.forEach(element => {
-        //         element.style.display = 'none';
-        //     });
-        //     return brownElements.length > 0;
-        // },
     },
 }
 </script>
@@ -67,31 +57,31 @@ export default {
                 <input type="radio" id="tab-1" name="tab" checked="checked">
                 <label for="tab-1" class="tab-left">撿到遺失動物</label>
                 <div class="info-1">
-                        <!-- svg圖 -->
-                        <svg width="238" height="81" viewBox="0 0 238 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g filter="url(#filter0_d_1569_9600)">
-                                <path
-                                    d="M6.58436 71.8828C6.57288 72.4349 6.11595 72.8732 5.56378 72.8618C5.01162 72.8503 4.57331 72.3933 4.5848 71.8412L6.58436 71.8828ZM229.144 55.1484L221.876 46.1758L233.281 44.3677L229.144 55.1484ZM137.972 38.6334L137.765 39.6117L137.637 39.5847L137.521 39.5258L137.972 38.6334ZM144.039 32.5529L145.034 32.4558L144.039 32.5529ZM137.521 39.5258C129.766 35.6056 124.934 31.497 122.608 27.3774C120.237 23.179 120.517 19.0461 122.795 15.3701C125.032 11.7614 129.153 8.64373 134.393 6.19573C139.651 3.73912 146.127 1.91355 153.198 0.944653C167.331 -0.991902 183.978 0.476549 198.215 7.32778C212.487 14.1955 224.319 26.4689 228.711 46.0381L226.759 46.476C222.515 27.5638 211.127 15.7606 197.348 9.12998C183.535 2.48285 167.299 1.03118 153.469 2.92614C146.559 3.87299 140.284 5.65109 135.239 8.00773C130.177 10.373 126.445 13.2782 124.495 16.4236C122.588 19.5017 122.35 22.8541 124.349 26.394C126.392 30.0127 130.816 33.8954 138.423 37.7409L137.521 39.5258ZM4.5848 71.8412C4.91473 55.9797 13.612 42.1996 26.3815 31.3275C39.152 20.4547 56.075 12.4143 73.0928 8.00667C90.0998 3.6018 107.312 2.79692 120.66 6.51353C134.044 10.2406 143.681 18.5811 145.034 32.4558L143.044 32.65C141.795 19.8477 132.985 12.0217 120.123 8.44022C107.224 4.84828 90.3893 5.59281 73.5942 9.94279C56.8099 14.29 40.1755 22.2099 27.6781 32.8503C15.1797 43.4915 6.89856 56.7777 6.58436 71.8828L4.5848 71.8412ZM145.034 32.4558C145.287 35.05 144.87 37.1838 143.509 38.5147C142.125 39.8688 140.072 40.1004 137.765 39.6117L138.179 37.6551C140.2 38.0832 141.422 37.7584 142.111 37.0849C142.823 36.3883 143.275 35.0234 143.044 32.65L145.034 32.4558Z"
-                                    fill="#52A038" />
-                            </g>
-                            <defs>
-                                <filter id="filter0_d_1569_9600" x="0.584961" y="0.15918" width="236.696" height="80.7031"
-                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                    <feColorMatrix in="SourceAlpha" type="matrix"
-                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                    <feOffset dy="4" />
-                                    <feGaussianBlur stdDeviation="2" />
-                                    <feComposite in2="hardAlpha" operator="out" />
-                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1569_9600" />
-                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1569_9600"
-                                        result="shape" />
-                                </filter>
-                            </defs>
-                        </svg>
-                        <!-- svg圖 結束-->
-                        <LostFrame />
+                    <!-- svg圖 -->
+                    <svg width="238" height="81" viewBox="0 0 238 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_1569_9600)">
+                            <path
+                                d="M6.58436 71.8828C6.57288 72.4349 6.11595 72.8732 5.56378 72.8618C5.01162 72.8503 4.57331 72.3933 4.5848 71.8412L6.58436 71.8828ZM229.144 55.1484L221.876 46.1758L233.281 44.3677L229.144 55.1484ZM137.972 38.6334L137.765 39.6117L137.637 39.5847L137.521 39.5258L137.972 38.6334ZM144.039 32.5529L145.034 32.4558L144.039 32.5529ZM137.521 39.5258C129.766 35.6056 124.934 31.497 122.608 27.3774C120.237 23.179 120.517 19.0461 122.795 15.3701C125.032 11.7614 129.153 8.64373 134.393 6.19573C139.651 3.73912 146.127 1.91355 153.198 0.944653C167.331 -0.991902 183.978 0.476549 198.215 7.32778C212.487 14.1955 224.319 26.4689 228.711 46.0381L226.759 46.476C222.515 27.5638 211.127 15.7606 197.348 9.12998C183.535 2.48285 167.299 1.03118 153.469 2.92614C146.559 3.87299 140.284 5.65109 135.239 8.00773C130.177 10.373 126.445 13.2782 124.495 16.4236C122.588 19.5017 122.35 22.8541 124.349 26.394C126.392 30.0127 130.816 33.8954 138.423 37.7409L137.521 39.5258ZM4.5848 71.8412C4.91473 55.9797 13.612 42.1996 26.3815 31.3275C39.152 20.4547 56.075 12.4143 73.0928 8.00667C90.0998 3.6018 107.312 2.79692 120.66 6.51353C134.044 10.2406 143.681 18.5811 145.034 32.4558L143.044 32.65C141.795 19.8477 132.985 12.0217 120.123 8.44022C107.224 4.84828 90.3893 5.59281 73.5942 9.94279C56.8099 14.29 40.1755 22.2099 27.6781 32.8503C15.1797 43.4915 6.89856 56.7777 6.58436 71.8828L4.5848 71.8412ZM145.034 32.4558C145.287 35.05 144.87 37.1838 143.509 38.5147C142.125 39.8688 140.072 40.1004 137.765 39.6117L138.179 37.6551C140.2 38.0832 141.422 37.7584 142.111 37.0849C142.823 36.3883 143.275 35.0234 143.044 32.65L145.034 32.4558Z"
+                                fill="#52A038" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_1569_9600" x="0.584961" y="0.15918" width="236.696" height="80.7031"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="4" />
+                                <feGaussianBlur stdDeviation="2" />
+                                <feComposite in2="hardAlpha" operator="out" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1569_9600" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1569_9600"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                    <!-- svg圖 結束-->
+                    <LostFrame :AnimalsData="filteredAnimals" />
                 </div>
                 <!--   tab group end -->
                 <!--   tab group -->
@@ -122,16 +112,12 @@ export default {
                         </defs>
                     </svg>
                     <!-- svg圖 結束-->
-                    <LostFrameBrown />
+                    <LostFrameBrown :AnimalsData="filteredAnimals" />
                 </div>
             </div>
             <!--   tab group end -->
         </div>
     </main>
-    <!-- 失散協尋>撿到遺失動物資訊頁（暫放） -->
-    <!-- <GreenButton :showSvg="false" @click="goToFoundAnimalInfo" class="btnn">確認前往：<br>撿到遺失動物資訊頁</GreenButton> -->
-    <!-- 失散協尋>我遺失了動物資訊頁（暫放） -->
-    <!-- <GreenButton :showSvg="false" @click="goToMyLostInfo" class="btnn">確認前往：<br>我遺失了動物資訊頁</GreenButton> -->
     <FooterPage />
 </template>
 <style scoped>
@@ -229,7 +215,7 @@ svg {
 }
 
 #tab-2:checked+label+.info-2 {
-    height:px;
+    height: px;
     display: block;
 }
 
