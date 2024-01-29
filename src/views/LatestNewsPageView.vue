@@ -37,11 +37,14 @@ export default {
       // 當公告被點擊時觸發，更新 selectedNews 為所選公告的索引
       this.selectedNews = index;
       this.isDetailPopupVisible = index;
+      // document.querySelector('.news-page-container').style.backgroundColor='rgba(82,160,56,0.15)';
+      document.body.style.overflow = 'hidden';
     },
     closeDetails() {
       this.selectedNews = null;
       this.isDetailPopupVisible = ''; //關閉彈出窗口
-
+      document.body.classList.remove('modal-open');
+      document.body.style.overflow = 'auto';
     },
     calculatePopupPosition() {
       // 根據所選消息的位置計算窗口位置
@@ -111,7 +114,6 @@ main {
 .news-page-container {
   width: 100%;
   height: 100%;
-
 }
 
 .latest-news-text {
@@ -121,6 +123,13 @@ main {
   color: var(--primary-color);
   margin: 68px 0px 0px 200px;
 }
+
+@media only screen and (max-width: 1870px) {
+  .latest-news-text {
+    margin: 68px 0px 0px 100px;
+  }
+}
+
 
 
 /* 綠色背景內 */
@@ -133,6 +142,13 @@ main {
   margin: 62px 0px 0px 158px;
 }
 
+
+@media only screen and (max-width: 1870px) {
+  .green-bg {
+    width: 999px;
+  }
+}
+
 .news-list {
   list-style: none;
   padding: 0;
@@ -143,6 +159,12 @@ main {
   color: var(--gray-color);
   margin: 62px 0px 0px 134px;
   width: 935px;
+}
+
+@media only screen and (max-width: 1870px) {
+  .news-list {
+    margin: 62px 0px 0px -11px;
+  }
 }
 
 .news-item {
@@ -183,6 +205,13 @@ main {
   align-items: center;
 }
 
+@media only screen and (max-width: 1870px) {
+  .news-announcement {
+    width: 799px;
+  }
+}
+
+
 .news-announcement span:first-child {
   margin-left: 30px;
 }
@@ -216,7 +245,9 @@ main {
 
 @media only screen and (max-width: 1870px) {
   .news-detail-popup {
-    left: 70%;
+    top: 15%;
+    left: 15%;
+    width: 890px;
   }
 }
 
@@ -230,6 +261,17 @@ main {
   background-image: url('../assets/Image/SponsorImage/icon_xbox-x.svg');
 }
 
+@media only screen and (max-width: 1870px) {
+  .close-btn {
+    background-image: url('../assets/Image/SponsorImage/octicon_x-16.svg');
+    top: 36px;
+    right: 51px;
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+  }
+}
+
 .news-detail-content {
   letter-spacing: 2px;
   font-size: 24px;
@@ -237,4 +279,17 @@ main {
   width: 470px;
   height: 380px;
 }
-</style>
+
+@media only screen and (max-width: 1870px) {
+  .news-detail-content {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    border-radius: 40px;
+    overflow: auto;
+    box-shadow: 0px 4px 6px 0px rgba(82, 160, 56, 0.15);
+    border-radius: 40px;
+    border: 1px white solid;
+    backdrop-filter: blur(17.5px);
+  }
+}</style>
