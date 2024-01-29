@@ -159,7 +159,7 @@ span:hover {
         background-image: url(../assets/Image/HomeImage/HomeA-hover.svg);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 75%;
+        background-size: 100%;
         color: var(--primary-color);
     }
 }

@@ -128,6 +128,12 @@ main {
     max-width: 100%;
     padding: 60px 155px 232px;
 }
+/* 1280版-提早變版 */
+@media (max-width: 1770px) {
+    main {
+        padding: 69px 91px 0px 182px;
+    }
+}
 
 .lost-title {
     display: flex;
@@ -158,7 +164,15 @@ svg {
     top: -3.8%;
     left: 36%;
 }
-
+/* 1280版-提早變版 */
+@media (max-width: 1770px) {
+    svg {
+        position: absolute;
+        top: 47%;
+        left: 90%;
+        transform: rotate(90deg);
+    }
+}
 
 .tabs {
     width: 1588px;

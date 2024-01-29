@@ -20,6 +20,13 @@ export default {
     }
   },
   methods: {
+    scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
     // SponsorPopUp裡 點擊到前往贊助 執行Popup關閉&Success開啟
     closeModel() {
       this.rightnow = false;
@@ -35,6 +42,8 @@ export default {
     // 視窗開啟時scrollBar隱藏
     hidden() {
       document.body.style.overflow = 'hidden';
+       // 讓scrollBar在router後平滑的回至頂部
+       this.scrollToTop();
     },
     showScrollbar() {
       document.body.style.overflow = 'auto';

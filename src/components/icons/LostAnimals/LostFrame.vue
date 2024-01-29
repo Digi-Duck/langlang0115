@@ -220,11 +220,26 @@ export default {
 .big-container {
     display: flex;
 }
+/* 1280版-提早變版 */
+@media (max-width: 1770px) {
+    .big-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 125px;
+    }
+}
 
 /* 左邊表格 */
 .frame-container {
     width: 700px;
     margin-right: 48px;
+}
+/* 1280版-提早變版 */
+@media (max-width: 1770px) {
+    .frame-container {
+        width: 100%;
+        margin-right: 0;
+    }
 }
 
 .notice {
@@ -244,6 +259,13 @@ form {
     border: 2px solid var(--olivegreen-color);
     border-top: 0;
     padding: 30px 34px;
+}
+/* 1280版-提早變版 */
+@media (max-width: 1770px) {
+    form {
+        width: 100%;
+        padding: 46px 180px;
+    }
 }
 
 
@@ -309,6 +331,13 @@ form svg {
     top: 25%;
     left: 39%;
 }
+/* 1280版-提早變版 */
+@media (max-width: 1770px) {
+    form svg {
+        top: 11.7%;
+        left: 76%;
+    }
+}
 
 /*按鈕*/
 .btn-area {
@@ -328,6 +357,13 @@ form svg {
     flex-direction: column;
     font-size: 24px;
     font-family: 'ABeeZee';
+}
+/* 1280版-提早變版 */
+@media (max-width: 1770px) {
+    .list-container {
+        flex-direction: column-reverse;
+        gap: 37px;
+    }
 }
 
 .btn {

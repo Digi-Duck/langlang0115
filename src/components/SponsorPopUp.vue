@@ -11,12 +11,19 @@ export default {
     // emits 回傳資料給父層
     emits: ['closeType', 'closePopup'],
     methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
         closeModel() {
             this.$emit('closeType', false);
         },
         closePopup() {
             this.$emit('closePopup', false);
-        }
+        },
     },
 };
 </script>
