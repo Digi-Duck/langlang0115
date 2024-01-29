@@ -4,24 +4,68 @@ import NavPage from '@/components/NavPage.vue';
 import TitleAndLine from '@/components/TitleAndLine.vue';
 import PetsCardImage from '@/components/PetsCardImage.vue';
 import FundInfoFrame from '@/components/icons/LostAnimals/FundInfoFrame.vue';
+import Animals from '@/json/Animals.json';
+
 export default {
-    data() {
-        return {
-            
-            // 分隔線設定
-            mytext: "其他說明",
-            mylinew: '80rem',
-            parentStyle: {
-                gap: '4rem',
-            },
-        };
-    },
     components: {
         NavPage,
         FooterPage,
         TitleAndLine,
         PetsCardImage,
         FundInfoFrame,
+    },
+    data() {
+        return {
+            // 分隔線設定
+            mytext: "其他說明",
+            mylinew: '80rem',
+            parentStyle: {
+                gap: '4rem',
+            },
+            // 傳入動物資料
+            Animals: Animals,
+            // 找到動物
+            foundAnimal: "",
+            // 收藏動物
+            likeAnimals: [],
+        };
+    },
+    created() {
+        this.lookingAnimal();
+        // console.log(this.foundAnimal);
+    },
+    methods: {
+        lookingAnimal() {
+            this.foundAnimal = this.Animals.find(x => x.名稱 == this.$route.params.name)
+        },
+        getLikeAnimals() {
+            // 讀取localStorage.likeAnimals
+            const tmp = localStorage.getItem("likeAnimals");
+            // console.log(tmp);
+            // 如果有資料
+            if (tmp) {
+                // parse JSON文字轉JS物件
+                this.likeAnimals = JSON.parse(tmp);
+            }
+        },
+        updateLikeAnimal() {
+            this.getLikeAnimals();
+            // 如果在this.likeAnimals的(indexOf)列表裡未找到ani,就要push; 如果找到就remove;
+            if (this.likeAnimals.indexOf(this.foundAnimal) == -1) {
+                this.likeAnimals.push(this.foundAnimal);
+            } else {
+                removeFromArray(this.likeAnimals, this.foundAnimal);
+            }
+            // 儲存更新 stringify JS物件轉JSON文字
+            localStorage.likeAnimals = JSON.stringify(this.likeAnimals);
+        },
+        removeFromArray(arr, elem) {
+            const index = arr.indexOf(elem);
+            if (index !== -1) {
+                // 使用splice方法從陣列中移除元素
+                arr.splice(index, 1);
+            }
+        }
     }
 }
 </script>
@@ -35,9 +79,9 @@ export default {
         <!-- 上方卡片區 -->
         <div class="furryBabiesCard">
             <!-- 卡片區圖 -->
-            <PetsCardImage />
+            <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" />
             <!-- 卡片區表格 -->
-            <FundInfoFrame textColor="red"></FundInfoFrame>
+            <FundInfoFrame textColor="red" :animalData="this.foundAnimal" />
         </div>
         <!-- 其他說明 -->
         <TitleAndLine :text="mytext" :customStyle="parentStyle" :linew="mylinew" />
@@ -55,7 +99,7 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 4.3rem 9rem 2.25rem 10rem;
+    padding: 4.3rem 9rem 10rem 10rem;
 }
 
 /* 標題 */
