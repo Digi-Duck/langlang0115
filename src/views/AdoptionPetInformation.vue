@@ -31,14 +31,16 @@ export default {
             Animals: Animals,
             // 隨機動物資料
             randomAnimals: [],
+            // 找到動物
             foundAnimal: "",
+            // 收藏動物
             likeAnimals: [],
         };
     },
     created() {
         this.randomAnimals = this.getRandomAnimals(Animals, 5);
         this.lookingAnimal();
-        console.log(this.foundAnimal);
+        // console.log(this.foundAnimal);
     },
     methods: {
         getRandomAnimals(arr, n) {
@@ -50,7 +52,7 @@ export default {
         getLikeAnimals() {
             // 讀取localStorage.likeAnimals
             const tmp = localStorage.getItem("likeAnimals");
-            console.log(tmp);
+            // console.log(tmp);
             // 如果有資料
             if (tmp) {
                 // parse JSON文字轉JS物件
@@ -93,7 +95,7 @@ export default {
         <!-- 上方卡片區 -->
         <div class="furryBabiesCard">
             <!-- 卡片區圖 -->
-            <PetsCardImage @favoriteAnimal="updateLikeAnimal" />
+            <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" />
             <!-- 卡片區表格 -->
             <PetsCardFrame :animalData="this.foundAnimal" />
         </div>
