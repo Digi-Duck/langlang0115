@@ -1,6 +1,7 @@
 <script>
 import NavPage from '@/components/NavPage.vue';
 import AnimalForm from '@/components/AnimalForm.vue';
+import FooterPage from '@/components/FooterPage.vue';
 
 
 export default {
@@ -10,9 +11,10 @@ export default {
         }
     },
     components: {
-        NavPage,
-        AnimalForm
-    },
+    NavPage,
+    AnimalForm,
+    FooterPage
+},
     mounted(){
          // 恢復滾軸功能（導入這頁之前，popup有隱藏滾軸的功能）
         document.body.style.overflow = 'auto';
@@ -42,13 +44,9 @@ export default {
                 ></AnimalForm>
         </div>
     </main>
+    <FooterPage />
 </template>
 
 
 <style>
-main {
-    width: 100vw;
-    max-width: 100%;
-    height: 100vh;
-}
 </style>
