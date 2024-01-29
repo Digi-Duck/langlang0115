@@ -25,109 +25,108 @@ export default {
 </script>
  
 <template>
-    <!-- 關於浪浪的事 -->
-    <section class="home-container home-about">
-      <div class="home-abouut-bg">
-        <div class="brown-paw-pic">
-          <img src="../assets/Image/HomeImage/HomeB-paw.svg">
-        </div>
-        <!-- 狗掌&主人與毛小孩圖片 -->
-        <div class="about-us-image">
-          <img src="../assets/Image/HomeImage/HomeB-AboutUsPic.svg" alt="">
-        </div>
+  <!-- 關於浪浪的事 -->
+  <section class="home-container home-about">
+    <div class="home-abouut-bg">
+      <div class="brown-paw-pic">
+        <img src="../assets/Image/HomeImage/HomeB-paw.svg">
       </div>
-      <!-- 關於浪浪的事文字 -->
-      <div class="home-about-section">
-        <div class="about-lang-text">關於浪浪的事</div>
-        <!-- about us & btns -->
-        <div class="home-about-and-btns">
-          <div class="about-text ">About Us</div>
-          <div class="home-about-btns">
-            <!-- 贊助我們按鈕 -->
-            <GreenButton @click="clickSponsorUsBtn">贊助我們</GreenButton>
-            <!-- 瞭解更多按鈕 -->
-            <YellowButton @click="clickSeeMoreBtn">瞭解更多</YellowButton>
-          </div>
-        </div>
-
-        <p class="mission-statement">
-          主要由喜歡毛小孩的夥伴們開發，目的是減少流浪在外的毛小孩。<br><br>
-          包含毛小孩送養、協尋、收容所資訊查找的功能，希望可以達到資訊透明，從出生到當小天使，紀錄毛小孩一生。
-        </p>
-      </div>
-    </section>
-    <!-- 文字簡介 -->
-    <!-- 最新消息 -->
-    <section class="home-container home-news-section">
-      <div class="yellow-paw-pic">
-        <img src="../assets/Image/HomeImage/HomeC-paw.svg">
-      </div>
-      <div class="dog-cat-pic"></div>
-      <div class="home-news-text">
-        <div class="about-lang-text">最新消息</div>
-        <div class="about-text">News</div>
-      </div>
-
-      <div class="news-area">
-        <div class="green-icon-container">
-
-          <ul class="news-list">
-            <li class="news-item">
-              <div class="news-date">
-                <span class="news-date-month">2023.11</span>
-                <span class="news-date-day">02</span>
-              </div>
-              <div class="news-announcement">
-                <span>浪浪的事改版問券調查</span>
-                <!-- 更多按鈕 -->
-                <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
-                  <span>更多...</span>
-                  <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
-                </div>
-
-              </div>
-            </li>
-            <li class="news-item">
-              <div class="news-date">
-                <span class="news-date-month">2023.05</span>
-                <span class="news-date-day">31</span>
-              </div>
-              <div class="news-announcement">
-                <span>誤發登入失敗通知</span>
-                <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
-                  <span>更多...</span>
-                  <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
-                </div>
-              </div>
-            </li>
-            <li class="news-item">
-              <div class="news-date">
-                <span class="news-date-month">2023.05</span>
-                <span class="news-date-day">25</span>
-              </div>
-              <div class="news-announcement">
-                <span>活動[轉載]高雄市動物...
-
-                </span>
-                <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
-                  <span>更多...</span>
-                  <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
-                </div>
-              </div>
-            </li>
-          </ul>
-          <div class="more-news-btn">
-            <GreenButton>更多消息</GreenButton>
-          </div>
+      <!-- 狗掌&主人與毛小孩圖片 -->
+      <div class="about-us-image"></div>
+    </div>
+    <!-- 關於浪浪的事文字 -->
+    <div class="home-about-section">
+      <div class="about-lang-text">關於浪浪的事</div>
+      <!-- about us & btns -->
+      <div class="home-about-and-btns">
+        <div class="about-text ">About Us</div>
+        <div class="home-about-btns">
+          <!-- 贊助我們按鈕 -->
+          <GreenButton @click="clickSponsorUsBtn">贊助我們</GreenButton>
+          <!-- 瞭解更多按鈕 -->
+          <YellowButton @click="clickSeeMoreBtn">瞭解更多</YellowButton>
         </div>
       </div>
-    </section>
+
+      <p class="mission-statement">
+        主要由喜歡毛小孩的夥伴們開發，目的是減少流浪在外的毛小孩。<br><br>
+        包含毛小孩送養、協尋、收容所資訊查找的功能，希望可以達到資訊透明，從出生到當小天使，紀錄毛小孩一生。
+      </p>
+    </div>
+  </section>
+  <!-- 文字簡介 -->
+  <!-- 最新消息 -->
+  <section class="home-container home-news-section">
+    <div class="yellow-paw-pic">
+      <img src="../assets/Image/HomeImage/HomeC-paw.svg">
+    </div>
+    <div class="dog-cat-pic"></div>
+    <div class="home-news-text">
+      <div class="about-lang-text">最新消息</div>
+      <div class="about-text">News</div>
+    </div>
+
+    <div class="news-area">
+      <div class="green-icon-container">
+
+        <ul class="news-list">
+          <li class="news-item">
+            <div class="news-date">
+              <span class="news-date-month">2023.11</span>
+              <span class="news-date-day">02</span>
+            </div>
+            <div class="news-announcement">
+              <span>浪浪的事改版問券調查</span>
+              <!-- 更多按鈕 -->
+              <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
+                <span>更多...</span>
+                <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
+              </div>
+
+            </div>
+          </li>
+          <li class="news-item">
+            <div class="news-date">
+              <span class="news-date-month">2023.05</span>
+              <span class="news-date-day">31</span>
+            </div>
+            <div class="news-announcement">
+              <span>誤發登入失敗通知</span>
+              <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
+                <span>更多...</span>
+                <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
+              </div>
+            </div>
+          </li>
+          <li class="news-item">
+            <div class="news-date">
+              <span class="news-date-month">2023.05</span>
+              <span class="news-date-day">25</span>
+            </div>
+            <div class="news-announcement">
+              <span>活動[轉載]高雄市動物...
+
+              </span>
+              <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
+                <span>更多...</span>
+                <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="more-news-btn">
+          <GreenButton>更多消息</GreenButton>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style scoped>
 .home-container {
   width: 100vw;
   max-width: 100%;
+  height: 850px;
   position: relative;
   margin-bottom: 209px;
 }
@@ -136,23 +135,43 @@ export default {
 /*#region*/
 .home-abouut-bg {
   height: 852px;
-  display: flex;
-  justify-content: space-between;
-  z-index: -1;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .brown-paw-pic {
-  margin-top: -10%;
-  margin-left: -27%;
   position: absolute;
-
+  top: -23.5%;
+  left: -28%;
 }
 
 .about-us-image {
-  /* width: 100%; */
+  width: 1002px;
+  height: 852px;
+  background-image: url(../assets/Image/HomeImage/HomeB-AboutUsPic.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: absolute;
   top: 0;
   right: 0;
+  z-index: -1;
+}
+
+/* 照片的遮罩 */
+.about-us-image::after {
+  content: "";
+  width: 1002px;
+  height: 853px;
+  border-radius: 35px 0px 0px 35px;
+  opacity: 0.97;
+  background: linear-gradient(90deg, #FFFEFD, rgba(255, 242, 209, 0.66) 53%, transparent);
+  filter: blur(0.5px);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .home-about-section {
@@ -196,28 +215,92 @@ export default {
   letter-spacing: 6px;
 }
 
+@media (max-width: 1280px) {
+  .brown-paw-pic {
+    top: -16%;
+    left: -41%;
+  }
+
+  .about-us-image {
+    width: 631px;
+    height: 549px;
+    position: absolute;
+    top: 27%;
+    right: 0%;
+  }
+
+  .about-us-image::after {
+    width: 631px;
+    height: 549px;
+  }
+
+  .home-about-section {
+    padding-left: 66px;
+  }
+
+  .about-lang-text {
+    color: var(--primary-color);
+    font-size: 48px;
+    letter-spacing: 12px;
+    margin-bottom: 15px;
+  }
+
+  .home-about-and-btns {
+    gap: 27px;
+    margin-bottom: 73px;
+  }
+
+  .about-text {
+    font-size: 32px;
+    letter-spacing: 8px;
+  }
+
+  .mission-statement {
+    width: 412px;
+    height: 401px;
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+}
+
 /*#endregion*/
 
 /*-----首頁 最新消息-----*/
+
 .yellow-paw-pic {
-  width: 1152px;
-  height: 839px;
-  z-index: -1;
+  z-index: 0;
+  position: absolute;
+  top: -35%;
+  left: -26.5%;
 }
 
-.yellow-paw-pic img {
-  margin-top: -24.5%;
-  margin-left: -43%;
+@media (max-width: 1280px) {
+  .yellow-paw-pic {
+    top: -26%;
+    left: -38.5%;
+  }
+  
 }
 
 .dog-cat-pic {
   background-image: url("../assets/Image/HomeImage/HomeC-dog-cat.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
   height: 268px;
   width: 268px;
   position: absolute;
   top: 0px;
   right: 225px;
   z-index: 1;
+}
+
+@media (max-width: 1280px) {
+  .dog-cat-pic {
+    height: 238px;
+    width: 216px;
+    top: 12%;
+  }
 }
 
 .home-news-text {
@@ -240,6 +323,15 @@ export default {
   right: 130px;
 }
 
+@media (max-width: 1280px) {
+  .green-icon-container {
+    width: 997px;
+    height: 570px;
+    top: 27%;
+    right: 87px;
+  }
+}
+
 .news-list {
   list-style: none;
   padding: 0;
@@ -248,16 +340,28 @@ export default {
   width: 880px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   color: var(--white-color);
+}
+
+@media (max-width: 1280px) {
+  .news-list {
+    transform: translate(100px, 120px);
+    height: 260px;
+    width: 793px;
+  }
 }
 
 .news-item {
   display: flex;
-  margin: 20px 0px;
-  width: 880px;
   height: 84px;
   font-family: 'ABeeZee', sans-serif;
+}
+
+@media (max-width: 1280px) {
+  .news-item {
+    height: 70px;
+  }
 }
 
 /* 最新消息的日期區 */
@@ -267,6 +371,12 @@ export default {
   align-items: center;
   margin-right: 40px;
   font-family: 'Stick', sans-serif;
+}
+
+@media (max-width: 1280px) {
+  .news-date {
+    margin-right: 36px;
+  }
 }
 
 .news-date-month {
@@ -288,6 +398,14 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 1280px) {
+  .news-announcement {
+    font-size: 32px;
+    letter-spacing: 8px;
+    border-width: 5px;
+  }
 }
 
 .news-announcement span:first-child {
@@ -316,4 +434,13 @@ export default {
   top: 660px;
   right: 150px;
 }
+@media (max-width: 1280px) {
+  .news-announcement-btn {
+ display: none;
+}
+.more-news-btn {
+  position: absolute;
+  top: 500px;
+}
+  }
 </style>

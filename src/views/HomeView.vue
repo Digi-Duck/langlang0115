@@ -26,7 +26,6 @@ export default {
     <section>
       <div class="home-header-greenbox"></div>
       <div class="home-header-img">
-        <!-- <img src="../assets/Image/HomeImage/HomeA-banner.svg" alt=""> -->
         <div class="home-header-text">
           <IconHeaderLine class="line3"></IconHeaderLine>
           <span>動物走失了</span>
@@ -53,38 +52,45 @@ export default {
   max-width: 100%;
   position: relative;
   margin-bottom: 209px;
+  background-color:var(--primary-color);
 }
 
 .home-header-greenbox {
-  background-color: var(--primary-color);
+background: var(--white-color);
   width: 100%;
-  height: 556px;
+  height: 440px;
+  border-radius: 10px 10px 0 0;
   position: absolute;
-  top: 0px;
+  bottom:-5px;
   left: 0px;
 }
-@media (min-width: 1280px) {
+
+@media (max-width: 1280px) {
   .home-header-greenbox {
-  background-color: var(--primary-color);
-  width: 100%;
-  height: 500px;
+    height: 224px;
+  }
 }
-}
+
 .home-header-img {
-  width:1827px ;
+  width: 97%;
   height: 947px;
   background-image: url(../assets/Image/HomeImage/HomeA-banner.svg);
-  background-position:center;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  /* background-size: 100%; */
   margin: auto;
   position: relative;
 }
+
 @media (max-width: 1280px) {
   .home-header-img {
-  background-image: url(../assets/Image/HomeImage/HomeA-banner-1280.svg);
-}
+    width: 1084px;
+    height: 725px;
+    background-image: url(../assets/Image/HomeImage/HomeA-banner-1280.svg);
   }
+}
+
+/* 三條條+字 */
 .home-header-text {
   width: 500px;
   height: 50px;
@@ -103,6 +109,7 @@ export default {
   transform: rotate(12deg);
 }
 
+
 .home-header-btn {
   display: flex;
   gap: 26px;
@@ -112,9 +119,15 @@ export default {
   transform: translateX(-50%);
 }
 
+@media (max-width: 1280px) {
+  .home-header-text {
+    left: 65%;
+    width: 200px;
+  }
+}
+
 #go-adopt-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-</style>
+}</style>

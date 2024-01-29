@@ -82,7 +82,7 @@ export default {
 
 span {
     font-size: 18px;
-    font-family: sans-serif;
+    font-family: 'ABeeZee';
     font-weight: 400;
     letter-spacing: 4.5px;
     padding: 25px 35px;
@@ -129,27 +129,38 @@ span:hover {
 @media (max-width: 1280px) {
     #wave {
         transform: scale(0.95);
-        top: 84%;
+        top: 55%;
         left: -1%;
     }
 
     #logo {
-        margin-top: 70px;
+        transform: scale(0.9);
+        margin-top: 50px;
         margin-left: 0px;
     }
 
     .titleen {
         width: 161px;
         height: 30px;
-        top: 125%;
         left: 17%;
     }
 
     .titlecn {
         width: 322px;
         height: 91px;
-        top: 160%;
-        left: 12%;
+    }
+
+    span {
+        padding: 25px 10px;
+        cursor: pointer;
+    }
+
+    span:hover {
+        background-image: url(../assets/Image/HomeImage/HomeA-hover.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 75%;
+        color: var(--primary-color);
     }
 }
 </style>
