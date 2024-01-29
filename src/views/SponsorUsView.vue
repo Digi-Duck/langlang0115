@@ -158,6 +158,7 @@ export default {
     position: relative;
 }
 
+/*
 .accept-criedcard::after {
     content: "";
     background-image: url(../assets/Image/SponsorImage/sponsor-us-arrow.svg);
@@ -175,6 +176,8 @@ export default {
         background-image:none;
     }
   }
+*/
+
 
 .sponsor-content {
     display: flex;
@@ -252,7 +255,7 @@ export default {
     margin: 0px 28px;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1836px) {
     .sponsored-list-title {
       min-width: 152px;
     }
@@ -287,7 +290,7 @@ export default {
     stroke: var(--primary-color);
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1836px) {
     .line-left {
         width: 400px;
     }
@@ -303,7 +306,7 @@ export default {
 
 
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1836px) {
     .line-right {
         width: 400px;
     }
@@ -413,7 +416,7 @@ tbody tr:nth-child(even) {
 }
 
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1836px) {
     .q-a-container {
        margin: 10px 132px;    
     }
