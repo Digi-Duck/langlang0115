@@ -24,12 +24,6 @@ export default {
     },
     data() {
         return {
-            // 下方暫放按鈕
-            mysubmit: "毛小孩資訊",
-            mybgcolorno: 'var(--primary-color)',
-            mytextcolorno: 'var(--white-color)',
-            mywno: '12.5rem',
-            myhno: '3rem',
             // 前往送養按鈕
             mytext: "前往送養",
             mytextColor: "var(--gray-color)",
@@ -104,10 +98,6 @@ export default {
         formadoptionPage() {
             this.$router.push('/formpageadoption');
         },
-        // 暫放
-        petinformationPage() {
-            this.$router.push('/adoptionpetinformation');
-        }
     },
 }
 </script>
@@ -165,8 +155,6 @@ export default {
                             <!-- <a href="../views/FormPageAdoption.vue"></a> -->
                             <IconChangeButton :text="mytext" :textColor="mytextColor" :bgColor="mybgColor" :w="myw" :h="myh"
                                 @click="formadoptionPage" />
-                            <IconChangeButton :text="mysubmit" :textColor="mytextcolorno" :bgColor="mybgcolorno" :w="mywno"
-                                :h="myhno" @click="petinformationPage" />
                             <a href="#">
                                 <IconPaperAirplane />
                                 搜尋附近動物醫院
