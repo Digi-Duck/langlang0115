@@ -64,7 +64,7 @@ export default {
     width: 25%;
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1645px) {
     .about-intro-title {
         margin: 69px 0px 0px 100px;  
         width: 31%;
@@ -77,7 +77,7 @@ export default {
     right: 150px;
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1645px) {
     .intro-description {
         top: 300px;
         right: 238px;
@@ -116,9 +116,9 @@ export default {
 }
 
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1645px) {
     .main-content {
-        margin:410px 58px 54px 131px
+        margin:410px 58px 54px 277px
     }
 }
 
