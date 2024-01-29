@@ -274,7 +274,6 @@ label[for="neutered"],
     appearance: none;
     font-size: 20px;
     width: 620px;
-    height: 56px;
     border: 2px solid var(--olivegreen-color);
     border-radius: 4px;
     outline: none;

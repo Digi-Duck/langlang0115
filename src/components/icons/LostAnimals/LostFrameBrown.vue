@@ -73,7 +73,7 @@ export default {
                             <path d="M12 2L7 7L2 2" stroke="#B68337" stroke-width="2.5" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-                        <select v-model="selectedOption" class="customSelect">
+                        <select v-model="formData.location" class="customSelect">
                             <option value="臺北市">臺北市</option>
                             <option value="新北市">新北市</option>
                             <option value="臺中市">臺中市</option>
@@ -250,7 +250,6 @@ label[for="neutered"],
     appearance: none;
     font-size: 20px;
     width: 620px;
-    height: 56px;
     border: 2px solid var(--B68337);
     border-radius: 4px;
     outline: none;
