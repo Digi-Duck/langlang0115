@@ -2,34 +2,26 @@
 import IconFb from '../IconFb.vue';
 import IconLineApp from '../IconLineApp.vue';
 export default {
-    components:{ IconFb,IconLineApp },
+    components: {
+        IconFb, IconLineApp
+    },
+    props: {
+        animalData: Object,
+    },
     data() {
         return {
             animals: [],
-            numberBg:String, //晶片號碼背景色
-            borderTh:String,
-            borderTd:String,  //表格外框色
-            textColor:String,  //文字顏色
+            numberBg: String, //晶片號碼背景色
+            borderTh: String,
+            borderTd: String,  //表格外框色
+            textColor: String,  //文字顏色
         }
     },
     methods: {
-        // async非同步
-        async fetchAnimals() {
-            // try...catch 嘗試...捕捉(錯誤)...
-            try {
-                // await 配合 async
-                const response = await fetch('http://localhost:3000/0')
-                // data = 等待response抓資料
-                const data = await response.json();
-                this.animals = data;
-                console.log(this.animals.cats[0].名稱);
-            } catch (error) {
-                console.error('Error fetching dogs:', error);
-            }
-        },
+
     },
     mounted() {
-        this.fetchAnimals();
+
     },
 }
 </script>
@@ -37,35 +29,35 @@ export default {
     <div class="cardFrameAll">
         <!-- 卡片表格區域-->
         <div class="CardFrame">
-            <div class="ChipNumber" :style="{backgroundColor:numberBg}">
-                <span>晶片號碼：AAAHG1130116001</span>
+            <div class="ChipNumber" :style="{ backgroundColor: numberBg }">
+                <span>晶片號碼：{{ animalData.名稱 }}</span>
             </div>
             <table>
                 <tbody>
                     <tr>
-                        <th :style="{color:textColor,borderColor:borderTh}">類別</th>
-                        <td >貓</td>
-                        <th :style="{color:textColor,borderColor:borderTh}">體型</th>
-                        <td >小型</td>
+                        <th :style="{ color: textColor, borderColor: borderTh }">類別</th>
+                        <td>{{ animalData.類型 }}</td>
+                        <th :style="{ color: textColor, borderColor: borderTh }">體型</th>
+                        <td>{{ animalData.體型 }}</td>
                     </tr>
                     <tr>
-                        <th :style="{color:textColor,borderColor:borderTh}">年齡</th>
-                        <td >幼年</td>
-                        <th :style="{color:textColor,borderColor:borderTh}">性別</th>
-                        <td >母</td>
+                        <th :style="{ color: textColor, borderColor: borderTh }">年齡</th>
+                        <td>{{ animalData.年齡 }}</td>
+                        <th :style="{ color: textColor, borderColor: borderTh }">性別</th>
+                        <td>{{ animalData.性別 }}</td>
                     </tr>
                     <tr>
-                        <th :style="{color:textColor,borderColor:borderTh}">是否已結紮</th>
-                        <td >未知</td>
-                        <th :style="{color:textColor,borderColor:borderTh}">顏色</th>
-                        <td >花色</td>
+                        <th :style="{ color: textColor, borderColor: borderTh }">是否已結紮</th>
+                        <td>{{ animalData.是否已結紮 }}</td>
+                        <th :style="{ color: textColor, borderColor: borderTh }">顏色</th>
+                        <td>{{ animalData.顏色 }}</td>
                     </tr>
                     <tr>
-                        <th :style="{color:textColor,borderColor:borderTh}">發現地點</th>
-                        <td colspan="3" >09:00 台中市 福星公園</td>
+                        <th :style="{ color: textColor, borderColor: borderTh }">發現地點</th>
+                        <td colspan="3">{{ animalData.找到地點 }}</td>
                     </tr>
                     <tr>
-                        <th :style="{color:textColor,borderColor:borderTh}">聯絡方式</th>
+                        <th :style="{ color: textColor, borderColor: borderTh }">聯絡方式</th>
                         <td colspan="3">09XX-XXX-XXX</td>
                     </tr>
                 </tbody>
@@ -75,14 +67,14 @@ export default {
             <div class="platformTime">
                 <div class="time">
                     <span>平台建立時間</span>
-                    <p class="creationTime">2024-01-10 00:00:00</p>
+                    <p class="creationTime">{{ animalData.建立 }}</p>
                 </div>
                 <div class="time">
                     <span>平台更新時間</span>
-                    <p class="updateTime">2024-01-10 00:00:00</p>
+                    <p class="updateTime">{{ animalData.更新 }}</p>
                 </div>
             </div>
-            <div class="shareIcon" :style="{color:textColor}">
+            <div class="shareIcon" :style="{ color: textColor }">
                 <span>分享至</span>
                 <IconFb class="fb"></IconFb>
                 <IconLineApp class="lineapp"></IconLineApp>
@@ -194,7 +186,8 @@ td {
     font-size: 1.5rem;
 }
 
-.fb,lineapp {
+.fb,
+lineapp {
     width: 3.25rem;
     height: 3.25rem;
 }
