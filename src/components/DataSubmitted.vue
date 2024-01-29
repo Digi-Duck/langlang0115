@@ -13,6 +13,7 @@ export default {
         submitResult: String,
         // 小字內文
         submitText: String,
+        submitTextTwo:String,
         // 按鈕文字
         submitBtnText: String,
         // 按鈕顏色
@@ -63,7 +64,7 @@ export default {
             </div>
             <div class="SendText" :textColor="myTextColor">
                 <span class="big" :fontSize="textSize">{{ submitResult }}</span>
-                <p class="small">{{ submitText }}</p>
+                <p class="small">{{ submitText }}<br>{{ submitTextTwo }}</p>
             </div>
             <button class="button" @click="goPage(myurl)" :bgColor="submitBtnColor">{{ submitBtnText }}</button>
         </div>
@@ -126,6 +127,7 @@ export default {
     font-size: 1.25rem;
     text-align: center;
     letter-spacing: 5px;
+    word-wrap: break-word;
 }
 
 .button {
