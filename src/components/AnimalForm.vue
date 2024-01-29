@@ -70,10 +70,17 @@ export default {
         },
         //點擊送出按鈕
         showSubmitBtn() {
+            if(this.formData.species == '' ||this.formData.bodyshape == ''||this.formData.gender == ''||this.formData.colors == ''||this.formData.age == ''||this.formData.neutered == ''||this.formData.time == ''||this.formData.place == ''||this.formData.phone == ''){
+                alert('請確認*必填欄位已填寫完成');
+                return;
+            }
+
             document.body.style.overflow = 'hidden';    //隱藏滾軸
             this.isSubmit = true;
             // 讓scrollBar在router後平滑的回至頂部
             this.scrollToTop();
+
+           
         },
         goPage() {
             if (this.isSubmit) {
@@ -196,6 +203,7 @@ export default {
 
                 <input type="radio" id="otherType" value="其他" v-model="formData.species" name="animalType" />
                 <label for="otherType">其他</label>
+
             </div>
 
 
