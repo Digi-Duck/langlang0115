@@ -24,15 +24,7 @@ export default {
     },
     data() {
         return {
-            // 前往送養按鈕
-            mytext: "前往送養",
-            mytextColor: "var(--gray-color)",
-            mybgColor: "var(--orangeyellow-color) ",
-            myw: "11.3rem",
-            myh: "4rem",
             // 尋找心目中的毛小孩標題
-            mytexttwo: "尋找心目中的毛小孩",
-            mylinew: '72rem',
             parenttwoStyle: {
                 gap: '0.5rem',
             },
@@ -49,9 +41,6 @@ export default {
             // 預設不過濾
             filteredAnimals: Animals,
         }
-    },
-    mounted() {
-        // console.log(this.Animals[0].cats);
     },
     methods: {
         // 搜尋器 過濾
@@ -130,7 +119,7 @@ export default {
             </div>
             <!-- 尋找心目中的毛小孩 -->
             <div class="lookingForLikepets">
-                <TitleAndLine :text="mytexttwo" :customStyle="parenttwoStyle" :linew="mylinew" />
+                <TitleAndLine :customStyle="parenttwoStyle" text="尋找心目中的毛小孩" linew="72rem" />
                 <!-- 認養中心搜尋卡片組件 -->
                 <div class="likepetsCards">
                     <div class="likepets">
@@ -152,9 +141,8 @@ export default {
                     <!-- 卡片 -->
                     <div class="petsInormationForm">
                         <div class="btn">
-                            <!-- <a href="../views/FormPageAdoption.vue"></a> -->
-                            <IconChangeButton :text="mytext" :textColor="mytextColor" :bgColor="mybgColor" :w="myw" :h="myh"
-                                @click="formadoptionPage" />
+                            <IconChangeButton text="前往送養" textColor="var(--gray-color)" bgColor="var(--orangeyellow-color)"
+                                w="11.3rem" h="4rem" @click="formadoptionPage" />
                             <a href="#">
                                 <IconPaperAirplane />
                                 搜尋附近動物醫院

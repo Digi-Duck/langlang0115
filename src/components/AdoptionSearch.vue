@@ -22,11 +22,6 @@ export default {
                 age: '', // 年齡選擇
                 neutered: '', // 是否已絕育
             },
-            mybgColor: "var(--primary-color)",
-            mytext: "搜尋",
-            mytextColor: "var(--white-color)",
-            myw: "125px",
-            myh: "54px",
         };
     },
     methods: {
@@ -158,15 +153,17 @@ export default {
                     <label for="neuteredNo">未結紮</label>
                 </div>
                 <div class="group">
-                    <input type="radio" id="neuteredUnknown" value="both" v-model="formData.neutered" name="neuteredStatus" />
+                    <input type="radio" id="neuteredUnknown" value="both" v-model="formData.neutered"
+                        name="neuteredStatus" />
                     <label for="neuteredUnknown">皆可</label>
                 </div>
             </div>
             <!-- 按鈕 -->
             <div class="btn-area">
                 <NoHoverButton @click.prevent="clearOptions" btnbgColor="var(--gray-color)" text="清除重填"></NoHoverButton>
-                <IconChangeButton @click.prevent="search" :text="mytext" :textColor="mytextColor" :bgColor="mybgColor"
-                    :w="myw" :h="myh">
+
+                <IconChangeButton @click.prevent="search" text="搜尋" textColor="var(--white-color)"
+                    bgColor="var(--primary-color)" w="125px" h="54px">
                 </IconChangeButton>
             </div>
         </form>
@@ -224,6 +221,7 @@ form {
 /*每個欄位的標題*/
 .photo-title,
 label[for="species"],
+label[for="location"],
 label[for="body-shape"],
 label[for="gender"],
 label[for="colors"],
