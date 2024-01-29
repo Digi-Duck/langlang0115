@@ -4,7 +4,6 @@ export default {
         cardBorderColor: String,  //卡片
         checkBoxColor: String,  //卡片裡的色塊
         AnimalData: Object, //單一動物資料
-        imageUrl: String,
     },
     data() {
         return {
@@ -25,11 +24,8 @@ export default {
     <router-link :to="{ name: 'adoptionpetinformation', params: { name: AnimalData.名稱 } }">
         <div class="card-container">
             <div class="card-ccontent" :style="{ borderColor: cardBorderColor }">
-                <!-- <div class="image" :style="{ backgroundImage: 'url(${imageUrl})' }"></div> -->
-                <!-- :style="{ backgroundImage: 'url(' + imageUrl + ')' } -->
-                <!-- new URL('@/assets/Image/CarouselImage/beagledog.svg', import.meta.url).href, -->
-                <!-- <div class="image" :style="{ backgroundImage: new URL(AnimalData.path, import.meta.url).href }"> new URL(`@/assets/Image/ShelterImage/${imageUrl}`)-->
-                <div class="image">
+                <div class="image"
+                    :style="{ backgroundImage: 'url(' + AnimalData.path + '),url(src/assets/Image/DogPawGreen.svg)' }">
                     <!-- <img :src="imgPath" alt=""> -->
                     <p class="check" :style="{ backgroundColor: checkBoxColor }">查看詳細資訊</p>
                 </div>
@@ -52,6 +48,7 @@ export default {
 a {
     background-color: transparent;
 }
+
 .card-ccontent {
     width: 250px;
     height: 277px;
@@ -69,7 +66,8 @@ a {
 .image {
     width: 200px;
     height: 200px;
-    background-image: url(../src/assets/Image/LostImage/lost.svg);
+    background-image: url(src/assets/Image/DogPawGreen.svg);
+    background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 17px;
     display: flex;

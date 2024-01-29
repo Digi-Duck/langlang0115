@@ -5,6 +5,9 @@ export default {
     components: {
         CardClickLike,
     },
+    props: {
+        AnimalData: Object, //單一動物資料
+    },
     methods: {
         favoriteAnimal() {
             this.$emit("favoriteAnimal");
@@ -14,7 +17,8 @@ export default {
 </script>
 <template>
     <div class="furryBabiesImage">
-        <img src="../assets/Image/CardImage/CardCat.png" alt="">
+        <div class="img" :style="{ backgroundImage: 'url(' + AnimalData.path + '),url(src/assets/Image/DogPawGreen.svg)' }">
+        </div>
         <CardClickLike class="heart" @favorite="favoriteAnimal"></CardClickLike>
     </div>
 </template>
@@ -26,7 +30,7 @@ export default {
     position: relative;
 }
 
-.furryBabiesImage img {
+.img {
     width: 40.3rem;
     height: 33.3rem;
 }
