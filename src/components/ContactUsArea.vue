@@ -3,6 +3,10 @@ import ContactMsgScreen from './ContactMsgScreen.vue';
 import IconChangeButton from './icons/IconChangeButton.vue';
 
 export default {
+    components: {
+        IconChangeButton,
+        ContactMsgScreen
+    },
     data() {
         return {
             selectedOption: null,
@@ -24,10 +28,6 @@ export default {
             document.body.style.overflow = 'hidden';
         },
     },
-    components: {
-        IconChangeButton,
-        ContactMsgScreen
-    }
 };
 </script>
 <template>
@@ -134,7 +134,7 @@ a:hover {
 
 @media only screen and (max-width: 1353px) {
     #contactTitle span {
-       width: 246px;
+        width: 246px;
     }
 }
 
@@ -146,7 +146,7 @@ a:hover {
 
 @media only screen and (max-width: 1353px) {
     #contactLine {
-     width: 700px;
+        width: 700px;
     }
 }
 
