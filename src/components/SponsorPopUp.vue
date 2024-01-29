@@ -1,7 +1,8 @@
 <script>
 import NoHoverButton from './NoHoverButton.vue';
 export default {
-    components: {NoHoverButton,
+    components: {
+        NoHoverButton,
     },
     data() {
         return {
@@ -34,9 +35,11 @@ export default {
                 <div class="dogimg"></div>
                 <span class="text">按下確定以後將會前往第三方支付平台（綠界科技），<br>
                     由專業的金流服務平台，完成付款動作，浪浪的事不會儲存您的信用卡卡號。</span>
-                <NoHoverButton class="btn" btnbgColor="var(--primary-color)" text="確認並前往贊助" @click="showSuccess = !showSuccess, closeModel()">確認並前往贊助
+                <NoHoverButton class="btn" btnbgColor="var(--primary-color)" text="確認並前往贊助"
+                    @click="showSuccess = !showSuccess, closeModel()">確認並前往贊助
                 </NoHoverButton>
-                <NoHoverButton class="btn" btnbgColor="var(--gray-color)" text="返回修改資料" @click="closePopup()">返回修改資料</NoHoverButton>
+                <NoHoverButton class="btn" btnbgColor="var(--gray-color)" text="返回修改資料" @click="closePopup()">返回修改資料
+                </NoHoverButton>
             </div>
         </div>
     </div>
@@ -55,6 +58,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 6;
 }
 
 .popup-container {
@@ -120,5 +124,4 @@ export default {
     color: var(--gray-color);
     border: 1px solid var(--gray-color);
     background-color: white;
-}
-</style>
+}</style>

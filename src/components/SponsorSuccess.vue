@@ -65,6 +65,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 6;
 }
 
 .popup-container {
@@ -119,4 +120,5 @@ img {
 .btn {
     width: 205px;
     height: 65px;
-}</style>
+}
+</style>
