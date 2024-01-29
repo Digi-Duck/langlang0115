@@ -57,10 +57,19 @@ export default {
         };
     },
     methods: {
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
         //點擊送出按鈕
         showSubmitBtn() {
             document.body.style.overflow = 'hidden';    //隱藏滾軸
             this.isSubmit = true;
+            // 讓scrollBar在router後平滑的回至頂部
+            this.scrollToTop();
         },
         goPage() {
             if (this.isSubmit) {
