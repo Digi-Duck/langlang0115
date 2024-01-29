@@ -5,15 +5,54 @@ export default {
     props: {
         AnimalData: Object, //單一動物資料
     },
+    mounted() {
+        // ../的暫時替代方案 如果有前綴 把imagePath設為前綴;反之則"空"
+        if (this.prefix) {
+            this.imagePath = this.prefix
+        }
+        else {
+            this.imagePath = ""
+        }
+        // console.log(this.imagePath)
+    },
     methods: {
         favoriteAnimal() {
             this.$emit("favoriteAnimal", this.AnimalData);
+        },
+        getLikeAnimals() {
+            // 讀取localStorage.likeAnimals
+            const tmp = localStorage.getItem("likeAnimals");
+            // console.log(tmp);
+            // 如果有資料
+            if (tmp) {
+                // parse JSON文字轉JS物件
+                this.likeAnimals = JSON.parse(tmp);
+            }
+        },
+        updateLikeAnimal() {
+            this.getLikeAnimals();
+            // 如果在this.likeAnimals的(indexOf)列表裡未找到ani,就要push; 如果找到就remove;
+            if (this.likeAnimals.indexOf(this.foundAnimal) == -1) {
+                this.likeAnimals.push(this.foundAnimal);
+            } else {
+                removeFromArray(this.likeAnimals, this.foundAnimal);
+            }
+            // 儲存更新 stringify JS物件轉JSON文字
+            localStorage.likeAnimals = JSON.stringify(this.likeAnimals);
+        },
+        removeFromArray(arr, elem) {
+            const index = arr.indexOf(elem);
+            if (index !== -1) {
+                // 使用splice方法從陣列中移除元素
+                arr.splice(index, 1);
+            }
         }
     }
 }
 </script>
 <template>
-    <div class="card">
+    <div class="card"
+        :style="{ backgroundImage: 'url(' + imagePath + AnimalData.path + '),url(' + imagePath + 'src/assets/Image/DogPawGreen.svg)' }">
         <CardClickLike class="heart" @favorite="favoriteAnimal"></CardClickLike>
     </div>
 </template>
@@ -23,7 +62,6 @@ export default {
     height: 300px;
     border: 15px solid var(--primary-color);
     border-radius: 70px;
-    background-image: url(../assets/Image/LostImage/lostdog.svg);
     background-position: center;
     background-size: cover;
     display: flex;

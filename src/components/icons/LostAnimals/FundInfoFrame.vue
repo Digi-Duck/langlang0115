@@ -94,7 +94,8 @@ export default {
 .CardFrame {
     display: flex;
     flex-direction: column;
-    width: 53rem;
+    width: 850px;
+    height: 480px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -122,8 +123,8 @@ export default {
 /* 表格 */
 table {
     text-align: left;
-    width: 53.1rem;
-    height: 20.8rem;
+    width: 850px;
+    height: 415px;
     border-collapse: collapse;
     font-style: normal;
     line-height: normal;

@@ -12,11 +12,6 @@ export default {
             imagePath: "",
         }
     },
-    methods: {
-        // getImageUrl() {
-        //     return process.env.BASE_URL + this.imagePath;
-        // }
-    },
     mounted() {
         // ../的暫時替代方案 如果有前綴 把imagePath設為前綴;反之則"空"
         if (this.prefix) {
@@ -26,7 +21,12 @@ export default {
             this.imagePath = ""
         }
         // console.log(this.imagePath)
-    }
+    },
+    methods: {
+        // getImageUrl() {
+        //     return process.env.BASE_URL + this.imagePath;
+        // }
+    },
 }
 </script>
 <template>

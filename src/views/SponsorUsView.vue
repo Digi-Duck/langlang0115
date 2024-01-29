@@ -98,20 +98,20 @@ export default {
             <!-- 問題內容 -->
             <div class="q-a-content">
                 <div class="q-a-text">
-                    <div class="question">Q:贊助會在什麼時候扣款?</div>
+                    <div class="question">Q: 贊助會在什麼時候扣款?</div>
                     <div class="answer"> <img src="../assets/Image/SponsorImage/sponsor-us-cat-paw.svg" width="50px"
                             height="50px">單筆贊助會在贊助完成當日立即扣款。</div>
                 </div>
                 <div class="q-a-text">
-                    <div class="question">Q:我的姓名會被看到嗎?</div>
+                    <div class="question">Q: 我的姓名會被看到嗎?</div>
                     <div class="answer"> <img src="../assets/Image/SponsorImage/sponsor-us-cat-paw.svg" width="50px"
-                            height="50px">贊助時您提供的姓名、留言皆會公開，姓名可選擇隱藏部分文字，留言可以選擇不填寫留言，第一步驟贊助人的姓名請填寫正確中文姓名。</div>
+                            height="50px">贊助時，您提供的大名及金額皆會公開，但部分文字會隱藏。</div>
                 </div>
                 <div class="q-a-text">
-                    <div class="question">Q:我需要其他協助</div>
+                    <div class="question">Q: 我需要其他協助</div>
                     <div class="answer">
                         <img src="../assets/Image/SponsorImage/sponsor-us-cat-paw.svg" width="50px" height="50px">
-                        你可以使用 聯絡我們 功能聯絡我們。
+                        歡迎到聯絡我們的留言區，留下您的訊息，我們會盡快答覆。
                     </div>
                 </div>
             </div>
