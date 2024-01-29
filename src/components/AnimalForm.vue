@@ -3,6 +3,7 @@ import NoHoverButton from './NoHoverButton.vue';
 import IconChangeButton from './icons/IconChangeButton.vue';
 
 export default {
+    components: { NoHoverButton, IconChangeButton },
     props: {
         pagename: String,
         title: String, //此表單的名稱
@@ -66,15 +67,20 @@ export default {
                 this.$router.push(this.targetRoute);
             }
             this.isSubmit = false;
+            // 視窗離開時scrollBar打開
+            document.body.style.overflow = 'auto';
         },
         //點擊清除重填按鈕
         showConfirmationBtn() {
             // 顯示確認框
             this.confirmClear = true;
+            document.body.style.overflow = 'hidden';    //隱藏滾軸
         },
         cancelConfirmation() {
             // 關閉確認框，不清空表單
             this.confirmClear = false;
+            // 視窗離開時scrollBar打開
+            document.body.style.overflow = 'auto';
         },
         clearFormBtn() {
             // 如果 confirmClear 是 true，則清空表單
@@ -96,12 +102,14 @@ export default {
                 };
                 // 重置 confirmClear 為 false
                 this.confirmClear = false;
+                // 視窗離開時scrollBar打開
+                document.body.style.overflow = 'auto';
             }
         },
 
 
     },
-    components: { NoHoverButton, IconChangeButton }
+
 }
 </script>
 
@@ -318,9 +326,6 @@ export default {
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </form>
 
