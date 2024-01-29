@@ -108,11 +108,6 @@ a:hover {
     font-style: normal;
 }
 
-@media only screen and (max-width: 1280px) {
-    .contact {
-        background-color: rgba(253, 255, 218, 0.821);
-    }
-}
 
 /* 聯絡我們標題區 */
 #contactTitleArea {
@@ -134,12 +129,25 @@ a:hover {
     font-size: 48px;
     font-weight: 400;
     letter-spacing: 12px;
+    width: 240px;
+}
+
+@media only screen and (max-width: 1353px) {
+    #contactTitle span {
+       width: 246px;
+    }
 }
 
 /* Line */
 #contactLine {
     display: flex;
     padding-left: 4rem;
+}
+
+@media only screen and (max-width: 1353px) {
+    #contactLine {
+     width: 700px;
+    }
 }
 
 #Line {
@@ -154,6 +162,14 @@ a:hover {
     background-color: var(--primary-color);
     transform: translate(0px, -3.5px) rotate(45deg);
 }
+
+@media only screen and (max-width: 1354px) {
+    #squre {
+        width: 19px;
+        transform: translate(0px, -4.5px) rotate(45deg);
+    }
+}
+
 
 /* 上方提醒內文 */
 #contactText {
