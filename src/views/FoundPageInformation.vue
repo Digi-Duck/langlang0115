@@ -18,9 +18,8 @@ export default {
         return {
             // 分隔線設定
             mytext: "其他說明",
-            mylinew: '80rem',
             parentStyle: {
-                gap: '4rem',
+                gap: '35px',
             },
             // 傳入動物資料
             Animals: Animals,
@@ -81,10 +80,14 @@ export default {
             <!-- 卡片區圖 -->
             <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" class="petsimg" />
             <!-- 卡片區表格 -->
-            <FundInfoFrame :animalData="this.foundAnimal"></FundInfoFrame>
+            <FundInfoFrame :animalData="this.foundAnimal" lineApp="var(--olivegreen-color)"></FundInfoFrame>
         </div>
         <!-- 其他說明 -->
-        <TitleAndLine :text="mytext" :customStyle="parentStyle" :linew="mylinew" />
+        <!-- 1980標題 -->
+        <TitleAndLine class="LinePc" linew="1311px" :text="mytext" :customStyle="parentStyle" />
+        <!-- 1280標題 -->
+        <TitleAndLine class="LineSm" linew="660px" :text="mytext" :customStyle="parentStyle" />
+
         <pre class="instructionsText">
 4/24更新：
 今天早上又去網友說的附近繞繞
@@ -124,7 +127,7 @@ https://www.facebook.com/groups/121649277854432/permalink/4368350043184313/
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 4.3rem 9rem 9rem 10rem;
+    padding: 182px 182px 177px 158px;
 }
 
 /* 標題 */
@@ -151,18 +154,14 @@ main {
 /* 上方卡片區域 */
 .furryBabiesCard {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    padding: 0 0 6.8rem 1.5rem;
+    padding: 0 0 6.8rem 0;
 }
 
-@media (max-width: 1280px) {
-    .furryBabiesCard {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .petsimg {}
+.LineSm {
+    display: none;
+    visibility: hidden;
 }
 
 .instructionsText {
@@ -174,5 +173,34 @@ main {
     line-height: 59px;
     letter-spacing: 6px;
     margin-top: 4.6rem;
+}
+
+@media (max-width: 1280px) {
+    .furryBabiesCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+        padding-bottom: 61px;
+    }
+
+    .LinePc {
+        display: none;
+        visibility: hidden;
+    }
+
+    .LineSm {
+        display: flex;
+        visibility: visible;
+        margin-left: 24px;
+    }
+
+    .instructionsText {
+        width: 100%;
+        margin-top: 4.6rem;
+        word-break: break-all;
+        margin-left: 24px;
+    }
+
 }
 </style>

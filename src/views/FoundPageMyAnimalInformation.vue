@@ -18,9 +18,8 @@ export default {
         return {
             // 分隔線設定
             mytext: "其他說明",
-            mylinew: '80rem',
             parentStyle: {
-                gap: '4rem',
+                gap: '35px',
             },
             // 傳入動物資料
             Animals: Animals,
@@ -79,12 +78,15 @@ export default {
         <!-- 上方卡片區 -->
         <div class="furryBabiesCard">
             <!-- 卡片區圖 -->
-            <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" />
+            <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" lineApp="var(--B68337)"></PetsCardImage>
             <!-- 卡片區表格 -->
-            <FundInfoFrame textColor="red" :animalData="this.foundAnimal" />
+            <FundInfoFrame :animalData="this.foundAnimal" numberBg="var(--B68337)" borderTh="var(--B68337)" borderTd="var(--B68337)" textColor="var(--B68337)" lineApp="var(--B68337)"></FundInfoFrame>
         </div>
         <!-- 其他說明 -->
-        <TitleAndLine :text="mytext" :customStyle="parentStyle" :linew="mylinew" />
+        <!-- 1980標題 -->
+        <TitleAndLine class="LinePc" linew="1311px" :text="mytext" :customStyle="parentStyle" />
+        <!-- 1280標題 -->
+        <TitleAndLine class="LineSm" linew="660px" :text="mytext" :customStyle="parentStyle" />
         <pre class="instructionsText">
 年紀大約11-12歲
 愛滋貓
@@ -99,7 +101,7 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 4.3rem 9rem 10rem 10rem;
+    padding: 182px 182px 177px 158px;
 }
 
 /* 標題 */
@@ -140,5 +142,39 @@ main {
     line-height: 59px;
     letter-spacing: 6px;
     margin-top: 4.6rem;
+}
+
+.LineSm {
+    display: none;
+    visibility: hidden;
+}
+
+@media (max-width: 1280px) {
+    .furryBabiesCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+        padding-bottom: 61px;
+    }
+
+    .LinePc {
+        display: none;
+        visibility: hidden;
+    }
+
+    .LineSm {
+        display: flex;
+        visibility: visible;
+        margin-left: 24px;
+    }
+
+    .instructionsText {
+        width: 100%;
+        margin-top: 4.6rem;
+        margin-left: 24px;
+        word-break: break-all;
+    }
+
 }
 </style>
