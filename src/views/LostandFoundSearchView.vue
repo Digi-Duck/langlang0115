@@ -181,6 +181,15 @@ svg {
     font-size: 24px;
     letter-spacing: 6px;
 }
+/* 1280版-提早變版 */
+@media (max-width: 1770px) {
+    .tabs {
+    width: 100%;
+    font-size: 24px;
+    letter-spacing: 6px;
+    padding-bottom: 213px;
+} 
+}
 
 /* 隱藏預設的radio */
 .tabs input[type=radio] {
