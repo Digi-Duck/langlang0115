@@ -6,16 +6,20 @@ export default {
         IconLineAndSqure
     },
     props: {
+        // 文字
         text: String,
         customStyle: Object,
-        linew:String,
+        // 線長
+        linew: String,
+        // 文字大小
+        textSize: String,
     },
 }
 </script>
 <template>
     <div class="contactTitleArea">
         <div class="contactTitle" :style="customStyle">
-            <span>{{ text }}</span>
+            <span :fontSize="textSize">{{ text }}</span>
             <IconLineAndSqure :linewidth="linew" />
         </div>
     </div>

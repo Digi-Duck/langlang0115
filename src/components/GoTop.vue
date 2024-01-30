@@ -50,8 +50,8 @@ export default {
     height: 80.035px;
     z-index: 5;
     position: fixed;
-    right: 5rem;
-    bottom: 16rem;
+    right: 33px;
+    bottom: 250px;
     cursor: pointer;
     opacity: 0.9;
     transform: opacity 0.3s ease;
@@ -59,5 +59,12 @@ export default {
 
 #goTop:hover {
     opacity: 1;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    #goTop {
+        right: 18px;
+        bottom: 200px;
+    }
 }
 </style>

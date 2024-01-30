@@ -37,7 +37,7 @@ export default {
         },
         search() {
             // 搜尋相關
-            this.$emit('search',this.formData);
+            this.$emit('search', this.formData);
             // console.log("Performing search with the following data:", this.formData);
             // 這裡添加搜尋邏輯，發送API請求
         },
@@ -193,8 +193,8 @@ export default {
 /* 下拉式選單 */
 .input {
     font-size: 1.5rem;
-    width: 38.75rem;
-    height: 3.5rem;
+    width: 620px;
+    height: 56px;
     border: 2px solid var(--primary-color);
     background: var(--white-color);
     outline: none;
@@ -217,12 +217,14 @@ export default {
     flex-direction: column;
     font-size: 1.5rem;
     letter-spacing: 6px;
-    width: 43.75rem;
-    height: 56.6rem;
+    width: 700px;
+    height: 906px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
+
+
 
 /* 表單整區 根據顏色區分*/
 form {
@@ -232,7 +234,7 @@ form {
     background-color: var(--white-color);
     border: 2px solid var(--primary-color);
     border-top: 0;
-    padding: 3rem 2.5rem;
+    padding: 50px 40px;
     background: var(--white-color);
 }
 
@@ -293,5 +295,24 @@ label[for="neutered"],
     gap: 27px;
     font-size: 20px;
     letter-spacing: 5px;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    .input {
+        width: 535px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        width: 990px;
+        background-color: var(--white-color);
+        border: 2px solid var(--primary-color);
+    }
+
+    form {
+        border: none;
+        padding: 47px 185px;
+    }
 }
 </style>
