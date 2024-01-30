@@ -152,7 +152,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--primary-color);
+    color: #52A038;
     font-size: 2.25rem;
     line-height: normal;
     letter-spacing: 9px;
@@ -173,7 +173,7 @@ main {
 }
 
 .information span {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .text {
@@ -191,6 +191,34 @@ main {
 @media screen and (max-width:1280px) and (min-width:769px) {
     .informationPopupFrame {
         width: 1000px;
+    }
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    .informationPopupFrame {
+        width: 650px;
+        height: 710px;
+        padding: 30px 50px 40px 50px;
+        gap: 30px;
+    }
+
+    .informationTitle {
+        font-size: 1.5rem;
+        letter-spacing: 6px;
+        padding: 10px 0;
+    }
+
+    .information {
+        font-size: 1.25rem;
+        gap: 20px;
+    }
+
+    .information span {
+        font-size: 1.25rem;
+    }
+
+    .text {
+        width: 540px;
     }
 }
 </style>
