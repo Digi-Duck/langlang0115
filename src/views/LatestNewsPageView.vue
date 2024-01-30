@@ -116,6 +116,14 @@ main {
   height: 100%;
 }
 
+/*
+@media only screen and (max-width: 375px) {
+  .news-page-container {
+    background-image: url("../assets/Image/SponsorImage/news-green.svg");
+    background-size: 250%;
+  }
+}*/
+
 .latest-news-text {
   font-weight: 400;
   letter-spacing: 12px;
@@ -138,6 +146,14 @@ main {
   }
 }
 
+@media only screen and (max-width: 375px) {
+  .latest-news-text {
+    font-size: 20px;
+    letter-spacing: 4.8px;
+    margin: 22px 0px 14px 33px;
+  }
+}
+
 
 
 /* 綠色背景內 */
@@ -148,21 +164,36 @@ main {
   width: 1588px;
   padding-bottom: 100px;
   margin: 62px 0px 0px 158px;
+
 }
 
 
 @media only screen and (max-width: 1870px) {
   .green-bg {
     width: 999px;
+    background-repeat: space;
   }
 }
 
 @media only screen and (max-width: 1195px) {
   .green-bg {
     width: 660px;
-    margin: 14px 0px 0px 43px;
+    margin: 14px 0px 0px 95px;
+    transform: translate(-60px, -5px);
+    background-repeat: space;
   }
 }
+
+@media only screen and (max-width: 375px) {
+  .green-bg {
+    width: 370px;
+    background-size: 194%;
+    background-position: center;
+    margin: 0px 0px 0px 60px;
+    background-repeat: repeat-y;
+  }
+}
+
 
 .news-list {
   list-style: none;
@@ -185,7 +216,15 @@ main {
 @media only screen and (max-width: 768px) {
   .news-list {
     width: 100%;
-    margin: 0px 0px 80px 0px;
+    margin: 0px 0px 80px 80px;
+
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .news-list {
+    width: 280px;
+    margin: 0px 0px 80px 70px;
 
   }
 }
@@ -208,6 +247,14 @@ main {
   }
 }
 
+@media only screen and (max-width: 375px) {
+
+  .news-item {
+    width: 280px;
+    height: 50px;
+  }
+}
+
 /* 最新消息的日期區 */
 .news-date {
   display: flex;
@@ -217,13 +264,37 @@ main {
   font-family: 'Stick', sans-serif;
 }
 
+@media only screen and (max-width: 375px) {
+  .news-date {
+    font-size: 16px;
+    margin-right: 0px;
+  }
+}
+
+
 .news-date-month {
   font-size: 16px;
+}
+
+@media only screen and (max-width: 375px) {
+  .news-date-month {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
 }
 
 .news-date-day {
   font-size: 32px;
   font-weight: 900;
+}
+
+@media only screen and (max-width: 375px) {
+  .news-date-day {
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Stick';
+  }
 }
 
 /* 最新消息的文字區 */
@@ -252,8 +323,34 @@ main {
   }
 }
 
+@media only screen and (max-width: 375px) {
+  .news-announcement {
+    letter-spacing: 3px;
+    margin-left: 10px;
+  }
+}
+
 .news-announcement span:first-child {
   margin-left: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .news-announcement span:first-child {
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .news-announcement span:first-child {
+    margin-left: 0px;
+  }
+}
+
+
+@media only screen and (max-width: 375px) {
+  .news-announcement span {
+    font-size: 12px;
+  }
 }
 
 .news-announcement-btn {
@@ -280,6 +377,13 @@ main {
   top: 10px;
 }
 
+@media only screen and (max-width: 375px) {
+  .news-announcement-btn img {
+    width: 21px;
+    height: 21px;
+  }
+}
+
 .news-detail-popup {
   position: fixed;
   top: 28%;
@@ -291,7 +395,7 @@ main {
   overflow-y: auto;
 }
 
-@media only screen and (max-width: 1870px) {
+@media only screen and (max-width:1570px) {
   .news-detail-popup {
     top: 30%;
     left: 15%;
@@ -307,6 +411,15 @@ main {
     left: 15%;
     width: 500px;
     height: 700px;
+  }
+}
+
+@media only screen and (max-width:375px) {
+  .news-detail-popup {
+    top: 25%;
+    left: 15%;
+    width: 300px;
+    height: 500px;
   }
 }
 
@@ -332,6 +445,15 @@ main {
   }
 }
 
+@media only screen and (max-width:375px) {
+  .close-btn {
+    width: 30px;
+    height: 30px;
+    margin: -10px -2px;
+  }
+
+}
+
 .news-detail-content {
   letter-spacing: 2px;
   font-size: 24px;
@@ -339,7 +461,7 @@ main {
   word-break: break-all;
 }
 
-@media only screen and (max-width: 1870px) {
+@media only screen and (max-width: 1570px) {
   .news-detail-content {
     width: 100%;
     height: 100%;
@@ -350,6 +472,16 @@ main {
     border-radius: 40px;
     border: 1px white solid;
     backdrop-filter: blur(17.5px);
+  }
+
+
+  @media only screen and (max-width:375px) {
+    .news-detail-content {
+      font-size: 14px;
+      letter-spacing: 6.3px;
+      padding: 48px 25px;
+      line-height: 16.625px;
+    }
   }
 }
 </style>
