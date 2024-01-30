@@ -130,12 +130,12 @@ main {
 
 .top {
     width: 1000px;
-    height: 400px;
     padding: 50px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 92px;
+    gap: 30px;
+    margin-bottom: 164px;
 }
 
 /* 頭貼 */
@@ -169,10 +169,10 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 25px;
+    font-size: 1.5rem;
     text-align: left;
     letter-spacing: 6px;
-    color: var(--gray-color);
+    color: #626262;
 }
 
 .contentmain div {
@@ -188,13 +188,13 @@ input {
     border: none;
     border-radius: 80px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     letter-spacing: 4px;
 }
 
 .name {
-    font-size: 25px;
+    font-size: 1.5rem;
 }
 
 /* 追蹤的浪浪 */
@@ -202,7 +202,7 @@ input {
     background-image: url(../assets/Image/MemberImage/blueBg.svg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -249,7 +249,7 @@ input {
 .thanks {
     font-size: 1.25rem;
     letter-spacing: 5px;
-    color: var(--primary-color);
+    color: #52A038;
     transform: rotate(10deg);
     position: absolute;
     top: 7.5%;
@@ -290,7 +290,7 @@ input {
 .historyicon {
     width: 80px;
     height: 80px;
-    background-color: var(--primary-color);
+    background-color: #52A038;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -319,5 +319,99 @@ input {
     .history {
         width: 1035px;
     }
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    main {
+        padding: 55px 0 200px;
+    }
+
+    .top {
+        width: 610px;
+        padding: 0;
+        gap: 25px;
+        margin-bottom: 55px;
+    }
+
+    /* 頭貼 */
+    .headsticker {
+        width: 159px;
+        height: 159px;
+    }
+
+    /* 個人資料 */
+    .contentbox {
+        width: 451px;
+        gap: 25px;
+    }
+
+    .contentboxtop {
+        height: 40px;
+    }
+
+    .contentmain {
+        width: 398px;
+        height: 180px;
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+
+    .contentmain div {
+        padding-left: 25px;
+    }
+
+    input {
+        width: 260px;
+        height: 40px;
+    }
+
+    /* 我追蹤的浪浪 */
+    .followed {
+        width: 100%;
+    }
+
+    .followedArea {
+        padding: 0 38px 100px 50px;
+        gap: 55px;
+    }
+
+    .title {
+        font-size: 2rem;
+        letter-spacing: 6px;
+    }
+
+    .followedbox {
+        width: 650px;
+    }
+
+    /* 捐款歷史 */
+    .history {
+        width: 619px;
+    }
+
+    .historytop {
+        margin-bottom: 40px;
+    }
+
+    .thanks {
+        top: 0%;
+        right: 1.5%;
+    }
+
+    .historycontent {
+        width: 619px;
+    }
+
+    .historycontent span {
+        width: 431px;
+        font-size: 1.5rem;
+    }
+
+    .bgline {
+        width: 387px;
+        top: 50%;
+        left: -16%;
+    }
+
 }
 </style>

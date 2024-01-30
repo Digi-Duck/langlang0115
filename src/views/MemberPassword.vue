@@ -45,6 +45,9 @@ export default {
                 <div class="contect">
                     <span>請輸入您的註冊 e-mail信箱，確認無誤後，系統會將密碼信寄至此信箱。</span>
                 </div>
+                <div class="contectTwo">
+                    <span>請輸入您的註冊 e-mail信箱，<br>確認無誤後，系統會將密碼信寄至此信箱。</span>
+                </div>
                 <div class="account">
                     <label>電子信箱</label>
                     <input type="email" placeholder="請輸入電子信箱" v-model="formData.email" required>
@@ -72,6 +75,8 @@ main {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     width: 818px;
     height: 600px;
     display: flex;
@@ -79,6 +84,7 @@ main {
     background-image: url(../assets/Image/MemberImage/loginBg.svg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
     font-family: 'ABeeZee';
 }
@@ -88,7 +94,6 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 60px 48px 149px 48px;
     gap: 40px;
     color: var(--gray-color);
 }
@@ -97,12 +102,22 @@ form {
     text-align: center;
     font-size: 2.5rem;
     letter-spacing: 10px;
-    color: var(--primary-color);
+    color: #52A038;
 }
 
 .contect {
     text-align: center;
     font-size: 1rem;
+}
+
+.contect span {
+    line-height: 118.75%;
+    letter-spacing: 0.48px;
+}
+
+.contectTwo {
+    display: none;
+    visibility: hidden;
 }
 
 .account {
@@ -138,5 +153,45 @@ input {
         padding: 83px 0 156px;
     }
 
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    main {
+        padding: 83px 108px 171px;
+    }
+
+    .container {
+        width: 535px;
+        height: 535px;
+        padding: 60px 38px 58px 38px;
+    }
+
+    .title {
+        font-size: 2.25rem;
+        letter-spacing: 9px;
+    }
+
+    .account {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        gap: 42px;
+    }
+
+    .contect {
+        display: none;
+        visibility: hidden;
+    }
+
+    .contectTwo {
+        display: flex;
+        visibility: visible;
+        font-size: 1rem;
+    }
+
+    .contectTwo span {
+        text-align: center;
+        line-height: 118.75%;
+        letter-spacing: 0.48px;
+    }
 }
 </style>

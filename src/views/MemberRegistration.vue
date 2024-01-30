@@ -86,7 +86,7 @@ export default {
                 </div>
                 <div class="other">
                     <input type="checkbox" v-model="formData.check" required>
-                    <span>我已閱讀，並同意遵守《<u class="privacy" @click="showPrivacyPopup">隱私權政策與會員服務條款</u>》</span>
+                    <span>* 我已閱讀，並同意遵守《<u class="privacy" @click="showPrivacyPopup">隱私權政策與會員服務條款</u>》</span>
                 </div>
                 <button class="signup" type="submit">註冊</button>
             </form>
@@ -114,6 +114,7 @@ main {
     background-image: url(../assets/Image/MemberImage/SignUpBg.svg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,13 +150,13 @@ form {
 
 .group {
     width: 426px;
-    font-size: 25px;
+    font-size: 1.5rem;
     text-align: left;
     letter-spacing: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--gray-color);
+    color: #626262;
 }
 
 input {
@@ -172,7 +173,7 @@ input {
 .other {
     font-size: 1rem;
     letter-spacing: 3px;
-    color: var(--gray-color);
+    color: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -221,5 +222,43 @@ input {
         width: 876px;
         height: 660px;
     }
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    main {
+        padding: 62px 108px 158px;
+    }
+
+    .container {
+        width: 535px;
+        height: 695px;
+        padding: 41px 54px 40px;
+    }
+
+    .title {
+        font-size: 2.25rem;
+        letter-spacing: 9px;
+        padding-bottom: 54px;
+    }
+
+    .contentbox {
+        margin-bottom: 28px;
+    }
+
+    .group {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+    }
+
+    .other {
+        font-size: 0.8rem;
+    }
+
+    .other input {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+
 }
 </style>

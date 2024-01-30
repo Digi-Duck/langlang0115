@@ -77,6 +77,10 @@ export default {
                             <input type="password" v-model="formData.password">
                         </div>
                     </div>
+                    <div class="otherTwo">
+                        <span @click="goToForget">忘記密碼<img src="../assets/Image/MemberImage/Icon-forget.svg"></span>
+                        <span @click="goToSignUp">註冊帳號 <img src="../assets/Image/MemberImage/Icon-signup.svg"></span>
+                    </div>
                     <button type="submit" class="login">
                         登入
                     </button>
@@ -87,13 +91,19 @@ export default {
                 <span @click="goToSignUp">註冊帳號 <img src="../assets/Image/MemberImage/Icon-signup.svg"></span>
             </div>
 
-            <span class="social"><img src="../assets/Image/MemberImage/member-line.svg">以社群帳號繼續<img
-                    src="../assets/Image/MemberImage/member-line.svg"></span>
-            <div class="icon">
-                <img src="../assets/Image/MemberImage/member-lineapp.svg" alt="">
-                <img src="../assets/Image/MemberImage/member-email.svg" alt="">
-                <img src="../assets/Image/MemberImage/member-fb.svg" alt="">
+            <div class="social">
+                <div class="socialLine">
+                    <img src="../assets/Image/MemberImage/member-line.svg">
+                    <span>以社群帳號繼續</span>
+                    <img src="../assets/Image/MemberImage/member-line.svg">
+                </div>
+                <div class="icon">
+                    <img src="../assets/Image/MemberImage/member-lineapp.svg" alt="">
+                    <img src="../assets/Image/MemberImage/member-email.svg" alt="">
+                    <img src="../assets/Image/MemberImage/member-fb.svg" alt="">
+                </div>
             </div>
+
         </div>
     </main>
     <FooterPage />
@@ -114,6 +124,7 @@ main {
     background-image: url(../assets/Image/MemberImage/loginBg.svg);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,7 +172,7 @@ input {
     border: none;
     border-radius: 80px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 4px;
 }
 
@@ -186,6 +197,11 @@ input {
     transition: 0.1s linear;
 }
 
+.otherTwo {
+    display: none;
+    visibility: hidden;
+}
+
 .other {
     display: flex;
     gap: 60px;
@@ -204,23 +220,30 @@ input {
 }
 
 .social {
-    width: 630px;
+    width: 616px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     gap: 25px;
-    font-size: 1.25rem;
     letter-spacing: 5px;
     padding-bottom: 40px;
 }
 
-.social img {
+.socialLine {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 1.25rem;
+}
+
+.socialLine img {
     width: 200px;
 }
 
 .icon {
     width: 452px;
     display: flex;
-    justify-content: space-between;
+    gap: 106px;
 }
 
 .icon img {
@@ -233,5 +256,87 @@ input {
     main {
         padding: 83px 0 156px;
     }
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    main {
+        padding: 62px 108px 157px 62px;
+    }
+
+    .container {
+        width: 535px;
+        height: 695px;
+        padding: 60px 48px 55px;
+    }
+
+    .title {
+        font-size: 2.25rem;
+        letter-spacing: 9px;
+        padding-bottom: 10px;
+    }
+
+    .accountbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .inputArea {
+        padding: 0;
+    }
+
+    .account {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        gap: 44px;
+        margin: 20px 0;
+    }
+
+    .other {
+        display: none;
+        visibility: hidden;
+    }
+
+    .otherTwo {
+        display: flex;
+        visibility: visible;
+        display: flex;
+        gap: 32px;
+        color: #626262;
+        padding: 30px 0 41px 0;
+    }
+
+    .otherTwo span {
+        text-decoration: underline;
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .social {
+        width: 437px;
+        padding-top: 32px;
+    }
+
+    .socialLine {
+        gap: 31px;
+    }
+
+    .socialLine img {
+        width: 100px;
+    }
+
+    .icon {
+        padding: 0 59px;
+        gap: 68px;
+    }
+
+    .icon img {
+        width: 53px;
+        height: 53px;
+    }
+
+
 }
 </style>
