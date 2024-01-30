@@ -6,6 +6,7 @@ import PetsCardImage from '@/components/PetsCardImage.vue';
 import PetsCardFrame from '@/components/PetsCardFrame.vue';
 import IconCard from '@/components/icons/LostAnimals/IconCard.vue';
 import Animals from '@/json/Animals.json';
+import PetsCardImageFrame from '@/components/PetsCardImageFrame.vue';
 
 export default {
     components: {
@@ -15,14 +16,39 @@ export default {
         PetsCardFrame,
         IconCard,
         PetsCardImage,
+        PetsCardImageFrame
     },
     data() {
         return {
             parentStyle: {
                 gap: '65px',
+                color: '#52A038',
+                fontSize: "2.25rem",
+            },
+            parentStyleTwo: {
+                gap: '37px',
+                color: '#52A038',
+                fontSize: "2.25rem",
+            },
+            parentStyleThree: {
+                gap: '31px',
+                color: '#52A038',
+                fontSize: "1.6rem",
             },
             parenttwoStyle: {
-                gap: '40px',
+                gap: '35px',
+                color: '#52A038',
+                fontSize: "2.25rem",
+            },
+            parenttwoStyleTwo: {
+                gap: '35px',
+                color: '#52A038',
+                fontSize: "2.25rem",
+            },
+            parenttwoStyleThree: {
+                gap: '33px',
+                color: '#52A038',
+                fontSize: "1.6rem",
             },
             // 傳入動物資料
             Animals: Animals,
@@ -89,19 +115,25 @@ export default {
             <span>認養中心</span>
             <p>> 毛小孩詳細資訊</p>
         </div>
-        <!-- 上方卡片區 -->
+        <!-- 上方卡片區 1980 & 1280-->
         <div class="furryBabiesCard">
             <!-- 卡片區圖 -->
             <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" />
             <!-- 卡片區表格 -->
             <PetsCardFrame :animalData="this.foundAnimal" />
         </div>
+        <!-- 上方卡片區 768版 -->
+        <div class="furryBabiesCardSmall">
+            <PetsCardImageFrame @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" />
+        </div>
         <!-- 送養中心 -->
         <div class="adoptionInstructions">
             <!-- 1980標題 -->
-            <TitleAndLine class="LineOne" text="送養說明" linew="1300px" :customStyle="parentStyle" textSize="2.25rem" />
+            <TitleAndLine class="LineOne" text="送養說明" linew="1300px" :customStyle="parentStyle" />
             <!-- 1280標題 -->
-            <TitleAndLine class="LineTwo" text="送養說明" linew="660px" :customStyle="parentStyle" textSize="2.25rem" />
+            <TitleAndLine class="LineTwo" text="送養說明" linew="648px" :customStyle="parentStyleTwo" />
+            <!-- 768標題 -->
+            <TitleAndLine class="LineThree" text="送養說明" linew="350px" :customStyle="parentStyleThree" />
             <div class="instructionsText">
                 二貓都是女生，都作完結育及用全能貓作體內外驅蟲了。年紀都還很輕，未滿一歲，只是都曾生育過。
                 <br>
@@ -114,7 +146,9 @@ export default {
             <!-- 1980標題 -->
             <TitleAndLine class="manyLineOne" text="更多毛小孩" linew="1282px" :customStyle="parenttwoStyle" />
             <!-- 1280標題 -->
-            <TitleAndLine class="manyLineTwo" text="更多毛小孩" linew="620px" :customStyle="parentStyle" textSize="2.25rem" />
+            <TitleAndLine class="manyLineTwo" text="更多毛小孩" linew="568px" :customStyle="parenttwoStyleTwo" />
+            <!-- 768標題 -->
+            <TitleAndLine class="manyLineThree" text="更多毛小孩" linew="313px" :customStyle="parenttwoStyleThree" />
             <!-- 卡片區 -->
             <div class="furryBabiesCardFrame">
                 <div class="BabiesCard">
@@ -150,7 +184,7 @@ main {
 
 .adoptionCenteTitle p {
     color: #D7D7D7;
-    padding-left: 2.5rem;
+    padding-left: 27px;
 }
 
 /* 上方卡片區域 */
@@ -158,6 +192,11 @@ main {
     display: flex;
     flex-direction: row;
     padding: 0 0 110px 24px;
+}
+
+.furryBabiesCardSmall {
+    display: none;
+    visibility: hidden;
 }
 
 /* 送養說明 */
@@ -196,12 +235,24 @@ main {
     gap: 50px;
 }
 
+/* 1280標題 */
 .LineTwo {
     display: none;
     visibility: hidden;
 }
 
+/* 768標題  */
+.LineThree {
+    display: none;
+    visibility: hidden;
+}
+
 .manyLineTwo {
+    display: none;
+    visibility: hidden;
+}
+
+.manyLineThree {
     display: none;
     visibility: hidden;
 }
@@ -241,11 +292,13 @@ main {
     }
 
     /* 更多毛小孩 */
+    /* 1980標題 */
     .manyLineOne {
         display: none;
         visibility: hidden;
     }
 
+    /* 1280標題 */
     .manyLineTwo {
         display: flex;
         visibility: visible;
@@ -271,5 +324,91 @@ main {
         padding: 0;
         width: 904px;
     }
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    main {
+        padding: 44px 86px 197px 40px;
+    }
+
+    /* 認養中心 */
+    .adoptionCenteTitle {
+        font-size: 1.6rem;
+        letter-spacing: 6.5px;
+    }
+
+    .adoptionCenteTitle p {
+        padding: 0 0 0 2.5rem;
+    }
+
+    /* 上方卡片區 */
+    .furryBabiesCard {
+        display: none;
+        visibility: hidden;
+    }
+
+    .furryBabiesCardSmall {
+        display: flex;
+        visibility: visible;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 0 104px 81px;
+    }
+
+    /* 送養中心 */
+    .LineOne {
+        display: none;
+        visibility: hidden;
+    }
+
+    .LineThree {
+        display: flex;
+        visibility: visible;
+    }
+
+    .adoptionInstructions {
+        padding-left: 55px;
+    }
+
+    .instructionsText {
+        letter-spacing: 6px;
+        padding: 0;
+    }
+
+    /* 更多毛小孩 */
+    .manyFurryBabies {
+        padding-left: 55px;
+    }
+
+    /* 1980標題 */
+    .manyLineOne {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* 768標題 */
+    .manyLineThree {
+        display: flex;
+        visibility: visible;
+    }
+
+    /* 卡片區 */
+    .furryBabiesCardFrame {
+        width: 751px;
+        padding-top: 45px;
+    }
+
+    .BabiesCard {
+        display: flex;
+        flex-direction: none;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 751px;
+        padding: 0;
+        column-gap: 40px;
+        row-gap: 20px;
+    }
+
+
 }
 </style>

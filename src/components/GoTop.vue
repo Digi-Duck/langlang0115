@@ -46,8 +46,8 @@ export default {
 <style scoped>
 #goTop {
     display: flex;
-    width: 81.257px;
-    height: 80.035px;
+    width: 81px;
+    height: 80px;
     z-index: 5;
     position: fixed;
     right: 33px;
@@ -62,6 +62,12 @@ export default {
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {
+    #goTop {
+        right: 18px;
+        bottom: 200px;
+    }
+}
+@media screen and (max-width:768px) and (min-width:376px){
     #goTop {
         right: 18px;
         bottom: 200px;
