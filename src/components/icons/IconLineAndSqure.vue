@@ -17,6 +17,9 @@ export default {
 }
 
 .line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* width: 80rem; */
     height: 2px;
     background-color: var(--primary-color);

@@ -39,7 +39,7 @@ export default {
 }
 
 .list-container {
-    width: 52.5rem;
+    width: 840px;
 }
 
 .title {
@@ -52,7 +52,7 @@ export default {
 }
 
 .cards {
-    height: 52.5rem;
+    height: 840px;
     overflow: scroll;
     border: 2px solid var(--primary-color);
     border-radius: 0 0 30px 30px;
@@ -69,7 +69,21 @@ export default {
 }
 
 .card {
-    width: 15.6rem;
-    height: 17.3rem;
+    width: 250px;
+    height: 277px;
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    .list-container {
+        width: 640px;
+    }
+
+    .cards {
+       justify-content: center;
+        height: 851px;
+        padding: 30px 26px;
+        column-gap: 30px;
+        row-gap: 20px;
+    }
 }
 </style>

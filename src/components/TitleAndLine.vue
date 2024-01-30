@@ -8,32 +8,48 @@ export default {
     props: {
         // 文字
         text: String,
+        // style物件 //文字顏色大小跟gap
         customStyle: Object,
         // 線長
         linew: String,
-        // 文字大小
-        textSize: String,
+        // 線顏色
+        linecolor: String,
     },
+    data() {
+        return {
+            bgline : this.linecolor,
+        }
+    },
+    
 }
 </script>
 <template>
     <div class="contactTitleArea">
         <div class="contactTitle" :style="customStyle">
-            <span :fontSize="textSize">{{ text }}</span>
+            <span>{{ text }}</span>
             <IconLineAndSqure :linewidth="linew" />
         </div>
+
     </div>
 </template>
 <style scoped>
+.contactTitleArea {
+    display: flex;
+    flex-direction: row;
+}
+
 .contactTitle {
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
 }
 
 .contactTitle span {
-    color: var(--primary-color);
-    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: var(--primary-color); */
     font-weight: 400;
     letter-spacing: 9px;
 }

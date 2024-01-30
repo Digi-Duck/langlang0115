@@ -26,7 +26,14 @@ export default {
         return {
             // 尋找心目中的毛小孩標題
             parenttwoStyle: {
-                gap: '0.5rem',
+                gap: '8px',
+                fontSize: "2rem",
+                color: 'var(--primary-color)',
+            },
+            parenttwoStyleThree: {
+                gap: '24px',
+                fontSize: "1.5rem",
+                color: 'var(--primary-color)',
             },
             // 搜尋區
             mybordercolor: 'var(--primary-color)',
@@ -104,7 +111,7 @@ export default {
     <NavPage />
     <main>
         <div class="adoptionCenterArea">
-            <!-- 認養中心 -->
+            <!-- 1980 & 1280認養中心 -->
             <div class="adoptionTitle">
                 <span>認養中心</span>
                 <p>
@@ -113,10 +120,17 @@ export default {
                     Center
                 </p>
             </div>
+            <div class="adoptionTitleTwo">
+                <span>認養中心</span>
+                <p>AdoptionCenter</p>
+            </div>
             <!-- 認養五步驟 -->
             <div class="fiveStepsToAdoption">
                 <div class="fiveStepsTitle">
                     <span>認養五步驟</span>
+                </div>
+                <div class="fiveStepsTitleImage">
+                    <img src="../assets/Image/doptionTitle.svg" alt="">
                 </div>
                 <!-- 1920 -->
                 <div class="fiveStep">
@@ -143,18 +157,21 @@ export default {
                         <p>聯絡刊登的送養人<br>了解毛小孩情況</p>
                         <p>帶毛小孩回家</p>
                     </div>
-
                 </div>
             </div>
             <!-- 尋找心目中的毛小孩 -->
             <div class="lookingForLikepets">
                 <!-- 1980 -->
                 <div class="lookingForTitle">
-                    <TitleAndLine :customStyle="parenttwoStyle" text="尋找心目中的毛小孩" linew="1100px" textSize="40px" />
+                    <TitleAndLine :customStyle="parenttwoStyle" text="尋找心目中的毛小孩" linew="1100px" />
                 </div>
                 <!-- 1280 -->
                 <div class="lookingForTitleTwo">
                     <TitleAndLine :customStyle="parenttwoStyle" text="尋找心目中的毛小孩" linew="600px" />
+                </div>
+                <!-- 768 -->
+                <div class="lookingForTitleThree">
+                    <TitleAndLine :customStyle="parenttwoStyleThree" text="尋找心目中的毛小孩" linew="359px" />
                 </div>
                 <!-- 認養中心搜尋卡片組件 -->
                 <div class="likepetsCards">
@@ -177,8 +194,12 @@ export default {
                     <!-- 1980卡片 -->
                     <div class="petsInormationForm">
                         <div class="btn">
+                            <!-- 1980 & 1280 -->
                             <IconChangeButton text="前往送養" textColor="var(--gray-color)" bgColor="var(--orangeyellow-color)"
                                 w="11.3rem" h="4rem" @click="formadoptionPage" />
+                            <!-- 768 -->
+                            <!-- <IconChangeButton text="前往送養" textColor="var(--gray-color)" bgColor="var(--orangeyellow-color)"
+                                w="11.3rem" h="4rem" @click="formadoptionPage" /> -->
                             <a href="https://reurl.cc/lgNWgE">
                                 <IconPaperAirplane />
                                 搜尋附近動物醫院
@@ -199,14 +220,12 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    font-style: normal;
-    line-height: normal;
 }
 
 .adoptionCenterArea {
     display: flex;
     flex-direction: column;
-    padding: 4.25rem 0.5rem 12rem 11rem;
+    padding: 68px 137px 197px 187px;
 }
 
 /* 認養中心 標題區 */
@@ -216,7 +235,13 @@ main {
     color: var(--primary-color);
     font-weight: 400;
     padding-bottom: 112px;
-    gap: 1.3rem;
+    gap: 20px;
+}
+
+/* 768 */
+.adoptionTitleTwo {
+    display: none;
+    visibility: hidden;
 }
 
 .adoptionTitle span {
@@ -245,6 +270,12 @@ main {
     width: 100%;
 }
 
+/* 768 */
+.fiveStepsTitleImage {
+    display: none;
+    visibility: hidden;
+}
+
 .fiveStepsTitle {
     display: flex;
     justify-content: center;
@@ -255,7 +286,14 @@ main {
     padding-bottom: 115px;
 }
 
+/* 1280 */
 .fiveStepsTextTwo {
+    display: none;
+    visibility: hidden;
+}
+
+/* 768 */
+.fiveStepsTextThree {
     display: none;
     visibility: hidden;
 }
@@ -286,7 +324,14 @@ main {
     padding-left: 20px;
 }
 
+/* 1280 */
 .lookingForTitleTwo {
+    display: none;
+    visibility: hidden;
+}
+
+/* 768 */
+.lookingForTitleThree {
     display: none;
     visibility: hidden;
 }
@@ -306,7 +351,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 5rem;
+    height: 80px;
     border: 2px solid var(--primary-color);
     background-color: var(--white-color);
     color: var(--primary-color);
@@ -400,6 +445,7 @@ a:hover {
     flex-direction: column;
 }
 
+
 @media screen and (max-width:1280px) and (min-width:769px) {
     .adoptionTitle {
         padding-bottom: 69px;
@@ -490,6 +536,7 @@ a:hover {
         border-bottom: 1px;
     }
 
+    /* 卡片 */
     .petsInormationForm {
         display: flex;
         flex-direction: column-reverse;
@@ -499,5 +546,147 @@ a:hover {
         margin-bottom: 0;
         margin-top: 25px;
     }
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    .adoptionCenterArea {
+        padding: 44px 22px 232px;
+    }
+
+    /* 認養中心 標題區 */
+    .adoptionTitle {
+        display: none;
+        visibility: hidden;
+    }
+
+    .adoptionTitleTwo {
+        display: flex;
+        align-items: center;
+        visibility: visible;
+        flex-direction: row;
+        color: var(--primary-color);
+        font-weight: 400;
+        padding: 0 0 82px 18px;
+        gap: 12px;
+    }
+
+    .adoptionTitleTwo span {
+        text-align: center;
+        font-size: 1.6rem;
+        letter-spacing: 6.5px;
+    }
+
+    .adoptionTitleTwo p {
+        letter-spacing: 4px;
+        font-size: 1rem;
+    }
+
+    /* 認養五步驟 */
+    .fiveStepsToAdoption {
+        padding: 0 22px;
+    }
+
+    .fiveStepsTitle {
+        display: none;
+        visibility: hidden;
+    }
+
+    .fiveStepsTitleImage {
+        display: flex;
+        visibility: visible;
+        position: absolute;
+        right: 25%;
+        top: 15%;
+        width: 4%;
+        height: 4%;
+    }
+
+    .fiveStep {
+        display: none;
+        visibility: hidden;
+    }
+
+    .fiveStepsTextTwo {
+        display: flex;
+        visibility: visible;
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 23px;
+        padding: 0 22px 74px 22px;
+        width: 707px;
+    }
+
+    .StepsText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        font-size: 0.8rem;
+        letter-spacing: 3.5px;
+        color: var(--primary-color);
+
+    }
+
+    .up {
+        gap: 141px;
+    }
+
+    .med {
+        width: 652px;
+    }
+
+    .down {
+        display: flex;
+        justify-content: space-between;
+        gap: 160px;
+    }
+
+    .lookingForTitle {
+        display: none;
+        visibility: hidden;
+    }
+
+    .lookingForTitleThree {
+        display: flex;
+        visibility: visible;
+        padding-left: 13px;
+    }
+
+    /* 認養中心搜尋卡片組件 */
+    .petsTitle {
+        display: none;
+        visibility: hidden;
+    }
+
+    .likepetsCards {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 49px;
+    }
+
+    .notice {
+        height: 57px;
+        border-bottom: 1px;
+    }
+
+    .adoptionGuidelines span {
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 6px;
+    }
+
+    /* 卡片 */
+    .petsInormationForm {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .btn {
+        margin-bottom: 0;
+        margin-top: 32px;
+        width: 614px;
+    }
+
 }
 </style>

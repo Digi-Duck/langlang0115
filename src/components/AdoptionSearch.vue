@@ -230,7 +230,7 @@ export default {
 form {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 64px;
     background-color: var(--white-color);
     border: 2px solid var(--primary-color);
     border-top: 0;
@@ -313,6 +313,21 @@ label[for="neutered"],
     form {
         border: none;
         padding: 47px 185px;
+    }
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 650px;
+        border: 2px solid var(--primary-color);
+    }
+
+    form {
+        border: none;
+        padding: 31px 0 0 29px;
     }
 }
 </style>

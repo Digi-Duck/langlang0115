@@ -81,4 +81,23 @@ export default {
         width: 200px;
     }
 }
+@media screen and (max-width:768px) and (min-width:376px){
+    .fiveStepsLineFrame{
+        gap: 20px;
+    }
+    .stepsLine {
+        width: 150px;
+    }
+    .circle{
+        width: 15px;
+        height: 15px;
+    }
+    .triangle::before {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 20px solid var(--primary-color);
+    top: -10px;
+}
+
+}
 </style>
