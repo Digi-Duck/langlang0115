@@ -94,7 +94,7 @@ export default {
     <div v-if="selectedNews !== null" class="news-detail-popup" :style="calculatePopupPosition">
       <div class="close-btn" @click="closeDetails"></div>
       <div class="news-detail-content">
-        <p  style="white-space: pre-line;">{{ news[selectedNews].content }}</p>
+        <p style="white-space: pre-line;">{{ news[selectedNews].content }}</p>
         <!-- 其他詳細內容 -->
       </div>
     </div>
@@ -130,6 +130,14 @@ main {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .latest-news-text {
+    font-size: 26px;
+    letter-spacing: 6.5px;
+    margin: 44px 0px 14px 40px;
+  }
+}
+
 
 
 /* 綠色背景內 */
@@ -146,6 +154,13 @@ main {
 @media only screen and (max-width: 1870px) {
   .green-bg {
     width: 999px;
+  }
+}
+
+@media only screen and (max-width: 1195px) {
+  .green-bg {
+    width: 660px;
+    margin: 14px 0px 0px 43px;
   }
 }
 
@@ -167,12 +182,30 @@ main {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .news-list {
+    width: 100%;
+    margin: 0px 0px 80px 0px;
+
+  }
+}
+
+
+
+
+
 .news-item {
   display: flex;
   margin: 20px 0px;
   width: 935px;
   height: 84px;
   font-family: 'ABeeZee', sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  .news-item {
+    width: 600px;
+  }
 }
 
 /* 最新消息的日期區 */
@@ -211,6 +244,14 @@ main {
   }
 }
 
+
+@media only screen and (max-width: 768px) {
+  .news-announcement {
+    font-size: 20px;
+    width: 450px;
+  }
+}
+
 .news-announcement span:first-child {
   margin-left: 30px;
 }
@@ -227,9 +268,16 @@ main {
   /* 在 hover 時往右移動 10px */
 }
 
+
+@media only screen and (max-width: 768px) {
+  .news-announcement-btn span {
+    opacity: 0;
+  }
+}
+
 .news-announcement-btn img {
   position: absolute;
-  top: 10px
+  top: 10px;
 }
 
 .news-detail-popup {
@@ -245,12 +293,23 @@ main {
 
 @media only screen and (max-width: 1870px) {
   .news-detail-popup {
-    top: 15%;
+    top: 30%;
     left: 15%;
     width: 890px;
     height: 500px;
   }
 }
+
+
+@media only screen and (max-width: 1066px) {
+  .news-detail-popup {
+    top: 15%;
+    left: 15%;
+    width: 500px;
+    height: 700px;
+  }
+}
+
 
 .close-btn {
   position: absolute;
@@ -277,7 +336,7 @@ main {
   letter-spacing: 2px;
   font-size: 24px;
   line-height: 2;
-  word-break:break-all;
+  word-break: break-all;
 }
 
 @media only screen and (max-width: 1870px) {
@@ -292,4 +351,5 @@ main {
     border: 1px white solid;
     backdrop-filter: blur(17.5px);
   }
-}</style>
+}
+</style>
