@@ -174,7 +174,7 @@ export default {
                 <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)"
                     bgColor="var(--orangeyellow-color)" w="180px" h="64px">
                 </IconChangeButton>
-                <a href="">
+                <a href="https://reurl.cc/lgNWgE">
                     <IconPaperAirplane />
                     搜尋附近動物醫院
                 </a>
