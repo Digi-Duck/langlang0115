@@ -124,6 +124,11 @@ a:hover {
     padding: 2.8rem 12.5rem 0 12.5rem;
 }
 
+@media only screen and (max-width: 1353px){
+    #contactTitle {
+        padding: 2.8rem 0rem 0 0rem;
+}}
+
 #contactTitle span {
     color: var(--primary-color);
     font-size: 48px;
@@ -180,6 +185,12 @@ a:hover {
     letter-spacing: 6px;
     margin: 0 12.5rem;
     color: #626262;
+}
+
+@media only screen and (max-width: 1353px) {
+    #contactText {
+        margin: 0;
+    }
 }
 
 /* input區 */
