@@ -77,10 +77,14 @@ export default {
             </div>
         </div>
         <div class="followed">
-            <span class="title">我追蹤的浪浪</span>
-            <div class="followedbox">
-                <FollowedCard v-for="likeani in likeAnimals" :AnimalData="likeani" @favoriteAnimal="updateLikeAnimal" :prefix="'../'" />
+            <div class="followedArea">
+                <span class="title">我追蹤的浪浪</span>
+                <div class="followedbox">
+                    <FollowedCard v-for="likeani in likeAnimals" :AnimalData="likeani" @favoriteAnimal="updateLikeAnimal"
+                        :prefix="'../'" />
+                </div>
             </div>
+
         </div>
         <div class="history">
             <div class="historytop">
@@ -118,25 +122,27 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     padding: 115px 0px 276px;
 }
 
 .top {
     width: 1000px;
     height: 400px;
-    margin: auto;
     padding: 50px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 170px;
+    margin-bottom: 92px;
 }
 
 /* 頭貼 */
 .headsticker {
     width: 250px;
     height: 250px;
-    border-radius: 50%;
+    border-radius: 110px;
     background-image: url(../assets/Image/CardImage/CardCat.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -197,16 +203,22 @@ input {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: auto;
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 60px;
-    padding: 0 258px;
-    margin-bottom: 160px;
+
+}
+
+.followedArea {
+    display: flex;
+    flex-direction: column;
+    padding: 0 257px 159px 296px;
+    gap: 61px;
 }
 
 .title {
-    font-size: 32px;
+    font-size: 2rem;
     letter-spacing: 8px;
 }
 
@@ -231,27 +243,27 @@ input {
 }
 
 .historytop {
-    margin-bottom: 114px;
+    margin-bottom: 107px;
 }
 
 .thanks {
-    font-size: 20px;
+    font-size: 1.25rem;
     letter-spacing: 5px;
     color: var(--primary-color);
-    transform: rotate(15deg);
+    transform: rotate(10deg);
     position: absolute;
     top: 7.5%;
-    right: 2%;
+    right: 1.5%;
 }
 
 .historybox {
     width: 962px;
-    height: 448px;
+    height: 449px;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 32px;
+    font-size: 2rem;
     letter-spacing: 8px;
     position: relative;
     top: 0;
@@ -283,5 +295,29 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    main {
+        padding: 65px 0px 221px;
+    }
+
+    .top {
+        margin-bottom: 65px;
+    }
+
+    /* 追蹤的浪浪 */
+    .followedArea {
+        padding: 0 132px 115px 132px;
+    }
+
+    .followedbox {
+        width: 1039px;
+    }
+
+    /* 捐款歷史 */
+    .history {
+        width: 1035px;
+    }
 }
 </style>

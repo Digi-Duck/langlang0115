@@ -79,7 +79,7 @@ export default {
         <!-- 上方卡片區 -->
         <div class="furryBabiesCard">
             <!-- 卡片區圖 -->
-            <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" />
+            <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" class="petsimg" />
             <!-- 卡片區表格 -->
             <FundInfoFrame :animalData="this.foundAnimal"></FundInfoFrame>
         </div>
@@ -152,8 +152,17 @@ main {
 .furryBabiesCard {
     display: flex;
     align-items: flex-start;
-    flex-direction: row;
     padding: 0 0 6.8rem 1.5rem;
+}
+
+@media (max-width: 1280px) {
+    .furryBabiesCard {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .petsimg {}
 }
 
 .instructionsText {

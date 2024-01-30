@@ -70,17 +70,14 @@ export default {
         },
         //點擊送出按鈕
         showSubmitBtn() {
-            if(this.formData.species == '' ||this.formData.bodyshape == ''||this.formData.gender == ''||this.formData.colors == ''||this.formData.age == ''||this.formData.neutered == ''||this.formData.time == ''||this.formData.place == ''||this.formData.phone == ''){
-                alert('請確認*必填欄位已填寫完成');
-                return;
-            }
-
+            // if (this.formData.species == '' || this.formData.bodyshape == '' || this.formData.gender == '' || this.formData.colors == '' || this.formData.age == '' || this.formData.neutered == '' || this.formData.time == '' || this.formData.place == '' || this.formData.phone == '') {
+            //     alert('請確認*必填欄位已填寫完成');
+            //     return;
+            // }
             document.body.style.overflow = 'hidden';    //隱藏滾軸
             this.isSubmit = true;
             // 讓scrollBar在router後平滑的回至頂部
             this.scrollToTop();
-
-           
         },
         goPage() {
             if (this.isSubmit) {
@@ -162,7 +159,6 @@ export default {
         </div>
         <form>
             <div class="form-group">
-
                 <div class="custom-file-upload">
                     <span class="photo-title" :style="{ color: inputTitleColor }">照片 *</span>
                     <label for="photo" :style="{ borderColor: uploadPicBorder }">
@@ -190,7 +186,11 @@ export default {
                     </div>
 
                 </div>
+            </div>
 
+            <div class="form-group">
+                <label for="chip-id" :style="{ color: inputTitleColor }">晶片號碼</label>
+                <input type="text" id="chip-id" v-model="formData.chipid" :style="{ border: inputTextBorder }" />
             </div>
 
             <div class="form-group">
@@ -204,12 +204,6 @@ export default {
                 <input type="radio" id="otherType" value="其他" v-model="formData.species" name="animalType" />
                 <label for="otherType">其他</label>
 
-            </div>
-
-
-            <div class="form-group">
-                <label for="chip-id" :style="{ color: inputTitleColor }">晶片號碼</label>
-                <input type="text" id="chip-id" v-model="formData.chipid" :style="{ border: inputTextBorder }" />
             </div>
 
             <div class="form-group">
@@ -306,7 +300,7 @@ export default {
 
             </div>
 
-            <div class="form-group">
+            <div class="form-group other">
                 <label for="other" :style="{ color: inputTitleColor }">其他說明</label>
                 <textarea id="other" v-model="formData.other" :style="{ border: inputTextBorder }"></textarea>
             </div>
@@ -394,6 +388,13 @@ main {
     margin: 147px 0px 0px 162px;
 }
 
+@media (max-width: 1280px) {
+    .header-container {
+        margin: 69px 0px 0px 100px;
+    }
+}
+
+
 .header-title {
     color: var(--primary-color);
 }
@@ -401,21 +402,30 @@ main {
 .header-text {
     color: #D7D7D7;
 }
-
 form {
     display: flex;
     flex-direction: column;
+    gap: 45px;
     font-size: 24px;
     letter-spacing: 6px;
     font-weight: 400;
     width: 100%;
-    padding: 50px 300px
+    padding: 75px 200px 100px 300px
 }
 
+@media (max-width: 1280px) {
+    form {
+        padding: 70px 237px 152px 150px;
+        gap: 60px;
+    }
+}
+
+
 .custom-file-upload {
+    width: 100%;
     position: relative;
-    display: inline-block;
     display: flex;
+    gap: 72px;
 }
 
 /*自訂上傳照片按鈕*/
@@ -427,6 +437,7 @@ form {
     border-radius: 5px;
     cursor: pointer;
 }
+
 
 /*傳送檔案預設樣式隱藏*/
 .custom-file-upload input[type="file"] {
@@ -441,52 +452,56 @@ form {
 .preview-pic {
     position: absolute;
     top: 0;
-    right: 0px;
+    right: -79%;
     z-index: 100;
     border: 5px dashed lightgrey;
-    padding: 10px ;
+    padding: 10px;
     display: flex;
     width: 500px;
     height: 500px;
 }
 
-.preview-pic img{
-background-repeat: no-repeat;
-height: 100%;
-width: 100%;
-object-fit: cover;
+@media (max-width: 1280px) {
+    .preview-pic {
+        width: 350px;
+        height: 350px;
+        right: -16%;
+    }
+}
+
+
+.preview-pic img {
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 
 }
 
 .preview-pic-block {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -79%;
     color: var(--white-color);
     width: 529px;
     height: 477px;
+    font-size: 48px;
+    letter-spacing: 12px;
     text-align: center;
     line-height: 477px;
-    float: right;
     background-color: #D8D8D8;
 }
 
-
-/*.custom-file-upload::after {
-    content: '預覽照片';
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: var(--white-color);
-    width: 529px;
-    height: 477px;
-    text-align: center;
-    line-height: 477px;
-    float: right;
-    background-color: #D8D8D8;
+@media (max-width: 1280px) {
+    .preview-pic-block {
+        width: 382px;
+        height: 344px;
+        line-height: 344px;
+        font-size: 36px;
+        letter-spacing: 9px;
+        right: -16%;
+    }
 }
-*/
-
 
 label[for="photo"] {
     display: flex;
@@ -497,11 +512,20 @@ label[for="photo"] {
 }
 
 .form-group {
-    margin-bottom: 52px;
+    width: 793px;
+    display: flex;
+    align-items: center;
     color: #000;
     font-size: 24px;
     font-weight: 400;
 }
+
+@media (max-width: 1280px) {
+    .form-group {
+        width: 100%;
+    }
+}
+
 
 /*每個欄位的標題*/
 .photo-title,
@@ -517,14 +541,40 @@ label[for="time"],
 label[for="phone"],
 label[for="other"],
 .time-place-title {
-    margin-right: 36px;
+    margin-right: 15px;
+}
+
+@media (max-width: 1280px) {
+
+    .photo-title,
+    label[for="photo"],
+    label[for="species"],
+    label[for="chip-id"],
+    label[for="body-shape"],
+    label[for="gender"],
+    label[for="colors"],
+    label[for="age"],
+    label[for="neutered"],
+    label[for="time"],
+    label[for="phone"],
+    label[for="other"],
+    .time-place-title {
+        margin-right: 35px;
+    }
 }
 
 .form-group input,
 select {
-    margin: 0px 17px;
-    /*border: 2px solid var(--primary-color);*/
+    margin: 0px 20px 0px 30px;
     border-radius: 4px;
+}
+
+@media (max-width: 1280px) {
+
+    .form-group input,
+    select {
+        margin: 0px 28px;
+    }
 }
 
 /* 所有 radio 按鈕 */
@@ -541,14 +591,25 @@ select {
 /* 發現浪浪之時間和地點 */
 .time-place {
     display: flex;
+    align-items: start;
 }
 
 .time-place-text {
     display: flex;
     flex-wrap: wrap;
-    height: 112px;
-    width: 60%;
+    height: 125px;
+    width: 100%;
     gap: 5px;
+}
+
+#time {
+    margin: 0;
+}
+
+@media (max-width: 1280px) {
+    .time-place-text {
+        height: 137px;
+    }
 }
 
 #time::placeholder,
@@ -569,6 +630,7 @@ select {
 /*聯絡方式*/
 .contact-area {
     display: flex;
+    align-items: flex-start;
 }
 
 .phone-area {
@@ -581,12 +643,19 @@ select {
 input#chip-id {
     width: 535px;
     height: 56px;
+    margin-left: 38px;
+}
+
+@media (max-width: 1280px) {
+    input#chip-id {
+        width: 300px;
+    }
 }
 
 input#time {
     width: 275px;
     height: 56px;
-    margin-right: 2px;
+    margin-right: 20px;
 }
 
 select#place {
@@ -609,25 +678,57 @@ select.customSelect {
     background-position: 95% center;
     background-repeat: no-repeat;
     padding-right: 1rem;
+    margin: 0;
 }
 
 input#description {
     width: 562px;
     height: 56px;
+    margin: 0;
 }
 
+
 input#phone {
-    width: 298px;
+    width: 565px;
     height: 56px;
+    margin: 0;
 }
 
 #other {
-    width: 785px;
+    width: 565px;
     height: 115px;
     overflow: auto;
     resize: both;
     font-size: 24px;
-    margin-left: 45px;
+}
+
+.contact-area label {
+    width: 100%;
+}
+
+.other label {
+    width: 212px;
+}
+
+.other {
+    align-items: flex-start;
+}
+
+@media (max-width: 1280px) {
+
+    .contact-area label,
+    .other label {
+        width: 230px;
+    }
+
+    #other {
+        width: 565px;
+        height: 115px;
+        overflow: auto;
+        resize: both;
+        font-size: 24px;
+        margin-left: 0;
+    }
 }
 
 /*其他說明的輸入欄*/
@@ -645,7 +746,7 @@ input#phone {
 /*按鈕*/
 .btn-area {
     display: flex;
-    margin: auto;
+    margin-left: 350px;
     gap: 55px;
 }
 
@@ -780,6 +881,5 @@ input#phone {
     letter-spacing: 5px;
     word-wrap: break-word;
     box-shadow: none;
-}
-</style>
+}</style>
 

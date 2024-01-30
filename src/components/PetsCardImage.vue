@@ -17,7 +17,8 @@ export default {
 </script>
 <template>
     <div class="furryBabiesImage">
-        <div class="img" :style="{ backgroundImage: 'url(../' + AnimalData.path + '),url(../src/assets/Image/DogPawGreen.svg)' }">
+        <div class="img"
+            :style="{ backgroundImage: 'url(../' + AnimalData.path + '),url(../src/assets/Image/DogPawGreen.svg)' }">
         </div>
         <CardClickLike class="heart" @favorite="favoriteAnimal"></CardClickLike>
     </div>
@@ -26,13 +27,13 @@ export default {
 .furryBabiesImage {
     display: flex;
     align-items: center;
-    margin-right: 4.1rem;
+    margin-right: 66px;
     position: relative;
 }
 
 .img {
-    width: 40.3rem;
-    height: 33.3rem;
+    width: 645px;
+    height: 534px;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -40,7 +41,28 @@ export default {
 /* 卡片愛心 */
 .furryBabiesImage .heart {
     position: absolute;
-    bottom: 1.75rem;
-    left: 2.1rem;
+    bottom: 28px;
+    left: 35px;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+
+    .furryBabiesImage {
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+        position: relative;
+    }
+
+    .img {
+        width: 505px;
+        height: 418px;
+    }
+
+    .furryBabiesImage .heart {
+        position: absolute;
+        bottom: 21.9px;
+        left: 27.9px;
+    }
 }
 </style>

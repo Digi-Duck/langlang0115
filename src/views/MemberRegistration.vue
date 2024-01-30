@@ -105,7 +105,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6.8rem 0 4.6rem 0;
+    padding: 109px 0 74px;
 }
 
 .container {
@@ -133,7 +133,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 2.5rem;
     letter-spacing: 10px;
     color: var(--primary-color);
     padding-bottom: 50px;
@@ -165,12 +165,12 @@ input {
     border: none;
     border-radius: 80px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 4px;
 }
 
 .other {
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 3px;
     color: var(--gray-color);
     display: flex;
@@ -205,10 +205,21 @@ input {
 
 .signup:hover {
     border: 4px solid var(--gray-color);
-    transition:0.1s linear;
+    transition: 0.1s linear;
 }
 
 .privacy {
     color: blue;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    main {
+        padding: 57px 0 126px;
+    }
+
+    .container {
+        width: 876px;
+        height: 660px;
+    }
 }
 </style>
