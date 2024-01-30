@@ -1,4 +1,6 @@
 <script>
+import IconHamOpen from './icons/IconHamOpen.vue';
+import IconHamClose from './icons/IconHamClose.vue';
 import IconLogo from './icons/IconLogo.vue';
 import IconNavWave from './icons/IconNavWave.vue';
 
@@ -6,6 +8,8 @@ export default {
     components: {
         IconLogo,
         IconNavWave,
+        IconHamClose,
+        IconHamOpen,
     },
     methods: {
         gohomePage() {
@@ -51,6 +55,23 @@ export default {
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="lostandfoundPage">失散協尋</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="latestnewsPage">最新公告</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="memberloginPage">會員登入</span>
+            </div>
+            <!-- 漢堡條 -->
+            <div class="ham">
+                <input type="checkbox" id="ham-switch" hidden>
+                <label for="ham-switch" class="ham-menu" tabindex="1">
+                    <IconHamOpen class="switch-open"></IconHamOpen>
+                    <IconHamClose class="switch-close"></IconHamClose>
+                </label>
+                <div class="bg-white"></div>
+                <ul class="ham-menu-li">
+                    <li tabindex="1" @click="aboutusPage">關於我們</li>
+                    <li tabindex="1" @click="sponsorusPage">贊助我們</li>
+                    <li tabindex="1" @click="adoptioncenterPage">認養中心</li>
+                    <li tabindex="1" @click="lostandfoundPage">失散協尋</li>
+                    <li tabindex="1" @click="latestnewsPage">最新公告</li>
+                    <li tabindex="1" @click="memberloginPage">會員登入</li>
+                </ul>
             </div>
         </div>
         <IconNavWave id="wave"></IconNavWave>
@@ -124,6 +145,7 @@ span:hover {
     position: absolute;
     top: 125%;
     left: 12%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 }
 
 @media (max-width: 1280px) {
@@ -163,4 +185,164 @@ span:hover {
         color: var(--primary-color);
     }
 }
+
+/* 漢堡條 */
+.ham {
+    display: none;
+    align-items: center;
+}
+
+.switch-close {
+    display: none;
+}
+
+/* 平板 */
+@media (max-width: 751px) {
+    .boxall {
+        background: transparent;
+        height: 0;
+        padding: 0;
+    }
+
+    #wave {
+        transform: scale(0.65);
+        left: -20%;
+        margin-top: -6%;
+    }
+
+    #logo {
+        transform: scale(0.77);
+        margin-top: 80px;
+        margin-left: -15px;
+    }
+
+    .titleen {
+        width: 120px;
+        height: 22px;
+        left: 13%;
+        margin-top: 5%;
+    }
+
+    .titlecn {
+        width: 240px;
+        height: 68px;
+        left: 8%;
+        margin-top: 8%;
+    }
+
+    .box {
+        display: none;
+    }
+
+    .ham {
+        width: 43px;
+        height: 50px;
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        z-index: 2;
+    }
+    .ham label{
+        z-index: 8;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .ham-menu-li {
+        display: none;
+        position: absolute;
+        top: 28px;
+        right: -20px;
+    }
+
+    li {
+        width:100% ;
+        height: 98px;
+        font-size: 18px;
+        line-height: 98px;
+        letter-spacing: 4.5px;
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    #ham-switch:checked~.ham-menu:nth-of-type(2){
+        display: block;
+    }
+
+    #ham-switch:not(:checked)~.ham-menu:nth-of-type(1){
+        display: block;
+    }
+
+    #ham-switch:checked~.ham-menu-li {
+        width: 350px;
+        height: 100vh;
+        background-color: var(--primary-color);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--white-color);
+        position: absolute;
+        top: 0;
+        z-index: 4;
+    }
+}
+
+@media (max-width: 358px) {
+    #wave {
+        display: none;
+    }
+    
+    #logo {
+        transform: scale(0.70);
+        margin-top: 60px;
+        margin-left: -20px;
+    }
+    .titleen {
+        width: 79px;
+        height: 15px;
+        left: 40%;
+        margin-top: 10px;
+    }
+
+    .titlecn {
+        width: 125px;
+        height: 39px;
+        left: 35%;
+        margin: 0;
+        top: 22px;
+    }
+    .ham {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+    }
+    .ham label{
+        z-index: 8;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: scale(0.75);
+    }
+
+    .ham-menu-li {
+        display: none;
+        right: -10px;
+    }
+    li {
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+    #ham-switch:checked~.ham-menu-li {
+        width: 238px;
+        height: 100vh;
+    }
+}
+
 </style>

@@ -74,6 +74,21 @@ export default {
   background-color: var(--primary-color);
 }
 
+@media (max-width: 751px) {
+  .home-container {
+    padding-top: 52px;
+    margin-bottom: 112px;
+  }
+}
+
+@media (max-width: 358px) {
+  .home-container {
+    padding-top: 70px;
+    margin-bottom: 63px;
+  }
+}
+
+
 .home-header-greenbox {
   background: var(--white-color);
   width: 100%;
@@ -89,6 +104,12 @@ export default {
     height: 224px;
   }
 }
+@media (max-width: 358px) {
+  .home-header-greenbox {
+    border-radius: 0;
+  }
+  }
+  
 
 .home-header-img {
   width: 97%;
@@ -96,7 +117,6 @@ export default {
   background-image: url(../assets/Image/HomeImage/HomeA-banner.svg);
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: 100%; */
   margin: auto;
   position: relative;
 }
@@ -108,6 +128,23 @@ export default {
     background-image: url(../assets/Image/HomeImage/HomeA-banner-1280.svg);
   }
 }
+/* 751px */
+@media (max-width: 710px) {
+  .home-header-img {
+    width: 695px;
+    height: 466px;
+    background-image: url(../assets/Image/HomeImage/HomeA-banner-751.svg);
+  }
+}
+
+@media (max-width: 358px) {
+  .home-header-img {
+    width: 310px;
+    height: 559px;
+    background-image: url(../assets/Image/HomeImage/HomeA-banner-358.svg);
+  }
+}
+
 
 /* 三條條+字 */
 .home-header-text {
@@ -145,9 +182,48 @@ export default {
   }
 }
 
+@media (max-width: 751px) {
+  .home-header-text {
+    width: 150px;
+    left: 75%;
+  }
+
+  .home-header-text span {
+    font-size: 16px;
+    top: -52%;
+    left: 3%;
+    transform: rotate(20deg);
+  }
+}
+
+@media (max-width: 358px) {
+  .home-header-text {
+    width: 80px;
+    height: 15px;
+    top: 25%;
+    left: 60%;
+  }
+
+  .line3 {
+    transform: scale(0.65);
+  }
+
+  .home-header-text span {
+    font-size: 14px;
+    top: -80%;
+    left: 5%;
+  }
+
+
+  .home-header-btn {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+
 #go-adopt-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-</style>
+}</style>

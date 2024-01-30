@@ -57,6 +57,7 @@
     .footer-container {
         height: 257px;
     }
+
     .dog {
         position: absolute;
         top: 14px;
@@ -74,4 +75,49 @@
         font-size: 16px;
         padding: 40px 0px;
     }
-}</style>
+}
+
+@media (max-width: 751px) {
+    .dog {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        transform: scale(0.8);
+    }
+
+    .cat {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        transform: scale(0.8);
+    }
+
+    .footer {
+        border-radius: 5px 5px 0 0;
+        padding: 25px 171px;
+    }
+}
+@media (max-width: 358px) {
+    .dog {
+        position: absolute;
+        top: 50px;
+        left: -65px;
+        transform: scale(0.5);
+    }
+
+    .cat {
+        position: absolute;
+        top: 42px;
+        right: -42px;
+        transform: scale(0.5);
+    }
+
+    .footer {
+        border-radius: 20px 20px 0 0;
+        padding: 28px 40px;
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+}
+
+</style>

@@ -28,7 +28,7 @@ export default {
       this.$router.push('/aboutuspage'); //導到關於我們頁面
       this.scrollToTop();
     },
-    clickMoreNews(){
+    clickMoreNews() {
       this.$router.push('/latestnewspage'); //導到關於我們頁面
       this.scrollToTop();
     }
@@ -40,7 +40,7 @@ export default {
 <template>
   <!-- 關於浪浪的事 -->
   <section class="home-container home-about">
-    <div class="home-abouut-bg">
+    <div class="home-about-bg">
       <div class="brown-paw-pic">
         <img src="../assets/Image/HomeImage/HomeB-paw.svg">
       </div>
@@ -81,7 +81,6 @@ export default {
 
     <div class="news-area">
       <div class="green-icon-container">
-
         <ul class="news-list">
           <li class="news-item">
             <div class="news-date">
@@ -146,7 +145,7 @@ export default {
 
 /*-----首頁 關於我們-----*/
 /*#region*/
-.home-abouut-bg {
+.home-about-bg {
   height: 852px;
   position: relative;
   top: 0;
@@ -276,6 +275,109 @@ export default {
   }
 }
 
+@media (max-width: 751px) {
+  .home-container {
+    height: 460px;
+    margin-bottom: 165px;
+  }
+
+  .brown-paw-pic {
+    top: -55%;
+    left: -92%;
+    transform: scale(0.65);
+  }
+
+  .about-us-image {
+    display: none;
+  }
+
+  .home-about-section {
+    padding-left: 85px;
+  }
+
+  .about-lang-text {
+    font-size: 26px;
+    letter-spacing: 6.5px;
+  }
+
+  .home-about-and-btns {
+    gap: 27px;
+    margin-bottom: 73px;
+  }
+
+  .home-about-btns {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+  }
+
+  .about-text {
+    font-size: 24px;
+    letter-spacing: 6px;
+  }
+
+  .mission-statement {
+    margin-left: 165px;
+    width: 429px;
+    font-size: 20px;
+    letter-spacing: 3.2px;
+    line-height: 50px;
+  }
+}
+
+/* ------------phone--------------- */
+@media (max-width: 358px) {
+  .home-container {
+    height: 370px;
+    margin-bottom: 81px;
+  }
+
+  .brown-paw-pic {
+    top: -66%;
+    left: -200%;
+    transform: scale(0.215);
+  }
+
+  .home-about-section {
+    padding-left: 24px;
+    height: 100%;
+  }
+
+  .about-lang-text {
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-bottom: 0;
+  }
+
+  .home-about-and-btns {
+    margin-bottom: 17px;
+  }
+
+  .home-about-btns {
+    width: 153px;
+    flex-direction: column;
+    gap: 17px;
+    top: 67%;
+    left: 50%;
+  }
+
+  .about-text {
+    font-size: 14px;
+    letter-spacing: 3.5px;
+  }
+
+  .mission-statement {
+    margin-left: 0;
+    padding: 0 23px 0 56px;
+    width: 100%;
+    height: 200px;
+    font-size: 14px;
+    letter-spacing: 2.4px;
+    line-height: 27px;
+  }
+
+}
+
 /*#endregion*/
 
 /*-----首頁 最新消息-----*/
@@ -294,6 +396,24 @@ export default {
   }
 
 }
+
+@media (max-width: 751px) {
+  .yellow-paw-pic {
+    top: -102%;
+    left: -89%;
+    transform: scale(0.65);
+  }
+}
+
+@media (max-width: 358px) {
+  .yellow-paw-pic {
+    top: -222.4%;
+    left: -195%;
+    transform: scale(0.215);
+  }
+}
+
+
 
 .dog-cat-pic {
   background-image: url("../assets/Image/HomeImage/HomeC-dog-cat.svg");
@@ -316,6 +436,23 @@ export default {
   }
 }
 
+@media (max-width: 751px) {
+  .dog-cat-pic {
+    transform: scale(0.5);
+    top: 0%;
+    right: 50px;
+  }
+}
+
+@media (max-width: 358px) {
+  .dog-cat-pic {
+    transform: scale(0.4);
+    top: -15%;
+    right: -20px;
+  }
+}
+
+
 .home-news-text {
   margin-top: 65px;
   margin-left: 180px;
@@ -323,6 +460,20 @@ export default {
   top: 0;
   left: 0;
 }
+
+@media (max-width: 751px) {
+  .home-news-text {
+    margin-top: 0;
+    margin-left: 85px;
+  }
+}
+
+@media (max-width: 358px) {
+  .home-news-text {
+    margin-left: 28px;
+  }
+}
+
 
 /* 綠色區塊內 */
 .green-icon-container {
@@ -345,6 +496,26 @@ export default {
   }
 }
 
+@media (max-width: 751px) {
+  .green-icon-container {
+    width: 660px;
+    height: 380px;
+    top: 25%;
+    right: 30px;
+  }
+}
+
+@media (max-width: 358px) {
+  .green-icon-container {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    top: 20%;
+    right: 0px;
+  }
+}
+
+
 .news-list {
   list-style: none;
   padding: 0;
@@ -365,10 +536,27 @@ export default {
   }
 }
 
+@media (max-width: 751px) {
+  .news-list {
+    transform: translate(100px, 50px);
+    height: 220px;
+    width: 465px;
+  }
+}
+
+@media (max-width: 358px) {
+  .news-list {
+    transform: translate(45px, 60px);
+    width: 276px;
+  }
+}
+
+
 .news-item {
   display: flex;
   height: 84px;
   font-family: 'ABeeZee', sans-serif;
+  align-items: center;
 }
 
 @media (max-width: 1280px) {
@@ -392,13 +580,39 @@ export default {
   }
 }
 
+@media (max-width: 358px) {
+  .news-date {
+    margin-right: 14px;
+  }
+}
+
+
 .news-date-month {
   font-size: 16px;
 }
 
+@media (max-width: 358px) {
+  .news-date-month {
+    font-size: 12px;
+  }
+}
+
+
 .news-date-day {
   font-size: 32px;
   font-weight: 900;
+}
+
+@media (max-width: 751px) {
+  .news-date-day {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 358px) {
+  .news-date-day {
+    font-size: 16px;
+  }
 }
 
 /* 最新消息的文字區 */
@@ -408,6 +622,7 @@ export default {
   letter-spacing: 7px;
   display: inline-block;
   width: 900px;
+  height: 50px;
   position: relative;
   display: flex;
   align-items: center;
@@ -421,9 +636,39 @@ export default {
   }
 }
 
+@media (max-width: 751px) {
+  .news-announcement {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+}
+
+@media (max-width: 358px) {
+  .news-announcement {
+    font-size: 12px;
+    letter-spacing: 3px;
+    border-bottom: 1px solid var(--white-color);
+
+  }
+}
+
+
 .news-announcement span:first-child {
   margin-left: 30px;
 }
+
+@media (max-width: 751px) {
+  .news-announcement span:first-child {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 358px) {
+  .news-announcement span:first-child {
+    margin-left: 5px;
+  }
+}
+
 
 .news-announcement-btn {
   font-size: 20px;
@@ -456,6 +701,38 @@ export default {
   .more-news-btn {
     position: absolute;
     top: 500px;
+  }
+}
+
+@media (max-width: 751px) {
+  .news-announcement-btn {
+    display: block;
+  }
+
+  .news-announcement-btn span {
+    display: none;
+  }
+
+  .news-announcement-btn img {
+    position: absolute;
+    top: -10px
+  }
+
+  .more-news-btn {
+    top: 350px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 358px) {
+  .news-announcement-btn img {
+    transform: scale(0.7);
+  }
+
+  .more-news-btn {
+    top: 400px;
+    right: 50%;
+    transform: translateX(50%);
   }
 }
 </style>
