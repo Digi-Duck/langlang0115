@@ -18,14 +18,11 @@ export default {
     },
     data() {
         return {
-            mytext: "送養說明",
-            mytexttwo: "更多毛小孩",
-            mylinew: '81.25rem',
             parentStyle: {
-                gap: '4rem',
+                gap: '65px',
             },
             parenttwoStyle: {
-                gap: '1.25rem',
+                gap: '40px',
             },
             // 傳入動物資料
             Animals: Animals,
@@ -101,8 +98,10 @@ export default {
         </div>
         <!-- 送養中心 -->
         <div class="adoptionInstructions">
-            <!-- 標題 -->
-            <TitleAndLine :text="mytext" :customStyle="parentStyle" :linew="mylinew" />
+            <!-- 1980標題 -->
+            <TitleAndLine class="LineOne" text="送養說明" linew="1300px" :customStyle="parentStyle" textSize="2.25rem" />
+            <!-- 1280標題 -->
+            <TitleAndLine class="LineTwo" text="送養說明" linew="660px" :customStyle="parentStyle" textSize="2.25rem" />
             <div class="instructionsText">
                 二貓都是女生，都作完結育及用全能貓作體內外驅蟲了。年紀都還很輕，未滿一歲，只是都曾生育過。
                 <br>
@@ -112,8 +111,10 @@ export default {
         </div>
         <!-- 更多毛小孩 -->
         <div class="manyFurryBabies">
-            <!-- 標題 -->
-            <TitleAndLine :text="mytexttwo" :customStyle="parenttwoStyle" :linew="mylinew" />
+            <!-- 1980標題 -->
+            <TitleAndLine class="manyLineOne" text="更多毛小孩" linew="1282px" :customStyle="parenttwoStyle" />
+            <!-- 1280標題 -->
+            <TitleAndLine class="manyLineTwo" text="更多毛小孩" linew="620px" :customStyle="parentStyle" textSize="2.25rem" />
             <!-- 卡片區 -->
             <div class="furryBabiesCardFrame">
                 <div class="BabiesCard">
@@ -128,14 +129,14 @@ export default {
 main {
     width: 100vw;
     max-width: 100%;
-    padding: 4.3rem 9rem 13.3rem 10rem;
+    padding: 68px 144px 213px 174px;
 }
 
 /* 標題 */
 .adoptionCenteTitle {
     display: flex;
     flex-direction: row;
-    padding: 0 0 6.25rem 1.5rem;
+    padding: 0 0 103px 26px;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;
@@ -156,7 +157,7 @@ main {
 .furryBabiesCard {
     display: flex;
     flex-direction: row;
-    padding: 0 0 6.8rem 1.5rem;
+    padding: 0 0 110px 24px;
 }
 
 /* 送養說明 */
@@ -171,7 +172,7 @@ main {
     font-weight: 400;
     line-height: 1.8rem;
     letter-spacing: 6px;
-    padding: 0 3rem 0 4.6rem;
+    padding: 0 13px 0 75px;
     margin: 4.6rem 0;
 }
 
@@ -184,13 +185,91 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 3.25rem;
+    padding-top: 73px;
+    width: 1570px;
 }
 
 .BabiesCard {
     display: flex;
     flex-direction: row;
     padding: 0 3.75rem;
-    gap: 3.25rem;
+    gap: 50px;
+}
+
+.LineTwo {
+    display: none;
+    visibility: hidden;
+}
+
+.manyLineTwo {
+    display: none;
+    visibility: hidden;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    main {
+        padding: 69px 100px 156px;
+    }
+
+    /* 認養中心 */
+    .adoptionCenteTitle {
+        padding-bottom: 122px;
+    }
+
+    .furryBabiesCard {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 0 76px 107px;
+        gap: 69px;
+    }
+
+    /* 送養中心 */
+    .LineOne {
+        display: none;
+        visibility: hidden;
+    }
+
+    .LineTwo {
+        display: flex;
+        visibility: visible;
+        padding-left: 80px;
+    }
+
+    .instructionsText {
+        padding: 0 48px 0 132px;
+    }
+
+    /* 更多毛小孩 */
+    .manyLineOne {
+        display: none;
+        visibility: hidden;
+    }
+
+    .manyLineTwo {
+        display: flex;
+        visibility: visible;
+    }
+
+    .manyFurryBabies {
+        padding-left: 80px;
+    }
+
+    .furryBabiesCardFrame {
+        display: flex;
+        align-items: center;
+        width: 998px;
+        padding-top: 52px;
+
+    }
+
+    .BabiesCard {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        flex-direction: none;
+        padding: 0;
+        width: 904px;
+    }
 }
 </style>

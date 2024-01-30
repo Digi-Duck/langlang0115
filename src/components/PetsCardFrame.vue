@@ -81,12 +81,12 @@ export default {
 .CardFrame {
     display: flex;
     flex-direction: column;
-    width: 53rem;
+    width: 850px;
     /* height: 24.8rem; */
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    padding-bottom: 30px;
+    padding-bottom: 38px;
 }
 
 /* 晶片號碼 */
@@ -94,8 +94,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 28.7rem;
-    max-width: 28.7rem;
+    min-width: 460px;
+    max-width: 460px;
     /* height: 4rem; */
     background-color: var(--primary-color);
     border-radius: 0.6rem 0.6rem 0 0;
@@ -182,5 +182,13 @@ td {
 .Icon {
     width: 3.25rem;
     height: 3.25rem;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+
+    /* 晶片號碼 */
+    .ChipNumber {
+
+    }
 }
 </style>
