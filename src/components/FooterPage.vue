@@ -23,7 +23,6 @@
     z-index: 5;
     border-radius: 5px 5px 0 0;
     background-color: var(--primary-color);
-
 }
 
 .dogcat {
@@ -51,5 +50,10 @@
     justify-content: center;
     color: white;
     font-size: 18px;
+}
+@media (max-width: 1280px) {
+    .footer-container {
+    height: 100px;
+}
 }
 </style>
