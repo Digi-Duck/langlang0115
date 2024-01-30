@@ -153,7 +153,7 @@ export default {
                         <div class="btn">
                             <IconChangeButton text="前往送養" textColor="var(--gray-color)" bgColor="var(--orangeyellow-color)"
                                 w="11.3rem" h="4rem" @click="formadoptionPage" />
-                            <a href="#">
+                            <a href="https://reurl.cc/lgNWgE">
                                 <IconPaperAirplane />
                                 搜尋附近動物醫院
                             </a>
@@ -213,8 +213,10 @@ main {
 /* 認養五步驟 */
 .fiveStepsToAdoption {
     display: flex;
+    align-items: center;
     flex-direction: column;
     padding: 0 13.5rem 0 1rem;
+    width: 100%;
 }
 
 .fiveStepsTitle {
@@ -360,5 +362,15 @@ a:hover {
 .petsInormationForm {
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    .adoptionCenterArea {
+        padding: 68px 169px 197px 178px;
+    }
+    .fiveStepsTitle {
+        font-size: 1.25rem;
+    }
+   
 }
 </style>
