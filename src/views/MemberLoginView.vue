@@ -145,7 +145,7 @@ main {
 }
 
 .account {
-    font-size: 25px;
+    font-size: 1.5rem;
     letter-spacing: 6px;
     display: flex;
     gap: 32px;
@@ -172,7 +172,7 @@ input {
     background-color: var(--white-color);
     border-radius: 50%;
     border: 1px solid var(--gray-color);
-    font-size: 24px;
+    font-size: 1.5rem;
     letter-spacing: 6px;
     display: flex;
     align-items: center;
@@ -183,7 +183,7 @@ input {
 .login:hover {
     border: 4px solid var(--gray-color);
     box-shadow: none;
-    transition:0.1s linear;
+    transition: 0.1s linear;
 }
 
 .other {
@@ -208,7 +208,7 @@ input {
     display: flex;
     justify-content: space-between;
     gap: 25px;
-    font-size: 20px;
+    font-size: 1.25rem;
     letter-spacing: 5px;
     padding-bottom: 40px;
 }
@@ -227,5 +227,11 @@ input {
     width: 80px;
     height: 80px;
     cursor: pointer;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    main {
+        padding: 83px 0 156px;
+    }
 }
 </style>

@@ -187,4 +187,10 @@ main {
 .text::-webkit-scrollbar {
     display: none;
 }
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    .informationPopupFrame {
+        width: 1000px;
+    }
+}
 </style>

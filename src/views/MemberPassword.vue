@@ -132,4 +132,11 @@ input {
     text-decoration: underline;
     cursor: pointer;
 }
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    main {
+        padding: 83px 0 156px;
+    }
+
+}
 </style>
