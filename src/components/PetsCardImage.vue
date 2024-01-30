@@ -7,6 +7,7 @@ export default {
     },
     props: {
         AnimalData: Object, //單一動物資料
+        inputIsFavorite: Boolean,
     },
     methods: {
         favoriteAnimal() {
@@ -20,7 +21,7 @@ export default {
         <div class="img"
             :style="{ backgroundImage: 'url(../' + AnimalData.path + '),url(../src/assets/Image/DogPawGreen.svg)' }">
         </div>
-        <CardClickLike class="heart" @favorite="favoriteAnimal"></CardClickLike>
+        <CardClickLike class="heart" @favorite="favoriteAnimal" :inputIsFavorite="this.inputIsFavorite"></CardClickLike>
     </div>
 </template>
 <style scoped>

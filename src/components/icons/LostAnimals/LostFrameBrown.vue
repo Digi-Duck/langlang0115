@@ -185,7 +185,7 @@ export default {
                 <div class="title">遺失動物列表</div>
                 <div class="cards">
                     <IconCard class="card" v-for="animal in AnimalsData" :AnimalData="animal"
-                        cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" />
+                        cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" myurl="myanimallostinformation" />
                 </div>
             </div>
         </div>
@@ -197,6 +197,7 @@ export default {
 .big-container {
     display: flex;
 }
+
 /* 1280版-提早變版 */
 @media (max-width: 1770px) {
     .big-container {
@@ -210,6 +211,7 @@ export default {
     width: 700px;
     margin-right: 48px;
 }
+
 /* 1280版-提早變版 */
 @media (max-width: 1770px) {
     .frame-container {
@@ -217,6 +219,7 @@ export default {
         margin-right: 0;
     }
 }
+
 .notice {
     height: 80px;
     text-align: center;
@@ -235,6 +238,7 @@ form {
     border-top: 0;
     padding: 30px 34px;
 }
+
 /* 1280版-提早變版 */
 @media (max-width: 1770px) {
     form {
@@ -306,6 +310,7 @@ form svg {
     top: 25%;
     left: 38%;
 }
+
 /* 1280版-提早變版 */
 @media (max-width: 1770px) {
     form svg {
@@ -333,6 +338,7 @@ form svg {
     font-size: 24px;
     font-family: 'ABeeZee';
 }
+
 /* 1280版-提早變版 */
 @media (max-width: 1770px) {
     .list-container {
@@ -392,5 +398,4 @@ a:hover {
     flex-wrap: wrap;
     gap: 20px;
     background-color: var(--white-color);
-}
-</style>
+}</style>

@@ -4,7 +4,11 @@ export default {
     components: { CardClickLike },
     props: {
         AnimalData: Object, //單一動物資料
-        prefix:String
+        prefix: String
+    },
+    data() {
+        return {
+        }
     },
     created() {
         // ../的暫時替代方案 如果有前綴 把imagePath設為前綴;反之則"空"
@@ -54,7 +58,7 @@ export default {
 <template>
     <div class="card"
         :style="{ backgroundImage: 'url(' + imagePath + AnimalData.path + '),url(' + imagePath + 'src/assets/Image/DogPawGreen.svg)' }">
-        <CardClickLike class="heart" @favorite="favoriteAnimal"></CardClickLike>
+        <CardClickLike class="heart" @favorite="favoriteAnimal" :inputIsFavorite="true"></CardClickLike>
     </div>
 </template>
 <style scoped>

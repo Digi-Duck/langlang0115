@@ -266,7 +266,7 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 0 13.5rem 0 1rem;
+    padding: 0 215px 0 128px;
     width: 100%;
 }
 

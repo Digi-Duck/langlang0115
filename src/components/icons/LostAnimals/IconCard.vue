@@ -5,6 +5,7 @@ export default {
         checkBoxColor: String,  //卡片裡的色塊
         AnimalData: Object, //單一動物資料
         prefix: String, //../的暫時替代方案
+        myurl:String,//IconCard路由
     },
     data() {
         return {
@@ -30,7 +31,7 @@ export default {
 }
 </script>
 <template>
-    <router-link :to="{ name: 'adoptionpetinformation', params: { name: AnimalData.名稱 } }">
+    <router-link :to="{ name: myurl , params: { name: AnimalData.名稱 } }">
         <div class="card-container">
             <div class="card-ccontent" :style="{ borderColor: cardBorderColor }">
                 <div class="image"

@@ -17,7 +17,11 @@ export default {
     },
     mounted() {
         // console.log(this.AnimalsData);
+
     },
+    methods: {
+
+    }
 }
 </script>
 
@@ -26,7 +30,7 @@ export default {
         <div class="list-container">
             <div class="title" :style="{ backgroundColor: listTitleColor }">毛小孩列表</div>
             <div class="cards" :style="{ borderColor: listborderColor }">
-                <IconCard class="card" v-for="animal in AnimalsData" :AnimalData="animal" />
+                <IconCard class="card" v-for="animal in AnimalsData" :AnimalData="animal" myurl="adoptionpetinformation" />
             </div>
         </div>
     </div>
@@ -79,7 +83,7 @@ export default {
     }
 
     .cards {
-       justify-content: center;
+        justify-content: center;
         height: 851px;
         padding: 30px 26px;
         column-gap: 30px;

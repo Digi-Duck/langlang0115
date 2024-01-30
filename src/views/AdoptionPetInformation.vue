@@ -60,15 +60,21 @@ export default {
             likeAnimals: [],
         };
     },
+    // 從主頁挑轉進來時
     created() {
         this.randomAnimals = this.getRandomAnimals(Animals, 5);
         this.lookingAnimal();
+        this.getLikeAnimals();
+        this.scrollToTop();
         // console.log(this.foundAnimal);
+        // 卡片點擊後重新渲染整個頁面
         // 監聽網址改變
         this.$watch(
             () => this.$route.params,
             async () => {
+                this.randomAnimals = this.getRandomAnimals(Animals, 5);
                 this.lookingAnimal();
+                this.getLikeAnimals();
                 this.scrollToTop();
             }
         )
@@ -91,20 +97,23 @@ export default {
             }
         },
         updateLikeAnimal() {
-            this.getLikeAnimals();
-            // 如果在this.likeAnimals的(indexOf)列表裡未找到ani,就要push; 如果找到就remove;
-            if (this.likeAnimals.indexOf(this.foundAnimal) == -1) {
-                this.likeAnimals.push(this.foundAnimal);
+            // console.log(this.likeAnimals);
+            // 如果在this.likeAnimals的動物名字裡未找到ani,就要push; 如果找到就remove;
+            if (this.likeAnimals.find(x => x.名稱 == this.foundAnimal.名稱)) {
+                this.removeFromArray(this.likeAnimals, this.foundAnimal);
             } else {
-                removeFromArray(this.likeAnimals, this.foundAnimal);
+                this.likeAnimals.push(this.foundAnimal);
             }
             // 儲存更新 stringify JS物件轉JSON文字
             localStorage.likeAnimals = JSON.stringify(this.likeAnimals);
         },
-        removeFromArray(arr, elem) {
-            const index = arr.indexOf(elem);
+        // 移除ani
+        removeFromArray(arr) {
+            // 從陣列找到第幾個喜歡的
+            const index = arr.findIndex(animal => animal.名稱 === this.foundAnimal.名稱);
+
             if (index !== -1) {
-                // 使用splice方法從陣列中移除元素
+                // 使用 splice(刪除) 陣列中移除 index(第幾個)元素, 刪除1
                 arr.splice(index, 1);
             }
         },
@@ -116,6 +125,13 @@ export default {
             });
         },
     },
+    // 不斷自動更新
+    computed: {
+        // 檢查愛心 是否存在喜歡的動物清單
+        isAnimalLiked() {
+            return this.likeAnimals.find(x => x.名稱 == this.foundAnimal.名稱) ? true : false;
+        }
+    }
 }
 </script>
 <template>
@@ -133,7 +149,9 @@ export default {
         <!-- 上方卡片區 1980 & 1280-->
         <div class="furryBabiesCard">
             <!-- 卡片區圖 -->
-            <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" />
+            <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal"
+                :inputIsFavorite="isAnimalLiked" />
+            <!-- 愛心傳參數PetsCardImage -->
             <!-- 卡片區表格 -->
             <PetsCardFrame :animalData="this.foundAnimal" />
         </div>

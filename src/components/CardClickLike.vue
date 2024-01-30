@@ -1,17 +1,28 @@
 <script>
 
 export default {
+    props: {
+        inputIsFavorite: Boolean,
+    },
     data() {
         return {
+            // 預設空的愛心
             isFavorite: false,
         };
+    },
+    mounted() {
+        // 如果有資料 就會改為傳入資料(滿的愛心 => true)
+        if (this.inputIsFavorite == true) {
+            this.isFavorite = this.inputIsFavorite;
+        }
     },
     methods: {
         toggleFavorite() {
             this.isFavorite = !this.isFavorite;
             this.$emit("favorite")
         },
-    }
+    },
+
 };
 </script>
 <template>
