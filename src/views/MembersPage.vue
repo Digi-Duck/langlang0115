@@ -16,7 +16,7 @@ export default {
     },
     mounted() {
         this.getLikeAnimals();
-        console.log(this.likeAnimals);
+        // console.log(this.likeAnimals);
     },
     methods: {
         getLikeAnimals() {
