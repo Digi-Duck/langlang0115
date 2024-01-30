@@ -97,8 +97,8 @@ main {
 .x {
     position: absolute;
     right: 3rem;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
 }
 
@@ -110,7 +110,7 @@ main {
     font-size: 2.25rem;
     line-height: normal;
     letter-spacing: 9px;
-    padding: 2rem 0;
+    padding: 34px 0;
 }
 
 .information {
@@ -120,13 +120,31 @@ main {
     font-size: 1.5rem;
     line-height: 150%;
     letter-spacing: 6px;
-    padding: 0 8rem;
+    padding: 0 126px;
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {
     .informationPopupFrame {
         width: 1100px;
         height: 806px;
+    }
+}
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    .informationPopupFrame {
+        width: 650px;
+        height: 720px;
+    }
+
+    .informationTitle {
+        font-size: 1.6rem;
+        letter-spacing: 6.5px;
+    }
+
+    .information {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        padding: 0 61px 34px 75px;
     }
 }
 </style>

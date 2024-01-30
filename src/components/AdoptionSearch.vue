@@ -192,7 +192,7 @@ export default {
 <style scoped>
 /* 下拉式選單 */
 .input {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     width: 620px;
     height: 56px;
     border: 2px solid var(--primary-color);
@@ -214,6 +214,7 @@ export default {
 
 .container {
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
     font-size: 1.5rem;
     letter-spacing: 6px;
@@ -222,6 +223,9 @@ export default {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    background-color: var(--white-color);
+    border: 2px solid var(--primary-color);
+    
 }
 
 
@@ -231,8 +235,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 64px;
-    background-color: var(--white-color);
-    border: 2px solid var(--primary-color);
+
     border-top: 0;
     padding: 50px 40px;
     background: var(--white-color);
@@ -248,11 +251,6 @@ label[for="gender"],
 label[for="colors"],
 label[for="age"],
 label[for="neutered"],
-
-.time-place-title {
-    color: var(--primary-color);
-    margin-right: 36px;
-}
 
 /* 表單 */
 .form-group input {
@@ -285,6 +283,7 @@ label[for="neutered"],
 .form-group label {
     vertical-align: middle;
     margin: 0;
+    font-size: 1.25rem;
 }
 
 /*按鈕*/
@@ -328,6 +327,10 @@ label[for="neutered"],
     form {
         border: none;
         padding: 31px 0 0 29px;
+    }
+
+    .input {
+        width: 535px;
     }
 }
 </style>

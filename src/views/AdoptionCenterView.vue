@@ -27,7 +27,7 @@ export default {
             // 尋找心目中的毛小孩標題
             parenttwoStyle: {
                 gap: '8px',
-                fontSize: "2rem",
+                fontSize: "2.4rem",
                 color: 'var(--primary-color)',
             },
             parenttwoStyleThree: {
@@ -171,7 +171,7 @@ export default {
                 </div>
                 <!-- 768 -->
                 <div class="lookingForTitleThree">
-                    <TitleAndLine :customStyle="parenttwoStyleThree" text="尋找心目中的毛小孩" linew="359px" />
+                    <TitleAndLine :customStyle="parenttwoStyleThree" text="尋找心目中的毛小孩" linew="358px" />
                 </div>
                 <!-- 認養中心搜尋卡片組件 -->
                 <div class="likepetsCards">
@@ -340,9 +340,8 @@ main {
     display: flex;
     align-items: end;
     flex-direction: row;
-    gap: 1.25rem;
-    padding-top: 2.8rem;
-    margin-left: 0.6rem;
+    gap: 19px;
+    padding-top: 45px;
 }
 
 /* 請先閱讀認養須知 */
@@ -355,6 +354,7 @@ main {
     border: 2px solid var(--primary-color);
     background-color: var(--white-color);
     color: var(--primary-color);
+    border-bottom: 1px;
 }
 
 .adoptionGuidelines span {
@@ -681,7 +681,7 @@ a:hover {
         display: flex;
         flex-direction: column-reverse;
     }
-    
+
     .btn {
         margin-bottom: 0;
         margin-top: 32px;
