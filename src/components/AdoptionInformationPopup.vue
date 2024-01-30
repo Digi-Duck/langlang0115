@@ -83,8 +83,8 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 85.4rem;
-    height: 47rem;
+    width: 1135px;
+    height: 770px;
     font-style: normal;
     font-weight: 400;
     border-radius: 2.5rem;
@@ -121,5 +121,12 @@ main {
     line-height: 150%;
     letter-spacing: 6px;
     padding: 0 8rem;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    .informationPopupFrame {
+        width: 1100px;
+        height: 806px;
+    }
 }
 </style>

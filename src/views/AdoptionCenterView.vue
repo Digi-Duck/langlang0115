@@ -118,18 +118,44 @@ export default {
                 <div class="fiveStepsTitle">
                     <span>認養五步驟</span>
                 </div>
-                <FiveStepsLineFrame />
-                <div class="fiveStepsText">
-                    <p>閱讀認養須知</p>
-                    <p style="margin-left: 55px;">尋找心目中的毛孩</p>
-                    <p style="margin-left: 25px;">聯絡刊登的送養人<br>了解毛小孩情況</p>
-                    <p>實際與毛小孩互動並於<br>完成寵物登記的變更</p>
-                    <p>帶毛小孩回家</p>
+                <!-- 1920 -->
+                <div class="fiveStep">
+                    <FiveStepsLineFrame />
+                    <div class="fiveStepsText">
+                        <p>閱讀認養須知</p>
+                        <p style="margin-left: 55px;">尋找心目中的毛孩</p>
+                        <p style="margin-left: 25px;">聯絡刊登的送養人<br>了解毛小孩情況</p>
+                        <p>實際與毛小孩互動並於<br>完成寵物登記的變更</p>
+                        <p>帶毛小孩回家</p>
+                    </div>
+                </div>
+                <!-- 1280 -->
+                <div class="fiveStepsTextTwo">
+                    <div class="StepsText up">
+                        <p>尋找心目中的毛孩</p>
+                        <p>實際與毛小孩互動並於<br>完成寵物登記的變更</p>
+                    </div>
+                    <div class="med">
+                        <FiveStepsLineFrame />
+                    </div>
+                    <div class="StepsText down">
+                        <p>閱讀認養須知</p>
+                        <p>聯絡刊登的送養人<br>了解毛小孩情況</p>
+                        <p>帶毛小孩回家</p>
+                    </div>
+
                 </div>
             </div>
             <!-- 尋找心目中的毛小孩 -->
             <div class="lookingForLikepets">
-                <TitleAndLine :customStyle="parenttwoStyle" text="尋找心目中的毛小孩" linew="72rem" />
+                <!-- 1980 -->
+                <div class="lookingForTitle">
+                    <TitleAndLine :customStyle="parenttwoStyle" text="尋找心目中的毛小孩" linew="1100px" textSize="40px" />
+                </div>
+                <!-- 1280 -->
+                <div class="lookingForTitleTwo">
+                    <TitleAndLine :customStyle="parenttwoStyle" text="尋找心目中的毛小孩" linew="600px" />
+                </div>
                 <!-- 認養中心搜尋卡片組件 -->
                 <div class="likepetsCards">
                     <div class="likepets">
@@ -148,7 +174,7 @@ export default {
                         <AdoptionSearch :frameBorder="mybordercolor" :noticeborder="mynoticeborder" :textColor="mytextc"
                             @search="search" />
                     </div>
-                    <!-- 卡片 -->
+                    <!-- 1980卡片 -->
                     <div class="petsInormationForm">
                         <div class="btn">
                             <IconChangeButton text="前往送養" textColor="var(--gray-color)" bgColor="var(--orangeyellow-color)"
@@ -189,7 +215,7 @@ main {
     flex-direction: row;
     color: var(--primary-color);
     font-weight: 400;
-    padding-bottom: 7rem;
+    padding-bottom: 112px;
     gap: 1.3rem;
 }
 
@@ -226,15 +252,20 @@ main {
     font-size: 2.25rem;
     color: var(--primary-color);
     letter-spacing: 0.5rem;
-    padding-bottom: 7rem;
+    padding-bottom: 115px;
 }
 
+.fiveStepsTextTwo {
+    display: none;
+    visibility: hidden;
+}
 
 /* 五步驟內文 */
 .fiveStepsText {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    width: 1472px;
     padding: 4.6rem 0 6.8rem 0;
 }
 
@@ -253,6 +284,11 @@ main {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
+}
+
+.lookingForTitleTwo {
+    display: none;
+    visibility: hidden;
 }
 
 .likepetsCards {
@@ -277,7 +313,7 @@ main {
 }
 
 .adoptionGuidelines span {
-    font-size: 28px;
+    font-size: 1.75rem;
     text-align: center;
     margin: 0 2px 1px 8px;
     letter-spacing: 7px;
@@ -341,9 +377,9 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 52.5rem;
-    height: 3.5rem;
-    margin-bottom: 1.5rem;
+    width: 840px;
+    height: 64px;
+    margin-bottom: 25px;
 }
 
 a {
@@ -365,12 +401,103 @@ a:hover {
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {
-    .adoptionCenterArea {
-        padding: 68px 169px 197px 178px;
+    .adoptionTitle {
+        padding-bottom: 69px;
     }
+
     .fiveStepsTitle {
-        font-size: 1.25rem;
+        padding-bottom: 123px;
     }
-   
+
+    .adoptionCenterArea {
+        padding: 68px 113px 246px 69px;
+    }
+
+    /* 認養五步驟 */
+    .fiveStepsToAdoption {
+        padding: 0 144px 0 165px;
+    }
+
+    .fiveStep {
+        display: none;
+        visibility: hidden;
+    }
+
+    .fiveStepsTextTwo {
+        display: flex;
+        visibility: visible;
+        flex-direction: column;
+        gap: 60px;
+        padding: 0 114px 105px 126px;
+    }
+
+    .StepsText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        color: var(--primary-color);
+
+    }
+
+    .up {
+        gap: 216px;
+        padding-left: 184px;
+    }
+
+    .med {
+        width: 1023px;
+    }
+
+    .down {
+        display: flex;
+        justify-content: space-between;
+        gap: 200px;
+    }
+
+    /* 尋找心目中的毛小孩 */
+    .lookingForLikepets {
+        display: flex;
+        align-items: center;
+    }
+
+    .lookingForTitle {
+        display: none;
+        visibility: hidden;
+    }
+
+    .lookingForTitleTwo {
+        display: flex;
+        visibility: visible;
+    }
+
+    .petsTitle {
+        display: none;
+        visibility: hidden;
+    }
+
+    .likepetsCards {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 40px;
+        gap: 109px;
+    }
+
+    .notice {
+        border-bottom: 1px;
+    }
+
+    .petsInormationForm {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .btn {
+        margin-bottom: 0;
+        margin-top: 25px;
+    }
 }
 </style>

@@ -33,6 +33,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    width: 100%;
     gap: 25px;
 }
 
@@ -73,5 +74,11 @@ export default {
 .triangle {
     display: flex;
     position: relative;
+}
+
+@media screen and (max-width:1280px) and (min-width:769px) {
+    .stepsLine {
+        width: 200px;
+    }
 }
 </style>
