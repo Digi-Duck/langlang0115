@@ -64,6 +64,14 @@ export default {
         this.randomAnimals = this.getRandomAnimals(Animals, 5);
         this.lookingAnimal();
         // console.log(this.foundAnimal);
+        // 監聽網址改變
+        this.$watch(
+            () => this.$route.params,
+            async () => {
+                this.lookingAnimal();
+                this.scrollToTop();
+            }
+        )
     },
     methods: {
         getRandomAnimals(arr, n) {
@@ -99,7 +107,14 @@ export default {
                 // 使用splice方法從陣列中移除元素
                 arr.splice(index, 1);
             }
-        }
+        },
+        scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                // behavior行動= 平滑
+                behavior: 'smooth',
+            });
+        },
     },
 }
 </script>
