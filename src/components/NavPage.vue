@@ -63,6 +63,8 @@ export default {
                     @click="clickMenu">
                     <IconHamOpen v-show="!isMenuOpen" class="switch-open"></IconHamOpen>
                     <IconHamClose v-show="isMenuOpen" class="switch-close"></IconHamClose>
+
+
                 </label>
                 <div class="bg-white" v-show="isMenuOpen"></div>
                 <ul v-show="isMenuOpen" class="ham-menu-li">
@@ -162,7 +164,7 @@ span:hover {
         width: 43px;
         height: 50px;
         position: absolute;
-        right: 20px;
+        right: -8px;
     }
 
     .ham-menu {
@@ -251,8 +253,8 @@ span:hover {
         width: 35px;
         height: 35px;
         position: absolute;
-        top: 0;
-        right: 5%;
+        top: 6%;
+        right: -8%;
     }
 
     .bg-white {

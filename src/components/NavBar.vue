@@ -262,8 +262,8 @@ span:hover {
         width: 43px;
         height: 50px;
         position: absolute;
-        top: 20px;
-        right: 40px;
+        top: 12px;
+        right:2px;
     }
 
     .ham-menu {
@@ -371,8 +371,8 @@ span:hover {
         display: block;
         visibility: visible;
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 5px;
+        right: -15px;
         z-index: 2;
     }
 
