@@ -53,6 +53,9 @@ export default {
                     <input type="email" placeholder="請輸入電子信箱" v-model="formData.email" required>
                 </div>
                 <IconChangeButton class="sendout" text="送出" bgColor="#52A038" textColor="#FEFEFB" />
+                <!-- 375 -->
+                <IconChangeButton class="sendoutTwo" text="送出" bgColor="#52A038" textColor="#FEFEFB" w="102px" h="41px" />
+                <!-- 375^ -->
                 <div class="other">
                     <span @click="goToLogin">返回登入頁面</span>
                 </div>
@@ -101,6 +104,7 @@ form {
 .title {
     text-align: center;
     font-size: 2.5rem;
+    font-weight: 400;
     letter-spacing: 10px;
     color: #52A038;
 }
@@ -136,7 +140,7 @@ input {
     border: none;
     border-radius: 80px;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: 4px;
 }
 
@@ -146,6 +150,62 @@ input {
     color: var(--gray-color);
     text-decoration: underline;
     cursor: pointer;
+}
+
+.sendoutTwo {
+    display: none;
+    visibility: hidden;
+}
+
+@media screen and (max-width:375.9px) {
+    main {
+        padding: 57px 0 88px;
+    }
+
+    .container {
+        width: 318px;
+        height: 414px;
+    }
+
+    form {
+        gap: 20px;
+    }
+
+    .title {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+    }
+
+    .contect {
+        width: 242px;
+        text-align: left;
+        font-size: 0.8rem;
+    }
+
+    .account {
+        font-size: 1rem;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    input {
+        width: 247px;
+    }
+
+    .other {
+        font-size: 0.8rem;
+    }
+
+    .sendout {
+        display: none;
+        visibility: hidden;
+    }
+
+    .sendoutTwo {
+        display: flex;
+        visibility: visible;
+    }
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {
