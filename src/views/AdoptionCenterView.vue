@@ -213,9 +213,9 @@ export default {
                         </div>
                         <AdoptionList :AnimalsData="filteredAnimals" :prefix="''" />
                     </div>
-                    <!-- 顯示視窗畫面 -->
-                    <AdoptionInformationPopup :is-show="show" @close="closePopup" />
                 </div>
+                <!-- 顯示視窗畫面 -->
+                <AdoptionInformationPopup :is-show="show" @close="closePopup" />
             </div>
         </div>
     </main>

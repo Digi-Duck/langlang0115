@@ -253,6 +253,7 @@ form {
     border-top: 0;
     padding: 50px 40px;
     background: var(--white-color);
+    border-top: 1px solid var(--primary-color);
 }
 
 
