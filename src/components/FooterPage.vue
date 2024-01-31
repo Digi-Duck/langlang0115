@@ -32,7 +32,7 @@
 
 .dog {
     position: absolute;
-    top: -144px;
+    top: -138px;
     left: 83px;
 }
 
@@ -52,12 +52,12 @@
 }
 
 @media (max-width: 1280px) {
-    .footer-container {
+    .footer {
         height: 100px;
     }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .dog {
         position: absolute;
         top: -128px;
@@ -75,6 +75,9 @@
     .footer-container {
         height: 89px;
     }
+    .footer{
+        padding: 24px 140px;
+    }
 
     .footer span {
         font-size: 16px;
@@ -82,28 +85,31 @@
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .footer-container {
         height: 87px;
-        border-radius: 20px 20px 0 0;
     }
 
     .dog {
         position: absolute;
-        top: -112px;
+        top: -108px;
         left: -60px;
-        transform: scale(0.5);
+        transform: scale(0.4);
     }
 
     .cat {
         position: absolute;
-        top: -122px;
+        top: -120px;
         right: -40px;
-        transform: scale(0.5);
+        transform: scale(0.4);
     }
 
     .footer-container {
         height: 89px;
+    }
+    .footer{
+        padding: 24px 34px;
+        border-radius: 20px 20px 0 0;
     }
 
     .footer span {

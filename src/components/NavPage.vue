@@ -130,7 +130,7 @@ span:hover {
 }
 
 /* 平板 */
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .box {
         display: none;
     }
@@ -192,7 +192,7 @@ span:hover {
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .boxall {
         height: 46px;
         padding: 0 20px;

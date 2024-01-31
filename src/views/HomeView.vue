@@ -74,14 +74,14 @@ export default {
   background-color: var(--primary-color);
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .home-container {
     padding-top: 52px;
     margin-bottom: 112px;
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .home-container {
     padding-top: 70px;
     margin-bottom: 63px;
@@ -104,7 +104,7 @@ export default {
     height: 224px;
   }
 }
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .home-header-greenbox {
     border-radius: 0;
   }
@@ -128,8 +128,8 @@ export default {
     background-image: url(../assets/Image/HomeImage/HomeA-banner-1280.svg);
   }
 }
-/* 751px */
-@media (max-width: 710px) {
+/* 768px */
+@media (max-width: 768px) {
   .home-header-img {
     width: 695px;
     height: 466px;
@@ -137,7 +137,7 @@ export default {
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .home-header-img {
     width: 310px;
     height: 559px;
@@ -182,7 +182,7 @@ export default {
   }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .home-header-text {
     width: 150px;
     left: 75%;
@@ -196,7 +196,7 @@ export default {
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .home-header-text {
     width: 80px;
     height: 15px;

@@ -275,7 +275,7 @@ export default {
   }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .home-container {
     height: 460px;
     margin-bottom: 165px;
@@ -326,7 +326,7 @@ export default {
 }
 
 /* ------------phone--------------- */
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .home-container {
     height: 370px;
     margin-bottom: 81px;
@@ -381,7 +381,9 @@ export default {
 /*#endregion*/
 
 /*-----首頁 最新消息-----*/
-
+.home-news-section{
+  margin-bottom: 200px;
+}
 .yellow-paw-pic {
   z-index: 0;
   position: absolute;
@@ -397,7 +399,7 @@ export default {
 
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .yellow-paw-pic {
     top: -102%;
     left: -89%;
@@ -405,7 +407,7 @@ export default {
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .yellow-paw-pic {
     top: -222.4%;
     left: -195%;
@@ -436,7 +438,7 @@ export default {
   }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .dog-cat-pic {
     transform: scale(0.5);
     top: 0%;
@@ -444,7 +446,7 @@ export default {
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .dog-cat-pic {
     transform: scale(0.4);
     top: -15%;
@@ -461,14 +463,14 @@ export default {
   left: 0;
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .home-news-text {
     margin-top: 0;
     margin-left: 85px;
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .home-news-text {
     margin-left: 28px;
   }
@@ -496,7 +498,7 @@ export default {
   }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .green-icon-container {
     width: 660px;
     height: 380px;
@@ -505,7 +507,7 @@ export default {
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .green-icon-container {
     width: 100%;
     background-position: center;
@@ -536,7 +538,7 @@ export default {
   }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .news-list {
     transform: translate(100px, 50px);
     height: 220px;
@@ -544,7 +546,7 @@ export default {
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .news-list {
     transform: translate(45px, 60px);
     width: 276px;
@@ -580,7 +582,7 @@ export default {
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .news-date {
     margin-right: 14px;
   }
@@ -591,7 +593,7 @@ export default {
   font-size: 16px;
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .news-date-month {
     font-size: 12px;
   }
@@ -603,13 +605,13 @@ export default {
   font-weight: 900;
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .news-date-day {
     font-size: 24px;
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .news-date-day {
     font-size: 16px;
   }
@@ -636,14 +638,14 @@ export default {
   }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .news-announcement {
     font-size: 20px;
     letter-spacing: 5px;
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .news-announcement {
     font-size: 12px;
     letter-spacing: 3px;
@@ -652,24 +654,21 @@ export default {
   }
 }
 
-
 .news-announcement span:first-child {
   margin-left: 30px;
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .news-announcement span:first-child {
     margin-left: 0px;
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .news-announcement span:first-child {
     margin-left: 5px;
   }
 }
-
-
 .news-announcement-btn {
   font-size: 20px;
   position: absolute;
@@ -704,7 +703,7 @@ export default {
   }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
   .news-announcement-btn {
     display: block;
   }
@@ -724,7 +723,7 @@ export default {
   }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
   .news-announcement-btn img {
     transform: scale(0.7);
   }
