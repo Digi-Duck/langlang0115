@@ -83,7 +83,6 @@ export default {
 
 @media (max-width: 375px) {
   .home-container {
-    padding-top: 70px;
     margin-bottom: 63px;
   }
 }

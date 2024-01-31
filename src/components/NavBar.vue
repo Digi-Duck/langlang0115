@@ -220,24 +220,23 @@ span:hover {
     }
 
     .boxall {
-        height: 52px;
-        padding: 0;
-        /* background: transparent;
+        background: transparent;
         height: 0;
-        padding: 0; */
+        padding: 0;
     }
 
     #wave {
-        transform: scale(0.75);
-        left: -20%;
-        margin-top: -100px;
+        /* visibility: hidden; */
+        transform: scale(0.5);
+        left: -123px;
+        margin-top: -80px;
     }
 
     #logo {
         width: 151px;
         height: 101px;
-        margin-top: 10%;
-        margin-left: -1.5%;
+        margin-top: 42px;
+        margin-left: -8px;
         /* transform: scale(0.77);
         margin-top: 80px;
         margin-left: -15px; */
@@ -246,15 +245,15 @@ span:hover {
     .titleen {
         width: 120px;
         height: 22px;
-        top: 84%;
-        left: 17%;
+        top: 35px;
+        left: 120px;
     }
 
     .titlecn {
         width: 240px;
         height: 68px;
-        top: 125%;
-        left: 16%;
+        top: 55px;
+        left: 108px;
     }
 
     .ham {
