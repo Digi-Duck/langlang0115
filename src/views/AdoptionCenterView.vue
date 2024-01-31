@@ -28,17 +28,17 @@ export default {
             parenttwoStyle: {
                 gap: '8px',
                 fontSize: "2.4rem",
-                color: 'var(--primary-color)',
+                color: '#52A038',
             },
             parenttwoStyleThree: {
                 gap: '24px',
                 fontSize: "1.5rem",
-                color: 'var(--primary-color)',
+                color: '#52A038',
             },
             // 搜尋區
-            mybordercolor: 'var(--primary-color)',
-            mynoticeborder: 'var(--primary-color)',
-            mytextc: 'var(--primary-color)',
+            mybordercolor: '#52A038',
+            mynoticeborder: '#52A038',
+            mytextc: '#52A038',
             // Icon圖
             isHovered: false,
             // 進入畫面時 視窗關閉
@@ -120,6 +120,7 @@ export default {
                     Center
                 </p>
             </div>
+            <!-- 768 & 375 -->
             <div class="adoptionTitleTwo">
                 <span>認養中心</span>
                 <p>AdoptionCenter</p>
@@ -134,11 +135,13 @@ export default {
                 </div>
                 <!-- 1920 -->
                 <div class="fiveStep">
-                    <FiveStepsLineFrame />
+                    <div class="stepRotated">
+                        <FiveStepsLineFrame />
+                    </div>
                     <div class="fiveStepsText">
                         <p>閱讀認養須知</p>
-                        <p style="margin-left: 55px;">尋找心目中的毛孩</p>
-                        <p style="margin-left: 25px;">聯絡刊登的送養人<br>了解毛小孩情況</p>
+                        <p>尋找心目中的毛孩</p>
+                        <p>聯絡刊登的送養人<br>了解毛小孩情況</p>
                         <p>實際與毛小孩互動並於<br>完成寵物登記的變更</p>
                         <p>帶毛小孩回家</p>
                     </div>
@@ -195,21 +198,24 @@ export default {
                     <div class="petsInormationForm">
                         <div class="btn">
                             <!-- 1980 & 1280 -->
-                            <IconChangeButton text="前往送養" textColor="var(--gray-color)" bgColor="var(--orangeyellow-color)"
-                                w="11.3rem" h="4rem" @click="formadoptionPage" />
+                            <IconChangeButton class="btnbig" text="前往送養" textColor="#626262" bgColor="#FAC60E" w="11.3rem"
+                                h="4rem" @click="formadoptionPage" />
                             <!-- 768 -->
-                            <!-- <IconChangeButton text="前往送養" textColor="var(--gray-color)" bgColor="var(--orangeyellow-color)"
-                                w="11.3rem" h="4rem" @click="formadoptionPage" /> -->
+                            <IconChangeButton class="btnsmall" text="去送養" textColor="#FEFEFB" bgColor="#FAC60E" w="110px"
+                                h="41px" @click="formadoptionPage" />
                             <a href="https://reurl.cc/lgNWgE">
-                                <IconPaperAirplane />
+                                <div class="air">
+                                    <IconPaperAirplane />
+                                </div>
+
                                 搜尋附近動物醫院
                             </a>
                         </div>
                         <AdoptionList :AnimalsData="filteredAnimals" :prefix="''" />
                     </div>
-                    <!-- 顯示視窗畫面 -->
-                    <AdoptionInformationPopup :is-show="show" @close="closePopup" />
                 </div>
+                <!-- 顯示視窗畫面 -->
+                <AdoptionInformationPopup :is-show="show" @close="closePopup" />
             </div>
         </div>
     </main>
@@ -232,7 +238,7 @@ main {
 .adoptionTitle {
     display: flex;
     flex-direction: row;
-    color: var(--primary-color);
+    color: #52A038;
     font-weight: 400;
     padding-bottom: 112px;
     gap: 20px;
@@ -281,7 +287,7 @@ main {
     justify-content: center;
     align-items: center;
     font-size: 2.25rem;
-    color: var(--primary-color);
+    color: #52A038;
     letter-spacing: 0.5rem;
     padding-bottom: 115px;
 }
@@ -309,7 +315,7 @@ main {
 
 .fiveStepsText p {
     text-align: center;
-    color: var(--primary-color);
+    color: #52A038;
     letter-spacing: 5px;
     font-size: 1.25rem;
     font-weight: 400;
@@ -351,9 +357,9 @@ main {
     align-items: center;
     justify-content: center;
     height: 80px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid #52A038;
     background-color: var(--white-color);
-    color: var(--primary-color);
+    color: #52A038;
     border-bottom: 1px;
 }
 
@@ -368,7 +374,7 @@ main {
     cursor: pointer;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--primary-color);
+    border-bottom: 1px solid #52A038;
 }
 
 .notice:hover .icon {
@@ -404,9 +410,9 @@ main {
     justify-content: center;
     width: 18.8rem;
     height: 4rem;
-    background-color: var(--primary-color);
+    background-color: #52A038;
     border-radius: 1.8rem 1.8rem 0px 0px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid #52A038;
 }
 
 .petsTitle span {
@@ -427,12 +433,17 @@ main {
     margin-bottom: 25px;
 }
 
+.btnsmall {
+    display: none;
+    visibility: hidden;
+}
+
 a {
     display: flex;
     align-items: center;
     gap: 10px;
     font-weight: 700;
-    color: var(--gray-color);
+    color: #626262;
     font-size: 1.5rem;
 }
 
@@ -445,6 +456,149 @@ a:hover {
     flex-direction: column;
 }
 
+@media screen and (max-width:375.9px) {
+    .adoptionCenterArea {
+        padding: 20px 0 104px 0;
+    }
+
+    /* 認養中心 標題區 */
+    .adoptionTitle {
+        display: none;
+        visibility: hidden;
+    }
+
+    .adoptionTitleTwo {
+        display: flex;
+        visibility: visible;
+        align-items: center;
+        flex-direction: row;
+        color: #52A038;
+        font-weight: 400;
+        padding: 0 0 46px 30px;
+        gap: 10px;
+    }
+
+    .adoptionTitleTwo span {
+        text-align: center;
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+    }
+
+    .adoptionTitleTwo p {
+        line-height: 17px;
+        letter-spacing: 3.5px;
+        font-size: 0.8rem;
+    }
+
+    /* 認養五步驟 */
+    .fiveStepsToAdoption {
+        align-items: flex-start;
+        padding: 0;
+    }
+
+    .fiveStepsTitle {
+        font-size: 1rem;
+        letter-spacing: 4px;
+        padding: 0 196px 30px 66px;
+        gap: 40px;
+    }
+
+    .fiveStep {
+        display: flex;
+        /* align-items: flex-start; */
+        flex-direction: row;
+        padding: 0 0 45px 10px;
+        position: relative;
+    }
+
+    .stepRotated {
+        display: flex;
+        align-items: flex-start;
+        transform: rotate(90deg);
+        position: absolute;
+        left: -80px;
+        top: 182px;
+    }
+
+    .fiveStepsText {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 46px;
+        padding: 0 126px 0 126px;
+    }
+
+    .fiveStepsText p {
+        text-align: left;
+        width: 200px;
+        font-size: 1rem;
+        line-height: 28px;
+        letter-spacing: 4px;
+    }
+
+    /* 認養中心搜尋卡片組件 */
+    .lookingForTitle {
+        display: none;
+        visibility: hidden;
+    }
+
+    .likepetsCards {
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .petsTitle {
+        width: 211px;
+        height: 54px;
+    }
+
+    .petsTitle span {
+        font-size: 1rem;
+    }
+
+    .notice {
+        height: 56px;
+        border: 1px solid #52A038;
+        border-bottom: 0;
+    }
+
+    .notice:hover {
+        animation: none;
+    }
+
+    .adoptionGuidelines span {
+        font-size: 1rem;
+    }
+
+    /* 卡片 */
+    .petsInormationForm {
+        padding-top: 40px;
+        flex-direction: column-reverse;
+    }
+
+    .btn {
+        width: 350px;
+        height: 71px;
+        margin: 71px 0 45px 0;
+        padding: 0 20px;
+    }
+
+    a {
+        gap: 0;
+        font-size: 1rem;
+    }
+
+    .btnsmall {
+        display: flex;
+        visibility: visible;
+    }
+
+    .btnbig {
+        display: none;
+        visibility: hidden;
+    }
+}
 
 @media screen and (max-width:1280px) and (min-width:769px) {
     .adoptionTitle {
@@ -484,7 +638,7 @@ a:hover {
         flex-direction: row;
         font-size: 1.25rem;
         letter-spacing: 5px;
-        color: var(--primary-color);
+        color: #52A038;
 
     }
 
@@ -564,7 +718,7 @@ a:hover {
         align-items: center;
         visibility: visible;
         flex-direction: row;
-        color: var(--primary-color);
+        color: #52A038;
         font-weight: 400;
         padding: 0 0 82px 18px;
         gap: 12px;
@@ -623,7 +777,7 @@ a:hover {
         flex-direction: row;
         font-size: 0.8rem;
         letter-spacing: 3.5px;
-        color: var(--primary-color);
+        color: #52A038;
 
     }
 

@@ -82,109 +82,126 @@ export default {
             <!-- 動物類別 -->
             <div class="form-group">
                 <label for="species" :style="{ color: textColor }">動物類別 *</label>
-                <div class="group">
-                    <input type="radio" id="dog" value="犬" v-model="formData.species" name="animalType" />
-                    <label for="dog">犬</label>
+                <div class="groupInput">
+                    <div class="group">
+                        <input type="radio" id="dog" value="犬" v-model="formData.species" name="animalType" />
+                        <label for="dog">犬</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="cat" value="貓" v-model="formData.species" name="animalType" />
+                        <label for="cat">貓</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="otherType" value="其他" v-model="formData.species" name="animalType" />
+                        <label for="otherType">其他</label>
+                    </div>
                 </div>
-                <div class="group">
-                    <input type="radio" id="cat" value="貓" v-model="formData.species" name="animalType" />
-                    <label for="cat">貓</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="otherType" value="其他" v-model="formData.species" name="animalType" />
-                    <label for="otherType">其他</label>
-                </div>
+
             </div>
             <!-- 體型選擇 -->
             <div class="form-group">
                 <label for="body-shape" :style="{ color: textColor }">體型選擇 *</label>
-                <div class="group">
-                    <input type="radio" id="large" value="大" v-model="formData.bodyshape" name="bodyShape" />
-                    <label for="large">大型</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="medium" value="中" v-model="formData.bodyshape" name="bodyShape" />
-                    <label for="medium">中型</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="small" value="小" v-model="formData.bodyshape" name="bodyShape" />
-                    <label for="small">小型</label>
+                <div class="groupInput">
+                    <div class="group">
+                        <input type="radio" id="large" value="大" v-model="formData.bodyshape" name="bodyShape" />
+                        <label for="large">大型</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="medium" value="中" v-model="formData.bodyshape" name="bodyShape" />
+                        <label for="medium">中型</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="small" value="小" v-model="formData.bodyshape" name="bodyShape" />
+                        <label for="small">小型</label>
+                    </div>
                 </div>
             </div>
             <!-- 性別選擇 -->
             <div class="form-group">
                 <label for="gender" :style="{ color: textColor }">性別選擇 *</label>
-                <div class="group">
-                    <input type="radio" id="male" value="公" v-model="formData.gender" name="gender">
-                    <label for="male">公</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="female" value="母" v-model="formData.gender" name="gender">
-                    <label for="female">母</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="gender-unknown" value="both" v-model="formData.gender" name="gender">
-                    <label for="gender-unknown">皆可</label>
+                <div class="groupInput">
+                    <div class="group">
+                        <input type="radio" id="male" value="公" v-model="formData.gender" name="gender">
+                        <label for="male">公</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="female" value="母" v-model="formData.gender" name="gender">
+                        <label for="female">母</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="gender-unknown" value="both" v-model="formData.gender" name="gender">
+                        <label for="gender-unknown">皆可</label>
+                    </div>
                 </div>
             </div>
             <!-- 花色選擇 -->
             <div class="form-group">
                 <label for="colors" :style="{ color: textColor }">花色選擇 *</label>
-                <div class="group">
-                    <input type="radio" id="solidColor" value="純色" v-model="formData.colors" name="colorType" />
-                    <label for="solidColor">純色</label>
+                <div class="groupInput">
+                    <div class="group">
+                        <input type="radio" id="solidColor" value="純色" v-model="formData.colors" name="colorType" />
+                        <label for="solidColor">純色</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="patternedColor" value="花色" v-model="formData.colors" name="colorType" />
+                        <label for="patternedColor">花色</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="undefinedColor" value="both" v-model="formData.colors" name="colorType" />
+                        <label for="undefinedColor">皆可</label>
+                    </div>
                 </div>
-                <div class="group">
-                    <input type="radio" id="patternedColor" value="花色" v-model="formData.colors" name="colorType" />
-                    <label for="patternedColor">花色</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="undefinedColor" value="both" v-model="formData.colors" name="colorType" />
-                    <label for="undefinedColor">皆可</label>
-                </div>
-
             </div>
             <!-- 年齡選擇 -->
             <div class="form-group">
                 <label for="age" :style="{ color: textColor }">年齡選擇 *</label>
-                <div class="group">
-                    <input type="radio" id="youngAge" value="幼年" v-model="formData.age" name="ageType" />
-                    <label for="youngAge">幼年</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="adultAge" value="成年" v-model="formData.age" name="ageType" />
-                    <label for="adultAge">成年</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="unknownAge" value="both" v-model="formData.age" name="ageType" />
-                    <label for="unknownAge">皆可</label>
+                <div class="groupInput">
+                    <div class="group">
+                        <input type="radio" id="youngAge" value="幼年" v-model="formData.age" name="ageType" />
+                        <label for="youngAge">幼年</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="adultAge" value="成年" v-model="formData.age" name="ageType" />
+                        <label for="adultAge">成年</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="unknownAge" value="both" v-model="formData.age" name="ageType" />
+                        <label for="unknownAge">皆可</label>
+                    </div>
                 </div>
             </div>
             <!-- 是否已絕育 -->
             <div class="form-group">
                 <label for="neutered" :style="{ color: textColor }">是否已絕育 *</label>
-                <div class="group">
-                    <input type="radio" id="neuteredYes" value="已絕育" v-model="formData.neutered" name="neuteredStatus" />
-                    <label for="neuteredYes">已絕育</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="neuteredNo" value="未絕育" v-model="formData.neutered" name="neuteredStatus" />
-                    <label for="neuteredNo">未結紮</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="neuteredUnknown" value="both" v-model="formData.neutered"
-                        name="neuteredStatus" />
-                    <label for="neuteredUnknown">皆可</label>
+                <div class="groupInput">
+                    <div class="group">
+                        <input type="radio" id="neuteredYes" value="已絕育" v-model="formData.neutered"
+                            name="neuteredStatus" />
+                        <label for="neuteredYes">已絕育</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="neuteredNo" value="未絕育" v-model="formData.neutered" name="neuteredStatus" />
+                        <label for="neuteredNo">未結紮</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="neuteredUnknown" value="both" v-model="formData.neutered"
+                            name="neuteredStatus" />
+                        <label for="neuteredUnknown">皆可</label>
+                    </div>
                 </div>
             </div>
             <!-- 按鈕 -->
             <div class="btn-area">
                 <NoHoverButton @click.prevent="clearOptions" btnbgColor="var(--gray-color)" text="清除重填"></NoHoverButton>
-
                 <IconChangeButton @click.prevent="search" text="搜尋" textColor="var(--white-color)"
                     bgColor="var(--primary-color)" w="125px" h="54px">
                 </IconChangeButton>
             </div>
+            <div class="btn">
+                <button class="downbtn clearbtn" @click.prevent="clearOptions">清除重填</button>
+                <button class="downbtn" @click.prevent="search">搜尋</button>
+            </div>
+
         </form>
     </div>
 </template>
@@ -220,12 +237,10 @@ export default {
     letter-spacing: 6px;
     width: 700px;
     height: 906px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
     background-color: var(--white-color);
     border: 2px solid var(--primary-color);
-    
+
 }
 
 
@@ -235,10 +250,10 @@ form {
     display: flex;
     flex-direction: column;
     gap: 64px;
-
     border-top: 0;
     padding: 50px 40px;
     background: var(--white-color);
+    border-top: 1px solid var(--primary-color);
 }
 
 
@@ -258,6 +273,11 @@ label[for="neutered"],
 }
 
 .form-group {
+    display: flex;
+    flex-direction: row;
+}
+
+.groupInput {
     display: flex;
     flex-direction: row;
 }
@@ -294,6 +314,95 @@ label[for="neutered"],
     gap: 27px;
     font-size: 20px;
     letter-spacing: 5px;
+}
+
+.btn {
+    display: none;
+    visibility: visible;
+}
+
+@media screen and (max-width:375.9px) {
+    .container {
+        font-size: 1rem;
+        width: 350px;
+        height: auto;
+        justify-content: flex-start;
+        letter-spacing: 2px;
+        border: 0;
+    }
+
+    .input {
+        width: 280px;
+        margin-top: 20px;
+        font-size: 1rem;
+        border: 1px solid var(--primary-color);
+    }
+
+    /* 表單整區 根據顏色區分*/
+    form {
+        gap: 20px;
+        padding: 40px 20px;
+        border: 1px solid var(--primary-color);
+    }
+
+    /* 表單 */
+    .form-group {
+        flex-direction: column;
+        font-size: 1rem;
+    }
+
+    .group {
+        gap: 0;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    /* 所有 radio 按鈕 */
+    .form-group input[type="radio"] {
+        transform: scale(1);
+    }
+
+    /* 讓選項按鈕和文字對齊 */
+    .form-group label {
+        vertical-align: middle;
+        font-size: 1rem;
+    }
+
+    /*按鈕*/
+    .btn-area {
+        display: none;
+        visibility: hidden;
+    }
+
+    .btn {
+        display: flex;
+        visibility: visible;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        letter-spacing: 3.75px;
+        gap: 25px;
+        padding-top: 20px;
+    }
+
+    .downbtn {
+        width: 102px;
+        height: 41px;
+        background-color: #52A038;
+    }
+
+    .clearbtn {
+        background-color: #626262;
+    }
+
+    /* .btn-area {
+        font-size: 1rem;
+        letter-spacing: 3.75px;
+        gap: 25px;
+    } */
+
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {

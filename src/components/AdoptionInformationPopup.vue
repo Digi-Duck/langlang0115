@@ -123,6 +123,31 @@ main {
     padding: 0 126px;
 }
 
+@media screen and (max-width:375.9px) {
+    main {
+        top: auto;
+        left: auto;
+    }
+
+    .informationPopupFrame {
+        width: 312px;
+        height: 760px;
+    }
+
+    .informationTitle {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        padding: 30px 0;
+    }
+
+    .information {
+        font-size: 1rem;
+        letter-spacing: 4px;
+        line-height: 20px;
+        padding: 0 16px;
+    }
+}
+
 @media screen and (max-width:1280px) and (min-width:769px) {
     .informationPopupFrame {
         width: 1100px;

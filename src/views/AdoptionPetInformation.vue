@@ -35,6 +35,11 @@ export default {
                 color: '#52A038',
                 fontSize: "1.6rem",
             },
+            parentStyleFour: {
+                gap: '4px',
+                color: '#52A038',
+                fontSize: "1.25rem",
+            },
             parenttwoStyle: {
                 gap: '35px',
                 color: '#52A038',
@@ -49,6 +54,11 @@ export default {
                 gap: '33px',
                 color: '#52A038',
                 fontSize: "1.6rem",
+            },
+            parenttwoStyleFour: {
+                gap: '7px',
+                color: '#52A038',
+                fontSize: "1.25rem",
             },
             // 傳入動物資料
             Animals: Animals,
@@ -155,7 +165,7 @@ export default {
             <!-- 卡片區表格 -->
             <PetsCardFrame :animalData="this.foundAnimal" />
         </div>
-        <!-- 上方卡片區 768版 -->
+        <!-- 上方卡片區 768 & 368版 -->
         <div class="furryBabiesCardSmall">
             <PetsCardImageFrame @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" />
         </div>
@@ -167,11 +177,13 @@ export default {
             <TitleAndLine class="LineTwo" text="送養說明" linew="648px" :customStyle="parentStyleTwo" />
             <!-- 768標題 -->
             <TitleAndLine class="LineThree" text="送養說明" linew="350px" :customStyle="parentStyleThree" />
+            <!-- 375標題  -->
+            <TitleAndLine class="LineFour" text="送養說明" linew="200px" :customStyle="parentStyleFour" />
             <div class="instructionsText">
                 二貓都是女生，都作完結育及用全能貓作體內外驅蟲了。年紀都還很輕，未滿一歲，只是都曾生育過。
                 <br>
                 <br>
-                目前正漸漸養胖中。白黃貓親人花貓警戒心較重，但相信有主人耐心的愛，ㄧ定能讓她融化她的戒心的。
+                目前正漸漸養胖中。白黃貓親人花貓警戒心較重，但相信有主人耐心的愛一定能讓她融化她的戒心的。
             </div>
         </div>
         <!-- 更多毛小孩 -->
@@ -182,6 +194,8 @@ export default {
             <TitleAndLine class="manyLineTwo" text="更多毛小孩" linew="568px" :customStyle="parenttwoStyleTwo" />
             <!-- 768標題 -->
             <TitleAndLine class="manyLineThree" text="更多毛小孩" linew="313px" :customStyle="parenttwoStyleThree" />
+            <!-- 375標題  -->
+            <TitleAndLine class="manyLineFour" text="更多毛小孩" linew="173px" :customStyle="parenttwoStyleFour" />
             <!-- 卡片區 -->
             <div class="furryBabiesCardFrame">
                 <div class="BabiesCard">
@@ -204,7 +218,7 @@ main {
     display: flex;
     flex-direction: row;
     padding: 0 0 103px 26px;
-    font-size: 48px;
+    font-size: 3rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -280,6 +294,12 @@ main {
     visibility: hidden;
 }
 
+/* 375標題  */
+.LineFour {
+    display: none;
+    visibility: hidden;
+}
+
 .manyLineTwo {
     display: none;
     visibility: hidden;
@@ -288,6 +308,97 @@ main {
 .manyLineThree {
     display: none;
     visibility: hidden;
+}
+
+.manyLineFour {
+    display: none;
+    visibility: hidden;
+}
+
+@media screen and (max-width:375.9px) {
+    main {
+        padding: 22px 0 84px;
+    }
+
+    /* 標題 */
+    .adoptionCenteTitle {
+        padding: 0 0 55px 33px;
+        font-size: 1.25rem;
+        letter-spacing: 4.8px;
+    }
+
+    .adoptionCenteTitle p {
+        padding-left: 9px;
+    }
+
+    /* 上方卡片區 */
+    .furryBabiesCard {
+        display: none;
+        visibility: hidden;
+    }
+
+    .furryBabiesCardSmall {
+        display: flex;
+        visibility: visible;
+        align-items: center;
+        justify-content: center;
+        padding-left: 5px;
+    }
+
+    /* 送養中心 */
+    .adoptionInstructions {
+        padding: 54px 0 0 33px;
+    }
+
+    .instructionsText {
+        font-size: 1rem;
+        line-height: 120%;
+        letter-spacing: 4px;
+        padding: 25px 25px 59px 33px;
+        margin: 0;
+    }
+
+    .LineOne {
+        display: none;
+        visibility: hidden;
+    }
+
+    .LineFour {
+        display: flex;
+        visibility: visible;
+    }
+
+    /* 更多毛小孩 */
+    .manyLineOne {
+        display: none;
+        visibility: hidden;
+    }
+
+    .manyLineFour {
+        display: flex;
+        visibility: visible;
+    }
+
+    .manyFurryBabies {
+        padding: 0 0 32px 25px;
+    }
+
+    /* 卡片區 */
+    .furryBabiesCardFrame {
+        padding-top: 32px;
+        width: 368px;
+    }
+
+    .BabiesCard {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0;
+        gap: 30px;
+        height: 940px;
+        overflow: hidden;
+    }
+
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {

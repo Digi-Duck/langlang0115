@@ -51,4 +51,11 @@ export default {
 .heartIcon.active {
     fill: #FFAFAF;
 }
+
+@media screen and (max-width:375.9px) {
+    .heartIcon {
+        width: 33px;
+        height: 29px;
+    }
+}
 </style>
