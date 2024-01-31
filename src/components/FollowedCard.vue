@@ -80,8 +80,10 @@ export default {
 .card:nth-child(8)::before {
     content: "已送養";
     color: var(--white-color);
-    font-size: 32px;
-    text-align: center;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     line-height: 235px;
     letter-spacing: 6px;
     width: 300px;
@@ -96,5 +98,31 @@ export default {
 
 .heart {
     transform: scale(0.6);
+}
+
+@media screen and (max-width:375.9px) {
+    .card {
+        width: 205px;
+        height: 205px;
+        border-radius: 40px
+    }
+
+    .card:nth-child(3)::before,
+    .card:nth-child(8)::before {
+        font-size: 1rem;
+        width: 205px;
+        height: 205px;
+        border-radius: 40px;
+        line-height: normal;
+    }
+
+    .heart {
+        width: 30px;
+        height: 25px;
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+    }
+
 }
 </style>

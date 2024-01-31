@@ -586,8 +586,10 @@ a:hover {
     }
 
     a {
-        gap: 0;
+        gap: 10px;
         font-size: 1rem;
+        align-items: center;
+        justify-content: center;
     }
 
     .btnsmall {
@@ -598,6 +600,11 @@ a:hover {
     .btnbig {
         display: none;
         visibility: hidden;
+    }
+
+    .air {
+        width: 20px;
+        height: 20px;
     }
 }
 

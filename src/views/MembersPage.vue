@@ -2,12 +2,14 @@
 import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
 import FollowedCard from '@/components/FollowedCard.vue'
+import IconHistory from '@/components/icons/iconHistory.vue';
 
 export default {
     components: {
         NavPage,
         FooterPage,
-        FollowedCard
+        FollowedCard,
+        IconHistory
     },
     data() {
         return {
@@ -96,19 +98,19 @@ export default {
                 <img class="bgline" src="../assets/Image/MemberImage/member-line.svg">
                 <div class="historycontent">
                     <div class="historyicon">
-                        <img src="../assets/Image/MemberImage/iconHistory.svg">
+                        <IconHistory />
                     </div>
                     <span>您在2023年11月20日贊助了100元新台幣</span>
                 </div>
                 <div class="historycontent">
                     <div class="historyicon">
-                        <img src="../assets/Image/MemberImage/iconHistory.svg">
+                        <IconHistory />
                     </div>
                     <span>您在2023年11月20日贊助了100元新台幣</span>
                 </div>
                 <div class="historycontent">
                     <div class="historyicon">
-                        <img src="../assets/Image/MemberImage/iconHistory.svg">
+                        <IconHistory />
                     </div>
                     <span>您在2023年11月20日贊助了100元新台幣</span>
                 </div>
@@ -290,8 +292,6 @@ input {
 .historyicon {
     width: 80px;
     height: 80px;
-    background-color: #52A038;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -386,12 +386,11 @@ input {
 
     /* 捐款歷史 */
     .history {
-        padding: 40px 0 0 30px;
         width: 351px;
     }
 
     .historytop {
-        margin-bottom: 42px;
+        margin: 25px 0 40px 0;
     }
 
     .title {
@@ -417,7 +416,7 @@ input {
     .bgline {
         width: 253px;
         top: 50%;
-    left: -36%;
+        left: -33%;
     }
 
     .historycontent {
@@ -425,10 +424,9 @@ input {
     }
 
     .historyicon {
-        width: 60px;
+        width: 55px;
         height: 55px;
     }
-
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {
