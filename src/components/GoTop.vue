@@ -61,16 +61,25 @@ export default {
     opacity: 1;
 }
 
+@media screen and (max-width:375.9px) {
+    #goTop {
+        width: 51px;
+        height: 50px;
+        right: 18px;
+        bottom: 300px;
+    }
+}
+
 @media screen and (max-width:1280px) and (min-width:769px) {
     #goTop {
         right: 18px;
         bottom: 200px;
     }
 }
-@media screen and (max-width:768px) and (min-width:376px){
+
+@media screen and (max-width:768px) and (min-width:376px) {
     #goTop {
         right: 18px;
         bottom: 200px;
     }
-}
-</style>
+}</style>

@@ -63,11 +63,11 @@ export default {
                 <div class="contentmain">
                     <div>
                         <label>姓名</label>
-                        <input type="text" placeholder="王曉明" class="name">
+                        <input class="name" type="text" placeholder="王曉明">
                     </div>
                     <div>
                         <label>電子郵件</label>
-                        <input type="text" placeholder="iluvlang@gmail.com">
+                        <input class="name" type="text" placeholder="iluvlang@gmail.com">
                     </div>
                     <div>
                         <label>手機號碼</label>
@@ -295,6 +295,140 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width:375.9px) {
+    main {
+        padding: 30px 0px 109px;
+    }
+
+    .top {
+        width: 340px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+        padding: 0;
+    }
+
+    /* 頭貼 */
+    .headsticker {
+        width: 155px;
+        height: 155px;
+        margin-bottom: 30px;
+    }
+
+    /* 個人資料 */
+    .contentbox {
+        justify-content: space-between;
+        width: 280px;
+        gap: 12px;
+        margin-left: 50px;
+    }
+
+    .contentboxtop {
+        height: 39px;
+        /* position: absolute;
+        right: 15px;
+        top: 350px; */
+    }
+
+    .contentmain {
+        width: 248px;
+        justify-content: center;
+        letter-spacing: 3.84px;
+        font-size: 1rem;
+        gap: 20px;
+    }
+
+    .contentmain div {
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    input {
+        width: 248px;
+        font-size: 0.8rem;
+        letter-spacing: 2.88px;
+    }
+
+    .name {
+        font-size: 0.75rem;
+
+    }
+
+    /* 追蹤的浪浪 */
+    .followed {
+        padding-top: 30px;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .followedArea {
+        padding: 0;
+        gap: 22px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
+
+    .followedbox {
+        width: 351px;
+        height: auto;
+        align-items: center;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    /* 捐款歷史 */
+    .history {
+        padding: 40px 0 0 30px;
+        width: 351px;
+    }
+
+    .historytop {
+        margin-bottom: 42px;
+    }
+
+    .title {
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+
+    .thanks {
+        font-size: 0.8rem;
+        letter-spacing: 3.5px;
+        top: 12.5%;
+        right: 1.5%;
+        transform: rotate(15deg);
+    }
+
+    .historybox {
+        width: 300px;
+        height: 310px;
+        font-size: 1rem;
+        letter-spacing: 4px;
+    }
+
+    .bgline {
+        width: 253px;
+        top: 50%;
+    left: -36%;
+    }
+
+    .historycontent {
+        gap: 17px;
+    }
+
+    .historyicon {
+        width: 60px;
+        height: 55px;
+    }
+
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {
