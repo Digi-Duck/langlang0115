@@ -124,10 +124,19 @@ a:hover {
     padding: 2.8rem 12.5rem 0 12.5rem;
 }
 
-@media only screen and (max-width: 1353px){
+@media only screen and (max-width: 1353px) {
     #contactTitle {
         padding: 2.8rem 0rem 0 0rem;
-}}
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #contactTitle {
+        padding: 0;
+
+    }
+}
+
 
 #contactTitle span {
     color: var(--primary-color);
@@ -143,6 +152,14 @@ a:hover {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    #contactTitle span {
+        font-size: 26px;
+        letter-spacing: 6.5px;
+        margin-right: -95px;
+    }
+}
+
 /* Line */
 #contactLine {
     display: flex;
@@ -152,6 +169,13 @@ a:hover {
 @media only screen and (max-width: 1353px) {
     #contactLine {
         width: 700px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #contactLine {
+        width: 400px;
+        padding-left: 29px;
     }
 }
 
@@ -175,6 +199,12 @@ a:hover {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    #squre {
+        width: 30px;
+    }
+}
+
 
 /* 上方提醒內文 */
 #contactText {
@@ -193,6 +223,13 @@ a:hover {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    #contactText {
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
+}
+
 /* input區 */
 #inputArea {
     display: flex;
@@ -200,6 +237,13 @@ a:hover {
     flex-direction: column;
     padding: 7.5rem 12.6rem 0 12.6rem;
     row-gap: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #inputArea {
+        padding: 7.5rem 0 0 0;
+        margin: 0px 123px;
+    }
 }
 
 /* input框 */
@@ -211,6 +255,16 @@ a:hover {
     line-height: normal;
     font-weight: 400;
 }
+
+@media only screen and (max-width: 768px) {
+    .inputFrame {
+
+        width: 569px;
+        font-size: 1.5rem;
+
+    }
+}
+
 
 /* input標題 */
 .inputTitle {
@@ -239,6 +293,14 @@ a:hover {
     outline: none;
 }
 
+@media only screen and (max-width: 768px) {
+
+    .input {
+        width: 378px;
+    }
+
+}
+
 /* 下拉選單箭頭設定 */
 .customSelect {
     -webkit-animation: none;
@@ -248,6 +310,26 @@ a:hover {
     background-position: 95% center;
     background-repeat: no-repeat;
     padding-right: 1rem;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    /* 修改選項樣式 */
+    .customSelect option {
+        background-color: red;
+        /* 設定選項背景顏色 */
+        color: #333;
+        /* 設定選項文字顏色 */
+        padding: 10px;
+        /* 設定選項內邊距 */
+        font-size: 90px;
+
+        width: 50px;
+    }
+
+
 }
 
 /* input內容 */
@@ -277,6 +359,12 @@ a:hover {
     align-items: center;
     flex-direction: column;
     margin-left: 11.25rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .sendArea {
+        margin-left: -2.75rem;
+    }
 }
 
 /* 下方文字區 */

@@ -26,13 +26,14 @@ export default {
     <section class="about-intro">
         <div class="about-intro-title">
             <div>關於浪浪的事</div>
-            <div style="font-size: 20px">About<br>Us</div>
+            <div class="aboutus">About Us</div>
+            <div class="about-us-big" style="font-size: 20px">About<br>Us</div>
         </div>
         <!-- 右上角 -->
         <div class="intro-description">
             <div class="description-text">減少流浪在外的動物<br>並且降低遭惡意領養的問題
                 <div class="intro-dog-pic">
-                    <img src="../assets/Image/AboutPage2Image/about-dog.svg">
+                    <!-- <img src="../assets/Image/AboutPage2Image/about-dog.svg"> -->
                 </div>
             </div>
         </div>
@@ -84,6 +85,27 @@ export default {
     }
 }
 
+
+@media only screen and (max-width: 768px) {
+    .about-us-big {
+        display: none;
+    }
+}
+
+.aboutus {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .aboutus {
+        display: block;
+        color: #52A038;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 4px;
+    }
+}
+
 .intro-description {
     position: absolute;
     top: 250px;
@@ -105,6 +127,14 @@ export default {
         height: 65px;
     }
 }
+@media only screen and (max-width: 768px) {
+    .intro-description {
+        top: 194px;
+        right: 183px;
+        width: 340px;
+        height: 65px;
+    }
+}
 
 .description-text {
     background-color: var(--primary-color);
@@ -116,27 +146,36 @@ export default {
     font-size: 28px;
     padding: 30px;
     position: relative;
+    box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.25);
+
 }
 
 
-@media only screen and (max-width: 1278px) {
+
+@media only screen and (max-width: 1224px) {
     .description-text {
-        font-size: 16px;
-        width: 309px;
-        height: 79px;
-        padding: 14px 37px 13px 6px;
-        text-align: center;
+        font-size: 14px;
+        letter-spacing: 3.5px;
+        width: 340px;
+        height: 65px;
+        padding: 14px 37px 13px 30px;
+        text-align: left;
+        border-radius: 30px;
+
     }
 }
 
 .intro-dog-pic {
+    background-image: url("../assets/Image/AboutPage2Image/about-dog.svg");
+    width: 446px;
+    height: 170px;
     position: absolute;
     top: -70px;
     right: -100px;
 }
 
 @media only screen and (max-width: 1278px) {
-    .intro-dog-pic img {
+    .intro-dog-pic  {
         position: absolute;
         top: 15px;
         right: -46px;
@@ -144,6 +183,17 @@ export default {
         height: 74px;
     }
 }
+@media only screen and (max-width: 1224px) {
+    .intro-dog-pic {
+        position: absolute;
+        top: -47px;
+        right: -46px;
+        background-repeat: no-repeat;
+        background-size: 140%;
+        border-radius: 30px;
+    }
+}
+
 
 .main-content {
     width: 73%;
@@ -161,8 +211,8 @@ export default {
 
 @media only screen and (max-width: 1645px) {
     .main-content {
-        margin: 450px auto 100px;    
-        width:1059px;
+        margin: 450px auto 100px;
+        width: 1059px;
         height: 680px;
     }
 }
@@ -170,6 +220,14 @@ export default {
 @media only screen and (max-width: 1278px) {
     .main-content {
         margin: 207px 58px 54px 187px;
+        width: 587px;
+        height: 999px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main-content {
+        margin: 139px 82px 54px 82px;
         width: 587px;
         height: 999px;
     }
@@ -187,6 +245,11 @@ export default {
         left: -100px;
         width: 201px;
         height: 128px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .main-content img:not(.sponsor-us-btn) {
+        left: -60px;
     }
 }
 
