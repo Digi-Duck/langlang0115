@@ -136,13 +136,13 @@ main {
     }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     main {
         padding: 44px 40px 0px 63px;
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     main {
         padding: 22px 4px 0px 4px;
     }
@@ -169,7 +169,7 @@ main {
     line-height: 24px;
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .lost-title {
         margin-bottom: 40px;
     }
@@ -188,7 +188,7 @@ main {
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .lost-title {
         margin-bottom: 20px;
         margin-left: 30px;
@@ -228,7 +228,7 @@ svg {
     }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     svg {
         display: none;
     }
@@ -252,7 +252,7 @@ svg {
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .tabs {
         font-size: 16px;
         letter-spacing: 0px;
@@ -290,18 +290,18 @@ svg {
     order: 0;
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .tab-left {
         height: 43px;
         line-height: 43px;
-        padding: 0px 37.5px;
+        padding: 0px 42px;
         border-radius: 30px 0 0 0;
     }
 
     .tab-right {
         height: 43px;
         line-height: 43px;
-        padding: 0 37.5px;
+        padding: 0 41.5px;
         border-radius: 0 30px 0 0;
     }
 }

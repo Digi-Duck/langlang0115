@@ -70,10 +70,10 @@ export default {
         },
         //點擊送出按鈕
         showSubmitBtn() {
-            // if (this.formData.species == '' || this.formData.bodyshape == '' || this.formData.gender == '' || this.formData.colors == '' || this.formData.age == '' || this.formData.neutered == '' || this.formData.time == '' || this.formData.place == '' || this.formData.phone == '') {
-            //     alert('請確認*必填欄位已填寫完成');
-            //     return;
-            // }
+            if (this.formData.species == '' || this.formData.bodyshape == '' || this.formData.gender == '' || this.formData.colors == '' || this.formData.age == '' || this.formData.neutered == '' || this.formData.time == '' || this.formData.place == '' || this.formData.phone == '') {
+                alert('請確認*必填欄位已填寫完成');
+                return;
+            }
             document.body.style.overflow = 'hidden';    //隱藏滾軸
             this.isSubmit = true;
             // 讓scrollBar在router後平滑的回至頂部
@@ -307,13 +307,24 @@ export default {
 
             <div class="btn-area">
                 <!-- 清除重填按鈕 -->
-                <NoHoverButton @click.prevent="showConfirmationBtn" :text="myinnertext" :btnbgColor="mybtnbgColor">
+                <NoHoverButton class="btn-1" @click.prevent="showConfirmationBtn" :text="myinnertext"
+                    :btnbgColor="mybtnbgColor">
                 </NoHoverButton>
 
                 <!-- 送出按鈕 -->
-                <IconChangeButton :text="mysubmit" @click.prevent="showSubmitBtn" :style="{
+                <IconChangeButton class="btn-1" :text="mysubmit" @click.prevent="showSubmitBtn" :style="{
                     color: textColor, backgroundColor: submitBgColor, width: w, height: h
                 }"></IconChangeButton>
+                <!-- 手機版-清除重填按鈕 -->
+                <NoHoverButton class="btn-2" @click.prevent="showConfirmationBtn" :text="myinnertext"
+                    :btnbgColor="mybtnbgColor">
+                </NoHoverButton>
+
+                <!-- 手機版-送出按鈕 -->
+                <IconChangeButton class="btn-2" :text="mysubmit" @click.prevent="showSubmitBtn" w="96px" h="41px" :style="{
+                    color: textColor, backgroundColor: submitBgColor,
+                }"></IconChangeButton>
+
 
                 <!-- 重填確認框 彈跳窗-->
                 <div v-if="confirmClear" class="confirmation-modal">
@@ -393,19 +404,21 @@ main {
         margin: 69px 0px 0px 100px;
     }
 }
-@media (max-width: 751px) {
+
+@media (max-width: 768px) {
     .header-container {
-    font-size: 26px;
-    letter-spacing: 6.5px;
-    margin: 22px 0px 0px 33px;
-}  
+        font-size: 26px;
+        letter-spacing: 6.5px;
+        margin: 22px 0px 0px 33px;
+    }
 }
-@media (max-width: 358px) {
+
+@media (max-width: 375px) {
     .header-container {
-    font-size: 20px;
-    letter-spacing: 4.8px;
-    margin: 44px 0px 0px 40px;
-}    
+        font-size: 20px;
+        letter-spacing: 4.8px;
+        margin: 22px 23px 0px 34px;
+    }
 }
 
 
@@ -416,6 +429,7 @@ main {
 .header-text {
     color: #D7D7D7;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -433,23 +447,19 @@ form {
         gap: 60px;
     }
 }
-@media (max-width: 751px) {
+
+@media (max-width: 768px) {
     form {
-    font-size: 16px;
-    letter-spacing: 6px;
-    font-weight: 400;
-    width: 100%;
-    padding: 104px 113px 0px 69px
+        padding: 104px 113px 132px 69px;
+        gap: 50px;
+    }
 }
-}
-@media (max-width: 358px) {
+
+@media (max-width: 375px) {
     form {
-    font-size: 16px;
-    letter-spacing: 6px;
-    font-weight: 400;
-    width: 100%;
-    padding: 67px 23px 0px 34px
-}
+        padding: 67px 23px 77px 23px;
+        gap: 25px;
+    }
 }
 
 
@@ -460,6 +470,23 @@ form {
     gap: 72px;
 }
 
+@media (max-width: 768px) {
+    .custom-file-upload {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 375px) {
+    .custom-file-upload {
+        gap: 25px;
+        align-items: center;
+        margin-bottom: 270px;
+        justify-content: flex-end;
+        padding-right: 47px;
+    }
+}
+
+
 /*自訂上傳照片按鈕*/
 .custom-file-upload label {
     background-color: #ffffff;
@@ -468,6 +495,14 @@ form {
     padding: 30px 15px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+@media (max-width: 375px) {
+    .custom-file-upload label {
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 }
 
 
@@ -500,9 +535,24 @@ form {
         right: -16%;
     }
 }
-@media (max-width: 751px) {
-    
+
+@media (max-width: 768px) {
+    .preview-pic {
+        width: 200px;
+        height: 200px;
+        right: -14%;
+    }
 }
+
+@media (max-width: 375px) {
+    .preview-pic {
+        width: 250px;
+        height: 250px;
+        top: 160%;
+        right: 12%;
+    }
+}
+
 
 
 .preview-pic img {
@@ -510,7 +560,6 @@ form {
     height: 100%;
     width: 100%;
     object-fit: cover;
-
 }
 
 .preview-pic-block {
@@ -537,7 +586,8 @@ form {
         right: -16%;
     }
 }
-@media (max-width: 751px) {
+
+@media (max-width: 768px) {
     .preview-pic-block {
         width: 193px;
         height: 174px;
@@ -548,6 +598,17 @@ form {
     }
 }
 
+@media (max-width: 375px) {
+    .preview-pic-block {
+        width: 249px;
+        height: 224px;
+        line-height: 224px;
+        top: 160%;
+        right: 12%;
+    }
+}
+
+
 label[for="photo"] {
     display: flex;
     width: 200px;
@@ -555,6 +616,14 @@ label[for="photo"] {
     justify-content: space-around;
     align-items: center;
 }
+
+@media (max-width: 375px) {
+    label[for="photo"] {
+        width: 174px;
+        height: 41px;
+    }
+}
+
 
 .form-group {
     width: 793px;
@@ -571,6 +640,19 @@ label[for="photo"] {
     }
 }
 
+@media (max-width: 768px) {
+    .form-group {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .form-group {
+        font-size: 16px;
+        flex-wrap: wrap;
+        gap: 10px 2px;
+    }
+}
 
 /*每個欄位的標題*/
 .photo-title,
@@ -607,7 +689,9 @@ label[for="other"],
         margin-right: 35px;
     }
 }
-@media (max-width: 751px) {
+
+@media (max-width: 768px) {
+
     .photo-title,
     label[for="photo"],
     label[for="species"],
@@ -622,8 +706,32 @@ label[for="other"],
     label[for="other"],
     .time-place-title {
         margin-right: 0px;
+        font-size: 16px;
+        letter-spacing: 4px;
     }
 }
+
+@media (max-width: 375px) {
+
+    label[for="species"],
+    label[for="chip-id"],
+    label[for="body-shape"],
+    label[for="gender"],
+    label[for="colors"],
+    label[for="age"],
+    label[for="neutered"] {
+        width: 100%;
+    }
+
+    label[for="time"],
+    label[for="phone"],
+    label[for="other"],
+    .time-place-title {
+        margin-left: 40px;
+    }
+
+}
+
 
 .form-group input,
 select {
@@ -632,10 +740,22 @@ select {
 }
 
 @media (max-width: 1280px) {
-
     .form-group input,
     select {
         margin: 0px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-group input,
+    select {
+        margin: 0px 20px;
+    }
+}
+@media (max-width: 375px) {
+    .form-group input,
+    select {
+        margin: 0px 15px;
     }
 }
 
@@ -643,6 +763,18 @@ select {
 .form-group input[type="radio"] {
     transform: scale(2);
 }
+
+@media (max-width: 768px) {
+    .form-group input[type="radio"] {
+        transform: scale(1.5);
+    }
+}
+@media (max-width: 375px) {
+    .form-group input[type="radio"] {
+        transform: scale(1.2);
+    }
+}
+
 
 /* 讓選項按鈕和文字對齊 */
 .form-group label {
@@ -655,6 +787,22 @@ select {
     display: flex;
     align-items: start;
 }
+
+@media (max-width: 768px) {
+    .time-place {
+        gap: 26px;
+    }
+}
+
+@media (max-width: 375px) {
+    .time-place {
+        flex-direction: column;
+        gap: 15px;
+        margin: 10px 0;
+    }
+}
+
+
 
 .time-place-text {
     display: flex;
@@ -674,11 +822,34 @@ select {
     }
 }
 
-#time::placeholder,
-#description::placeholder {
+@media (max-width: 375px) {
+    .time-place-text {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: 167px;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+/* 設定 所有input 文字大小 */
+.form-group input[type="text"],
+select#place {
+    font-size: 24px;
     text-align: center;
     color: #b1b1b1;
     letter-spacing: 6px;
+}
+
+@media (max-width: 768px) {
+
+    .form-group input[type="text"],
+    select#place {
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
 }
 
 .time-place-text span,
@@ -688,6 +859,15 @@ select {
     letter-spacing: 4px;
     color: var(--gray-color)
 }
+
+@media (max-width: 375px) {
+    .phone-area span {
+        font-size: 14px;
+        letter-spacing: 3.5px;
+        margin: 0;
+    }
+}
+
 
 /*聯絡方式*/
 .contact-area {
@@ -699,6 +879,17 @@ select {
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 375px) {
+    .contact-area {
+        margin: 15px 0;
+}
+    .phone-area {
+        gap: 10px;
+        margin-left: 40px;
+    }
+}
+
 
 
 /*設定每個input樣式*/
@@ -714,6 +905,21 @@ input#chip-id {
     }
 }
 
+@media (max-width: 768px) {
+    input#chip-id {
+        width: 250px;
+    }
+}
+
+@media (max-width: 375px) {
+    input#chip-id {
+        width: 298px;
+        height: 41px;
+        margin: 0;
+    }
+}
+
+
 input#time {
     width: 275px;
     height: 56px;
@@ -723,12 +929,34 @@ input#time {
 select#place {
     width: 257px;
     height: 56px;
-    letter-spacing: 6px;
-    font-size: 24px;
-    font-weight: 400;
-    text-align: center;
-    color: #b1b1b1;
 }
+
+@media (max-width: 768px) {
+    input#time {
+        width: 185px;
+        margin-right: 11px;
+    }
+
+    select#place {
+        width: 180px;
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 375px) {
+    input#time {
+        width: 255px;
+        height: 41px;
+        margin-right: 0px;
+    }
+
+    select#place {
+        width: 255px;
+        height: 41px;
+        letter-spacing: 4px;
+    }
+}
+
 
 select.customSelect {
     /*取消下拉式選單預設按鈕樣式*/
@@ -749,12 +977,41 @@ input#description {
     margin: 0;
 }
 
+@media (max-width: 768px) {
+    input#description {
+        width: 388px;
+        height: 56px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 375px) {
+    input#description {
+        width: 256px;
+        height: 41px;
+    }
+}
 
 input#phone {
     width: 565px;
     height: 56px;
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    input#phone {
+        width: 392px;
+    }
+}
+
+@media (max-width: 375px) {
+    input#phone {
+        width: 202px;
+        height: 41px;
+        margin: 0;
+    }
+}
+
 
 #other {
     width: 565px;
@@ -793,6 +1050,33 @@ input#phone {
     }
 }
 
+@media (max-width: 768px) {
+    .contact-area label,
+    .other label {
+        width: 179px;
+    }
+
+    #other {
+        width: 394px;
+        height: 115px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .contact-area label,
+    .other label {
+        width: 100%;
+    }
+
+    #other {
+        width: 255px;
+        height: 200px;
+        margin: auto;
+    }
+}
+
+
 /*其他說明的輸入欄*/
 .form-group textarea {
     vertical-align: top;
@@ -800,16 +1084,44 @@ input#phone {
     border-radius: 4px;
 }
 
-/* 設定 所有input 文字大小 */
-.form-group input[type="text"] {
-    font-size: 24px;
+/*按鈕*/
+.btn-2 {
+    display: none;
 }
 
-/*按鈕*/
 .btn-area {
     display: flex;
     margin-left: 350px;
     gap: 55px;
+}
+
+@media (max-width: 768px) {
+    .btn-area {
+        display: flex;
+        margin-left: 163px;
+        gap: 55px;
+    }
+}
+
+@media (max-width: 375px) {
+    .btn-area {
+        display: flex;
+        margin: auto;
+        gap: 25px;
+    }
+
+    .btn-1 {
+        display: none;
+    }
+
+    .btn-2 {
+        display: flex;
+        width: 102px;
+        height: 41px;
+        font-size: 15px;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /*確認是否清除*/
@@ -837,10 +1149,9 @@ input#phone {
     width: 550px;
     height: 409px;
     background-color: var(--white-color);
-    /*border: 2px solid var(--primary-color);*/
+    border: 2px solid var(--primary-color);
     border-width: 2px;
     border-style: solid;
-    /*border-color: aqua;*/
     border-radius: 30px;
     gap: 42px;
 }
@@ -874,9 +1185,7 @@ input#phone {
     border: 1px solid var(--gray-color);
 }
 
-
 /*送出確認框*/
-
 .ScreenFrame {
     display: flex;
     align-items: center;
@@ -943,5 +1252,6 @@ input#phone {
     letter-spacing: 5px;
     word-wrap: break-word;
     box-shadow: none;
-}</style>
+}
+</style>
 

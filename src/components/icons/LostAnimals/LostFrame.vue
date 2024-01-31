@@ -236,16 +236,16 @@ export default {
     }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .big-container {
         width: 648px;
         gap: 84px;
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .big-container {
-        width: 350px;
+        width: 367px;
         gap: 37px;
     }
 }
@@ -274,11 +274,11 @@ export default {
     color: var(--olivegreen-color);
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .notice {
         height: 54px;
         line-height: normal;
-        padding: 5px 25px;
+        padding: 5px 30px;
         font-size: 14px;
         letter-spacing: 3.5px;
     }
@@ -304,7 +304,7 @@ form {
     }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     form {
         width: 100%;
         padding: 40px 21px;
@@ -326,7 +326,7 @@ label[for="neutered"],
     color: var(--olivegreen-color);
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     label[for="species"],
     label[for="location"],
     label[for="body-shape"],
@@ -366,13 +366,13 @@ label[for="neutered"],
     font-size: 24px;
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .form-group label {
         font-size: 22px;
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .form-group {
         margin: 15px 0;
         display: flex;
@@ -419,31 +419,31 @@ form svg {
 /* 1280版-提早變版 */
 @media (max-width: 1770px) {
     form svg {
-        top: 11.7%;
-        left: 76%;
+        top: 9.2%;
+        left: 83%;
     }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .customSelect {
         width: 535px;
         padding: 20px;
     }
 
     form svg {
-        top: 11.2%;
-        left: 80%;
+        top: 11.8%;
+        left: 78%;
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .customSelect {
         width: 280px;
         margin-top: 0;
     }
 
     form svg {
-        top: 9.7%;
+        top: 10.5%;
         left: 75%;
     }
 }
@@ -456,7 +456,7 @@ form svg {
     gap: 55px;
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .btn-area {
         display: flex;
         justify-content: center;
@@ -485,13 +485,13 @@ form svg {
     }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .list-container {
         width: 100%;
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .list-container {
         font-size: 16px;
         gap: 0px;
@@ -521,7 +521,7 @@ a:hover {
     display: none;
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .btn {
         font-size: 16px;
         padding: 0 20px;
