@@ -34,7 +34,6 @@
     position: absolute;
     top: -144px;
     left: 83px;
-    transform: rotate(-4deg);
 }
 
 .cat {
@@ -51,9 +50,64 @@
     color: white;
     font-size: 18px;
 }
+
 @media (max-width: 1280px) {
     .footer-container {
-    height: 100px;
+        height: 100px;
+    }
 }
+
+@media (max-width: 751px) {
+    .dog {
+        position: absolute;
+        top: -128px;
+        left: 0px;
+        transform: scale(0.8);
+    }
+
+    .cat {
+        position: absolute;
+        top: -127px;
+        right: 0px;
+        transform: scale(0.8);
+    }
+
+    .footer-container {
+        height: 89px;
+    }
+
+    .footer span {
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 358px) {
+    .footer-container {
+    height: 87px;
+    border-radius: 20px 20px 0 0;
+}
+    .dog {
+        position: absolute;
+        top: -112px;
+        left: -60px;
+        transform: scale(0.5);
+    }
+
+    .cat {
+        position: absolute;
+        top: -122px;
+        right: -40px;
+        transform: scale(0.5);
+    }
+
+    .footer-container {
+        height: 89px;
+    }
+
+    .footer span {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
 }
 </style>
