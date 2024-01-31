@@ -77,6 +77,7 @@ export default {
                             <input type="password" v-model="formData.password">
                         </div>
                     </div>
+                    <!-- 768 -->
                     <div class="otherTwo">
                         <span @click="goToForget">忘記密碼<img src="../assets/Image/MemberImage/Icon-forget.svg"></span>
                         <span @click="goToSignUp">註冊帳號 <img src="../assets/Image/MemberImage/Icon-signup.svg"></span>
@@ -137,7 +138,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 2.5rem;
     letter-spacing: 10px;
     color: var(--primary-color);
     padding-bottom: 36px;
@@ -250,6 +251,89 @@ input {
     width: 80px;
     height: 80px;
     cursor: pointer;
+}
+
+@media screen and (max-width:375.9px) {
+    main {
+        padding: 57px 0 103px;
+    }
+
+    .container {
+        width: 318px;
+        height: 600px;
+        padding: 28px 0 62px;
+    }
+
+    .title {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        padding-bottom: 30px;
+    }
+
+    .accountbox {
+        flex-direction: column;
+    }
+
+    .inputArea {
+        padding-right: 0;
+    }
+
+    .account {
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 1rem;
+        letter-spacing: 4px;
+        gap: 5px;
+        margin: 0;
+    }
+
+    input {
+        width: 259px;
+    }
+
+    .login {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+        letter-spacing: 4px;
+        margin: 25px 0 20px 0;
+    }
+
+    .other {
+        gap: 67px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+
+    .social {
+        width: 316px;
+        gap: 30px;
+        letter-spacing: 4px;
+        padding-bottom: 0;
+        padding-top: 40px;
+    }
+
+    .socialLine {
+        font-size: 1rem;
+    }
+
+    .socialLine img {
+        width: 50px;
+
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 316px;
+        gap: 34px;
+    }
+
+    .icon img {
+        width: 51px;
+        height: 51px;
+    }
 }
 
 @media screen and (max-width:1280px) and (min-width:769px) {
