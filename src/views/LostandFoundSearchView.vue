@@ -136,6 +136,19 @@ main {
     }
 }
 
+@media (max-width: 751px) {
+    main {
+        padding: 44px 40px 0px 63px;
+    }
+}
+
+@media (max-width: 358px) {
+    main {
+        padding: 22px 4px 0px 4px;
+    }
+}
+
+
 .lost-title {
     display: flex;
     align-items: center;
@@ -155,6 +168,45 @@ main {
     width: 150px;
     line-height: 24px;
 }
+
+@media (max-width: 751px) {
+    .lost-title {
+        margin-bottom: 40px;
+    }
+
+    .lost-titlecn {
+        font-size: 26px;
+        letter-spacing: 6.5px;
+        width: 180px;
+    }
+
+    .lost-titleen {
+        font-size: 16px;
+        letter-spacing: 5px;
+        width: 100%;
+        line-height: 0px;
+    }
+}
+
+@media (max-width: 358px) {
+    .lost-title {
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+
+    .lost-titlecn {
+        font-size: 20px;
+        letter-spacing: 5px;
+        width: 102px;
+    }
+
+    .lost-titleen {
+        font-size: 14px;
+        letter-spacing: 3.5px;
+        width: 160px;
+    }
+}
+
 
 .content {
     position: relative;
@@ -176,6 +228,12 @@ svg {
     }
 }
 
+@media (max-width: 751px) {
+    svg {
+        display: none;
+    }
+}
+
 .tabs {
     width: 1588px;
     display: flex;
@@ -191,6 +249,14 @@ svg {
         font-size: 24px;
         letter-spacing: 6px;
         padding-bottom: 213px;
+    }
+}
+
+@media (max-width: 358px) {
+    .tabs {
+        font-size: 16px;
+        letter-spacing: 0px;
+        padding-bottom: 80px;
     }
 }
 
@@ -224,6 +290,23 @@ svg {
     order: 0;
 }
 
+@media (max-width: 358px) {
+    .tab-left {
+        height: 43px;
+        line-height: 43px;
+        padding: 0px 37.5px;
+        border-radius: 30px 0 0 0;
+    }
+
+    .tab-right {
+        height: 43px;
+        line-height: 43px;
+        padding: 0 37.5px;
+        border-radius: 0 30px 0 0;
+    }
+}
+
+
 /* 切換頁籤後的樣式 */
 #tab-1:checked+label {
     color: var(--white-color);
@@ -252,4 +335,5 @@ svg {
 .info-2 {
     display: none;
     order: 1;
-}</style>
+}
+</style>

@@ -84,9 +84,10 @@
 
 @media (max-width: 358px) {
     .footer-container {
-    height: 87px;
-    border-radius: 20px 20px 0 0;
-}
+        height: 87px;
+        border-radius: 20px 20px 0 0;
+    }
+
     .dog {
         position: absolute;
         top: -112px;
