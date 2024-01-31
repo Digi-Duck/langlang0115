@@ -140,6 +140,13 @@ export default {
     /*    background-color: beige;*/
 }
 
+@media only screen and (max-width: 375px) {
+    .sponsor-page {
+        margin-bottom: 208px;
+    }
+}
+
+
 .sponsor-title {
     font-size: 48px;
     color: var(--primary-color);
@@ -160,12 +167,22 @@ export default {
     }
 }
 
-@media only screen and (max-width: 1836px) {
+@media only screen and (max-width: 768px) {
     .sponsor-title {
         width: 72%;
         font-size: 26px;
+   
     }
 }
+
+@media only screen and (max-width: 375px) {
+    .sponsor-title {
+        font-size: 20px;
+        margin: 30px;
+    }
+}
+
+
 
 @media only screen and (max-width: 768px) {
     .sponsor-us-big {
@@ -190,13 +207,29 @@ export default {
     }
 }
 
-
+@media only screen and (max-width: 768px) {
+    .sponsor-us {
+        font-size: 14px;
+    }
+}
 
 .accept-criedcard {
     font-size: 20px;
     border: 3px dashed var(--primary-color);
     margin: 10px 0px 4px 17px;
     position: relative;
+}
+
+@media only screen and (max-width: 375px) {
+    .accept-criedcard {
+        font-size: 14px;
+        letter-spacing: 3.5px;
+        margin: 10px 0px 4px 10px;
+        position: absolute;
+        top: 66px;
+        left: 150px;
+    }
+
 }
 
 /*
@@ -233,6 +266,16 @@ export default {
     padding: 0px 40px;
 }
 
+@media only screen and (max-width: 375px) {
+    .sponsor-flow-chart {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding: 0px ;
+        margin: -60px 0px 0px;
+    }
+}
 
 .three-step-text {
     font-size: 40px;
@@ -254,6 +297,15 @@ export default {
     }
 }
 
+@media only screen and (max-width: 375px) {
+    .three-step-text {
+        font-size: 16px;
+        letter-spacing: 4px;
+        width: 173px;
+        margin-left: 12px;
+    }
+}
+
 .flow-chart img {
     width: 919px;
 }
@@ -267,6 +319,12 @@ export default {
 @media only screen and (max-width: 768px) {
     .flow-chart img {
         width: 396px;
+    }
+}
+
+@media only screen and (max-width: 396px) {
+    .flow-chart img {
+        width: 335px;
     }
 }
 
@@ -298,6 +356,15 @@ export default {
     }
 }
 
+@media only screen and (max-width: 375px) {
+    .sponsor-intro-text {
+        margin: 66px 46px;
+        font-size: 20px;
+        width: 350px;
+        padding: 20px 30px;
+    }
+}
+
 .sponsor-intro-text span {
     display: flex;
     justify-content: end;
@@ -325,6 +392,13 @@ export default {
     .sponsored-list-title {
         min-width: 124px;
         font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .sponsored-list-title {
+        min-width: 76px;
+        font-size: 16px;
     }
 }
 
@@ -363,11 +437,17 @@ export default {
     }
 
 }
+
 @media only screen and (max-width: 768px) {
     .line-left {
         width: 260px;
     }
+}
 
+@media only screen and (max-width: 375px) {
+    .line-left {
+        width: 87px;
+    }
 }
 
 .line-right {
@@ -384,9 +464,16 @@ export default {
         width: 400px;
     }
 }
+
 @media only screen and (max-width: 768px) {
     .line-right {
         width: 260px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .line-right {
+        width: 87px;
     }
 }
 
@@ -406,6 +493,13 @@ export default {
     .table-all {
         width: 640px;
         height: 973px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .table-all {
+        width: 293px;
+        height: 245px;
     }
 }
 
@@ -430,6 +524,13 @@ thead {
     top: 0;
 }
 
+@media only screen and (max-width: 375px) {
+    thead {
+        font-size: 16px;
+        height: 43px;
+    }
+}
+
 tbody {
     color: var(--gray-color);
     /*width: 100%;
@@ -443,6 +544,13 @@ td {
     height: 98px;
     border-bottom: 1px solid #D7D7D7;
 }
+
+@media only screen and (max-width: 375px) {
+    td {
+        height: 43px;
+    }
+}
+
 
 td:nth-child(1) {
     width: 258px;
@@ -470,13 +578,27 @@ td:nth-child(3) {
     }
 }
 
+@media only screen and (max-width: 375px) {
+    tr td:nth-child(1) {
+        font-size: 13px;
+        width: 110px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
 
     tr td:nth-child(2),
     td:nth-child(3) {
         font-size: 24px;
     }
+}
 
+@media only screen and (max-width: 375px) {
+
+    tr td:nth-child(2),
+    td:nth-child(3) {
+        font-size: 16px;
+    }
 }
 
 
@@ -510,6 +632,11 @@ tbody tr:nth-child(even) {
         margin: -50px 0px 209px 0px;
     }
 }
+@media only screen and (max-width: 375px) {
+    .sponsor-page.c-area {
+        margin: -152px 0px 209px 2px;
+    }
+}
 
 .q-a-container {
     width: 1584px;
@@ -535,6 +662,12 @@ tbody tr:nth-child(even) {
         margin: 0px;
     }
 }
+@media only screen and (max-width: 375px) {
+    .q-a-container {
+        width: 310px;
+        margin: 0px;
+    }
+}
 
 .q-a-tittle {
     color: var(--gray-color);
@@ -547,6 +680,13 @@ tbody tr:nth-child(even) {
 @media only screen and (max-width: 768px) {
     .q-a-tittle {
         font-size: 26px;
+        letter-spacing: 6.5px;
+    }
+
+}
+@media only screen and (max-width: 375px) {
+    .q-a-tittle {
+        font-size: 20px;
         letter-spacing: 6.5px;
     }
 
@@ -566,6 +706,13 @@ tbody tr:nth-child(even) {
         padding: 0px 36px;
     }
 }
+@media only screen and (max-width: 375px) {
+    .q-a-content {
+        font-size: 14px;
+        letter-spacing: 5px;
+        padding: 0px 0px 0px 5px;
+    }
+}
 
 
 .q-a-text {
@@ -580,4 +727,16 @@ tbody tr:nth-child(even) {
 
 .answer img {
     margin: 0px 7px 0px 30px;
-}</style>
+}
+
+@media only screen and (max-width: 375px) {
+    .answer img  {
+   width: 18px;
+   height: 18px;
+   margin: 0px 7px 0px 8px;
+    }
+}
+
+
+
+</style>
