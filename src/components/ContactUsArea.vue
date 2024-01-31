@@ -425,9 +425,8 @@ a:hover {
     border-radius: 0px 2.5rem 2.5rem 2.5rem;
 }
 @media only screen and (max-width: 768px) {
-
     .detail{
-        width: 195px;
+        width: 384px;
         height: 174px;
         border-radius: 0px 20px 20px;
     }

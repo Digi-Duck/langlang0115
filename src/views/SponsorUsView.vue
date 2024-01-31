@@ -41,7 +41,9 @@ export default {
     <section class="sponsor-page">
         <div class="sponsor-title">
             <span>贊助我們</span>
-            <div style="font-size: 20px">Sponsor<br>Us</div>
+            <div class="sponsor-us-big" style="font-size: 20px">Sponsor<br>Us</div>
+            <div class="sponsor-us">Sponsor Us</div>
+
             <div class="accept-criedcard">目前僅支援信用卡</div>
         </div>
         <div class="sponsor-content">
@@ -158,6 +160,37 @@ export default {
     }
 }
 
+@media only screen and (max-width: 1836px) {
+    .sponsor-title {
+        width: 72%;
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .sponsor-us-big {
+        display: none;
+    }
+}
+
+.sponsor-us {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .sponsor-us {
+        display: block;
+        font-size: 16px;
+        font-family: ABeeZee;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 4px;
+        word-wrap: break-word;
+        margin-left: 10px;
+    }
+}
+
+
 
 .accept-criedcard {
     font-size: 20px;
@@ -215,14 +248,25 @@ export default {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .three-step-text {
+        font-size: 26px;
+    }
+}
+
 .flow-chart img {
     width: 919px;
 }
 
 @media only screen and (max-width: 1836px) {
-
     .flow-chart img {
         width: 812px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .flow-chart img {
+        width: 396px;
     }
 }
 
@@ -243,7 +287,15 @@ export default {
     .sponsor-intro-text {
         margin: 66px 351px;
     }
+}
 
+@media only screen and (max-width: 768px) {
+    .sponsor-intro-text {
+        margin: 66px 46px;
+        font-size: 20px;
+        width: 589px;
+        padding: 40px 35px;
+    }
 }
 
 .sponsor-intro-text span {
@@ -266,6 +318,13 @@ export default {
 @media only screen and (max-width: 1836px) {
     .sponsored-list-title {
         min-width: 152px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .sponsored-list-title {
+        min-width: 124px;
+        font-size: 26px;
     }
 }
 
@@ -304,6 +363,12 @@ export default {
     }
 
 }
+@media only screen and (max-width: 768px) {
+    .line-left {
+        width: 260px;
+    }
+
+}
 
 .line-right {
     width: 633px;
@@ -319,6 +384,11 @@ export default {
         width: 400px;
     }
 }
+@media only screen and (max-width: 768px) {
+    .line-right {
+        width: 260px;
+    }
+}
 
 
 .table-all {
@@ -330,6 +400,13 @@ export default {
     overflow: scroll;
     width: 1001px;
     height: 1553px;
+}
+
+@media only screen and (max-width: 768px) {
+    .table-all {
+        width: 640px;
+        height: 973px;
+    }
 }
 
 table {
@@ -386,6 +463,23 @@ td:nth-child(3) {
     letter-spacing: 6px;
 }
 
+@media only screen and (max-width: 768px) {
+    tr td:nth-child(1) {
+        font-size: 16px;
+        width: 110px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    tr td:nth-child(2),
+    td:nth-child(3) {
+        font-size: 24px;
+    }
+
+}
+
+
 th:nth-child(2),
 td:nth-child(2) {
     border-left: 1px solid #D7D7D7;
@@ -411,9 +505,13 @@ tbody tr:nth-child(even) {
     margin: 300px 0px 209px 0px;
 }
 
+@media only screen and (max-width: 768px) {
+    .sponsor-page.c-area {
+        margin: -50px 0px 209px 0px;
+    }
+}
 
 .q-a-container {
-    /*    background-color: #c5cba7;*/
     width: 1584px;
     border: 1px solid var(--primary-color);
     opacity: 0.97;
@@ -431,11 +529,26 @@ tbody tr:nth-child(even) {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .q-a-container {
+        width: 589px;
+        margin: 0px;
+    }
+}
+
 .q-a-tittle {
     color: var(--gray-color);
     font-size: 48px;
     margin-left: 53px;
     letter-spacing: 12px;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .q-a-tittle {
+        font-size: 26px;
+        letter-spacing: 6.5px;
+    }
 
 }
 
@@ -445,6 +558,15 @@ tbody tr:nth-child(even) {
     letter-spacing: 8px;
     padding: 0px 77px;
 }
+
+@media only screen and (max-width: 768px) {
+    .q-a-content {
+        font-size: 20px;
+        letter-spacing: 5px;
+        padding: 0px 36px;
+    }
+}
+
 
 .q-a-text {
     margin: 45px 0px;
@@ -458,5 +580,4 @@ tbody tr:nth-child(even) {
 
 .answer img {
     margin: 0px 7px 0px 30px;
-}
-</style>
+}</style>
