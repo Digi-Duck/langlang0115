@@ -73,7 +73,7 @@ export default {
 @media only screen and (max-width: 1645px) {
     .about-intro-title {
         margin: 69px 0px 0px 100px;
-        width: 31%;
+        width: 34%;
     }
 }
 
@@ -82,6 +82,15 @@ export default {
         margin: 44px 0px 0px 40px;
         width: 415px;
         font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 378px) {
+    .about-intro-title {
+        margin: 15px 0px 0px 30px;
+        padding: 0;
+        font-size: 20px;
+        width: 251px;
     }
 }
 
@@ -127,11 +136,21 @@ export default {
         height: 65px;
     }
 }
+
 @media only screen and (max-width: 768px) {
     .intro-description {
         top: 194px;
         right: 183px;
         width: 340px;
+        height: 65px;
+    }
+}
+
+@media only screen and (max-width: 378px) {
+    .intro-description {
+        top: 131px;
+        right: 79px;
+        width: 315px;
         height: 65px;
     }
 }
@@ -164,6 +183,18 @@ export default {
 
     }
 }
+@media only screen and (max-width: 378px) {
+    .description-text {
+        font-size: 16px;
+        letter-spacing: 4px;
+        width: 310px;
+        height: 76px;
+        padding: 14px 37px 13px 30px;
+        text-align: left;
+        border-radius: 20px;
+
+    }
+}
 
 .intro-dog-pic {
     background-image: url("../assets/Image/AboutPage2Image/about-dog.svg");
@@ -193,6 +224,19 @@ export default {
         border-radius: 30px;
     }
 }
+@media only screen and (max-width: 375px) {
+    .intro-dog-pic {
+        position: absolute;
+        top: -38px;
+        right: -71px;
+        background-repeat: no-repeat;
+        background-size: 140%;
+        border-radius: 30px;
+        width: 148px;
+        height: 80px;
+    }
+}
+
 
 
 .main-content {
@@ -232,6 +276,32 @@ export default {
         height: 999px;
     }
 }
+@media only screen and (max-width: 378px) {
+    .main-content {
+        margin: 175px 0px 54px 10px;
+        width: 358px;
+        height: 486px;
+        display: flex;
+        padding: 30px;  
+    }
+}
+
+
+.main-content span {
+    font-family: ABeeZee;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 5.6px;
+ }
+
+
+@media only screen and (max-width: 378px) {
+    .main-content span {
+       font-size: 16px;
+       letter-spacing: 4px;
+       line-height: 150%;
+    }
+}
 
 .main-content img:not(.sponsor-us-btn) {
     position: absolute;
@@ -250,6 +320,14 @@ export default {
 @media only screen and (max-width: 768px) {
     .main-content img:not(.sponsor-us-btn) {
         left: -60px;
+    }
+}
+@media only screen and (max-width: 378px) {
+    .main-content img:not(.sponsor-us-btn) {
+        width: 127px;
+        height: 82px;
+        left: -12px;
+        top:-53px;
     }
 }
 

@@ -41,7 +41,7 @@ export default {
                 </div>
             </div>
             <div id="contactText">
-                <p> 收到訊息後客服部會依照順序逐一回覆唷！</p>
+                <p> 收到留言後，我們會盡快與您聯繫！</p>
             </div>
         </div>
         <div id="inputArea">
@@ -115,8 +115,14 @@ a:hover {
     flex-direction: column;
 }
 
-/* 聯絡我們標題文字 */
 
+@media only screen and (max-width: 378px) {
+    #contactTitleArea {
+        width: 317px;    
+    }    
+}
+
+/* 聯絡我們標題文字 */
 #contactTitle {
     display: flex;
     align-items: center;
@@ -133,7 +139,13 @@ a:hover {
 @media only screen and (max-width: 768px) {
     #contactTitle {
         padding: 0;
+    }
+}
 
+@media only screen and (max-width: 378px) {
+    #contactTitle {
+        margin: 0px 0px 0px 0px;
+        padding: 0;
     }
 }
 
@@ -160,6 +172,15 @@ a:hover {
     }
 }
 
+@media only screen and (max-width: 378px) {
+    #contactTitle span {
+        font-size: 20px;
+        letter-spacing:5px;
+        margin-right: -160px;
+    }
+}
+
+
 /* Line */
 #contactLine {
     display: flex;
@@ -175,6 +196,12 @@ a:hover {
 @media only screen and (max-width: 768px) {
     #contactLine {
         width: 400px;
+        padding-left: 29px;
+    }
+}
+@media only screen and (max-width: 378px) {
+    #contactLine {
+        width: 193px;
         padding-left: 29px;
     }
 }
@@ -204,6 +231,11 @@ a:hover {
         width: 30px;
     }
 }
+@media only screen and (max-width: 378px) {
+    #squre {
+        width: 65px;
+    }
+}
 
 
 /* 上方提醒內文 */
@@ -227,6 +259,21 @@ a:hover {
     #contactText {
         font-size: 16px;
         letter-spacing: 4px;
+         width: 383px;
+    }
+}
+@media only screen and (max-width: 378px) {
+    #contactText {
+         width: 300px;
+    }
+}
+@media only screen and (max-width: 378px) {
+    #contactText p{
+        font-size: 14px;
+        letter-spacing: 3.5px;
+        margin-left: 0px;
+        
+   
     }
 }
 
@@ -246,6 +293,14 @@ a:hover {
     }
 }
 
+@media only screen and (max-width: 378px) {
+    #inputArea {
+        padding: 35px 0 0 55px;
+        margin: 0px;
+        width: 100px;
+    }
+}
+
 /* input框 */
 .inputFrame {
     display: flex;
@@ -258,10 +313,18 @@ a:hover {
 
 @media only screen and (max-width: 768px) {
     .inputFrame {
-
         width: 569px;
         font-size: 1.5rem;
 
+    }
+}
+
+@media only screen and (max-width: 378px) {
+    .inputFrame {
+        width: 290px;
+        font-size: 1.5rem;
+        padding: 0;
+        margin: 0px 0px 0px -60px;
     }
 }
 
@@ -279,6 +342,20 @@ a:hover {
     background: var(--primary-color);
 }
 
+@media only screen and (max-width: 378px) {
+    .inputTitle {
+        width: 90px;
+    }
+}
+
+@media only screen and (max-width: 378px) {
+    .inputFrame:nth-child(4) label {
+        text-align: center;
+    }
+}
+
+
+
 .inputTitle label {
     color: var(--white-color);
 }
@@ -294,9 +371,15 @@ a:hover {
 }
 
 @media only screen and (max-width: 768px) {
-
     .input {
         width: 378px;
+    }
+
+}
+
+@media only screen and (max-width: 378px) {
+    .input {
+        width:194px;
     }
 
 }
@@ -341,9 +424,15 @@ a:hover {
     outline: none;
     height: 14rem;
     border-radius: 0px 2.5rem 2.5rem 2.5rem;
-
 }
+@media only screen and (max-width: 768px) {
 
+    .detail{
+        width: 195px;
+        height: 174px;
+        border-radius: 0px 20px 20px;
+    }
+}
 .detail::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -367,6 +456,7 @@ a:hover {
     }
 }
 
+
 /* 下方文字區 */
 .remindText {
     display: flex;
@@ -379,11 +469,36 @@ a:hover {
     color: #626262;
 }
 
+@media only screen and (max-width: 768px) {
+    .remindText {
+        margin-left: 10px;
+    }
+}
+@media only screen and (max-width: 378px) {
+    .remindText {
+        font-size: 16px;
+        width: 200px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .remindText {
+        margin-left: 10px;
+    }
+}
+
+
 .remindText p {
     text-align: center;
     line-height: 291.6%;
     letter-spacing: 3.8px;
     text-decoration-line: underline;
+}
+@media only screen and (max-width: 375px) {
+    .remindText p{
+       font-size: 16px;
+       width: 232px;
+       letter-spacing: 2.56px;
+    }
 }
 
 #mymail {
@@ -391,6 +506,22 @@ a:hover {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
+
+}
+
+@media only screen and (max-width: 375px) {
+    #mymail  {
+        width: 378px;
+        }
+}
+
+@media only screen and (max-width: 768px) {
+    #mymail img {
+        margin-left: 19px;
+        margin-right: -55px;
+        width: 31px;
+        height: 21px;
+    }
 }
 
 #mymail span {
@@ -401,4 +532,10 @@ a:hover {
     height: 4.3rem;
     letter-spacing: 3.8px;
 }
-</style>
+
+@media only screen and (max-width: 768px) {
+    #mymail span {
+        font-size: 14px;
+
+    }
+}</style>
