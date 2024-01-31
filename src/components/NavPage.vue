@@ -2,8 +2,20 @@
 import IconHamOpen from './icons/IconHamOpen.vue';
 import IconHamClose from './icons/IconHamClose.vue';
 export default {
-    components: { IconHamOpen, IconHamClose },
+    components: {
+        IconHamOpen, IconHamClose
+    },
+    data() {
+        return {
+            // 預設漢堡條
+            isMenuOpen: false,
+        }
+    },
     methods: {
+        // 漢堡條
+        clickMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
         gohomePage() {
             this.$router.push('/');
         },
@@ -46,13 +58,14 @@ export default {
             </div>
             <!-- 漢堡條 -->
             <div class="ham">
-                <input type="checkbox" id="ham-switch" hidden>
-                <label for="ham-switch" class="ham-menu" tabindex="1">
-                    <IconHamOpen class="switch-open"></IconHamOpen>
-                    <IconHamClose class="switch-close"></IconHamClose>
+                <!-- <input type="checkbox" id="ham-switch" hidden> -->
+                <label for="ham-switch" class="ham-menu" tabindex="1" :class="{ 'hamber': true, 'open': isMenuOpen }"
+                    @click="clickMenu">
+                    <IconHamOpen v-show="!isMenuOpen" class="switch-open"></IconHamOpen>
+                    <IconHamClose v-show="isMenuOpen" class="switch-close"></IconHamClose>
                 </label>
-                <div class="bg-white"></div>
-                <ul class="ham-menu-li">
+                <div class="bg-white" v-show="isMenuOpen"></div>
+                <ul v-show="isMenuOpen" class="ham-menu-li">
                     <li tabindex="1" @click="aboutusPage">關於我們</li>
                     <li tabindex="1" @click="sponsorusPage">贊助我們</li>
                     <li tabindex="1" @click="adoptioncenterPage">認養中心</li>
@@ -74,20 +87,20 @@ export default {
     width: 100vw;
     max-width: 100%;
     height: 82px;
-    background: var(--primary-color);
-    color: var(--white-color);
+    background: #52A038;
+    color: #FEFEFB;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px 0 38px;
+    padding: 0 38px;
 }
 
 span {
-    font-size: 18px;
-    font-family: sans-serif;
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: 4.5px;
     padding: 25px 35px;
+    cursor: pointer;
 }
 
 span:hover {
@@ -95,7 +108,7 @@ span:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 75%;
-    color: var(--primary-color);
+    color: #52A038;
     cursor: pointer;
 }
 
@@ -105,11 +118,22 @@ span:hover {
     cursor: pointer;
 }
 
-@media (max-width: 1280px) {
-    .boxall {
-        padding: 0 38px;
-    }
+.titlecn {
+    width: 176px;
+    height: 50px;
+}
 
+.titleen {
+    width: 161px;
+    height: 30px;
+}
+
+.ham {
+    display: none;
+    visibility: hidden;
+}
+
+@media (max-width: 1280px) {
     span {
         padding: 25px 10px;
     }
@@ -122,89 +146,93 @@ span:hover {
 /* 漢堡條 */
 .ham {
     display: none;
-    align-items: center;
-}
-
-.switch-close {
-    display: none;
+    visibility: visible;
 }
 
 /* 平板 */
 @media (max-width: 768px) {
     .box {
         display: none;
+        visibility: hidden;
     }
 
     .ham {
+        display: block;
+        visibility: visible;
         width: 43px;
         height: 50px;
-        display: block;
         position: absolute;
         right: 20px;
-        z-index: 2;
     }
 
-    .ham label {
+    .ham-menu {
         z-index: 8;
-        position: absolute;
-        top: 0px;
-        right: 0px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .bg-white {
+        z-index: 6;
+        width: 100vw;
+        max-width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .ham-menu-li {
-        display: none;
+        z-index: 7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #52A038;
+        width: 350px;
+        height: 1024px;
+        padding: 0;
+        gap: 50px;
         position: absolute;
-        right: -20px;
+        top: -30%;
+        left: -668%;
     }
 
     li {
-        width: 100%;
-        height: 98px;
-        font-size: 18px;
-        line-height: 98px;
-        letter-spacing: 4.5px;
-        text-align: center;
-        list-style-type: none;
-        padding: 0;
-    }
-
-    #ham-switch:checked~.ham-menu:nth-of-type(2) {
-        display: block;
-    }
-
-    #ham-switch:not(:checked)~.ham-menu:nth-of-type(1) {
-        display: block;
-    }
-
-    #ham-switch:checked~.ham-menu-li {
-        width: 350px;
-        height: 100vh;
-        background-color: var(--primary-color);
-        padding: 20px;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         align-items: center;
-        color: var(--white-color);
-        position: absolute;
-        top: 0;
-        z-index: 4;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        font-size: 1.5rem;
+        letter-spacing: 4.5px;
+        list-style: none;
+    }
+
+    li:hover {
+        background-image: url(../assets/Image/HomeImage/HomeA-hover.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 45%;
+        color: #52A038;
+        cursor: pointer;
     }
 }
 
-@media (max-width: 375px) {
+@media screen and (max-width:375.9px) {
+    .box {
+        display: none;
+        visibility: hidden;
+    }
+
     .boxall {
         height: 46px;
-        padding: 0 20px;
+        padding: 0 15px;
     }
 
     .logotext {
-        gap: 10px;
-    }
-
-    .titleen {
-        width: 79px;
-        height: 15px;
+        gap: 5px;
     }
 
     .titlecn {
@@ -212,24 +240,68 @@ span:hover {
         height: 29px;
     }
 
-    /* .ham {
-        display: block;
-        position: absolute;
-        z-index: 2;
-    } */
+    .titleen {
+        width: 79px;
+        height: 15px;
+    }
 
-    .ham label {
-        transform: scale(0.75);
+    .ham {
+        display: flex;
+        visibility: visible;
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        top: 0;
+        right: 5%;
+    }
+
+    .bg-white {
+        z-index: 6;
+        width: 100vw;
+        max-width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .ham-menu-li {
+        z-index: 7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #52A038;
+        width: 238px;
+        height: 667px;
+        padding: 0;
+        gap: 32px;
+        position: absolute;
+        top: 0;
+        left: -530%;
+        padding: 40px 0;
     }
 
     li {
-        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        font-size: 1.25rem;
         letter-spacing: 5px;
+        list-style: none;
     }
 
-    #ham-switch:checked~.ham-menu-li {
-        width: 238px;
-        height: 100vh;
+    li:hover {
+        background-image: url(../assets/Image/HomeImage/HomeA-hover.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 55%;
+        color: #52A038;
+        cursor: pointer;
     }
 }
 </style>

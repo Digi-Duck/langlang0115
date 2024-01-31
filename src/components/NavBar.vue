@@ -11,7 +11,17 @@ export default {
         IconHamClose,
         IconHamOpen,
     },
+    data() {
+        return {
+            // 預設漢堡條
+            isMenuOpen: false,
+        }
+    },
     methods: {
+        // 漢堡條
+        clickMenu() {
+            this.isMenuOpen = !this.isMenuOpen;
+        },
         gohomePage() {
             this.$router.push('/');
         },
@@ -58,13 +68,14 @@ export default {
             </div>
             <!-- 漢堡條 -->
             <div class="ham">
-                <input type="checkbox" id="ham-switch" hidden>
-                <label for="ham-switch" class="ham-menu" tabindex="1">
-                    <IconHamOpen class="switch-open"></IconHamOpen>
-                    <IconHamClose class="switch-close"></IconHamClose>
+                <!-- <input type="checkbox" id="ham-switch" hidden> -->
+                <label for="ham-switch" class="ham-menu" tabindex="1" :class="{ 'hamber': true, 'open': isMenuOpen }"
+                    @click="clickMenu">
+                    <IconHamOpen v-show="!isMenuOpen" class="switch-open"></IconHamOpen>
+                    <IconHamClose v-show="isMenuOpen" class="switch-close"></IconHamClose>
                 </label>
-                <div class="bg-white"></div>
-                <ul class="ham-menu-li">
+                <div class="bg-white" v-show="isMenuOpen"></div>
+                <ul v-show="isMenuOpen" class="ham-menu-li">
                     <li tabindex="1" @click="aboutusPage">關於我們</li>
                     <li tabindex="1" @click="sponsorusPage">贊助我們</li>
                     <li tabindex="1" @click="adoptioncenterPage">認養中心</li>
@@ -72,9 +83,13 @@ export default {
                     <li tabindex="1" @click="latestnewsPage">最新公告</li>
                     <li tabindex="1" @click="memberloginPage">會員登入</li>
                 </ul>
+
             </div>
         </div>
-        <IconNavWave id="wave"></IconNavWave>
+        <div id="wave">
+            <IconNavWave></IconNavWave>
+        </div>
+
     </div>
 </template>
 
@@ -87,23 +102,51 @@ export default {
     width: 100vw;
     max-width: 100%;
     height: 82px;
-    background: var(--primary-color);
-    color: var(--white-color);
+    background: #52A038;
+    color: #FEFEFB;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 38px;
 }
 
 #logo {
-    margin-top: 70px;
-    margin-left: 20px;
+    width: 180px;
+    height: 170px;
+    margin-top: 45px;
+    margin-left: 10px;
+    transform: rotate(-2deg);
     z-index: 2;
+    cursor: pointer;
 }
 
+.logotext {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.titleen {
+    width: 161px;
+    height: 30px;
+    position: absolute;
+    top: 90%;
+    left: 14%;
+}
+
+.titlecn {
+    width: 397px;
+    height: 123px;
+    position: absolute;
+    top: 125%;
+    left: 13%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+
 span {
-    font-size: 18px;
-    font-family: 'ABeeZee';
+    font-size: 1.125rem;
     font-weight: 400;
     letter-spacing: 4.5px;
     padding: 25px 35px;
@@ -115,7 +158,8 @@ span:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 75%;
-    color: var(--primary-color);
+    color: #52A038;
+    cursor: pointer;
 }
 
 #wave {
@@ -124,47 +168,28 @@ span:hover {
     z-index: 1;
 }
 
-.logotext {
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    cursor: pointer;
-}
-
-.titleen {
-    width: 186px;
-    height: 34px;
-    position: absolute;
-    top: 95%;
-    left: 12%;
-}
-
-.titlecn {
-    width: 397px;
-    height: 123px;
-    position: absolute;
-    top: 125%;
-    left: 12%;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+/* 漢堡條 */
+.ham {
+    display: none;
+    visibility: hidden;
 }
 
 @media (max-width: 1280px) {
     #wave {
-        transform: scale(0.95);
+        transform: scale(0.9);
         top: 55%;
-        left: -1%;
+        left: -5%;
     }
 
     #logo {
-        transform: scale(0.9);
-        margin-top: 50px;
-        margin-left: 0px;
+        width: 171px;
+        height: 157px;
+        margin-top: 7%;
+        margin-left: 0%;
     }
 
     .titleen {
-        width: 161px;
-        height: 30px;
-        left: 17%;
+        left: 16%;
     }
 
     .titlecn {
@@ -174,7 +199,6 @@ span:hover {
 
     span {
         padding: 25px 10px;
-        cursor: pointer;
     }
 
     span:hover {
@@ -183,166 +207,222 @@ span:hover {
         background-repeat: no-repeat;
         background-size: 100%;
         color: var(--primary-color);
+        cursor: pointer;
     }
-}
-
-/* 漢堡條 */
-.ham {
-    display: none;
-    align-items: center;
-}
-
-.switch-close {
-    display: none;
 }
 
 /* 平板 */
 @media (max-width: 768px) {
+    .box {
+        display: none;
+        visibility: hidden;
+    }
+
     .boxall {
-        background: transparent;
-        height: 0;
+        height: 52px;
         padding: 0;
+        /* background: transparent;
+        height: 0;
+        padding: 0; */
     }
 
     #wave {
-        transform: scale(0.65);
+        transform: scale(0.75);
         left: -20%;
         margin-top: -6%;
     }
 
     #logo {
-        transform: scale(0.77);
+        width: 151px;
+        height: 101px;
+        margin-top: 10%;
+        margin-left: -1.5%;
+        /* transform: scale(0.77);
         margin-top: 80px;
-        margin-left: -15px;
+        margin-left: -15px; */
     }
 
     .titleen {
         width: 120px;
         height: 22px;
-        left: 13%;
-        margin-top: 5%;
+        top: 84%;
+        left: 17%;
     }
 
     .titlecn {
         width: 240px;
         height: 68px;
-        left: 8%;
-        margin-top: 8%;
-    }
-
-    .box {
-        display: none;
+        top: 125%;
+        left: 16%;
     }
 
     .ham {
+        display: block;
+        visibility: visible;
         width: 43px;
         height: 50px;
-        display: block;
         position: absolute;
-        top: 50px;
-        right: 20px;
-        z-index: 2;
+        top: 20px;
+        right: 40px;
     }
-    .ham label{
+
+    .ham-menu {
         z-index: 8;
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* .ham label {
+        z-index: 5;
         position: absolute;
         top: 0px;
         right: 0px;
+    } */
+
+    .bg-white {
+        z-index: 6;
+        width: 100vw;
+        max-width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .ham-menu-li {
-        display: none;
+        z-index: 7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #52A038;
+        width: 350px;
+        height: 1024px;
+        padding: 0;
+        gap: 50px;
         position: absolute;
-        top: 28px;
-        right: -20px;
+        top: -36%;
+        left: -621%;
     }
 
     li {
-        width:100% ;
-        height: 98px;
-        font-size: 18px;
-        line-height: 98px;
-        letter-spacing: 4.5px;
-        text-align: center;
-        list-style-type: none;
-        padding: 0;
-    }
-
-    #ham-switch:checked~.ham-menu:nth-of-type(2){
-        display: block;
-    }
-
-    #ham-switch:not(:checked)~.ham-menu:nth-of-type(1){
-        display: block;
-    }
-
-    #ham-switch:checked~.ham-menu-li {
-        width: 350px;
-        height: 100vh;
-        background-color: var(--primary-color);
-        padding: 20px;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         align-items: center;
-        color: var(--white-color);
-        position: absolute;
-        top: 0;
-        z-index: 4;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        font-size: 1.5rem;
+        letter-spacing: 4.5px;
+        list-style: none;
+    }
+
+    li:hover {
+        background-image: url(../assets/Image/HomeImage/HomeA-hover.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 45%;
+        color: #52A038;
+        cursor: pointer;
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 375.9px) {
+    .box {
+        display: none;
+        visibility: hidden;
+    }
+
     #wave {
         display: none;
+        visibility: hidden;
     }
-    
+
+    .boxall {
+        height: 70px;
+        padding: 0;
+    }
+
     #logo {
-        transform: scale(0.70);
-        margin-top: 60px;
-        margin-left: -20px;
+        width: 68px;
+        height: 93px;
+        transform: scale(1);
+        margin-top: 6%;
+        margin-left: 2%;
     }
+
     .titleen {
         width: 79px;
         height: 15px;
+        top: 12%;
         left: 40%;
-        margin-top: 10px;
     }
 
     .titlecn {
         width: 125px;
         height: 39px;
+        top: 28%;
         left: 35%;
-        margin: 0;
-        top: 22px;
+        /* top: 22px; */
     }
+
     .ham {
         display: block;
+        visibility: visible;
         position: absolute;
         top: 10px;
         right: 10px;
         z-index: 2;
     }
-    .ham label{
-        z-index: 8;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        transform: scale(0.75);
+
+    .bg-white {
+        z-index: 6;
+        width: 100vw;
+        max-width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .ham-menu-li {
-        display: none;
-        right: -10px;
-    }
-    li {
-        font-size: 20px;
-        letter-spacing: 5px;
-    }
-    #ham-switch:checked~.ham-menu-li {
+        z-index: 7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #52A038;
         width: 238px;
-        height: 100vh;
+        height: 667px;
+        padding: 0;
+        gap: 32px;
+        position: absolute;
+        top: -18%;
+        left: -432%;
+        padding: 40px 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        list-style: none;
+    }
+
+    li:hover {
+        background-image: url(../assets/Image/HomeImage/HomeA-hover.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 55%;
+        color: #52A038;
+        cursor: pointer;
     }
 }
-
 </style>
