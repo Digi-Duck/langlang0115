@@ -76,28 +76,54 @@ export default {
     position: relative;
 }
 
+@media screen and (max-width:375.9px) {
+    .fiveStepsLineFrame {
+        gap: 17px;
+    }
+
+    .circle {
+        width: 10px;
+        height: 10px;
+    }
+
+    .stepsLine {
+        width: 76px;
+    }
+
+    .triangle::before {
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 17px solid var(--primary-color);
+        top: -8px;
+    }
+}
+
 @media screen and (max-width:1280px) and (min-width:769px) {
     .stepsLine {
         width: 200px;
     }
 }
-@media screen and (max-width:768px) and (min-width:376px){
-    .fiveStepsLineFrame{
+
+@media screen and (max-width:768px) and (min-width:376px) {
+    .fiveStepsLineFrame {
         gap: 20px;
     }
+
     .stepsLine {
         width: 150px;
     }
-    .circle{
+
+    .circle {
         width: 15px;
         height: 15px;
     }
+
     .triangle::before {
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 20px solid var(--primary-color);
-    top: -10px;
-}
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 20px solid var(--primary-color);
+        top: -10px;
+    }
 
 }
 </style>

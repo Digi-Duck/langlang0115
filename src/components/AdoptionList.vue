@@ -77,6 +77,30 @@ export default {
     height: 277px;
 }
 
+@media screen and (max-width:375.9px) {
+    .all-container {
+        align-items: center;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+
+    .list-container {
+        width: 350px;
+        height: 977px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .cards {
+        justify-content: center;
+        height: 977px;
+        padding: 40px 50px;
+        gap: 30px;
+    }
+}
+
 @media screen and (max-width:768px) and (min-width:376px) {
     .list-container {
         width: 640px;
