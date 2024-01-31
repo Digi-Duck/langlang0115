@@ -44,6 +44,11 @@ export default {
     </button>
 </template>
 <style scoped>
+@media screen and (max-width:375.9px){
+    .custom-button{
+        font-size: 0.9rem;
+    }
+}
 .custom-button {
     display: flex;
     justify-content: center;

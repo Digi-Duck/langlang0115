@@ -526,6 +526,7 @@ a:hover {
         flex-direction: column;
         gap: 46px;
         padding: 0 126px 0 126px;
+        width: 222px;
     }
 
     .fiveStepsText p {
