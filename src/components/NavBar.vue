@@ -1,3 +1,4 @@
+<!-- 主頁Nav -->
 <script>
 import IconHamOpen from './icons/IconHamOpen.vue';
 import IconHamClose from './icons/IconHamClose.vue';
@@ -68,13 +69,12 @@ export default {
             </div>
             <!-- 漢堡條 -->
             <div class="ham">
-                <!-- <input type="checkbox" id="ham-switch" hidden> -->
+                <input type="checkbox" id="ham-switch" hidden>
                 <label for="ham-switch" class="ham-menu" tabindex="1" :class="{ 'hamber': true, 'open': isMenuOpen }"
                     @click="clickMenu">
                     <IconHamOpen v-show="!isMenuOpen" class="switch-open"></IconHamOpen>
                     <IconHamClose v-show="isMenuOpen" class="switch-close"></IconHamClose>
                 </label>
-                <div class="bg-white" v-show="isMenuOpen"></div>
                 <ul v-show="isMenuOpen" class="ham-menu-li">
                     <li tabindex="1" @click="aboutusPage">關於我們</li>
                     <li tabindex="1" @click="sponsorusPage">贊助我們</li>
@@ -83,7 +83,7 @@ export default {
                     <li tabindex="1" @click="latestnewsPage">最新公告</li>
                     <li tabindex="1" @click="memberloginPage">會員登入</li>
                 </ul>
-
+                <!-- <div class="bg-white" v-show="isMenuOpen"></div> -->
             </div>
         </div>
         <div id="wave">
@@ -174,7 +174,7 @@ span:hover {
     visibility: hidden;
 }
 
-@media (max-width: 1280px) {
+@media screen and (max-width:1280px) and (min-width:769px) {
     #wave {
         transform: scale(0.9);
         top: 55%;
@@ -199,6 +199,7 @@ span:hover {
 
     span {
         padding: 25px 10px;
+        z-index: 2;
     }
 
     span:hover {
@@ -212,7 +213,7 @@ span:hover {
 }
 
 /* 平板 */
-@media (max-width: 768px) {
+@media screen and (max-width:768px) and (min-width:376px) {
     .box {
         display: none;
         visibility: hidden;
@@ -229,7 +230,7 @@ span:hover {
     #wave {
         transform: scale(0.75);
         left: -20%;
-        margin-top: -6%;
+        margin-top: -100px;
     }
 
     #logo {
@@ -259,11 +260,9 @@ span:hover {
     .ham {
         display: block;
         visibility: visible;
-        width: 43px;
-        height: 50px;
         position: absolute;
         top: 12px;
-        right:2px;
+        right: 20px;
     }
 
     .ham-menu {
@@ -272,14 +271,7 @@ span:hover {
         cursor: pointer;
     }
 
-    /* .ham label {
-        z-index: 5;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-    } */
-
-    .bg-white {
+    /* .bg-white {
         z-index: 6;
         width: 100vw;
         max-width: 100%;
@@ -289,22 +281,23 @@ span:hover {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
+    } */
 
     .ham-menu-li {
-        z-index: 7;
+        z-index: 6;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         background-color: #52A038;
-        width: 350px;
-        height: 1024px;
+        width: 45vw;
+        height: 100vh;
         padding: 0;
         gap: 50px;
         position: absolute;
-        top: -36%;
-        left: -621%;
+        top: 0;
+        left: -328px;
+        padding: 40px 0;
     }
 
     li {
@@ -328,7 +321,7 @@ span:hover {
     }
 }
 
-@media (max-width: 375.9px) {
+@media screen and (max-width:375.9px) {
     .box {
         display: none;
         visibility: hidden;
@@ -372,11 +365,17 @@ span:hover {
         visibility: visible;
         position: absolute;
         top: 5px;
-        right: -15px;
+        right: 10px;
         z-index: 2;
     }
 
-    .bg-white {
+    .ham-menu {
+        z-index: 8;
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* .bg-white {
         z-index: 6;
         width: 100vw;
         max-width: 100%;
@@ -386,22 +385,22 @@ span:hover {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
+    } */
 
     .ham-menu-li {
-        z-index: 7;
+        z-index: 6;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         background-color: #52A038;
-        width: 238px;
-        height: 667px;
+        width: 63vw;
+        height: 100vh;
         padding: 0;
         gap: 32px;
         position: absolute;
-        top: -18%;
-        left: -432%;
+        top: 0;
+        left: -226px;
         padding: 40px 0;
     }
 

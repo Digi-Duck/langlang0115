@@ -77,7 +77,7 @@ export default {
     height: 277px;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:375px) {
     .all-container {
         align-items: center;
         font-size: 0.8rem;
@@ -95,8 +95,9 @@ export default {
 
     .cards {
         justify-content: center;
+        width: 93vw;
         height: 977px;
-        padding: 40px 50px;
+        padding: 40px 0;
         gap: 30px;
     }
 }

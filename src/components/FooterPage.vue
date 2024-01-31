@@ -1,4 +1,8 @@
+<script>
+export default {
 
+}
+</script>
 <template>
     <div class="footer-container">
         <div class="dogcat">
@@ -22,7 +26,7 @@
     height: 116px;
     z-index: 5;
     border-radius: 5px 5px 0 0;
-    background-color: var(--primary-color);
+    background-color: #52A038;
 }
 
 .dogcat {
@@ -32,14 +36,14 @@
 
 .dog {
     position: absolute;
-    top: -138px;
-    left: 83px;
+    top: -140px;
+    left: 70px;
 }
 
 .cat {
     position: absolute;
     top: -130px;
-    right: 83px;
+    right: 45px;
 }
 
 .footer {
@@ -48,7 +52,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 @media (max-width: 1280px) {
@@ -75,8 +79,9 @@
     .footer-container {
         height: 89px;
     }
-    .footer{
-        padding: 24px 140px;
+
+    .footer {
+        padding: 24px 138px;
     }
 
     .footer span {
@@ -87,13 +92,13 @@
 
 @media (max-width: 375px) {
     .footer-container {
-        height: 87px;
+        height: 85x;
     }
 
     .dog {
         position: absolute;
         top: -108px;
-        left: -60px;
+        left: -80px;
         transform: scale(0.4);
     }
 
@@ -107,8 +112,9 @@
     .footer-container {
         height: 89px;
     }
-    .footer{
-        padding: 24px 34px;
+
+    .footer {
+        padding: 0 24px;
         border-radius: 20px 20px 0 0;
     }
 

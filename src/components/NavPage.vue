@@ -1,3 +1,4 @@
+<!-- 分頁Nav -->
 <script>
 import IconHamOpen from './icons/IconHamOpen.vue';
 import IconHamClose from './icons/IconHamClose.vue';
@@ -58,15 +59,12 @@ export default {
             </div>
             <!-- 漢堡條 -->
             <div class="ham">
-                <!-- <input type="checkbox" id="ham-switch" hidden> -->
+                <input type="checkbox" id="ham-switch" hidden>
                 <label for="ham-switch" class="ham-menu" tabindex="1" :class="{ 'hamber': true, 'open': isMenuOpen }"
                     @click="clickMenu">
                     <IconHamOpen v-show="!isMenuOpen" class="switch-open"></IconHamOpen>
                     <IconHamClose v-show="isMenuOpen" class="switch-close"></IconHamClose>
-
-
                 </label>
-                <div class="bg-white" v-show="isMenuOpen"></div>
                 <ul v-show="isMenuOpen" class="ham-menu-li">
                     <li tabindex="1" @click="aboutusPage">關於我們</li>
                     <li tabindex="1" @click="sponsorusPage">贊助我們</li>
@@ -75,6 +73,7 @@ export default {
                     <li tabindex="1" @click="latestnewsPage">最新公告</li>
                     <li tabindex="1" @click="memberloginPage">會員登入</li>
                 </ul>
+                <!-- <div class="bg-white"></div> -->
             </div>
         </div>
     </div>
@@ -135,7 +134,7 @@ span:hover {
     visibility: hidden;
 }
 
-@media (max-width: 1280px) {
+@media screen and (max-width:1280px) and (min-width:769px) {
     span {
         padding: 25px 10px;
     }
@@ -152,7 +151,7 @@ span:hover {
 }
 
 /* 平板 */
-@media (max-width: 768px) {
+@media screen and (max-width:768px) and (min-width:376px) {
     .box {
         display: none;
         visibility: hidden;
@@ -161,10 +160,9 @@ span:hover {
     .ham {
         display: block;
         visibility: visible;
-        width: 43px;
-        height: 50px;
         position: absolute;
-        right: -8px;
+        top: 8px;
+        right: 10px;
     }
 
     .ham-menu {
@@ -173,7 +171,7 @@ span:hover {
         cursor: pointer;
     }
 
-    .bg-white {
+    /* .bg-white {
         z-index: 6;
         width: 100vw;
         max-width: 100%;
@@ -183,22 +181,22 @@ span:hover {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    }
-
+    } */
     .ham-menu-li {
-        z-index: 7;
+        z-index: 6;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         background-color: #52A038;
-        width: 350px;
-        height: 1024px;
+        width: 45vw;
+        height: 100vh;
         padding: 0;
         gap: 50px;
         position: absolute;
-        top: -30%;
-        left: -668%;
+        top: 0;
+        left: -336px;
+        padding: 40px 0;
     }
 
     li {
@@ -250,39 +248,42 @@ span:hover {
     .ham {
         display: flex;
         visibility: visible;
-        width: 35px;
-        height: 35px;
         position: absolute;
-        top: 6%;
-        right: -8%;
+        top: 1px;
+        right: 6px;
     }
 
+    .ham-menu {
+        z-index: 7;
+    }
+
+    /* 
     .bg-white {
-        z-index: 6;
         width: 100vw;
         max-width: 100%;
-        height: 100vh;
-        background-color: rgba(255, 255, 255, 0.7);
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+        background: rgba(255, 255, 255, 0.7);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        transition: all .3s;
+        transform: translateX(100vw);
+        overflow: hidden;
+    } */
 
     .ham-menu-li {
-        z-index: 7;
+        z-index: 6;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         background-color: #52A038;
-        width: 238px;
-        height: 667px;
+        width: 63vw;
+        height: 100vh;
         padding: 0;
         gap: 32px;
         position: absolute;
         top: 0;
-        left: -530%;
+        left: -230px;
         padding: 40px 0;
     }
 

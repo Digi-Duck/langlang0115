@@ -81,7 +81,6 @@ main {
     display: flex;
     flex-direction: column;
     width: 818px;
-    height: 600px;
     display: flex;
     justify-content: center;
     background-image: url(../assets/Image/MemberImage/loginBg.svg);
