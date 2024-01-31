@@ -13,7 +13,7 @@ export default {
         submitResult: String,
         // 小字內文
         submitText: String,
-        submitTextTwo:String,
+        submitTextTwo: String,
         // 按鈕文字
         submitBtnText: String,
         // 按鈕顏色
@@ -52,7 +52,7 @@ export default {
         <div class="Success">
             <div class="img">
                 <!-- 圖 -->
-                <svg width="65" height="66" viewBox="0 0 63 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="img" width="65" height="66" viewBox="0 0 63 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="ion:paw-outline">
                         <rect x="62.2773" y="0.702637" width="65.2662" height="60.8014" rx="10"
                             transform="rotate(90.6621 62.2773 0.702637)" :fill="myFillColor" />
@@ -139,5 +139,30 @@ export default {
     font-size: 1.25rem;
     letter-spacing: 5px;
     box-shadow: none;
+}
+
+@media screen and (max-width:375.9px) {
+    .Success {
+        width: 350px;
+        height: 320px;
+        padding: 2rem;
+    }
+
+    .SendText span {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+    }
+
+    .SendText p {
+        font-size: 1rem;
+        letter-spacing: 3.5px;
+    }
+
+    .button {
+        width: 205px;
+        height: 65px;
+        font-size: 1.25rem;
+    }
+
 }
 </style>

@@ -86,7 +86,8 @@ export default {
                 </div>
                 <div class="other">
                     <input type="checkbox" v-model="formData.check" required>
-                    <span>* 我已閱讀，並同意遵守《<u class="privacy" @click="showPrivacyPopup">隱私權政策與會員服務條款</u>》</span>
+                    <p>* </p>
+                    <span>我已閱讀，並同意遵守《<u class="privacy" @click="showPrivacyPopup">隱私權政策與會員服務條款</u>》</span>
                 </div>
                 <button class="signup" type="submit">註冊</button>
             </form>
@@ -151,7 +152,7 @@ form {
 .group {
     width: 426px;
     font-size: 1.5rem;
-    text-align: left;
+    /* text-align: left; */
     letter-spacing: 6px;
     display: flex;
     justify-content: space-between;
@@ -213,6 +214,68 @@ input {
     color: blue;
 }
 
+@media screen and (max-width:375.9px) {
+    main {
+        padding: 57px 0 93px;
+    }
+
+    .container {
+        width: 318px;
+        height: 720px;
+        padding: 28px 0 21px 0;
+        background-image: url(../assets/Image/MemberImage/loginBg2.svg);
+        background-size: auto;
+    }
+
+    .title {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        padding-bottom: 20px;
+    }
+
+    .contentbox {
+        margin-bottom: 28px;
+    }
+
+    .group {
+        width: 245px;
+        font-size: 1rem;
+        align-items: flex-start;
+        flex-direction: column;
+        letter-spacing: 4px;
+        gap: 6px;
+    }
+
+    input {
+        width: 247px;
+    }
+
+    .other {
+        width: 268px;
+        height: 28px;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        font-size: 0.75rem;
+    }
+
+    .other input {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    .other span {
+        width: 211px;
+        margin-left: 8px;
+    }
+
+    .signup {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+}
+
 @media screen and (max-width:1280px) and (min-width:769px) {
     main {
         padding: 57px 0 126px;
@@ -231,8 +294,10 @@ input {
 
     .container {
         width: 535px;
-        height: 695px;
+        height: 685px;
         padding: 41px 54px 40px;
+        background-image: url(../assets/Image/MemberImage/loginBg768.svg);
+        background-size: auto;
     }
 
     .title {

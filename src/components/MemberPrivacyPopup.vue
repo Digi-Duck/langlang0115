@@ -188,6 +188,50 @@ main {
     display: none;
 }
 
+@media screen and (max-width:375.9px) {
+
+    ol>li {
+        margin-left: 10px;
+        line-height: 50px;
+    }
+
+    .informationPopupFrame {
+        width: 328px;
+        height: 613px;
+        padding: 50px 0;
+    }
+
+    .x {
+        top: 16px;
+        right: 14px;
+    }
+
+    .informationTitle {
+        width: 150px;
+        font-size: 1.25rem;
+        letter-spacing: 5px;
+        padding: 0 0 10px 0;
+    }
+
+    .information {
+        font-size: 1rem;
+        letter-spacing: 4px;
+        line-height: 120%;
+        gap: 20px;
+    }
+
+    .information span {
+        width: 278px;
+        font-size: 1rem;
+        padding: 0 25px;
+    }
+
+    .text {
+        width: 279px;
+        height: 294px;
+    }
+}
+
 @media screen and (max-width:1280px) and (min-width:769px) {
     .informationPopupFrame {
         width: 1000px;
