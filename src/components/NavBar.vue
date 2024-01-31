@@ -197,7 +197,7 @@ span:hover {
 }
 
 /* 平板 */
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .boxall {
         background: transparent;
         height: 0;
@@ -292,7 +292,7 @@ span:hover {
     }
 }
 
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     #wave {
         display: none;
     }

@@ -172,17 +172,20 @@ export default {
         <div class="list-container">
             <div class="btn">
                 <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)"
-                    bgColor="var(--orangeyellow-color)" w="180px" h="64px">
+                    bgColor="var(--orangeyellow-color)" w="180px" h="64px" class="notify-btn">
+                </IconChangeButton>
+                <IconChangeButton @click="showpopup" text="協尋通報" textColor="var(--gray-color)"
+                    bgColor="var(--orangeyellow-color)" w="96px" h="41px" class="notify-btn-2">
                 </IconChangeButton>
                 <a href="https://reurl.cc/lgNWgE">
-                    <IconPaperAirplane />
+                    <IconPaperAirplane class="airplane"/>
                     搜尋附近動物醫院
                 </a>
                 <!-- 顯示的彈跳視窗 -->
                 <LostPopupBrown :is-show="show" @close="close"></LostPopupBrown>
             </div>
             <div class="list-content">
-                <div class="title">遺失動物列表</div>
+                <div class="title">撿到動物列表</div>
                 <div class="cards">
                     <IconCard class="card" v-for="animal in AnimalsData" :AnimalData="animal"
                         cardBorderColor="var(--B68337)" checkBoxColor="var(--B68337)" myurl="myanimallostinformation" />
@@ -195,14 +198,31 @@ export default {
 
 <style scoped>
 .big-container {
+    height: 996px;
     display: flex;
 }
 
 /* 1280版-提早變版 */
 @media (max-width: 1770px) {
     .big-container {
+        height: 100%;
         flex-direction: column;
         align-items: center;
+        gap: 125px;
+    }
+}
+
+@media (max-width: 751px) {
+    .big-container {
+        width: 648px;
+        gap: 84px;
+    }
+}
+
+@media (max-width: 358px) {
+    .big-container {
+        width: 350px;
+        gap: 37px;
     }
 }
 
@@ -229,8 +249,19 @@ export default {
     color: var(--B68337);
 }
 
+@media (max-width: 358px) {
+    .notice {
+        height: 54px;
+        line-height: normal;
+        padding: 5px 25px;
+        font-size: 14px;
+        letter-spacing: 3.5px;
+    }
+}
+
 /*根據顏色區分*/
 form {
+    height: 916px;
     display: flex;
     flex-direction: column;
     background-color: var(--white-color);
@@ -244,10 +275,17 @@ form {
     form {
         width: 100%;
         padding: 46px 180px;
-        margin-bottom: 125px;
     }
 }
 
+@media (max-width: 751px) {
+    form {
+        width: 100%;
+        padding: 40px 21px;
+        background-color: transparent;
+
+    }
+}
 
 /*每個欄位的標題*/
 label[for="species"],
@@ -262,6 +300,21 @@ label[for="neutered"],
     color: var(--B68337);
 }
 
+@media (max-width: 358px) {
+    label[for="species"],
+    label[for="location"],
+    label[for="body-shape"],
+    label[for="gender"],
+    label[for="colors"],
+    label[for="age"],
+    label[for="neutered"],
+
+    .time-place-title {
+        width: 300px;
+        margin-bottom: 17px;
+    }
+}
+
 .select {
     display: flex;
     flex-direction: column;
@@ -272,8 +325,7 @@ label[for="neutered"],
 }
 
 .form-group input {
-    margin-left: 35px;
-    margin-right: 20px;
+    margin: 0 20px 0 35px;
 }
 
 /* 所有 radio 按鈕 */
@@ -287,6 +339,32 @@ label[for="neutered"],
     font-size: 24px;
 }
 
+@media (max-width: 751px) {
+    .form-group label {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 358px) {
+    .form-group {
+        margin: 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .form-group input {
+        margin: 0px 10px 0 15px;
+    }
+
+    .form-group input[type="radio"] {
+        transform: scale(1);
+    }
+
+    .form-group label {
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
+}
 
 /* 下拉選單箭頭設定 */
 .customSelect {
@@ -308,7 +386,7 @@ label[for="neutered"],
 form svg {
     position: absolute;
     top: 25%;
-    left: 38%;
+    left: 39%;
 }
 
 /* 1280版-提早變版 */
@@ -319,17 +397,48 @@ form svg {
     }
 }
 
+@media (max-width: 751px) {
+    .customSelect {
+        width: 535px;
+        padding: 20px;
+    }
+
+    form svg {
+        top: 11.2%;
+        left: 80%;
+    }
+}
+
+@media (max-width: 358px) {
+    .customSelect {
+        width: 280px;
+        margin-top: 0;
+    }
+
+    form svg {
+        top: 9.7%;
+        left: 75%;
+    }
+}
+
 /*按鈕*/
 .btn-area {
     display: flex;
     justify-content: center;
     gap: 55px;
-    font-size: 20px;
-    letter-spacing: 5px;
-    margin-bottom: 40px;
 }
 
-/* 右邊動物列表 */
+@media (max-width: 358px) {
+    .btn-area {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 70px;
+        transform: scale(0.8)
+    }
+}
+
+/* --------右邊動物列表-------------------- */
 .list-container {
     width: 840px;
     display: flex;
@@ -344,6 +453,19 @@ form svg {
     .list-container {
         flex-direction: column-reverse;
         gap: 37px;
+    }
+}
+
+@media (max-width: 751px) {
+    .list-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 358px) {
+    .list-container {
+        font-size: 16px;
+        gap: 0px;
     }
 }
 
@@ -364,6 +486,33 @@ a {
 
 a:hover {
     background-color: transparent;
+}
+
+.notify-btn-2 {
+    display: none;
+}
+
+@media (max-width: 358px) {
+    .btn {
+        font-size: 16px;
+        padding: 0 20px;
+        height: 71px;
+    }
+
+    .notify-btn {
+        display: none;
+    }
+
+    .notify-btn-2 {
+        display: flex;
+        font-size: 15px;
+        letter-spacing: 3.75px;
+    }
+
+    .airplane {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .list-content {

@@ -77,7 +77,7 @@
     }
 }
 
-@media (max-width: 751px) {
+@media (max-width: 768px) {
     .dog {
         position: absolute;
         top: 30px;
@@ -97,7 +97,7 @@
         padding: 25px 171px;
     }
 }
-@media (max-width: 358px) {
+@media (max-width: 375px) {
     .dog {
         position: absolute;
         top: 50px;

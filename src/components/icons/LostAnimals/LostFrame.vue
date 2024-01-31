@@ -222,12 +222,14 @@ export default {
 
 <style scoped>
 .big-container {
+    height: 996px;
     display: flex;
 }
 
 /* 1280版-提早變版 */
 @media (max-width: 1770px) {
     .big-container {
+        height: 100%;
         flex-direction: column;
         align-items: center;
         gap: 125px;
@@ -285,6 +287,7 @@ export default {
 
 /*根據顏色區分*/
 form {
+    height: 916px;
     display: flex;
     flex-direction: column;
     background-color: var(--white-color);
@@ -530,6 +533,7 @@ a:hover {
     }
 
     .notify-btn-2 {
+        display: flex;
         font-size: 15px;
         letter-spacing: 3.75px;
     }
@@ -572,4 +576,5 @@ a:hover {
     flex-wrap: wrap;
     gap: 20px;
     background-color: var(--white-color);
-}</style>
+}
+</style>
