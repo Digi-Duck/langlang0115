@@ -55,7 +55,7 @@ export default {
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="adoptioncenterPage">認養中心</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="lostandfoundPage">失散協尋</span>
                 <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="latestnewsPage">最新公告</span>
-                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="memberloginPage">會員登入</span>
+                <span @mouseover="handleHover" @mouseout="handleMouseOut" @click="memberloginPage">會員中心</span>
             </div>
             <!-- 漢堡條 -->
             <div class="ham">
@@ -71,7 +71,7 @@ export default {
                     <li tabindex="1" @click="adoptioncenterPage">認養中心</li>
                     <li tabindex="1" @click="lostandfoundPage">失散協尋</li>
                     <li tabindex="1" @click="latestnewsPage">最新公告</li>
-                    <li tabindex="1" @click="memberloginPage">會員登入</li>
+                    <li tabindex="1" @click="memberloginPage">會員中心</li>
                 </ul>
                 <!-- <div class="bg-white"></div> -->
             </div>
