@@ -87,11 +87,11 @@ export default {
               <span class="news-date-month">2023.11</span>
               <span class="news-date-day">02</span>
             </div>
-            <div class="news-announcement">
+            <div class="news-announcement" @click="clickMoreNews">
               <span>浪浪的事改版問券調查</span>
               <!-- 更多按鈕 -->
               <div class="news-announcement-btn" @mouseover="handleHover" @mouseout="handleMouseOut">
-                <span>更多...</span>
+                <span >更多...</span>
                 <img src="../assets/Image/HomeImage/HomeC-more-btn.svg">
               </div>
 
