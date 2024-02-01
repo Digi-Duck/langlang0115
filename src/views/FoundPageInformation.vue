@@ -1,16 +1,13 @@
 <script>
 import FooterPage from '@/components/FooterPage.vue';
 import NavPage from '@/components/NavPage.vue';
-import TitleAndLine from '@/components/TitleAndLine.vue';
 import PetsCardImage from '@/components/PetsCardImage.vue';
 import FundInfoFrame from '@/components/icons/LostAnimals/FundInfoFrame.vue';
 import Animals from '@/json/Animals.json';
-
 export default {
     components: {
         NavPage,
         FooterPage,
-        TitleAndLine,
         PetsCardImage,
         FundInfoFrame,
     },
@@ -77,17 +74,20 @@ export default {
         </div>
         <!-- 上方卡片區 -->
         <div class="furryBabiesCard">
+            <span class="sm-id">晶片號碼 : AAAHG1130116001</span>
             <!-- 卡片區圖 -->
             <PetsCardImage @favoriteAnimal="updateLikeAnimal" :AnimalData="this.foundAnimal" class="petsimg" />
             <!-- 卡片區表格 -->
-            <FundInfoFrame :animalData="this.foundAnimal" lineApp="var(--olivegreen-color)"></FundInfoFrame>
+            <FundInfoFrame :animalData="this.foundAnimal" lineApp="var(--olivegreen-color)" class="infoframe">
+            </FundInfoFrame>
         </div>
-        <!-- 其他說明 -->
-        <!-- 1980標題 -->
-        <TitleAndLine class="LinePc" linew="1311px" :text="mytext" :customStyle="parentStyle" />
-        <!-- 1280標題 -->
-        <TitleAndLine class="LineSm" linew="660px" :text="mytext" :customStyle="parentStyle" />
-
+        <div id="contactTitle">
+            <span>其他說明</span>
+            <div id="contactLine">
+                <div id="Line"></div>
+                <div id="squre"></div>
+            </div>
+        </div>
         <pre class="instructionsText">
 4/24更新：
 今天早上又去網友說的附近繞繞
@@ -159,9 +159,43 @@ main {
     padding: 0 0 6.8rem 0;
 }
 
-.LineSm {
+.sm-id {
     display: none;
-    visibility: hidden;
+}
+
+/*------------ 其他說明標題區------------ */
+
+/* 標題文字 */
+#contactTitle {
+    display: flex;
+    align-items: center;
+    padding-left: 38px;
+}
+
+#contactTitle span {
+    color: var(--olivegreen-color);
+    font-size: 36px;
+    letter-spacing: 9px;
+    width: 200px;
+}
+
+/* Line */
+#contactLine {
+    display: flex;
+    padding-left: 34px;
+}
+
+#Line {
+    width: 1311px;
+    height: 2px;
+    background-color: var(--olivegreen-color);
+}
+
+#squre {
+    width: 10px;
+    height: 10px;
+    background-color: var(--olivegreen-color);
+    transform: translate(0px, -3.5px) rotate(45deg);
 }
 
 .instructionsText {
@@ -172,6 +206,7 @@ main {
     white-space: pre-wrap;
     line-height: 59px;
     letter-spacing: 6px;
+    margin-left: 37px;
     margin-top: 4.6rem;
 }
 
@@ -184,23 +219,158 @@ main {
         padding-bottom: 61px;
     }
 
-    .LinePc {
-        display: none;
-        visibility: hidden;
+    /* 標題文字 */
+    #contactTitle {
+        padding-left: 12px;
     }
 
-    .LineSm {
-        display: flex;
-        visibility: visible;
-        margin-left: 24px;
+    #Line {
+        width: 700px;
     }
 
     .instructionsText {
         width: 100%;
-        margin-top: 4.6rem;
+        margin-top: 67px;
         word-break: break-all;
         margin-left: 24px;
     }
 
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 39px 133px 133px 44px;
+    }
+
+    /* 標題 */
+    .adoptionCenteTitle {
+        padding: 0 0 78px 0;
+        font-size: 24px;
+        letter-spacing: 6.5px;
+    }
+
+    .adoptionCenteTitle p {
+        padding-left: 8px;
+    }
+
+    /* 上方卡片區域 */
+    .furryBabiesCard {
+        width: 497px;
+        height: 998px;
+        background-color: var(--olivegreen-color);
+        border-radius: 10px 10px 0 0;
+        padding: 27px 0 0 0;
+        gap: 0px;
+        margin: 0 0 72px 81px;
+    }
+
+    .sm-id {
+        display: block;
+        font-size: 20px;
+        color: #FFF;
+        font-family: sans-serif;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 21px;
+    }
+
+    .petsimg {
+        margin: auto;
+    }
+
+    /* 標題文字 */
+    #contactTitle {
+        display: flex;
+        justify-content: flex-end;
+        padding-left: 0;
+    }
+
+    #contactTitle span {
+        font-size: 26px;
+        letter-spacing: 6.5px;
+        text-align: end;
+    }
+
+    /* Line */
+    #contactLine {
+        padding-left: 30px;
+    }
+
+    #Line {
+        width: 350px;
+    }
+
+    .instructionsText {
+        width: 518px;
+        margin-left: 71px;
+    }
+}
+
+@media (max-width: 375px) {
+    main {
+        padding: 22px 4px;
+    }
+
+    /* 標題 */
+    .adoptionCenteTitle {
+        padding: 0 0 55px 0;
+        font-size: 20px;
+        letter-spacing: 4.8px;
+    }
+
+    .adoptionCenteTitle p {
+        padding-left: 10px;
+    }
+
+    /* 上方卡片區域 */
+    .furryBabiesCard {
+        width: 350px;
+        height: 850px;
+        border-radius: 10px 10px 0 0;
+        padding: 16px 0 0 0;
+        gap: 0px;
+        margin: auto;
+    }
+
+    .sm-id {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+
+    .petsimg {
+        margin: auto;
+    }
+
+    /* 標題文字 */
+    #contactTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    #contactTitle span {
+        font-size: 20px;
+        letter-spacing: 5px;
+        text-align: center;
+    }
+
+    /* Line */
+    #contactLine {
+        padding-left: 0px;
+    }
+
+    #Line {
+        width: 200px;
+    }
+
+    .instructionsText {
+        width: 308px;
+        margin-top: 33px;
+        margin-left: 28px;
+        font-size: 16px;
+        letter-spacing: 4px;
+    }
 }
 </style>

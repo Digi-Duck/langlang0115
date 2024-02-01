@@ -344,7 +344,7 @@ input {
 
 @media screen and (max-width:768px) and (min-width:376px) {
     main {
-        padding: 62px 108px 157px 62px;
+        padding: 62px 108px 157px;
     }
 
     .container {

@@ -46,7 +46,7 @@ export default {
     left: 35px;
 }
 
-@media screen and (max-width:1280px) and (min-width:769px) {
+@media screen and (max-width:1280px) and (min-width:768px) {
 
     .furryBabiesImage {
         display: flex;
@@ -64,6 +64,50 @@ export default {
         position: absolute;
         bottom: 21.9px;
         left: 27.9px;
+    }
+}
+
+@media (max-width: 768px) {
+    .furryBabiesImage {
+        display: flex;
+        align-items: center;
+        margin-right: 66px;
+        position: relative;
+    }
+
+    .img {
+        width: 446px;
+        height: 369px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /* 卡片愛心 */
+    .furryBabiesImage .heart {
+        position: absolute;
+        bottom: 28px;
+        left: 35px;
+    }
+}
+
+@media (max-width: 375px) {
+    .furryBabiesImage {
+        display: flex;
+        align-items: center;
+        margin-right: 66px;
+        position: relative;
+    }
+
+    .img {
+        width: 278px;
+        height: 230px;
+    }
+
+    /* 卡片愛心 */
+    .furryBabiesImage .heart {
+        position: absolute;
+        bottom: 28px;
+        left: 35px;
     }
 }
 </style>

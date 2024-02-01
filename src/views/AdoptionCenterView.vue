@@ -327,7 +327,6 @@ main {
 .lookingForLikepets {
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
 }
 
 /* 1280 */
@@ -458,7 +457,7 @@ a:hover {
 
 @media screen and (max-width:375.9px) {
     .adoptionCenterArea {
-        padding: 20px 0 104px 0;
+        padding: 20px 0 60px 0;
     }
 
     /* 認養中心 標題區 */
@@ -668,6 +667,7 @@ a:hover {
     /* 尋找心目中的毛小孩 */
     .lookingForLikepets {
         display: flex;
+        justify-content: center;
         align-items: center;
     }
 
