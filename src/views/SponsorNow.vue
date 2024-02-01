@@ -68,14 +68,20 @@ export default {
       <div class="sponsor-text">
         <div class="notice">請同意並瞭解以下內容才能贊助</div>
         <div><input type="checkbox" class="input-checkbox">
-          <span class="sign">*</span>我已瞭解浪浪的事平台是製作流浪動物相關服務，讓毛小孩可以順利被認養、尋獲、協尋...的平台。
+          <span class="sign">*</span>
+          <span class="sign-text">我已瞭解浪浪的事平台是製作流浪動物相關服務，讓毛小孩可以順利被認養、尋獲、協尋...的平台。</span>
         </div>
         <div><input type="checkbox" class="input-checkbox">
-          <span class="sign">*</span>我已瞭解浪浪的事平台是做資訊整合，收集公立收容、私人收容或個人刊登毛小孩資訊，提供毛小孩相關資訊的平台，並非公立收容所或任何私立收容單位。
+          <span class="sign">*</span>
+          <span class="sign-text"> 我已瞭解浪浪的事平台是做資訊整合，收集公立收容、私人收容或個人刊登毛小孩資訊，提供毛小孩相關資訊的平台，並非公立收容所或任何私立收容單位。</span>
+
+
         </div>
         <div><input type="checkbox" class="input-checkbox">
-          <span class="sign">*</span>我已瞭解浪浪的事平台，並無收容毛小孩且看過 <span class="sponsor-aboutus">關於我們</span>
-          內容瞭解平台是製作系統服務讓毛小孩資訊可以更多人看見。
+          <span class="sign">*</span>
+          <span class="sign-text">
+            我已瞭解浪浪的事平台，並無收容毛小孩且看過 <span class="sponsor-aboutus">關於我們</span>
+            內容瞭解平台是製作系統服務讓毛小孩資訊可以更多人看見。</span>
         </div>
       </div>
     </div>
@@ -166,6 +172,7 @@ export default {
   }
 
 }
+
 .sponsor-rightnow {
   padding: 50px 0 100px 0;
 }
@@ -232,6 +239,16 @@ export default {
   }
 }
 
+@media only screen and (max-width: 375px) {
+  .cats {
+    width: 358px;
+    height: 98px;
+    background-size: 140%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
 .sponsor-text {
   display: flex;
   flex-direction: column;
@@ -259,8 +276,21 @@ input.input-checkbox {
   margin-left: 10px;
 }
 
+@media only screen and (max-width: 375px) {
+  .sign-text {
+    font-size: 14px;
+    letter-spacing: 25%;
+  }
+}
+
 .notice {
   font-weight: bold;
+}
+
+@media only screen and (max-width: 375px) {
+  .notice {
+    font-size: 14px;
+  }
 }
 
 .sponsor-aboutus {
@@ -291,6 +321,17 @@ input.input-checkbox {
     justify-content: unset;
     width: 731px;
     padding: 0px 0px 100px 0px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .interval {
+    justify-content: unset;
+    width: 293px;
+    padding: 0px 0px 100px 0px;
+    margin: auto;
+
   }
 }
 
@@ -304,6 +345,13 @@ input.input-checkbox {
 @media only screen and (max-width: 768px) {
   .line-text {
     font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .line-text {
+    font-size: 16px;
+    margin: 0px 1px;
   }
 }
 
@@ -339,6 +387,12 @@ input.input-checkbox {
   }
 }
 
+@media only screen and (max-width: 375px) {
+  .line-left {
+    width: 87px;
+  }
+}
+
 .line-right {
   width: 633px;
   height: 2px;
@@ -355,6 +409,12 @@ input.input-checkbox {
 @media only screen and (max-width: 768px) {
   .line-right {
     width: 260px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .line-right {
+    width: 87px;
   }
 }
 
@@ -386,6 +446,16 @@ input.input-checkbox {
   }
 }
 
+@media only screen and (max-width: 375px) {
+
+  .information {
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
 .information input {
   width: 100%;
   height: 85px;
@@ -405,6 +475,18 @@ input.input-checkbox {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 768px) {
+  .name-input {
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .name-input {
+    justify-content: flex-start;
+  }
+}
+
 .name-input input {
   width: 429px;
   height: 85px;
@@ -412,17 +494,43 @@ input.input-checkbox {
 
 @media only screen and (max-width: 768px) {
   .name-input {
-    width: 642px;
-    height: 85px;
     display: flex;
     gap: 10px;
   }
 }
 
 @media only screen and (max-width: 768px) {
+  .name-input input {
+    justify-content: flex-start;
+    width: 314px;
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .name-input input {
+    justify-content: flex-start;
+    width: 133px;
+    height: 43px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .email-input {
     width: 642px;
-    height: 85px;
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box .email-input {
+    width: 277px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box .email-input input {
+    height: 43px;
   }
 }
 
@@ -430,6 +538,32 @@ input.input-checkbox {
   font-size: 20px;
   letter-spacing: 5px;
   color: var(--gray-color);
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    font-size: 20px;
+    letter-spacing: 3.5px;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .content {
+    font-size: 14px;
+    letter-spacing: 3.5px;
+    margin-top: -30px;
+  }
+}
+
+
+
+@media only screen and (max-width: 375px) {
+  .box span:nth-child(1) {
+    font-size: 14px;
+    letter-spacing: 3.5px;
+    margin-top: -40px;
+  }
 }
 
 .box .card {
@@ -445,6 +579,13 @@ input.input-checkbox {
 @media only screen and (max-width: 768px) {
   .box .agree-text {
     width: 681px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .box .agree-text {
+    font-size: 12px;
+    width: 260px;
   }
 }
 
