@@ -80,6 +80,14 @@ export default {
     gap: 9px;
 }
 
+@media only screen and (max-width: 375px) {
+    .msgSuccess {    
+        width: 350px;
+        height: 320px;
+    }    
+}
+
+
 .msgSendText {
     display: flex;
     align-items: center;
@@ -104,11 +112,29 @@ export default {
     display: flex;
     padding: 0.2rem 0 3rem 0;
 }
+@media only screen and (max-width: 375px) {
+    .msgText {
+        display: flex;
+        padding: 0.2rem 0 1.5rem 0;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .msgSendText span {
+        font-size: 20px;
+    }
+}
 
 .msgText p {
     text-align: center;
     font-size: 1rem;
     letter-spacing: 3px;
+}
+
+@media only screen and (max-width: 375px) {
+    .msgText p {
+                font-size:14px;
+    }
 }
 
 .greenbutton {

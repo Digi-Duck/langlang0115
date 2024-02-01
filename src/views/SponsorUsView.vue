@@ -182,8 +182,6 @@ export default {
     }
 }
 
-
-
 @media only screen and (max-width: 768px) {
     .sponsor-us-big {
         display: none;
