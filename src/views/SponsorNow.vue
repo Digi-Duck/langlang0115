@@ -158,6 +158,14 @@ export default {
   letter-spacing: 6px;
 }
 
+
+@media only screen and (max-width: 768px) {
+  .sponsor-container {
+    padding: 0px 20px 100px;
+
+  }
+
+}
 .sponsor-rightnow {
   padding: 50px 0 100px 0;
 }
@@ -168,10 +176,10 @@ export default {
   margin-bottom: 50px;
 }
 
-.sponsor-titlecn {
-  font-size: 48px;
-  letter-spacing: 12px;
-  width: 240px;
+@media only screen and (max-width: 768px) {
+  .sponsor-titlecn {
+    font-size: 26px;
+  }
 }
 
 .sponsor-titleen {
@@ -202,6 +210,12 @@ export default {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+}
+
 .cats {
   width: 1465px;
   height: 265px;
@@ -209,6 +223,13 @@ export default {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top;
+}
+
+@media only screen and (max-width: 768px) {
+  .cats {
+    width: 711px;
+    height: 135px;
+  }
 }
 
 .sponsor-text {
@@ -224,10 +245,12 @@ export default {
 @media only screen and (max-width: 1836px) {
   .sponsor-text {
     padding-left: 44px;
+    margin-top: 0px;
+
   }
 }
 
-input.input-checkbox{
+input.input-checkbox {
   width: 20px;
   height: 20px;
 }
@@ -263,6 +286,14 @@ input.input-checkbox{
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .interval {
+    justify-content: unset;
+    width: 731px;
+    padding: 0px 0px 100px 0px;
+  }
+}
+
 
 @media only screen and (max-width: 1280px) {
   .line-text {
@@ -270,6 +301,11 @@ input.input-checkbox{
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .line-text {
+    font-size: 26px;
+  }
+}
 
 
 .line {
@@ -297,6 +333,12 @@ input.input-checkbox{
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .line-left {
+    width: 260px;
+  }
+}
+
 .line-right {
   width: 633px;
   height: 2px;
@@ -310,6 +352,12 @@ input.input-checkbox{
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .line-right {
+    width: 260px;
+  }
+}
+
 /* 下半部區塊 */
 .information {
   padding: 143px 311px 0 311px;
@@ -319,6 +367,16 @@ input.input-checkbox{
 }
 
 @media only screen and (max-width: 1836px) {
+
+  .information {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
 
   .information {
     padding: 0px;
@@ -352,6 +410,22 @@ input.input-checkbox{
   height: 85px;
 }
 
+@media only screen and (max-width: 768px) {
+  .name-input {
+    width: 642px;
+    height: 85px;
+    display: flex;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .email-input {
+    width: 642px;
+    height: 85px;
+  }
+}
+
 .content {
   font-size: 20px;
   letter-spacing: 5px;
@@ -368,6 +442,12 @@ input.input-checkbox{
   text-indent: -25px;
 }
 
+@media only screen and (max-width: 768px) {
+  .box .agree-text {
+    width: 681px;
+  }
+}
+
 .box .agree {
   width: 18px;
   height: 18px;
@@ -378,5 +458,4 @@ input.input-checkbox{
   margin: auto;
   /* font-size: 32px; */
   /* transform: scale(1.3); */
-}
-</style>
+}</style>
