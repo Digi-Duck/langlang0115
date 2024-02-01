@@ -21,12 +21,12 @@ export default {
   },
   methods: {
     scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                // behavior行動= 平滑
-                behavior: 'smooth',
-            });
-        },
+      window.scrollTo({
+        top: 0,
+        // behavior行動= 平滑
+        behavior: 'smooth',
+      });
+    },
     // SponsorPopUp裡 點擊到前往贊助 執行Popup關閉&Success開啟
     closeModel() {
       this.rightnow = false;
@@ -42,8 +42,8 @@ export default {
     // 視窗開啟時scrollBar隱藏
     hidden() {
       document.body.style.overflow = 'hidden';
-       // 讓scrollBar在router後平滑的回至頂部
-       this.scrollToTop();
+      // 讓scrollBar在router後平滑的回至頂部
+      this.scrollToTop();
     },
     showScrollbar() {
       document.body.style.overflow = 'auto';
@@ -67,13 +67,13 @@ export default {
       </div>
       <div class="sponsor-text">
         <div class="notice">請同意並瞭解以下內容才能贊助</div>
-        <div><input type="checkbox">
+        <div><input type="checkbox" class="input-checkbox">
           <span class="sign">*</span>我已瞭解浪浪的事平台是製作流浪動物相關服務，讓毛小孩可以順利被認養、尋獲、協尋...的平台。
         </div>
-        <div><input type="checkbox">
+        <div><input type="checkbox" class="input-checkbox">
           <span class="sign">*</span>我已瞭解浪浪的事平台是做資訊整合，收集公立收容、私人收容或個人刊登毛小孩資訊，提供毛小孩相關資訊的平台，並非公立收容所或任何私立收容單位。
         </div>
-        <div><input type="checkbox">
+        <div><input type="checkbox" class="input-checkbox">
           <span class="sign">*</span>我已瞭解浪浪的事平台，並無收容毛小孩且看過 <span class="sponsor-aboutus">關於我們</span>
           內容瞭解平台是製作系統服務讓毛小孩資訊可以更多人看見。
         </div>
@@ -135,8 +135,8 @@ export default {
         </div>
       </div>
       <div class="box ">
-        <IconChangeButton class="sponsornow-btn" text="確認並送出" textColor="var(--white-color)" bgColor="var(--primary-color)"
-          w="201px" h="64px" @click="rightnow = !rightnow, hidden()" />
+        <IconChangeButton class="sponsornow-btn" text="確認並送出" textColor="var(--white-color)"
+          bgColor="var(--primary-color)" w="201px" h="64px" @click="rightnow = !rightnow, hidden()" />
         <!-- Popup 執行closeModel closePopup-->
         <SponsorPopUp v-if="rightnow" @close-type="closeModel" @closePopup="closePopup">
         </SponsorPopUp>
@@ -194,6 +194,14 @@ export default {
   margin-right: 20px;
 }
 
+@media only screen and (max-width: 1836px) {
+  .arrow {
+    position: absolute;
+    top: 356px;
+    left: 59px;
+  }
+}
+
 .cats {
   width: 1465px;
   height: 265px;
@@ -211,6 +219,17 @@ export default {
   margin-top: -20px;
   padding-left: 125px;
   color: var(--gray-color);
+}
+
+@media only screen and (max-width: 1836px) {
+  .sponsor-text {
+    padding-left: 44px;
+  }
+}
+
+input.input-checkbox{
+  width: 20px;
+  height: 20px;
 }
 
 .sign {
@@ -232,7 +251,26 @@ export default {
   align-items: center;
   font-size: 32px;
   letter-spacing: 8px;
+  margin: auto;
 }
+
+
+@media only screen and (max-width: 1836px) {
+  .interval {
+    justify-content: unset;
+    width: 999px;
+    padding: 0px 0px 100px 0px;
+  }
+}
+
+
+@media only screen and (max-width: 1280px) {
+  .line-text {
+    margin: 0px 19px;
+  }
+}
+
+
 
 .line {
   display: flex;
@@ -253,11 +291,23 @@ export default {
   stroke: var(--primary-color);
 }
 
+@media only screen and (max-width: 1836px) {
+  .line-left {
+    width: 390px;
+  }
+}
+
 .line-right {
   width: 633px;
   height: 2px;
   background-color: var(--primary-color);
   stroke: var(--primary-color);
+}
+
+@media only screen and (max-width: 1836px) {
+  .line-right {
+    width: 390px;
+  }
 }
 
 /* 下半部區塊 */
@@ -266,7 +316,16 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 50px;
+}
 
+@media only screen and (max-width: 1836px) {
+
+  .information {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
 }
 
 .information input {
@@ -276,6 +335,7 @@ export default {
   border-radius: 4px;
   border: 2px solid var(--primary-color);
 }
+
 .box {
   display: flex;
   flex-direction: column;

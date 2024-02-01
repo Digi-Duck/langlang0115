@@ -433,7 +433,6 @@ export default {
     .line-left {
         width: 400px;
     }
-
 }
 
 @media only screen and (max-width: 768px) {
