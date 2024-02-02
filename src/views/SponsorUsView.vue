@@ -140,7 +140,7 @@ export default {
     /*    background-color: beige;*/
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .sponsor-page {
         margin-bottom: 208px;
     }
@@ -175,7 +175,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .sponsor-title {
         font-size: 20px;
         margin: 30px;
@@ -218,7 +218,7 @@ export default {
     position: relative;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .accept-criedcard {
         font-size: 14px;
         letter-spacing: 3.5px;
@@ -264,7 +264,7 @@ export default {
     padding: 0px 40px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .sponsor-flow-chart {
         display: flex;
         flex-direction: column;
@@ -295,7 +295,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .three-step-text {
         font-size: 16px;
         letter-spacing: 4px;
@@ -320,7 +320,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 396px) {
+@media only screen and (max-width: 720px) {
     .flow-chart img {
         width: 335px;
     }
@@ -354,7 +354,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .sponsor-intro-text {
         margin: 66px 46px;
         font-size: 20px;
@@ -393,7 +393,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .sponsored-list-title {
         min-width: 76px;
         font-size: 16px;
@@ -441,7 +441,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .line-left {
         width: 87px;
     }
@@ -468,7 +468,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .line-right {
         width: 87px;
     }
@@ -493,7 +493,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .table-all {
         width: 293px;
         height: 245px;
@@ -521,7 +521,7 @@ thead {
     top: 0;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     thead {
         font-size: 16px;
         height: 43px;
@@ -542,7 +542,7 @@ td {
     border-bottom: 1px solid #D7D7D7;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     td {
         height: 43px;
     }
@@ -575,7 +575,7 @@ td:nth-child(3) {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     tr td:nth-child(1) {
         font-size: 13px;
         width: 110px;
@@ -590,7 +590,7 @@ td:nth-child(3) {
     }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
 
     tr td:nth-child(2),
     td:nth-child(3) {
@@ -629,7 +629,7 @@ tbody tr:nth-child(even) {
         margin: -50px 0px 209px 0px;
     }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .sponsor-page.c-area {
         margin: -152px 0px 209px 2px;
     }
@@ -659,7 +659,7 @@ tbody tr:nth-child(even) {
         margin: 0px;
     }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .q-a-container {
         width: 310px;
         margin: 0px;
@@ -681,7 +681,7 @@ tbody tr:nth-child(even) {
     }
 
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .q-a-tittle {
         font-size: 20px;
         letter-spacing: 6.5px;
@@ -703,7 +703,7 @@ tbody tr:nth-child(even) {
         padding: 0px 36px;
     }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .q-a-content {
         font-size: 14px;
         letter-spacing: 5px;
@@ -726,7 +726,7 @@ tbody tr:nth-child(even) {
     margin: 0px 7px 0px 30px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .answer img  {
    width: 18px;
    height: 18px;
