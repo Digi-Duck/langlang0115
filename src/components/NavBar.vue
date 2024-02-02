@@ -213,7 +213,7 @@ span:hover {
 }
 
 /* 平板 */
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     .box {
         display: none;
         visibility: hidden;
@@ -338,8 +338,8 @@ span:hover {
     #logo {
         width: 68px;
         height: 93px;
-        transform: scale(1);
-        margin-top: 6%;
+        transform: scale(0.9);
+        margin-top: 0%;
         margin-left: 2%;
     }
 

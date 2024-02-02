@@ -90,7 +90,7 @@ export default {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .furryBabiesImage {
         display: flex;
         align-items: center;
