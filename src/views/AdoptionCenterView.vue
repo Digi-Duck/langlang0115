@@ -710,7 +710,7 @@ a:hover {
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     .adoptionCenterArea {
         padding: 44px 22px 232px;
     }

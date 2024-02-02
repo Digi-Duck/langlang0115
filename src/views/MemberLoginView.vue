@@ -342,7 +342,7 @@ input {
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     main {
         padding: 62px 108px 157px;
     }

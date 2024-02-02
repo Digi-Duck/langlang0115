@@ -230,7 +230,7 @@ export default {
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     .cols {
         display: none;
         visibility: hidden;

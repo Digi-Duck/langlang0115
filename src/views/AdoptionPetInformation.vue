@@ -470,7 +470,7 @@ main {
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     main {
         padding: 44px 86px 197px 40px;
     }

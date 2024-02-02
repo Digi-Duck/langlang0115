@@ -238,7 +238,7 @@ main {
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     .informationPopupFrame {
         width: 650px;
         height: 710px;

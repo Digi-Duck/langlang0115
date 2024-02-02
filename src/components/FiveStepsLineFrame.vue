@@ -104,7 +104,7 @@ export default {
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     .fiveStepsLineFrame {
         gap: 20px;
     }
