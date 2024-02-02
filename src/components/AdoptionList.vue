@@ -77,7 +77,7 @@ export default {
     height: 277px;
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:720px) {
     .all-container {
         align-items: center;
         font-size: 0.8rem;
@@ -102,7 +102,7 @@ export default {
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     .list-container {
         width: 640px;
     }

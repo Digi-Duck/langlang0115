@@ -424,7 +424,7 @@ label[for="neutered"],
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     .container {
         display: flex;
         justify-content: center;
