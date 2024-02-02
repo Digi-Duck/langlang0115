@@ -81,7 +81,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
   .home-container {
     margin-bottom: 63px;
   }
@@ -103,7 +103,7 @@ export default {
     height: 224px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 720px) {
   .home-header-greenbox {
     border-radius: 0;
   }
@@ -136,7 +136,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
   .home-header-img {
     width: 310px;
     height: 559px;
@@ -195,7 +195,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
   .home-header-text {
     width: 80px;
     height: 15px;

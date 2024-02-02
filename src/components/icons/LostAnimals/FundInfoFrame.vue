@@ -278,7 +278,7 @@ td {
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .cardFrameAll {
         width: 100%;
         display: flex;

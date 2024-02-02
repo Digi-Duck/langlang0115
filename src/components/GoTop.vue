@@ -69,14 +69,14 @@ export default {
     }
 }
 
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     #goTop {
         right: 18px;
         bottom: 180px;
     }
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     #goTop {
         width: 51px;
         height: 50px;

@@ -326,7 +326,7 @@ export default {
 }
 
 /* ------------phone--------------- */
-@media (max-width: 375px) {
+@media (max-width: 720px) {
   .home-container {
     height: 370px;
     margin-bottom: 81px;
@@ -407,7 +407,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
   .yellow-paw-pic {
     top: -222.4%;
     left: -195%;
@@ -446,7 +446,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .dog-cat-pic {
     transform: scale(0.4);
     top: -15%;
@@ -470,7 +470,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .home-news-text {
     margin-left: 28px;
   }
@@ -507,7 +507,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .green-icon-container {
     width: 100%;
     background-position: center;
@@ -546,7 +546,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .news-list {
     transform: translate(45px, 60px);
     width: 276px;
@@ -582,7 +582,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .news-date {
     margin-right: 14px;
   }
@@ -593,7 +593,7 @@ export default {
   font-size: 16px;
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .news-date-month {
     font-size: 12px;
   }
@@ -611,7 +611,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .news-date-day {
     font-size: 16px;
   }
@@ -645,7 +645,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .news-announcement {
     font-size: 12px;
     letter-spacing: 3px;
@@ -664,7 +664,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .news-announcement span:first-child {
     margin-left: 5px;
   }
@@ -723,7 +723,7 @@ export default {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
   .news-announcement-btn img {
     transform: scale(0.7);
   }

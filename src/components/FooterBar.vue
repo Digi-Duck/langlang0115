@@ -98,7 +98,7 @@
     }
 }
 
-@media (max-width: 375.9px) {
+@media (max-width: 720px) {
     .footer {
         display: flex;
         align-items: center;

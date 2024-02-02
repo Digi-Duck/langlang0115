@@ -286,7 +286,7 @@ main {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     main {
         padding: 22px 4px;
     }

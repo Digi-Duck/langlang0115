@@ -151,7 +151,7 @@ span:hover {
 }
 
 /* 平板 */
-@media screen and (max-width:768px) and (min-width:376px) {
+@media screen and (max-width:768px) and (min-width:720px) {
     .box {
         display: none;
         visibility: hidden;
@@ -220,7 +220,7 @@ span:hover {
     }
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .box {
         display: none;
         visibility: hidden;

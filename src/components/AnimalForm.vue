@@ -413,7 +413,7 @@ main {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .header-container {
         font-size: 20px;
         letter-spacing: 4.8px;
@@ -455,7 +455,7 @@ form {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     form {
         padding: 67px 23px 77px 23px;
         gap: 25px;
@@ -476,7 +476,7 @@ form {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .custom-file-upload {
         gap: 25px;
         align-items: center;
@@ -497,7 +497,7 @@ form {
     cursor: pointer;
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .custom-file-upload label {
         padding: 10px 15px;
         border-radius: 5px;
@@ -544,7 +544,7 @@ form {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .preview-pic {
         width: 250px;
         height: 250px;
@@ -598,7 +598,7 @@ form {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .preview-pic-block {
         width: 249px;
         height: 224px;
@@ -617,7 +617,7 @@ label[for="photo"] {
     align-items: center;
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     label[for="photo"] {
         width: 174px;
         height: 41px;
@@ -646,7 +646,7 @@ label[for="photo"] {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .form-group {
         font-size: 16px;
         flex-wrap: wrap;
@@ -711,7 +711,7 @@ label[for="other"],
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
 
     label[for="species"],
     label[for="chip-id"],
@@ -752,7 +752,7 @@ select {
         margin: 0px 20px;
     }
 }
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .form-group input,
     select {
         margin: 0px 15px;
@@ -769,7 +769,7 @@ select {
         transform: scale(1.5);
     }
 }
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .form-group input[type="radio"] {
         transform: scale(1.2);
     }
@@ -794,7 +794,7 @@ select {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .time-place {
         flex-direction: column;
         gap: 15px;
@@ -822,7 +822,7 @@ select {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .time-place-text {
         display: flex;
         flex-wrap: nowrap;
@@ -860,7 +860,7 @@ select#place {
     color: var(--gray-color)
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .phone-area span {
         font-size: 14px;
         letter-spacing: 3.5px;
@@ -880,7 +880,7 @@ select#place {
     flex-direction: column;
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .contact-area {
         margin: 15px 0;
 }
@@ -911,7 +911,7 @@ input#chip-id {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     input#chip-id {
         width: 298px;
         height: 41px;
@@ -943,7 +943,7 @@ select#place {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     input#time {
         width: 255px;
         height: 41px;
@@ -985,7 +985,7 @@ input#description {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     input#description {
         width: 256px;
         height: 41px;
@@ -1004,7 +1004,7 @@ input#phone {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     input#phone {
         width: 202px;
         height: 41px;
@@ -1062,7 +1062,7 @@ input#phone {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
 
     .contact-area label,
     .other label {
@@ -1103,7 +1103,7 @@ input#phone {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .btn-area {
         display: flex;
         margin: auto;

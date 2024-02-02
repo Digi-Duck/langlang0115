@@ -142,7 +142,7 @@ main {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     main {
         padding: 22px 4px 0px 4px;
     }
@@ -175,7 +175,7 @@ main {
     }
 
     .lost-titlecn {
-        font-size: 26px;
+        font-size: 22px;
         letter-spacing: 6.5px;
         width: 180px;
     }
@@ -188,7 +188,7 @@ main {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width720px) {
     .lost-title {
         margin-bottom: 20px;
         margin-left: 30px;
@@ -252,7 +252,7 @@ svg {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .tabs {
         font-size: 16px;
         letter-spacing: 0px;
@@ -290,18 +290,18 @@ svg {
     order: 0;
 }
 
-@media (max-width: 375px) {
+@media (max-width:720px) {
     .tab-left {
         height: 43px;
         line-height: 43px;
-        padding: 0px 42px;
+        padding: 0px 41px;
         border-radius: 30px 0 0 0;
     }
 
     .tab-right {
         height: 43px;
         line-height: 43px;
-        padding: 0 41.5px;
+        padding: 0 41px;
         border-radius: 0 30px 0 0;
     }
 }

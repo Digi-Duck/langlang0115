@@ -219,7 +219,7 @@ export default {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .big-container {
         width: 367px;
         gap: 37px;
@@ -249,7 +249,7 @@ export default {
     color: var(--B68337);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .notice {
         height: 54px;
         line-height: normal;
@@ -300,7 +300,7 @@ label[for="neutered"],
     color: var(--B68337);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     label[for="species"],
     label[for="location"],
     label[for="body-shape"],
@@ -345,7 +345,7 @@ label[for="neutered"],
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .form-group {
         margin: 15px 0;
         display: flex;
@@ -409,7 +409,7 @@ form svg {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .customSelect {
         width: 280px;
         margin-top: 0;
@@ -428,7 +428,7 @@ form svg {
     gap: 55px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .btn-area {
         display: flex;
         justify-content: center;
@@ -462,7 +462,7 @@ form svg {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .list-container {
         font-size: 16px;
         gap: 0px;
@@ -492,7 +492,7 @@ a:hover {
     display: none;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 720px) {
     .btn {
         font-size: 16px;
         padding: 0 20px;
