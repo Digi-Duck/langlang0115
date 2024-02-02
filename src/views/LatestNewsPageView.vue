@@ -146,7 +146,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .latest-news-text {
     font-size: 20px;
     letter-spacing: 4.8px;
@@ -184,7 +184,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .green-bg {
     width: 370px;
     background-size: 194%;
@@ -221,7 +221,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .news-list {
     width: 280px;
     margin: 0px 0px 80px 70px;
@@ -247,7 +247,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
 
   .news-item {
     width: 280px;
@@ -264,7 +264,7 @@ main {
   font-family: 'Stick', sans-serif;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .news-date {
     font-size: 16px;
     margin-right: 0px;
@@ -276,7 +276,7 @@ main {
   font-size: 16px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .news-date-month {
     font-size: 12px;
     font-weight: 400;
@@ -289,7 +289,7 @@ main {
   font-weight: 900;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .news-date-day {
     font-size: 16px;
     font-weight: 900;
@@ -323,7 +323,7 @@ main {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .news-announcement {
     letter-spacing: 3px;
     margin-left: 10px;
@@ -340,14 +340,14 @@ main {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .news-announcement span:first-child {
     margin-left: 0px;
   }
 }
 
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .news-announcement span {
     font-size: 12px;
   }
@@ -377,7 +377,7 @@ main {
   top: 10px;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
   .news-announcement-btn img {
     width: 21px;
     height: 21px;
@@ -414,7 +414,7 @@ main {
   }
 }
 
-@media only screen and (max-width:375px) {
+@media only screen and (max-width:720px) {
   .news-detail-popup {
     top: 25%;
     left: 15%;
@@ -445,7 +445,7 @@ main {
   }
 }
 
-@media only screen and (max-width:375px) {
+@media only screen and (max-width:720px) {
   .close-btn {
     width: 30px;
     height: 30px;
@@ -475,7 +475,7 @@ main {
   }
 
 
-  @media only screen and (max-width:375px) {
+  @media only screen and (max-width:720px) {
     .news-detail-content {
       font-size: 14px;
       letter-spacing: 6.3px;
