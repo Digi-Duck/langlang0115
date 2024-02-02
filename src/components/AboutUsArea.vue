@@ -85,7 +85,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .about-intro-title {
         margin: 15px 0px 0px 30px;
         padding: 0;
@@ -146,7 +146,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .intro-description {
         top: 131px;
         right: 79px;
@@ -183,7 +183,7 @@ export default {
 
     }
 }
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .description-text {
         font-size: 16px;
         letter-spacing: 4px;
@@ -224,7 +224,7 @@ export default {
         border-radius: 30px;
     }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .intro-dog-pic {
         position: absolute;
         top: -38px;
@@ -276,7 +276,7 @@ export default {
         height: 999px;
     }
 }
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .main-content {
         margin: 175px 0px 54px 10px;
         width: 358px;
@@ -295,7 +295,7 @@ export default {
  }
 
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .main-content span {
        font-size: 16px;
        letter-spacing: 4px;
@@ -322,7 +322,7 @@ export default {
         left: -60px;
     }
 }
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .main-content img:not(.sponsor-us-btn) {
         width: 127px;
         height: 82px;
