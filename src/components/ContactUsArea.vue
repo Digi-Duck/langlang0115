@@ -116,7 +116,7 @@ a:hover {
 }
 
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     #contactTitleArea {
         width: 317px;    
     }    
@@ -142,7 +142,7 @@ a:hover {
     }
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     #contactTitle {
         margin: 0px 0px 0px 0px;
         padding: 0;
@@ -172,7 +172,7 @@ a:hover {
     }
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     #contactTitle span {
         font-size: 20px;
         letter-spacing:5px;
@@ -199,7 +199,7 @@ a:hover {
         padding-left: 29px;
     }
 }
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     #contactLine {
         width: 193px;
         padding-left: 29px;
@@ -231,7 +231,7 @@ a:hover {
         width: 30px;
     }
 }
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     #squre {
         width: 65px;
     }
@@ -262,12 +262,12 @@ a:hover {
          width: 383px;
     }
 }
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     #contactText {
          width: 300px;
     }
 }
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     #contactText p{
         font-size: 14px;
         letter-spacing: 3.5px;
@@ -293,7 +293,7 @@ a:hover {
     }
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     #inputArea {
         padding: 35px 0 0 55px;
         margin: 0px;
@@ -319,7 +319,7 @@ a:hover {
     }
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .inputFrame {
         width: 290px;
         font-size: 1.5rem;
@@ -342,13 +342,13 @@ a:hover {
     background: var(--primary-color);
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .inputTitle {
         width: 90px;
     }
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .inputFrame:nth-child(4) label {
         text-align: center;
     }
@@ -377,7 +377,7 @@ a:hover {
 
 }
 
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .input {
         width:194px;
     }
@@ -472,7 +472,7 @@ a:hover {
         margin-left: 10px;
     }
 }
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 720px) {
     .remindText {
         font-size: 16px;
         width: 200px;
@@ -491,7 +491,7 @@ a:hover {
     letter-spacing: 3.8px;
     text-decoration-line: underline;
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     .remindText p{
        font-size: 16px;
        width: 232px;
@@ -507,7 +507,7 @@ a:hover {
 
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 720px) {
     #mymail  {
         width: 378px;
         }
