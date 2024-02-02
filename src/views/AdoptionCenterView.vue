@@ -635,7 +635,6 @@ a:hover {
         visibility: visible;
         flex-direction: column;
         gap: 60px;
-        padding: 0 114px 105px 126px;
     }
 
     .StepsText {
@@ -651,7 +650,7 @@ a:hover {
 
     .up {
         gap: 216px;
-        padding-left: 184px;
+        padding-left: 150px;
     }
 
     .med {
