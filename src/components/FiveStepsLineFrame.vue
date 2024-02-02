@@ -110,7 +110,7 @@ export default {
     }
 
     .stepsLine {
-        width: 150px;
+        width: 130px;
     }
 
     .circle {
