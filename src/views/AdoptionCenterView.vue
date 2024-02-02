@@ -774,8 +774,6 @@ a:hover {
         align-items: center;
         flex-direction: column-reverse;
         gap: 23px;
-        padding: 0 22px 74px 22px;
-        width: 707px;
     }
 
     .StepsText {

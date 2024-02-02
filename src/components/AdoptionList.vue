@@ -95,7 +95,6 @@ export default {
 
     .cards {
         justify-content: center;
-        width: 93vw;
         height: 977px;
         padding: 40px 0;
         gap: 30px;
