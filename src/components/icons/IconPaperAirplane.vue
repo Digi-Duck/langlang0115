@@ -5,7 +5,7 @@
             fill="#626262" />
     </svg>
 </template>
-<style scoped> @media screen and (max-width:375.9px) {
+<style scoped> @media screen and (max-width:720px) {
      .air {
          width: 20px;
          height: 20px;

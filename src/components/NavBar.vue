@@ -220,7 +220,6 @@ span:hover {
     }
 
     .boxall {
-        background: transparent;
         height: 0;
         padding: 0;
     }
@@ -320,7 +319,7 @@ span:hover {
     }
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .box {
         display: none;
         visibility: hidden;

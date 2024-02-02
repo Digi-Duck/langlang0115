@@ -315,7 +315,7 @@ main {
     visibility: hidden;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     main {
         padding: 22px 0 84px;
     }

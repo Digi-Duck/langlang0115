@@ -455,7 +455,7 @@ a:hover {
     flex-direction: column;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .adoptionCenterArea {
         padding: 20px 0 60px 0;
     }

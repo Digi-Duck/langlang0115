@@ -12,7 +12,7 @@
     </svg>
 </template>
 <style scoped>
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .ham {
         width: 41px;
         height: 41px;

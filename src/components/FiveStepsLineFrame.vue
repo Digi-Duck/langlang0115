@@ -76,7 +76,7 @@ export default {
     position: relative;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .fiveStepsLineFrame {
         gap: 17px;
     }

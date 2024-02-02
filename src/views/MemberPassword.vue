@@ -156,7 +156,7 @@ input {
     visibility: hidden;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     main {
         padding: 57px 0 88px;
     }

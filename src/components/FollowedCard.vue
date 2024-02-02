@@ -100,7 +100,7 @@ export default {
     transform: scale(0.6);
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .card {
         width: 205px;
         height: 205px;

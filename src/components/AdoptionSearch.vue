@@ -321,7 +321,7 @@ label[for="neutered"],
     visibility: visible;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .container {
         font-size: 1rem;
         width: 350px;

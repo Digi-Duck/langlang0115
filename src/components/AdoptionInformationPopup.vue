@@ -123,7 +123,7 @@ main {
     padding: 0 126px;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     main {
         top: auto;
         left: auto;

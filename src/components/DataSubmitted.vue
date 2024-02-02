@@ -141,7 +141,7 @@ export default {
     box-shadow: none;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .Success {
         width: 350px;
         height: 320px;

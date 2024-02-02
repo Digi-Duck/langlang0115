@@ -44,7 +44,7 @@ export default {
     </button>
 </template>
 <style scoped>
-@media screen and (max-width:375.9px){
+@media screen and (max-width:720px){
     .custom-button{
         font-size: 0.9rem;
     }

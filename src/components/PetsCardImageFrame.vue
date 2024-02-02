@@ -97,7 +97,7 @@ export default {
     </div>
 </template>
 <style scoped>
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
     .cardFrameAll {
         display: flex;
         flex-direction: column;

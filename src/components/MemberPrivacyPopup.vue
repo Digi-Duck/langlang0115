@@ -188,7 +188,7 @@ main {
     display: none;
 }
 
-@media screen and (max-width:375.9px) {
+@media screen and (max-width:720px) {
 
     ol>li {
         margin-left: 10px;
