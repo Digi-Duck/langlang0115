@@ -195,7 +195,8 @@ span:hover {
         gap: 50px;
         position: absolute;
         top: 0;
-        left: -336px;
+        right: 0;
+        /* left: -336px; */
         padding: 40px 0;
     }
 
@@ -283,7 +284,7 @@ span:hover {
         gap: 32px;
         position: absolute;
         top: 0;
-        left: -230px;
+        /* left: -230px; */
         padding: 40px 0;
     }
 
